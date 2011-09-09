@@ -10,7 +10,10 @@ DO NOT DO IT (I DID IT)!!!<br>
 svn import https://universitario.googlecode.com/svn/trunk --username sergei.bardas<br>
 
 DO IT:<br>
-svn checkout https://universitario.googlecode.com/svn/trunk/ --username sergei.bardas 
+crom cmd:<br>
+svn checkout https://universitario.googlecode.com/svn/trunk/ --username sergei.bardas
+from Eclipse:<br>
+just add *https://universitario.googlecode.com/svn/trunk/* URL to SVN Repositroy Exploring perspective 
 
 ===3.maven===
 version:3.0.3<br>
