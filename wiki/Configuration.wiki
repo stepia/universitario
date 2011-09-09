@@ -1,8 +1,18 @@
-1.DB
+===1.DB===
+mysql
+login:rff
+pwd:rff
+schema:rffDB
 
-2.maven
-
+===2.maven===
+versio:3.0.3
 mvn eclipse:eclipse
 Update Dependencies
 
-3.tomcat
+===3.tomcat===
+versio:7.0.12
+
+===4.start application===
+
+sh catalina.sh jpda run
+http://localhost:8099/Universitario-0.1
