@@ -4,23 +4,37 @@ login:*rff*<br>
 pwd:*rff*<br>
 schema:*rffDB*<br>
 
-===2.maven===
+===2.svn===
+
+svn import https://teal.googlecode.com/svn/trunk --username sergei.bardas
+svn checkout https://teal.googlecode.com/svn/trunk/ teal --username sergei.bardas 
+
+===3.maven===
 version:3.0.3<br>
 mvn eclipse:eclipse<br>
 Maven-->Update Dependencies<br>
 
-===3.tomcat===
+===4.tomcat===
 version:7.0.12<br>
 <Connector *port="8099"* protocol="HTTP/1.1" 
                connectionTimeout="20000" 
                redirectPort="8443" />
 
-===4.deploy application===
+set debug mode:
+set JPDA_ADDRESS=8000
+set JPDA_TRANSPORT=dt_socket
+
+===5.deploy application===
 {{{mvn clean install -Dmaven.test.skip=true}}}<br>
 copy Universitario-0.1.war to ../apache-tomcat-7.0.12/webapps dir
 
 
-===5.start application===
+===6.start application===
 
 sh catalina.sh jpda run<br>
 http://localhost:8099/Universitario-0.1
+
+
+===7.shutdown application===
+
+{{{CTR-C}}} or {{{sh shutdown.sh}}}
