@@ -26,7 +26,6 @@ schema:*rffDB*<br>
 в server.xml прописать порт(любой свободный):<br>
 <Connector *port="8099"* protocol="HTTP/1.1" ...<br>
 дебаг для томката:<br>
-set debug mode:<br>
 set JPDA_ADDRESS=8000<br>
 set JPDA_TRANSPORT=dt_socket<br>
 
