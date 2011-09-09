@@ -17,7 +17,7 @@ https://universitario.googlecode.com/svn/trunk/<br>
 выполнить mvn eclipse:eclipse в корне проекта или<br>
 Maven-->Update Dependencies из Eclipse<br>
 
-4.База данных MySQL:<br>
+4.База данных MySQL(у меня версия MySQL 5.1.49-1ubuntu8.1):<br>
 login:*rff*<br>
 pwd:*rff*<br>
 schema:*rffDB*<br>
