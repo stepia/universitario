@@ -10,7 +10,7 @@ mvn eclipse:eclipse<br>
 Maven-->Update Dependencies<br>
 
 ===3.tomcat===
-version:7.0.12
+version:7.0.12<br>
 <Connector *port="8099"* protocol="HTTP/1.1" 
                connectionTimeout="20000" 
                redirectPort="8443" />
