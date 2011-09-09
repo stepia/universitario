@@ -4,6 +4,12 @@
   Maven plugin<br>
 
 2. установить maven(version:3.0.3)<br>
+прописать переменные средя для maven сюда:<br>
+sudo gedit /etc/environment<br>
+вот так:<br>
+PATH="../apache-maven-3.0.3/bin"<br>
+MAVEN_HOME="../apache-maven-3.0.3"<br>
+
 
 3.вычекать проект в Eclipse,т.е. добавить новый location в SVN Repository Exploring:<br>
 https://universitario.googlecode.com/svn/trunk/<br>
