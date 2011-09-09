@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:utils="http://java.sun.com/jsf/composite/utils"
+        >
+
+<h:head>
+    <link href="resources/styles/main.css" rel="stylesheet" type="text/css"/>
+</h:head>
+
+<h:body>
+
+    <utils:menuComponent/>
+
+    <h:panelGroup layout="block">
+        <h:dataTable var="dec" value="#{showPerson.decanes}">
+            <h:column>#{dec.firstName}</h:column>
+            <h:column>#{dec.lastName}</h:column>
+        </h:dataTable>
+    </h:panelGroup>
+</h:body>
+
+</html>
