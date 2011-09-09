@@ -16,16 +16,16 @@ schema:*rffDB*<br>
 в server.xml прописать порт(любой свободный):<br>
 <Connector *port="8099"* protocol="HTTP/1.1" ...<br>
 дебаг для томката:<br>
-set debug mode:
-set JPDA_ADDRESS=8000
-set JPDA_TRANSPORT=dt_socket
+set debug mode:<br>
+set JPDA_ADDRESS=8000<br>
+set JPDA_TRANSPORT=dt_socket<br>
 6.сборка приложения<br>
 {{{mvn clean install -Dmaven.test.skip=true}}}<br>
-скопировать Universitario-0.1.war в ../apache-tomcat-7.0.12/webapps
+скопировать Universitario-0.1.war в ../apache-tomcat-7.0.12/webapps<br>
 7.старт приложения:<br>
 
 sh catalina.sh jpda run<br>
-http://localhost:8099/Universitario-0.1
+http://localhost:8099/Universitario-0.1<br>
 
 8.останов приложения:<br>
 
