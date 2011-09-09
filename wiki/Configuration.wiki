@@ -6,8 +6,11 @@ schema:*rffDB*<br>
 
 ===2.svn===
 
-svn import https://teal.googlecode.com/svn/trunk --username sergei.bardas
-svn checkout https://teal.googlecode.com/svn/trunk/ teal --username sergei.bardas 
+DO NOT DO IT (I DID IT)!!!<br>
+svn import https://universitario.googlecode.com/svn/trunk --username sergei.bardas<br>
+
+DO IT:<br>
+svn checkout https://universitario.googlecode.com/svn/trunk/ teal --username sergei.bardas 
 
 ===3.maven===
 version:3.0.3<br>
