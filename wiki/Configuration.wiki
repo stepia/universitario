@@ -1,16 +1,19 @@
 ===1.DB===
-type:mysql<br>
-login:rff<br>
-pwd:rff<br>
-schema:rffDB<br>
+type:*mysql*<br>
+login:*rff*<br>
+pwd:*rff*<br>
+schema:*rffDB*<br>
 
 ===2.maven===
-versio:3.0.3<br>
+version:3.0.3<br>
 mvn eclipse:eclipse<br>
 Maven-->Update Dependencies<br>
 
 ===3.tomcat===
-versio:7.0.12
+version:7.0.12
+<Connector *port="8099"* protocol="HTTP/1.1" 
+               connectionTimeout="20000" 
+               redirectPort="8443" />
 
 ===4.deploy application===
 {{{mvn clean install -Dmaven.test.skip=true}}}<br>
