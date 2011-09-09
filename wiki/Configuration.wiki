@@ -14,7 +14,7 @@ from command line:<br>
 svn checkout https://universitario.googlecode.com/svn/trunk/ --username sergei.bardas<br>
 or<br>
 from Eclipse:<br>
-just add *https://universitario.googlecode.com/svn/trunk/* URL to SVN Repositroy Exploring perspective 
+just add https://universitario.googlecode.com/svn/trunk/ URL to SVN Repositroy Exploring perspective 
 
 ===3.maven===
 version:3.0.3<br>
