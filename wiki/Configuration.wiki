@@ -1,37 +1,26 @@
-===1.DB===
-type:*mysql*<br>
+===Настройка и запуск===
+1.Eclipse с плагинами для SVN Repository Exploring и Maven<br>
+2.вычекать проект в Eclipse.,т.е. добавить новый locations в SVN Repository Exploring:<br>
+https://universitario.googlecode.com/svn/trunk/
+выполнить mvn eclipse:eclipse в корне проекта,если не подтягиваются библиотеки или<br>
+Maven-->Update Dependencies из Eclipse<br>
+3.База данных MySQL:<br>
 login:*rff*<br>
 pwd:*rff*<br>
 schema:*rffDB*<br>
-
-===2.svn===
-
-DO NOT DO IT (I DID IT)!!!<br>
-svn import https://universitario.googlecode.com/svn/trunk --username sergei.bardas<br>
-
-DO IT:<br>
-from command line:<br>
-svn checkout https://universitario.googlecode.com/svn/trunk/ --username sergei.bardas<br>
-or<br>
-from Eclipse:<br>
-just add https://universitario.googlecode.com/svn/trunk/ URL to SVN Repositroy Exploring perspective 
-
-===3.maven===
-version:3.0.3<br>
-mvn eclipse:eclipse<br>
-Maven-->Update Dependencies<br>
-
-===4.tomcat===
-version:7.0.12<br>
+4. maven version:3.0.3<br>
+5. tomcat version:7.0.12<br>
+в server.xml прописать порт(любой свободный):
 <Connector *port="8099"* protocol="HTTP/1.1" 
                connectionTimeout="20000" 
                redirectPort="8443" />
 
+дебаг для томката:<br>
 set debug mode:
 set JPDA_ADDRESS=8000
 set JPDA_TRANSPORT=dt_socket
 
-===5.deploy application===
+6.сборка приложения<br>
 {{{mvn clean install -Dmaven.test.skip=true}}}<br>
 copy Universitario-0.1.war to ../apache-tomcat-7.0.12/webapps dir
 
