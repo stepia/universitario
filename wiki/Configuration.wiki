@@ -1,8 +1,11 @@
 ===Настройка и запуск===
-1.Eclipse с плагинами для SVN Repository Exploring и Maven<br>
-2.вычекать проект в Eclipse.,т.е. добавить новый locations в SVN Repository Exploring:<br>
-https://universitario.googlecode.com/svn/trunk/
-выполнить mvn eclipse:eclipse в корне проекта,если не подтягиваются библиотеки или<br>
+1.Eclipse с двумя плагинами:<br>
+  SVN Repository Exploring<br>
+  Maven plugin<br>
+2.вычекать проект в Eclipse,т.е. добавить новый location в SVN Repository Exploring:<br>
+https://universitario.googlecode.com/svn/trunk/<br>
+если не подтягиваются библиотеки:<br>
+выполнить mvn eclipse:eclipse в корне проекта или<br>
 Maven-->Update Dependencies из Eclipse<br>
 3.База данных MySQL:<br>
 login:*rff*<br>
