@@ -1,4 +1,4 @@
-===Настройка и запуск===
+===Концигурация и запуск===
 1.Eclipse с двумя плагинами:<br>
   SVN Repository Exploring<br>
   Maven plugin<br>
