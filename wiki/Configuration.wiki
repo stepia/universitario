@@ -3,18 +3,18 @@
   SVN Repository Exploring<br>
   Maven plugin<br>
 
-2.вычекать проект в Eclipse,т.е. добавить новый location в SVN Repository Exploring:<br>
+2. установить maven(version:3.0.3)<br>
+
+3.вычекать проект в Eclipse,т.е. добавить новый location в SVN Repository Exploring:<br>
 https://universitario.googlecode.com/svn/trunk/<br>
 если не подтягиваются библиотеки:<br>
 выполнить mvn eclipse:eclipse в корне проекта или<br>
 Maven-->Update Dependencies из Eclipse<br>
 
-3.База данных MySQL:<br>
+4.База данных MySQL:<br>
 login:*rff*<br>
 pwd:*rff*<br>
 schema:*rffDB*<br>
-
-4. maven version:3.0.3<br>
 
 5. tomcat version:7.0.12<br>
 в server.xml прописать порт(любой свободный):<br>
