@@ -10,27 +10,20 @@ pwd:*rff*<br>
 schema:*rffDB*<br>
 4. maven version:3.0.3<br>
 5. tomcat version:7.0.12<br>
-в server.xml прописать порт(любой свободный):
-<Connector *port="8099"* protocol="HTTP/1.1" 
-               connectionTimeout="20000" 
-               redirectPort="8443" />
-
+в server.xml прописать порт(любой свободный):<br>
+<Connector *port="8099"* protocol="HTTP/1.1" ...<br>
 дебаг для томката:<br>
 set debug mode:
 set JPDA_ADDRESS=8000
 set JPDA_TRANSPORT=dt_socket
-
 6.сборка приложения<br>
 {{{mvn clean install -Dmaven.test.skip=true}}}<br>
-copy Universitario-0.1.war to ../apache-tomcat-7.0.12/webapps dir
-
-
-===6.start application===
+скопировать Universitario-0.1.war в ../apache-tomcat-7.0.12/webapps
+7.старт приложения:<br>
 
 sh catalina.sh jpda run<br>
 http://localhost:8099/Universitario-0.1
 
-
-===7.shutdown application===
+8.останов приложения:<br>
 
 {{{CTR-C}}} or {{{sh shutdown.sh}}}
