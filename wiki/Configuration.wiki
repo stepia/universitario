@@ -29,13 +29,16 @@ schema:*rffDB*<br>
 set JPDA_ADDRESS=8000<br>
 set JPDA_TRANSPORT=dt_socket<br>
 
-6.сборка приложения<br>
+6.инициализация БД для приложения:<br>
+выполнить init.sql
+
+7.сборка приложения<br>
 {{{mvn clean install -Dmaven.test.skip=true}}}<br>
 скопировать Universitario-0.1.war в ../apache-tomcat-7.0.12/webapps<br>
 
-7.старт приложения:<br>
+8.старт приложения:<br>
 sh catalina.sh jpda run<br>
 http://localhost:8099/Universitario-0.1<br>
 
-8.останов приложения:<br>
+9.останов приложения:<br>
 {{{CTR-C}}} or {{{sh shutdown.sh}}}
