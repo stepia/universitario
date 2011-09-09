@@ -10,8 +10,9 @@ DO NOT DO IT (I DID IT)!!!<br>
 svn import https://universitario.googlecode.com/svn/trunk --username sergei.bardas<br>
 
 DO IT:<br>
-crom cmd:<br>
-svn checkout https://universitario.googlecode.com/svn/trunk/ --username sergei.bardas
+from command line:<br>
+svn checkout https://universitario.googlecode.com/svn/trunk/ --username sergei.bardas<br>
+or<br>
 from Eclipse:<br>
 just add *https://universitario.googlecode.com/svn/trunk/* URL to SVN Repositroy Exploring perspective 
 
