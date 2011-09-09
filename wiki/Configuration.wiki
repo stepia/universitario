@@ -2,4 +2,7 @@
 
 2.maven
 
+mvn eclipse:eclipse
+Update Dependencies
+
 3.tomcat
