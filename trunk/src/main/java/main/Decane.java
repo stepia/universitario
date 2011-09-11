@@ -6,7 +6,7 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean
 @SessionScoped
 public class Decane {
-	//test
+	//test1
 
 	private String firstName;
 	private String lastName;
