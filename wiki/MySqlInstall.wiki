@@ -1,0 +1,26 @@
+MYSQL INSTALL(ARCHLINUX)
+
+1.Programm installation
+sudo pacman -S mysql(or yaourt mysql)
+
+2.Program configuration
+2.1 run in console 
+sudo /etc/rc.d/mysqld start && mysql_secure_installation
+2.2 Enter current password for root (enter for none): - нажимаем enter
+Remove anonymous users? [Y/n] - нажимем Y или enter
+2.3 New password: - вводим новый пароль нажимаем enter
+re-enter new password: повторяем введенный пароль и enter
+Remove anonymous users? [Y/n] Y
+2.4 Disallow root login remotely? [Y/n] Y
+Remove test database and access to it? [Y/n] Y
+2.5 Reload privilege tables now? [Y/n] Y
+
+3.Product configuration
+
+4. Program run
+4.1 Подключение
+# mysql -u root -p
+Enter password:<пароль>
+4.2 перезагрузка
+/etc/rc.d/mysqld restart
+
