@@ -1,0 +1,54 @@
+Концигурация и запуск
+1.Eclipse с двумя плагинами:
+SVN Repository Exploring
+Maven plugin
+2. установить maven(version:3.0.3)
+прописать переменные среды для maven сюда:
+sudo gedit /etc/environment
+вот так:
+PATH="../apache-maven-3.0.3/bin"
+MAVEN_HOME="../apache-maven-3.0.3"
+3.вычекать проект в Eclipse,т.е. добавить новый location в SVN Repository Exploring:
+https://universitario.googlecode.com/svn/trunk/
+пароль лежит здесь:
+Profile-->Settings
+если не подтягиваются сторонние библиотеки(Eclipse типа ругается):
+выполнить mvn eclipse:eclipse в корне проекта или
+Maven-->Update Dependencies из Eclipse
+4.База данных MySQL(у меня версия MySQL 5.1.49-1ubuntu8.1):
+login:rff
+pwd:rff
+schema:rffDB
+5. tomcat version:7.0.12
+в server.xml прописать порт(любой свободный):
+<Connector port="8099" protocol="HTTP/1.1" ...
+дебаг для томката:
+set JPDA_ADDRESS=8000
+set JPDA_TRANSPORT=dt_socket
+6.инициализация БД для приложения:
+выполнить init.sql
+
+7.сборка приложения
+mvn clean install -Dmaven.test.skip=true
+скопировать Universitario-0.1.war в ../apache-tomcat-7.0.12/webapps
+8.старт приложения в режиме дебага:
+sh catalina.sh jpda run
+http://localhost:8099/Universitario-0.1
+9.останов приложения:
+CTR-C или sh shutdown.sh
+
+
+MYSQL INSTALL(ARCHLINUX)
+console - sudo /etc/rc.d/mysqld start && mysql_secure_installation
+Enter current password for root (enter for none): - нажимаем enter
+Remove anonymous users? [Y/n] - нажимем Y или enter
+New password: - вводим новый пароль нажимаем enter
+re-enter new password: повторяем введенный пароль и enter
+Remove anonymous users? [Y/n] Y
+Disallow root login remotely? [Y/n] Y
+Remove test database and access to it? [Y/n] Y
+Reload privilege tables now? [Y/n] Y
+
+Подключение
+# mysql -u root -p
+Enter password:
