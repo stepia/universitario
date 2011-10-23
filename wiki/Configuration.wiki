@@ -12,7 +12,7 @@ MAVEN_HOME="../apache-maven-3.0.3"<br>
 
 
 3.вычекать проект в Eclipse,т.е. добавить новый location в SVN Repository Exploring:<br>
-https://universitario.googlecode.com/svn/trunk/<br>
+https://universitario.googlecode.com/svn/<br>
 пароль лежит здесь:<br>
 Profile-->Settings<br>
 если не подтягиваются сторонние библиотеки(Eclipse типа ругается):<br>
