@@ -1,6 +1,5 @@
-package main;
+package source.stepo;
 
-import java.util.List;
 
 public class UniversityManager {
 
