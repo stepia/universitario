@@ -23,6 +23,8 @@ Maven-->Update Dependencies из Eclipse<br>
 login:*rff*<br>
 pwd:*rff*<br>
 schema:*rffDB*<br>
+*note:* if access denied,create user with following script:
+`GRANT ALL ON *.* TO 'rff'@'localhost' IDENTIFIED BY 'rff'`;
 
 5. tomcat version:7.0.12<br>
 в server.xml прописать порт(любой свободный):<br>
