@@ -1,0 +1,19 @@
+*1. metrics*<br>
+lines of code<br>
+time of deploy<br>
+time of build<br>
+learning curve<br>
+
+*2. distributed team*<br>
+IT-sector external consultants
+*3. agile process*<br>
+small iterations with demo
+code review<br>
+refactoring
+*4. TDD (JUnit,Selenium tests)*
+
+*5. Stack of technologies:*<br>
+Java, JSF,Spring,Hibernate,JS,Primefaces
+
+*6. Environment:*<br>
+ Tomcat,MySql DB,Maven
