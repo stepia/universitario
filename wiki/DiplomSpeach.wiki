@@ -5,11 +5,11 @@ time of build<br>
 learning curve<br>
 
 *2. distributed team*<br>
-IT-sector external consultants
+IT-sector external consultants<br>
 *3. agile process*<br>
-small iterations with demo
+small iterations with demo<br>
 code review<br>
-refactoring
+refactoring<br>
 *4. TDD (JUnit,Selenium tests)*
 
 *5. Stack of technologies:*<br>
