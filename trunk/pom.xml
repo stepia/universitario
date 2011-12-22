@@ -10,8 +10,20 @@
 
     <packaging>war</packaging>
 
+ 	<build>
+	    <plugins>
+	        <plugin>
+	            <artifactId>maven-eclipse-plugin</artifactId>
+	            <configuration>
+	                <wtpversion>2.0</wtpversion>
+	            </configuration>
+	        </plugin>
+	    </plugins>
+	</build>
+	
     <properties>
         <org.springframework.version>3.0.5.RELEASE</org.springframework.version>
+        <spring-security.version>3.0.0.RC1</spring-security.version>
         <org.hibernate.version>3.5.1-Final</org.hibernate.version>
     </properties>
 
@@ -19,7 +31,7 @@
         <repository>
             <id>prime-repo</id>
             <name>Prime Technology Maven Repository</name>
-            <url>http://repository.primefaces.org</url>
+            <url>http://repository.prime.com.tr</url>
             <layout>default</layout>
         </repository>
         <repository>
@@ -34,6 +46,10 @@
             <layout>default</layout>
             <url>http://repository.jboss.org/maven2</url>
         </repository>
+        <repository>
+			<id>Springframework milestone</id>
+			<url>http://maven.springframework.org/milestone</url>
+		</repository>
     </repositories>
 
     <dependencies>
@@ -133,6 +149,12 @@
 			    <artifactId>spring-web</artifactId>
 			    <version>${org.springframework.version}</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-expression</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
 			      
 			<dependency>
 			    <groupId>org.hibernate</groupId>
@@ -157,6 +179,74 @@
 			   <artifactId>hibernate-entitymanager</artifactId>
 			   <version>3.4.0.GA</version>
 			</dependency> 
-    </dependencies>
+			
+			 <dependency>
+		       <groupId>junit</groupId>
+		       <artifactId>junit</artifactId>
+		       <version>4.10</version>
+		       <scope>test</scope>
+  			 </dependency>
+  			 
+  			 <dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-test</artifactId>
+			    <version>${org.springframework.version}</version>
+			</dependency>
+			
+			<dependency>
+       		 <groupId>org.seleniumhq.selenium</groupId>
+       		 <artifactId>selenium-server</artifactId>
+       		 <version>2.14.0</version>
+   		    </dependency> 
+   		    
+   		    <dependency>
+        		<groupId>org.seleniumhq.selenium</groupId>
+        		<artifactId>selenium-java</artifactId>
+        		<version>2.14.0</version>
+    		</dependency>
+
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${spring-security.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring-security.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-openid</artifactId>
+			<version>${spring-security.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring-security.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring-security.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- END Spring Security -->
+
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>jsr250-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+			
+    
+     </dependencies>
+    
 
 </project>
