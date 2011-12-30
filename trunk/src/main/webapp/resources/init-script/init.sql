@@ -2,8 +2,6 @@ SET FOREIGN_KEY_CHECKS = 0;
 drop table if exists authorities;
 drop table if exists users;
 drop table if exists decane;
-drop table if exists authorities;
-drop table if exists users;
 drop table if exists employee;
 drop table if exists person;
 SET FOREIGN_KEY_CHECKS = 1;
