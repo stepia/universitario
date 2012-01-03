@@ -1,6 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -10,17 +9,6 @@
 
     <packaging>war</packaging>
 
- 	<build>
-	    <plugins>
-	        <plugin>
-	            <artifactId>maven-eclipse-plugin</artifactId>
-	            <configuration>
-	                <wtpversion>2.0</wtpversion>
-	            </configuration>
-	        </plugin>
-	    </plugins>
-	</build>
-	
     <properties>
         <org.springframework.version>3.0.5.RELEASE</org.springframework.version>
         <spring-security.version>3.1.0.RELEASE</spring-security.version>
@@ -47,196 +35,196 @@
             <url>http://repository.jboss.org/maven2</url>
         </repository>
         <repository>
-			<id>Springframework milestone</id>
-			<url>http://maven.springframework.org/milestone</url>
-		</repository>
+            <id>Springframework milestone</id>
+            <url>http://maven.springframework.org/milestone</url>
+        </repository>
     </repositories>
 
     <dependencies>
-			<dependency>
-			   <groupId>cglib</groupId>
-			   <artifactId>cglib</artifactId>
-			   <version>2.2</version>
-			</dependency>
-			
-			<dependency>
-			   <groupId>commons-collections</groupId>
-			   <artifactId>commons-collections</artifactId>
-			   <version>3.2.1</version>
-			</dependency>
-			
-			<dependency>
-			   <groupId>commons-logging</groupId>
-			   <artifactId>commons-logging</artifactId>
-			   <version>1.1.1</version>
-			</dependency>
-			
-			<dependency>
-			   <groupId>dom4j</groupId>
-			   <artifactId>dom4j</artifactId>
-			   <version>1.6.1</version>
-			</dependency>
-			
-			<dependency>
-			   <groupId>log4j</groupId>
-			   <artifactId>log4j</artifactId>
-			   <version>1.2.16</version>
-			</dependency>
-			  
-			<dependency>
-			    <groupId>commons-lang</groupId>
-			    <artifactId>commons-lang</artifactId>
-			    <version>2.5</version>
-			</dependency>
-			
-			<dependency>
-			    <groupId>org.primefaces</groupId>
-			    <artifactId>primefaces</artifactId>
-			    <version>2.2.1</version>
-			</dependency>
-			
-			<dependency>
-			  <groupId>com.sun.faces</groupId>
-			  <artifactId>jsf-api</artifactId>
-			  <version>2.1.0-b03</version>
-			</dependency>
-			
-			<dependency>
-			  <groupId>com.sun.faces</groupId>
-			  <artifactId>jsf-impl</artifactId>
-			  <version>2.1.0-b03</version>
-			</dependency>
-			
-			<dependency>
-			    <groupId>javax.servlet</groupId>
-			    <artifactId>jstl</artifactId>
-			    <version>1.2</version>
-			</dependency>
-			
-			<dependency>
-			    <groupId>javax.servlet</groupId>
-			    <artifactId>servlet-api</artifactId>
-			    <version>2.5</version>
-			</dependency>
-			
-			<dependency>
-			    <groupId>javax.mail</groupId>
-			    <artifactId>mail</artifactId>
-			    <version>1.4.4</version>
-			</dependency>
-			
-			<dependency>
-			    <groupId>mysql</groupId>
-			    <artifactId>mysql-connector-java</artifactId>
-			    <version>5.1.13</version>
-			    <scope>runtime</scope>
-			</dependency>
-			
-			<dependency>
-			   <groupId>aopalliance</groupId>
-			   <artifactId>aopalliance</artifactId>
-			   <version>1.0</version>
-			</dependency>
-			
-			 <dependency>
-			     <groupId>org.springframework</groupId>
-			     <artifactId>spring-orm</artifactId>
-			     <version>${org.springframework.version}</version>
-			 </dependency>
-			      
-			<dependency>
-			    <groupId>org.springframework</groupId>
-			    <artifactId>spring-web</artifactId>
-			    <version>${org.springframework.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-expression</artifactId>
-				<version>${org.springframework.version}</version>
-			</dependency>
-			      
-			<dependency>
-			    <groupId>org.hibernate</groupId>
-			    <artifactId>hibernate-core</artifactId>
-			    <version>3.3.2.GA</version>
-			</dependency>
-			  
-			<dependency>
-			   <groupId>org.hibernate</groupId>
-			   <artifactId>hibernate-annotations</artifactId>
-			   <version>3.4.0.GA</version>
-			</dependency>
-			    
-			<dependency>
-			   <groupId>org.hibernate</groupId>
-			   <artifactId>hibernate-commons-annotations</artifactId>
-			   <version>3.3.0.ga</version>
-			</dependency>
-			  
-			<dependency>
-			   <groupId>org.hibernate</groupId>
-			   <artifactId>hibernate-entitymanager</artifactId>
-			   <version>3.4.0.GA</version>
-			</dependency> 
-			
-			 <dependency>
-		       <groupId>junit</groupId>
-		       <artifactId>junit</artifactId>
-		       <version>4.10</version>
-		       <scope>test</scope>
-  			 </dependency>
-  			 
-  			 <dependency>
-			    <groupId>org.springframework</groupId>
-			    <artifactId>spring-test</artifactId>
-			    <version>${org.springframework.version}</version>
-			</dependency>
-			
-			<dependency>
-       		 <groupId>org.seleniumhq.selenium</groupId>
-       		 <artifactId>selenium-server</artifactId>
-       		 <version>2.14.0</version>
-   		    </dependency> 
-   		    
-   		    <dependency>
-        		<groupId>org.seleniumhq.selenium</groupId>
-        		<artifactId>selenium-java</artifactId>
-        		<version>2.14.0</version>
-    		</dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>2.2</version>
+        </dependency>
 
-		<!-- Spring Security -->
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-core</artifactId>
-			<version>${spring-security.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-config</artifactId>
-			<version>${spring-security.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-openid</artifactId>
-			<version>${spring-security.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-taglibs</artifactId>
-			<version>${spring-security.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-web</artifactId>
-			<version>${spring-security.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<!-- END Spring Security -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-api</artifactId>
+            <version>2.1.0-b03</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-impl</artifactId>
+            <version>2.1.0-b03</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.13</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>aopalliance</groupId>
+            <artifactId>aopalliance</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>3.3.2.GA</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-annotations</artifactId>
+            <version>3.4.0.GA</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-commons-annotations</artifactId>
+            <version>3.3.0.ga</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>3.4.0.GA</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>2.14.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>2.14.0</version>
+        </dependency>
+
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${spring-security.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring-security.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-openid</artifactId>
+            <version>${spring-security.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring-security.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring-security.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- END Spring Security -->
 
         <dependency>
             <groupId>javax.annotation</groupId>
@@ -244,9 +232,68 @@
             <version>1.0</version>
         </dependency>
 
-			
-    
-     </dependencies>
-    
+
+
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-dependency-plugin</artifactId>
+                                        <versionRange>[2.0,)</versionRange>
+                                        <goals>
+                                            <goal>copy-dependencies</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>src/main/webapp/WEB-INF/lib</outputDirectory>
+                            <includeScope>compile</includeScope>
+                            <excludeScope>test</excludeScope>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <webappDirectory>/home/snum/workspace/Universitario/Universitario/Servers/Tomcat/webapps/st</webappDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>
