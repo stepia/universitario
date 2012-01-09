@@ -10,43 +10,43 @@ import javax.faces.context.FacesContext;
 @SessionScoped
 public class LoginBean {
 
-	private boolean isAuthenticated;
+    private boolean isAuthenticated;
 
-	@ManagedProperty(value = "#{userDetails}")
-	private UserDetails userDetails;
+    @ManagedProperty(value = "#{userDetails}")
+    private UserDetails userDetails;
 
-	public void setUserDetails(UserDetails userDetails) {
-		this.userDetails = userDetails;
-	}
+    public void setUserDetails(UserDetails userDetails) {
+        this.userDetails = userDetails;
+    }
 
-	public UserDetails getUserDetails() {
-		return userDetails;
-	}
+    public UserDetails getUserDetails() {
+        return userDetails;
+    }
 
-	@ManagedProperty(value = "#{authenticationService}")
-	private transient AuthenticationService authenticationService;
+    @ManagedProperty(value = "#{authenticationService}")
+    private transient AuthenticationService authenticationService;
 
-	public void setAuthenticationService(AuthenticationService authenticationService) {
-		this.authenticationService = authenticationService;
-	}
+    public void setAuthenticationService(AuthenticationService authenticationService) {
+        this.authenticationService = authenticationService;
+    }
 
-	public String doLogin() {
-		boolean isLoggedIn = authenticationService.login(userDetails.getUsername(), userDetails.getPassword());
-		if (isLoggedIn) {
-			isAuthenticated = true;
-			return "index";
-		}
-		FacesContext.getCurrentInstance().addMessage("login failure", new FacesMessage());
-		return "failureLogin";
+    public String doLogin() {
+        boolean isLoggedIn = authenticationService.login(userDetails.getUsername(), userDetails.getPassword());
+        if (isLoggedIn) {
+            isAuthenticated = true;
+            return "index";
+        }
+        FacesContext.getCurrentInstance().addMessage("login failure", new FacesMessage());
+        return "failureLogin";
 
-	}
+    }
 
-	public boolean isAuthenticated() {
-		return isAuthenticated;
-	}
+    public boolean isAuthenticated() {
+        return isAuthenticated;
+    }
 
-	public void setAuthenticated(boolean isAuthenticated) {
-		this.isAuthenticated = isAuthenticated;
-	}
+    public void setAuthenticated(boolean isAuthenticated) {
+        this.isAuthenticated = isAuthenticated;
+    }
 
 }
