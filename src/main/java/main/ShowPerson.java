@@ -10,22 +10,22 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class ShowPerson {
 
-	@ManagedProperty(value = "#{universityManager}")
-	private UniversityManager universityManager;
+    @ManagedProperty(value = "#{universityManager}")
+    private UniversityManager universityManager;
 
-	public UniversityManager getUniversityManager() {
-		return universityManager;
-	}
+    public UniversityManager getUniversityManager() {
+        return universityManager;
+    }
 
-	public void setUniversityManager(UniversityManager universityManager) {
-		this.universityManager = universityManager;
-	}
+    public void setUniversityManager(UniversityManager universityManager) {
+        this.universityManager = universityManager;
+    }
 
-	private List<Decane> decanes;
+    private List<Decane> decanes;
 
-	public List<Decane> getDecanes() {
-		decanes = this.getUniversityManager().getDecanes();
-		return decanes;
-	}
+    public List<Decane> getDecanes() {
+        decanes = this.getUniversityManager().getDecanes();
+        return decanes;
+    }
 
 }

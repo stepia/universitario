@@ -4,14 +4,14 @@ import java.util.List;
 
 public class UniversityManager {
 
-	private UniversityDao universityDao;
+    private UniversityDao universityDao;
 
-	public void setUniversityDao(UniversityDao universityDao) {
-		this.universityDao = universityDao;
-	}
+    public void setUniversityDao(UniversityDao universityDao) {
+        this.universityDao = universityDao;
+    }
 
-	public List<Decane> getDecanes() {
-		return universityDao.getDecanes();
-	}
+    public List<Decane> getDecanes() {
+        return universityDao.getDecanes();
+    }
 
 }
