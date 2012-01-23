@@ -9,7 +9,8 @@
         xmlns:tx="http://www.springframework.org/schema/tx">
         
     <context:annotation-config />
-    <context:component-scan base-package="main" />
+    <context:component-scan base-package="core" />
+    <context:component-scan base-package="security" />
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -46,13 +47,13 @@
         </property>
     </bean>
 
-    <bean id="universityDao" class="main.UniversityDaoHibernate">
+    <bean id="universityDao" class="core.UniversityDaoHibernate">
         <property name="sessionFactory">
             <ref local="sessionFactory"/>
         </property>
     </bean>
 
-    <bean id="universityManager" class="main.UniversityManager">
+    <bean id="universityManager" class="core.UniversityManager">
         <property name="universityDao">
             <ref local="universityDao"/>
         </property>

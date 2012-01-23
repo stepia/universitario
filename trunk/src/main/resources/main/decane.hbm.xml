@@ -4,7 +4,7 @@
 
 <hibernate-mapping>
 
-    <class name="main.Decane" table="decane">
+    <class name="model.Decane" table="decane">
         <id name="id" column="id"/>
         <property name="firstName" column="firstname"/>
         <property name="lastName" column="lastname"/>

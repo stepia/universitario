@@ -24,3 +24,23 @@
     -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
 }
+
+/* Reports */
+.report-header {
+	border:1px solid #666;
+	padding:1px;
+	background-color:#ccc;
+}
+
+.odd-report-record {
+	background-color:#fff;
+}
+
+.even-report-record {
+	background-color:#999;
+}
+
+.report-container {
+	border-collapse:collapse;
+}
+/* Reports END */
