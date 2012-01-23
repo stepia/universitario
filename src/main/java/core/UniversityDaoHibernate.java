@@ -1,6 +1,8 @@
-package main;
+package core;
 
 import java.util.List;
+
+import model.Decane;
 
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 

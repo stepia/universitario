@@ -1,4 +1,4 @@
-package main;
+package security;
 
 public interface AuthenticationService {
 
