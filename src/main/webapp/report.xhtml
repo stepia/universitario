@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:composite="http://java.sun.com/jsf/composite"
+        xmlns:utils="http://java.sun.com/jsf/composite/utils"
+>
+
+<h:head>
+    <link href="resources/styles/main.css" rel="stylesheet" type="text/css"/>
+</h:head>
+
+<h:body>
+
+    <utils:menuComponent/>
+	
+    Choose parameters to generate report:
+    
+    <h:form>
+    	<h:selectOneMenu value="#{reportingBean.employeeFilter.course}">
+	    		<f:selectItem itemValue="1" itemLabel="1"/>
+	    		<f:selectItem itemValue="2" itemLabel="2"/>
+	    		<f:selectItem itemValue="3" itemLabel="3"/>
+	    		<f:selectItem itemValue="4" itemLabel="4"/>
+	    		<f:selectItem itemValue="5" itemLabel="5"/>
+    	</h:selectOneMenu>
+    	<h:selectBooleanCheckbox value="#{reportingBean.employeeFilter.debt}" label="debt" title="debt"/>
+    	<h:commandButton action="#{reportingBean.report(reportingBean.employeeFilter)}" value="generate"/>
+    </h:form>
+    
+    
+    <h:dataTable value="#{reportingBean.employee}" var="record" styleClass="report-container" headerClass="report-header"
+	rowClasses="odd-report-record,even-report-record" rendered="#{reportingBean.employee.size()>0}" id="employee-report">
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="course"/>
+			</f:facet>
+				#{record.course}
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="debts"/>
+			</f:facet>
+				#{record.debt}
+		</h:column>	
+		</h:dataTable>
+
+</h:body>
+
+</html>
