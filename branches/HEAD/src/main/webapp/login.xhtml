@@ -1,30 +1,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html
-        xmlns="http://www.w3.org/1999/xhtml"
-        xmlns:h="http://java.sun.com/jsf/html"
-        xmlns:f="http://java.sun.com/jsf/core"
-        xmlns:composite="http://java.sun.com/jsf/composite"
-        xmlns:ui="http://java.sun.com/jsf/facelets"
-        xmlns:p="http://primefaces.prime.com.tr/ui"
-        xmlns:utils="http://java.sun.com/jsf/composite/utils"
-        >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:utils="http://java.sun.com/jsf/composite/utils">
 
 <h:head>
-    <link href="resources/styles/main.css" rel="stylesheet" type="text/css"/>
+	<title>Login</title>
+	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
-<h:body>
+<h:body
+	style="color: Yellow; background: Teal;position: fixed; left:40%; top:30%">
 
-    <utils:menuComponent/>
-    
-    
-    <h:form>
-    	username:<h:inputText value="#{userDetails.username}"/><br/>
-    	password:<h:inputSecret value="#{userDetails.password}"/>
-    	
-    	<h:commandButton action="#{loginBean.doLogin}" value="login"/>
-    </h:form>
+	<utils:menuComponent />
+
+
+	<h:form id="form">
+		<h:panelGrid id="pnlLogin" columns="3" border="0"
+			title="Universitario">
+			<h:outputText value="User name:" />
+			<h:inputText id="username" required="true"
+				value="#{userDetails.username}" requiredMessage="required"
+				converterMessage="not a valid name" />
+			<h:message for="username" errorStyle="color:red" />
+			<h:outputText value="Password:" />
+			<h:inputSecret id="password" required="true"
+				value="#{userDetails.password}" requiredMessage="required"
+				converterMessage="not a valid password" />
+			<h:message for="password" errorStyle="color:red" />
+			<h:commandButton action="#{loginBean.doLogin}" value="login" />
+		</h:panelGrid>
+	</h:form>
 
 </h:body>
 
