@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:s="http://jboss.com/products/seam/taglib">
+<h:head>
+	<title>Regisration</title>
+</h:head>
+
+<h:body style="color: Yellow; background: Teal;position: fixed; left:40%; top:30%">
+
+	<h:panelGrid id="pnlUser" columns="3" border="0"
+		title="Create new user">
+		<h:outputText value="User name:" />
+		<h:inputText id="newUser" required="true"
+			value="" requiredMessage="required"
+			converterMessage="not a valid name">
+			<f:validateLength minimum="4" maximum="8" />
+		</h:inputText>
+		<h:message for="newUser" errorStyle="color:red" />
+		<h:outputText value="New password:" />
+		<h:inputSecret id="newpassword" required="true"
+			value="" requiredMessage="required"
+			converterMessage="not a valid password">
+			<f:validateLength minimum="6" />
+		</h:inputSecret>
+		<h:message for="newpassword" errorStyle="color:red" />
+		<h:outputText value="Confirm new password:" />
+		<h:inputSecret id="comfirmpassword" required="true"
+			value="" requiredMessage="required"
+			converterMessage="not a valid password">
+			<f:validateLength minimum="6" />
+		</h:inputSecret>
+		<h:message for="comfirmpassword" errorStyle="color:red" />
+		<h:outputText value="&lt;br/&gt;" escape="false"/>
+		<h:outputText value="&lt;br/&gt;" escape="false"/>
+		<h:outputText value="&lt;br/&gt;" escape="false"/>
+		<h:commandButton action="#{loginBean.doLogin}" style="color:#000000; background:#FFCC00" value="Create" />
+		<h:commandButton action="#{loginBean.doLogin}" style="color:#ffffff; background:#DC2827" value="Cancel" />
+	</h:panelGrid>
+</h:body>
+
+</html>
