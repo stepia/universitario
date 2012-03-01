@@ -10,6 +10,7 @@
 <h:head>
 	<h:title>Login</h:title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </h:head>
 
 <h:body
@@ -22,12 +23,12 @@
 			title="Universitario">
 			<h:outputText value="User name:" />
 			<h:inputText id="username" required="true"
-				value="#{userDetails.username}" requiredMessage="required"
+				value="#{user.username}" requiredMessage="required"
 				converterMessage="not a valid name" />
 			<h:message for="username" errorStyle="color:red" />
 			<h:outputText value="Password:" />
 			<h:inputSecret id="password" required="true"
-				value="#{userDetails.password}" requiredMessage="required"
+				value="#{user.password}" requiredMessage="required"
 				converterMessage="not a valid password" />
 			<h:message for="password" errorStyle="color:red" />
 			<h:commandButton action="#{loginBean.doLogin}" value="login" />
