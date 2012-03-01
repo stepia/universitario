@@ -8,7 +8,10 @@
     xmlns:tx="http://www.springframework.org/schema/tx">
 
     <context:annotation-config/>
-    <context:component-scan base-package="main"/>
+    <context:component-scan base-package="dao"/>
+    <context:component-scan base-package="service"/>
+    <context:component-scan base-package="web"/>
+
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -30,7 +33,8 @@
         </property>
         <property name="mappingResources">
             <list>
-                <value>main/decane.hbm.xml</value>
+                <value>main/authority.hbm.xml</value>
+                <value>main/user.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -46,31 +50,27 @@
         </property>
     </bean>
 
-    <bean id="universityDao" class="main.UniversityDaoHibernate">
+    <bean id="userDao" class="dao.UserDaoHibernate">
         <property name="sessionFactory">
             <ref local="sessionFactory"/>
         </property>
     </bean>
 
-    <bean id="universityManager" class="main.UniversityManager">
-        <property name="universityDao">
-            <ref local="universityDao"/>
+    <bean id="userManager" class="service.UserManager">
+        <property name="userDao">
+            <ref local="userDao"/>
         </property>
     </bean>
 
-    <bean id="manager" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
-        <property name="transactionManager">
-            <ref local="transactionManager"/>
+    <bean id="authorityDao" class="dao.AuthorityDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
         </property>
-        <property name="target">
-            <ref local="universityManager"/>
-        </property>
-        <property name="transactionAttributes">
-            <props>
-                <prop key="save*">PROPAGATION_REQUIRED</prop>
-                <prop key="remove*">PROPAGATION_REQUIRED</prop>
-                <prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
-            </props>
+    </bean>
+
+    <bean id="authorityManager" class="service.AuthorityManager">
+        <property name="authorityDao">
+            <ref local="authorityDao"/>
         </property>
     </bean>
 
