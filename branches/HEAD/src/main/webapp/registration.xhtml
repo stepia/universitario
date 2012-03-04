@@ -12,15 +12,15 @@
 	<h:panelGrid id="pnlUser" columns="3" border="0"
 		title="Create new user">
 		<h:outputText value="User name:" />
-		<h:inputText id="newUser" required="true"
-			value="" requiredMessage="required"
+		<h:inputText id="user" required="true"
+			value="#{user.username}" requiredMessage="required"
 			converterMessage="not a valid name">
 			<f:validateLength minimum="4" maximum="8" />
 		</h:inputText>
-		<h:message for="newUser" errorStyle="color:red" />
+		<h:message for="user" errorStyle="color:red" />
 		<h:outputText value="New password:" />
 		<h:inputSecret id="newpassword" required="true"
-			value="" requiredMessage="required"
+			value="#{user.password}" requiredMessage="required"
 			converterMessage="not a valid password">
 			<f:validateLength minimum="6" />
 		</h:inputSecret>
@@ -35,9 +35,15 @@
 		<h:outputText value="&lt;br/&gt;" escape="false"/>
 		<h:outputText value="&lt;br/&gt;" escape="false"/>
 		<h:outputText value="&lt;br/&gt;" escape="false"/>
-		<h:commandButton action="#{loginBean.doLogin}" style="color:#000000; background:#FFCC00" value="Create" />
-		<h:commandButton action="#{loginBean.doLogin}" style="color:#ffffff; background:#DC2827" value="Cancel" />
+		<h:commandButton action="#{UserInfo.createUser}" style="color:#000000; background:#FFCC00" value="Create" />
+		<h:commandButton onclick="history.go(-1)" style="color:#ffffff; background:#DC2827" value="Cancel" />
 	</h:panelGrid>
+	    <h:panelGroup layout="block">
+        <h:dataTable var="user" value="#{usermanager.users}">
+            <h:column>#{user.username}</h:column>
+            <h:column>#{user.password}</h:column>
+        </h:dataTable>
+    </h:panelGroup>
 </h:body>
 
 </html>
