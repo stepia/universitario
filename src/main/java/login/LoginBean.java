@@ -6,35 +6,41 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import org.springframework.security.access.annotation.Secured;
+
 import service.IAuthenticationService;
-import entry.User;
 
 @ManagedBean
 @SessionScoped
 public class LoginBean {
-
-    private boolean isAuthenticated;
-
-    @ManagedProperty(value = "#{user}")
-    private User user;
-
-    public void setUser(User userDetails) {
-        this.user = userDetails;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
     @ManagedProperty(value = "#{authenticationService}")
     private transient IAuthenticationService authenticationService;
+    private boolean isAuthenticated;
+    String username;
+    String password;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public void setAuthenticationService(IAuthenticationService authenticationService) {
         this.authenticationService = authenticationService;
     }
 
     public String doLogin() {
-        boolean isLoggedIn = authenticationService.login(user.getUsername(), user.getPassword());
+        boolean isLoggedIn = authenticationService.login(username, password);
         if (isLoggedIn) {
             isAuthenticated = true;
             return "success";
@@ -53,6 +59,13 @@ public class LoginBean {
 
     public void setAuthenticated(boolean isAuthenticated) {
         this.isAuthenticated = isAuthenticated;
+    }
+
+    @Secured("ROLE_USER")
+    public String logout() {
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+
+        return "logout";
     }
 
 }
