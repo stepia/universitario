@@ -10,7 +10,7 @@ import org.springframework.security.access.annotation.Secured;
 
 import service.IAuthenticationService;
 
-@ManagedBean
+@ManagedBean(name = "loginbean")
 @SessionScoped
 public class LoginBean {
     @ManagedProperty(value = "#{authenticationService}")
@@ -62,7 +62,7 @@ public class LoginBean {
     }
 
     @Secured("ROLE_USER")
-    public String logout() {
+    public String doLogout() {
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
 
         return "logout";

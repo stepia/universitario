@@ -8,12 +8,6 @@
         <variable-resolver>org.springframework.web.jsf.DelegatingVariableResolver</variable-resolver>
     </application>
 
-    <managed-bean>
-        <managed-bean-name>loginbean</managed-bean-name>
-        <managed-bean-class>login.LoginBean</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-    </managed-bean>
-
     <navigation-rule>
         <from-view-id>/login.xhtml</from-view-id>
         <navigation-case>
@@ -27,6 +21,16 @@
         <navigation-case>
             <from-outcome>logout</from-outcome>
             <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>createuser</from-outcome>
+            <to-view-id>/userDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edituser</from-outcome>
+            <to-view-id>/userResult.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
     </navigation-rule>

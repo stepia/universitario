@@ -26,7 +26,7 @@ public class AuthorityInfo {
 
     private List<Authority> authorities;
 
-    public List<Authority> getDecanes() {
+    public List<Authority> getAuthorities() {
         authorities = this.getAuthorityManager().getAuthorities();
         return authorities;
     }
