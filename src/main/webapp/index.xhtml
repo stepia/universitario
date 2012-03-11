@@ -13,162 +13,146 @@
 <h:body>
 	<div id="header">
 		<ui:insert name="header">
+			<h:outputText value="#{loginbean.username}" />
 			<ui:include src="/header.xhtml" />
 		</ui:insert>
 	</div>
+	<h:form id="mainForm">
+		<div id="content">
+			<ui:insert name="content">
 
-	<div id="content">
-		<ui:insert name="content">
- 
-			<p:panel header="User" styleClass="panel" rendered="#{facesContext.externalContext.isUserInRole('ROLE_ADMIN')}">
-				<h:commandButton 
-					image="/resources/img/accessories-clock.png" action="#" />
-				<h:commandButton  image="/resources/img/edit-clear-2.png"
-					action="#" />
-				<h:commandButton  image="/resources/img/edit-cut-2.png"
-					action="#" />
-				<h:commandButton  image="/resources/img/edit-paste-9.png"
-					action="#" />
-				<h:commandButton  image="/resources/img/xmag-3.png"
-					action="#" />
-				<h:commandButton  image="/resources/img/edit-paste-4.png"
-					action="#" />
-				<h:commandButton  image="/resources/img/edit-find-9.png"
-					action="#" />
-			</p:panel>
-			<p:panel header="Person" styleClass="panel">
-				<h:commandButton 
-					image="/resources/img/utilities-log-viewer.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/utilities-find-2.png" action="#" />
-				<h:commandButton  image="/resources/img/edit-find-7.png"
-					action="#" />
-				<h:commandButton  image="/resources/img/edit-find-3.png"
-					action="#" />
-				<h:commandButton 
-					image="/resources/img/user-properties.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/edit-delete-2.png" action="#" />
-				<h:commandButton  image="/resources/img/user-new-3.png"
-					action="#" />
-				<h:commandButton  image="/resources/img/user-info.png"
-					action="#" />
-				<h:commandButton  image="/resources/img/edit-cut-2.png"
-					action="#" />
-				<h:commandButton  image="/resources/img/edit-cut-6.png"
-					action="#" />
-			</p:panel>
-			<p:panel header="Employee" styleClass="panel">
-				<h:commandButton  image="/resources/img/user-info-2.png"
-					action="#" />
-				<h:commandButton  image="/resources/img/edit-clear-2.png"
-					action="#" />
-				<h:commandButton  image="/resources/img/edit-add.png"
-					action="#" />
-				<h:commandButton 
-					image="/resources/img/user-group-properties.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/user-group-new-2.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/user-group-delete-2.png" action="#" />
-				<h:commandButton  image="/resources/img/edit-4.png"
-					action="#" />
-				<h:commandButton  image="/resources/img/edit-4.png"
-					action="#" />
-				<h:commandButton 
-					image="/resources/img/user-delete-2.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/text-x-preview.png" action="#" />
-				<h:commandButton  image="/resources/img/draw-brush.png"
-					action="#" />
-			</p:panel>
-			<p:panel header="Decane" styleClass="panel">
-				<h:commandButton 
-					image="/resources/img/document-send.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/system-users-4.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/accessories-dictionary-2.png" action="#" />
-				<h:commandButton  image="/resources/img/go-home-3.png"
-					action="#" />
-				<h:commandButton 
-					image="/resources/img/accessories-dictionary.png" action="#" />
-				<h:commandButton  image="/resources/img/go-home-4.png"
-					action="#" />
-				<h:commandButton 
-					image="/resources/img/accessories-text-editor-3.png" action="#" />
-				<h:commandButton  image="/resources/img/go-home-5.png"
-					action="#" />
-				<h:commandButton 
-					image="/resources/img/accessories-text-editor-4.png" action="#" />
-				<h:commandButton  image="/resources/img/go-home-6.png"
-					action="#" />
-				<h:commandButton 
-					image="/resources/img/accessories-text-editor-8.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/document-new-7.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/system-users-3.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/dialog-password.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/system-users-2.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/applications-science-2.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/system-password.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/applications-other-2.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/preferences-contact-list.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/applications-office-2.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/applications-internet-5.png" action="#" />
-				<h:commandButton  image="/resources/img/go-home-8.png"
-					action="#" />
-			</p:panel>
-			<p:panel header="Univer" styleClass="panel">
-				<h:commandButton 
-					image="/resources/img/application-exit-2.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/internet-web-browser-4.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/application-exit-3.png" action="#" />
-				<h:commandButton  image="/resources/img/kdmconfig-5.png"
-					action="#" />
-				<h:commandButton  image="/resources/img/personal-4.png"
-					action="#" />
-				<h:commandButton 
-					image="/resources/img/network-globe.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/network-globe2.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/applications-internet-3.png" action="#" />
-				<h:commandButton 
-					image="/resources/img/application-exit-5.png" action="#" />
-				<h:commandButton  image="/resources/img/klipper-4.png"
-					action="#" />
-				<h:commandButton 
-					image="/resources/img/applications-engineering-2.png" action="#" />
-				<h:commandButton  image="/resources/img/knewsticker.png"
-					action="#" />
-				<h:commandButton 
-					image="/resources/img/applications-internet-2.png" action="#" />
-				<h:commandButton  image="/resources/img/kuser-4.png"
-					action="#" />
-				<h:commandButton  image="/resources/img/kthesaurus.png"
-					action="#" />
-				<h:commandButton 
-					image="/resources/img/applications-engineering-3.png" action="#" />
-			</p:panel>
-		</ui:insert>
-	</div>
+				<p:panel header="User" styleClass="panel"
+					rendered="#{facesContext.externalContext.isUserInRole('ROLE_USER')}">
+					<h:commandButton image="/resources/img/user-new-3.png"
+						action="#{mainbean.doAction('createuser')}" value="New user" />
+					<h:commandButton image="/resources/img/user-properties.png"
+						action="#{mainbean.doAction('edituser')}" value="Edit user" />
+				</p:panel>
+				<p:panel header="Person" styleClass="panel">
+					<h:commandButton image="/resources/img/utilities-log-viewer.png"
+						action="#" />
+					<h:commandButton image="/resources/img/utilities-find-2.png"
+						action="#" />
+					<h:commandButton image="/resources/img/edit-find-7.png" action="#" />
+					<h:commandButton image="/resources/img/edit-find-3.png" action="#" />
+					<h:commandButton image="/resources/img/user-properties.png"
+						action="#" />
+					<h:commandButton image="/resources/img/edit-delete-2.png"
+						action="#" />
+					<h:commandButton image="/resources/img/user-new-3.png" action="#" />
+					<h:commandButton image="/resources/img/user-info.png" action="#" />
+					<h:commandButton image="/resources/img/edit-cut-2.png" action="#" />
+					<h:commandButton image="/resources/img/edit-cut-6.png" action="#" />
+				</p:panel>
+				<p:panel header="Employee" styleClass="panel">
+					<h:commandButton image="/resources/img/user-info-2.png" action="#" />
+					<h:commandButton image="/resources/img/edit-clear-2.png" action="#" />
+					<h:commandButton image="/resources/img/edit-add.png" action="#" />
+					<h:commandButton image="/resources/img/user-group-properties.png"
+						action="#" />
+					<h:commandButton image="/resources/img/user-group-new-2.png"
+						action="#" />
+					<h:commandButton image="/resources/img/user-group-delete-2.png"
+						action="#" />
+					<h:commandButton image="/resources/img/edit-4.png" action="#" />
+					<h:commandButton image="/resources/img/edit-4.png" action="#" />
+					<h:commandButton image="/resources/img/user-delete-2.png"
+						action="#" />
+					<h:commandButton image="/resources/img/text-x-preview.png"
+						action="#" />
+					<h:commandButton image="/resources/img/draw-brush.png" action="#" />
+				</p:panel>
+				<p:panel header="Decane" styleClass="panel">
+					<h:commandButton image="/resources/img/document-send.png"
+						action="#" />
+					<h:commandButton image="/resources/img/system-users-4.png"
+						action="#" />
+					<h:commandButton
+						image="/resources/img/accessories-dictionary-2.png" action="#" />
+					<h:commandButton image="/resources/img/go-home-3.png" action="#" />
+					<h:commandButton image="/resources/img/accessories-dictionary.png"
+						action="#" />
+					<h:commandButton image="/resources/img/go-home-4.png" action="#" />
+					<h:commandButton
+						image="/resources/img/accessories-text-editor-3.png" action="#" />
+					<h:commandButton image="/resources/img/go-home-5.png" action="#" />
+					<h:commandButton
+						image="/resources/img/accessories-text-editor-4.png" action="#" />
+					<h:commandButton image="/resources/img/go-home-6.png" action="#" />
+					<h:commandButton
+						image="/resources/img/accessories-text-editor-8.png" action="#" />
+					<h:commandButton image="/resources/img/document-new-7.png"
+						action="#" />
+					<h:commandButton image="/resources/img/system-users-3.png"
+						action="#" />
+					<h:commandButton image="/resources/img/dialog-password.png"
+						action="#" />
+					<h:commandButton image="/resources/img/system-users-2.png"
+						action="#" />
+					<h:commandButton image="/resources/img/applications-science-2.png"
+						action="#" />
+					<h:commandButton image="/resources/img/system-password.png"
+						action="#" />
+					<h:commandButton image="/resources/img/applications-other-2.png"
+						action="#" />
+					<h:commandButton
+						image="/resources/img/preferences-contact-list.png" action="#" />
+					<h:commandButton image="/resources/img/applications-office-2.png"
+						action="#" />
+					<h:commandButton image="/resources/img/applications-internet-5.png"
+						action="#" />
+					<h:commandButton image="/resources/img/go-home-8.png" action="#" />
+				</p:panel>
+				<p:panel header="Univer" styleClass="panel">
+					<h:commandButton image="/resources/img/application-exit-2.png"
+						action="#" />
+					<h:commandButton image="/resources/img/internet-web-browser-4.png"
+						action="#" />
+					<h:commandButton image="/resources/img/application-exit-3.png"
+						action="#" />
+					<h:commandButton image="/resources/img/kdmconfig-5.png" action="#" />
+					<h:commandButton image="/resources/img/personal-4.png" action="#" />
+					<h:commandButton image="/resources/img/network-globe.png"
+						action="#" />
+					<h:commandButton image="/resources/img/network-globe2.png"
+						action="#" />
+					<h:commandButton image="/resources/img/applications-internet-3.png"
+						action="#" />
+					<h:commandButton image="/resources/img/application-exit-5.png"
+						action="#" />
+					<h:commandButton image="/resources/img/klipper-4.png" action="#" />
+					<h:commandButton
+						image="/resources/img/applications-engineering-2.png" action="#" />
+					<h:commandButton image="/resources/img/knewsticker.png" action="#" />
+					<h:commandButton image="/resources/img/applications-internet-2.png"
+						action="#" />
+					<h:commandButton image="/resources/img/kuser-4.png" action="#" />
+					<h:commandButton image="/resources/img/kthesaurus.png" action="#" />
+					<h:commandButton
+						image="/resources/img/applications-engineering-3.png" action="#" />
+				</p:panel>
+				<p:panel header="Other" styleClass="panel"
+					rendered="#{facesContext.externalContext.isUserInRole('ROLE_USER')}">
+					<h:commandButton image="/resources/img/accessories-clock.png"
+						action="#{MainBean.doCreateUser}" />
+					<h:commandButton image="/resources/img/edit-clear-2.png" action="#" />
+					<h:commandButton image="/resources/img/edit-cut-2.png" action="#" />
+					<h:commandButton image="/resources/img/edit-paste-9.png" action="#" />
+					<h:commandButton image="/resources/img/xmag-3.png" action="#" />
+					<h:commandButton image="/resources/img/edit-paste-4.png" action="#" />
+					<h:commandButton image="/resources/img/edit-find-9.png" action="#" />
+				</p:panel>
 
+
+			</ui:insert>
+		</div>
+	</h:form>
+	
 	<div id="footer">
 		<ui:insert name="footer">
 			<ui:include src="/footer.xhtml" />
 		</ui:insert>
 	</div>
+
 </h:body>
 </html>

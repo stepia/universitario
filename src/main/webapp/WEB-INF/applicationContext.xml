@@ -73,7 +73,6 @@
             <ref local="authorityDao"/>
         </property>
     </bean>
-
-
+    
 </beans>
 

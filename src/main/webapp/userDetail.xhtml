@@ -4,7 +4,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:s="http://jboss.com/products/seam/taglib">
 <h:head>
-	<title>Regisration</title>
+	<title>Create new user</title>
 </h:head>
 
 <h:body style="color: Yellow; background: Teal;position: fixed; left:40%; top:30%">
@@ -38,12 +38,6 @@
 		<h:commandButton action="#{UserInfo.createUser}" style="color:#000000; background:#FFCC00" value="Create" />
 		<h:commandButton onclick="history.go(-1)" style="color:#ffffff; background:#DC2827" value="Cancel" />
 	</h:panelGrid>
-	    <h:panelGroup layout="block">
-        <h:dataTable var="user" value="#{usermanager.users}">
-            <h:column>#{user.username}</h:column>
-            <h:column>#{user.password}</h:column>
-        </h:dataTable>
-    </h:panelGroup>
 </h:body>
 
 </html>

@@ -21,15 +21,15 @@
 			title="Universitario">
 			<h:outputText value="User name:" />
 			<h:inputText id="username" required="true"
-				value="#{loginBean.username}" requiredMessage="required"
+				value="#{loginbean.username}" requiredMessage="required"
 				converterMessage="not a valid name" />
 			<h:message for="username" errorStyle="color:red" />
 			<h:outputText value="Password:" />
 			<h:inputSecret id="password" required="true"
-				value="#{loginBean.password}" requiredMessage="required"
+				value="#{loginbean.password}" requiredMessage="required"
 				converterMessage="not a valid password" />
 			<h:message for="password" errorStyle="color:red" />
-			<h:commandButton action="#{loginBean.doLogin}" value="login" />
+			<h:commandButton action="#{loginbean.doLogin}" value="login" />
 		</h:panelGrid>
 	</h:form>
 
