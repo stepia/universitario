@@ -17,7 +17,6 @@
 			<ui:include src="/header.xhtml" />
 		</ui:insert>
 	</div>
-	<h:form id="mainForm">
 		<div id="content">
 			<ui:insert name="content">
 
@@ -39,31 +38,26 @@
 					<br/>
 					existing users:<br/>
 					<ui:repeat var="usr" value="#{userAction.users}">
-						<h:form>
+						<h:form id="edit-form">
 							<h:inputText value="#{usr.username}" rendered="#{usr.editable}"/>
 							<h:outputText value="#{usr.username}" rendered="#{not usr.editable}"/>
 							<h:commandLink action="#{userAction.editUserAction(usr)}" value="edit" rendered="#{not usr.editable}"/>
 							<h:commandLink action="#{userAction.editUser(usr)}" value="save" rendered="#{usr.editable}"/>
 						</h:form>
 					</ui:repeat>
-					
-
-					
-				</p:panel>
-				<p:panel header="Person" styleClass="panel">
-
-				</p:panel>
-				<p:panel header="Employee" styleClass="panel">
-
 				</p:panel>
 				
-				<p:panel header="Personal info" rendered="#{facesContext.externalContext.isUserInRole('ROLE_USER')}">
-					personal
+				<p:panel header="Person" styleClass="panel" rendered="#{facesContext.externalContext.isUserInRole('ROLE_ADMIN')}">
+				</p:panel>
+				<p:panel header="Employee" styleClass="panel" rendered="#{facesContext.externalContext.isUserInRole('ROLE_ADMIN')}">
+				</p:panel>
+				
+				<p:panel header="Personal Info" rendered="#{facesContext.externalContext.isUserInRole('ROLE_USER')}">
+					personal info...
 				</p:panel>
 
 			</ui:insert>
 		</div>
-	</h:form>
 	
 	<div id="footer">
 		<ui:insert name="footer">
