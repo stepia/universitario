@@ -7,34 +7,44 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class Authority {
 
-    private int authorityAA;
+	private long authorityaa;
 
-    private String username;
+	private String username;
 
-    private String authority;
+	private String authority;
 
-    public int getAuthorityaa() {
-        return authorityAA;
-    }
+	private User user;
 
-    public void setAuthorityaa(int authorityAA) {
-        this.authorityAA = authorityAA;
-    }
+	public User getUser() {
+		return user;
+	}
 
-    public String getUsername() {
-        return username;
-    }
+	public void setUser(User user) {
+		this.user = user;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public long getAuthorityaa() {
+		return authorityaa;
+	}
 
-    public String getAuthority() {
-        return authority;
-    }
+	public void setAuthorityaa(long authorityaa) {
+		this.authorityaa = authorityaa;
+	}
 
-    public void setAuthority(String authority) {
-        this.authority = authority;
-    }
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getAuthority() {
+		return authority;
+	}
+
+	public void setAuthority(String authority) {
+		this.authority = authority;
+	}
 
 }

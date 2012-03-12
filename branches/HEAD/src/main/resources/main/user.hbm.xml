@@ -4,8 +4,14 @@
 
 <hibernate-mapping>
     <class name="entry.User" table="users">
-        <id name="usaa" column="usaa"/>
+        <id name="usaa"/>
         <property name="username" column="username"/>
+        <property name="password" column="password"/>
         <property name="enabled" column="enabled"/>
+        
+        <set name="authorities" cascade="all" inverse="true">
+        	<key column="authorityaa" not-null="true"/>
+        	<one-to-many class="entry.Authority"/>
+        </set>
     </class>
 </hibernate-mapping>

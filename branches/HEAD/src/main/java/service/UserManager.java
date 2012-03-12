@@ -26,13 +26,16 @@ public class UserManager implements IUserManager {
 
     @Transactional
     public List<User> getUsers() {
-
         return getUserDao().getUsers();
     }
 
     @Transactional
     public void deleteUser(User user) {
         getUserDao().deleteUser(user);
+    }
+    @Transactional
+    public int editUser(User user) {
+        return getUserDao().editUser(user);
     }
 
 }
