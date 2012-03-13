@@ -4,7 +4,7 @@
 
 <hibernate-mapping>
     <class name="entry.Employee" table="employee">
-        <id name="empid" column="id"/>
+        <id name="id" column="empid"/>
         <property name="faculty" column="faculty"/>
         <property name="state" column="state"/>
     </class>

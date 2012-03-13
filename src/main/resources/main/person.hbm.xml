@@ -4,10 +4,10 @@
 
 <hibernate-mapping>
     <class name="entry.Person" table="person">
-        <id name="perid" column="id"/>
-        <property name="firstName" column="username"/>
-        <property name="lastName" column="username"/>
-        <property name="middleName" column="username"/>
+        <id name="id" column="perid"/>
+        <property name="firstName" column="firstname"/>
+        <property name="lastName" column="lastname"/>
+        <property name="middleName" column="middlename"/>
         <property name="dob" column="dob"/>
     </class>
 </hibernate-mapping>

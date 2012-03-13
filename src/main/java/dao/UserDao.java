@@ -2,6 +2,8 @@ package dao;
 
 import java.util.List;
 
+import entry.Employee;
+import entry.Person;
 import entry.User;
 
 public interface UserDao {
@@ -12,6 +14,8 @@ public interface UserDao {
 
 	public void deleteUser(User user);
 
-	public int editUser(User user);
+	public int editUser(User user, Person person);
+
+	public User getUserById(long id);
 
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -38,19 +38,39 @@
 					<br/>
 					existing users:<br/>
 					<ui:repeat var="usr" value="#{userAction.users}">
-						<h:form id="edit-form">
-							<h:inputText value="#{usr.username}" rendered="#{usr.editable}"/>
-							<h:outputText value="#{usr.username}" rendered="#{not usr.editable}"/>
-							<h:commandLink action="#{userAction.editUserAction(usr)}" value="edit" rendered="#{not usr.editable}"/>
-							<h:commandLink action="#{userAction.editUser(usr)}" value="save" rendered="#{usr.editable}"/>
+						<h:form id="show-form">
+							<h:outputText value="#{usr.username}"/>
+							<p:commandLink action="#{userAction.editUserAction(usr)}" value="edit" process="@this" update=":edit-form" immediate="true">
+								<f:setPropertyActionListener target="#{userAction.user}" value="#{usr}" />
+							 </p:commandLink> 
+
 						</h:form>
 					</ui:repeat>
+									<p:ajaxStatus style="width:16px;height:16px;">
+                                        <f:facet name="start">
+                                            <h:graphicImage value="resources/img/ajax-loader.gif"/>
+                                        </f:facet>
+
+                                        <f:facet name="complete">
+                                            <h:outputText value=""/>
+                                        </f:facet>
+                                    </p:ajaxStatus>
 				</p:panel>
+
+					<h:form id="edit-form" rendered="#{userAction.user.editable}">
+						<h:inputText value="#{userAction.user.username}"/><br/>
+						
+						
+						<h:inputText value="#{userAction.person.firstName}"/><br/>
+						<h:inputText value="#{userAction.person.lastName}"/><br/>
+						<h:inputText value="#{userAction.person.middleName}"/><br/>
+						<p:calendar value="#{userAction.person.dob}"/>
+						
+						
+						<h:commandButton action="#{userAction.editUser}" value="ok"/>
+					</h:form>	
 				
-				<p:panel header="Person" styleClass="panel" rendered="#{facesContext.externalContext.isUserInRole('ROLE_ADMIN')}">
-				</p:panel>
-				<p:panel header="Employee" styleClass="panel" rendered="#{facesContext.externalContext.isUserInRole('ROLE_ADMIN')}">
-				</p:panel>
+
 				
 				<p:panel header="Personal Info" rendered="#{facesContext.externalContext.isUserInRole('ROLE_USER')}">
 					personal info...

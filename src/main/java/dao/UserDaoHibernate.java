@@ -5,14 +5,23 @@ import java.util.List;
 import java.util.Set;
 
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.classic.Session;
+import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import entry.Authority;
+import entry.Employee;
+import entry.Person;
 import entry.User;
 
 public class UserDaoHibernate extends HibernateDaoSupport implements UserDao {
+
+	@SuppressWarnings("unchecked")
+	public User getUserById(long id) {
+		return (User) DataAccessUtils.uniqueResult(getHibernateTemplate().find(
+				"from User where usaa=?", new Object[] { id }));
+	}
 
 	@SuppressWarnings("unchecked")
 	public List<User> getUsers() {
@@ -28,6 +37,10 @@ public class UserDaoHibernate extends HibernateDaoSupport implements UserDao {
 		user.setAuthorities(authorities);
 		getHibernateTemplate().save(user);
 
+		Person person = new Person();
+		person.setId(user.getUsaa());
+		getHibernateTemplate().save(person);
+
 	}
 
 	public void deleteUser(User user) {
@@ -35,14 +48,29 @@ public class UserDaoHibernate extends HibernateDaoSupport implements UserDao {
 		getHibernateTemplate().flush();
 	}
 
-	public int editUser(User user) {
-		SessionFactory sf = getHibernateTemplate().getSessionFactory();
-		Session s = sf.openSession();
-		Query q = s
-				.createQuery("update User set username=:username where usaa=:usaa");
-		q.setString("username", user.getUsername());
-		q.setLong("usaa", user.getUsaa());
-		return q.executeUpdate();
+	public int editUser(User user, Person person) {
+		Query personQuery;
+		Query userQuery;
+		try {
+			SessionFactory sf = getHibernateTemplate().getSessionFactory();
+			Session s = sf.openSession();
+			userQuery = s
+					.createQuery("update User set username=:username where usaa=:usaa");
+			userQuery.setString("username", user.getUsername());
+			userQuery.setLong("usaa", user.getUsaa());
+
+			personQuery = s
+					.createQuery("update Person set firstname=:firstname, lastname=:lastname ,middlename=:middlename ,dob=:dob");
+			personQuery.setString("firstname", person.getFirstName());
+			personQuery.setString("lastname", person.getLastName());
+			personQuery.setString("middlename", person.getMiddleName());
+			personQuery.setDate("dob", person.getDob());
+		} catch (Exception e) {
+			System.out.println("some shit:" + e);
+			return 0;
+		}
+
+		return userQuery.executeUpdate() + personQuery.executeUpdate();
 	}
 
 }
