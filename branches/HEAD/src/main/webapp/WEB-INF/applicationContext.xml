@@ -35,6 +35,8 @@
             <list>
                 <value>main/authority.hbm.xml</value>
                 <value>main/user.hbm.xml</value>
+                <value>main/person.hbm.xml</value>
+                <value>main/employee.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
