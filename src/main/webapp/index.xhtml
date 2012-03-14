@@ -20,31 +20,35 @@
 		<div id="content">
 			<ui:insert name="content">
 
-				<p:panel header="User" styleClass="panel"
+				<p:panel header="List of Users (#{userAction.length})" styleClass="panel"
 					rendered="#{facesContext.externalContext.isUserInRole('ROLE_ADMIN')}">
-					<h:commandButton onclick="createDlg.show()" value="New user" style="margin-right:20px;" type="button"/>
+					<h:commandButton onclick="createDlg.show()" value="new user" styleClass="create-user" type="button"/>
 					
 					
 					<p:dialog header="create" widgetVar="createDlg" modal="true" height="200" width="400">
 						<h:form>
 							username:<br/>
-							<h:inputText value="#{user.username}"/><br/>
+							<h:inputText value="#{userAction.user.username}"/><br/>
 							password:<br/>
-							<h:inputSecret value="#{user.password}"/><br/>
+							<h:inputSecret value="#{userAction.user.password}"/><br/>
 							<h:commandButton action = "#{userAction.createUser}" value="create"/>
 						</h:form>
 					</p:dialog>
 					
 					<br/>
-					existing users:<br/>
 					<ui:repeat var="usr" value="#{userAction.users}">
-						<h:form id="show-form">
-							<h:outputText value="#{usr.username}"/>
-							<p:commandLink action="#{userAction.editUserAction(usr)}" value="edit" process="@this" update=":edit-form" immediate="true">
-								<f:setPropertyActionListener target="#{userAction.user}" value="#{usr}" />
-							 </p:commandLink> 
-
-						</h:form>
+						<div class="user-row">
+							<h:form id="show-form">
+								<div style="width:100px;float:left;">
+									<h:outputText value="#{usr.username}" styleClass="#{userAction.user.editable?'d':'pppp'}"/>
+								</div>	
+								<div style="float:left;">
+									<p:commandLink action="#{userAction.editUserAction(usr)}" value="edit" process="@this" update=":edit-form" immediate="true" ajax="false">
+										<f:setPropertyActionListener target="#{userAction.user}" value="#{usr}" />
+									 </p:commandLink>
+								</div>	
+							</h:form>
+						</div>		
 					</ui:repeat>
 									<p:ajaxStatus style="width:16px;height:16px;">
                                         <f:facet name="start">
@@ -57,15 +61,25 @@
                                     </p:ajaxStatus>
 				</p:panel>
 
+				
 					<h:form id="edit-form" rendered="#{userAction.user.editable}">
-						<h:inputText value="#{userAction.user.username}"/><br/>
+					
+						<p:panel header="User" styleClass="panel">
+							<h:inputText value="#{userAction.user.username}"/><br/>
+						</p:panel>	
 						
+						<p:panel header="Personal" styleClass="panel">
+							first name:<h:inputText value="#{userAction.person.firstName}"/><br/>
+							first name:<h:outputText value="#{userAction.person.firstName}"/><br/>
+							last name:<h:inputText value="#{userAction.person.lastName}"/><br/>
+							middle name:<h:inputText value="#{userAction.person.middleName}"/><br/>
+							DOB:<p:calendar value="#{userAction.person.dob}"/><br/>
+						</p:panel>
 						
-						<h:inputText value="#{userAction.person.firstName}"/><br/>
-						<h:inputText value="#{userAction.person.lastName}"/><br/>
-						<h:inputText value="#{userAction.person.middleName}"/><br/>
-						<p:calendar value="#{userAction.person.dob}"/>
-						
+						<p:panel header="Employee" styleClass="panel">
+							faculty:<h:inputText value="#{userAction.employee.faculty}"/><br/>
+							state:<h:inputText value="#{userAction.employee.state}"/><br/>
+						</p:panel>
 						
 						<h:commandButton action="#{userAction.editUser}" value="ok"/>
 					</h:form>	

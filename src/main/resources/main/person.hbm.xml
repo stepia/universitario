@@ -4,7 +4,9 @@
 
 <hibernate-mapping>
     <class name="entry.Person" table="person">
-        <id name="id" column="perid"/>
+        <id name="id" column="perid">
+			<generator class="increment" />
+		</id>
         <property name="firstName" column="firstname"/>
         <property name="lastName" column="lastname"/>
         <property name="middleName" column="middlename"/>
