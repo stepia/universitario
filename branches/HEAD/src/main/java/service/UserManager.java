@@ -37,8 +37,8 @@ public class UserManager implements IUserManager {
 	}
 
 	@Transactional
-	public int editUser(User user, Person person) {
-		return getUserDao().editUser(user, person);
+	public void editUser(User user) {
+		getUserDao().editUser(user);
 	}
 
 	@Transactional

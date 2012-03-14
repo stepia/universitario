@@ -24,6 +24,16 @@ public class UserAction {
 	@ManagedProperty(value = "#{userManager}")
 	private UserManager userManager;
 
+	private int length;
+
+	public int getLength() {
+		return length;
+	}
+
+	public void setLength(int length) {
+		this.length = length;
+	}
+
 	public UserManager getUserManager() {
 		return userManager;
 	}
@@ -61,19 +71,22 @@ public class UserAction {
 	}
 
 	public List<User> getUsers() {
-		return userManager.getUsers();
+		List<User> users = userManager.getUsers();
+		this.length = users.size();
+		return users;
 	}
 
 	public String editUserAction(User user) {
 		user.setEditable(true);
-		// this.user=user;
 		return null;
 	}
 
-	public int editUser() {
-		// long id = (Long)
-		// e.getComponent().getAttributes().get("targetObject");
-		// User user = userManager.getUserById(id);
-		return userManager.editUser(user, person);
+	public void editUser() {
+		long userId = user.getUsaa();
+		employee.setId(userId);
+		person.setId(userId);
+		user.setPerson(person);
+		user.setEmployee(employee);
+		userManager.editUser(user);
 	}
 }

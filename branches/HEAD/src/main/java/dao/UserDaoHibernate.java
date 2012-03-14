@@ -4,9 +4,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
@@ -35,11 +32,10 @@ public class UserDaoHibernate extends HibernateDaoSupport implements UserDao {
 		authorities.add(authority);
 		authority.setUsername(user.getUsername());
 		user.setAuthorities(authorities);
-		getHibernateTemplate().save(user);
 
-		Person person = new Person();
-		person.setId(user.getUsaa());
-		getHibernateTemplate().save(person);
+		user.setPerson(new Person());
+		user.setEmployee(new Employee());
+		getHibernateTemplate().save(user);
 
 	}
 
@@ -48,29 +44,13 @@ public class UserDaoHibernate extends HibernateDaoSupport implements UserDao {
 		getHibernateTemplate().flush();
 	}
 
-	public int editUser(User user, Person person) {
-		Query personQuery;
-		Query userQuery;
+	public void editUser(User user) {
 		try {
-			SessionFactory sf = getHibernateTemplate().getSessionFactory();
-			Session s = sf.openSession();
-			userQuery = s
-					.createQuery("update User set username=:username where usaa=:usaa");
-			userQuery.setString("username", user.getUsername());
-			userQuery.setLong("usaa", user.getUsaa());
-
-			personQuery = s
-					.createQuery("update Person set firstname=:firstname, lastname=:lastname ,middlename=:middlename ,dob=:dob");
-			personQuery.setString("firstname", person.getFirstName());
-			personQuery.setString("lastname", person.getLastName());
-			personQuery.setString("middlename", person.getMiddleName());
-			personQuery.setDate("dob", person.getDob());
+			getHibernateTemplate().update(user);
 		} catch (Exception e) {
 			System.out.println("some shit:" + e);
-			return 0;
 		}
 
-		return userQuery.executeUpdate() + personQuery.executeUpdate();
 	}
 
 }

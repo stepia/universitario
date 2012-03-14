@@ -16,6 +16,24 @@ public class User {
 	private boolean enabled = true;
 	private boolean editable;
 	private Set<Authority> authorities = new HashSet<Authority>();
+	private Person person;
+	private Employee employee;
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
 
 	public boolean isEditable() {
 		return editable;
