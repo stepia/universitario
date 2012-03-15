@@ -4,7 +4,7 @@
 
 <hibernate-mapping>
     <class name="entry.Authority" table="authorities">
-        <id name="authorityaa"/>
+        <id name="id"/>
         <property name="username" column="username"/>
         <property name="authority" column="authority"/>
          <many-to-one name="user" class="entry.User" not-null="false" column="usaa" insert="false" update="false"/>

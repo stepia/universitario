@@ -56,7 +56,7 @@ public class UserBean {
 
         for (int i = 0; i < size; i++) {
             User user = new User();
-            user.setUsaa(i);
+            user.setId(i);
             user.setUsername(String.valueOf(i + 1));
             user.setEnabled(true);
             list.add(user);

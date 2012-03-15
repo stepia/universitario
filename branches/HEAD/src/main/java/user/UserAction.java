@@ -82,7 +82,7 @@ public class UserAction {
 	}
 
 	public void editUser() {
-		long userId = user.getUsaa();
+		long userId = user.getId();
 		employee.setId(userId);
 		person.setId(userId);
 		user.setPerson(person);
