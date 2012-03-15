@@ -7,7 +7,6 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class Employee {
 
-	private String faculty;
 	private String state;
 	private long id;
 
@@ -17,14 +16,6 @@ public class Employee {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public String getFaculty() {
-		return faculty;
-	}
-
-	public void setFaculty(String faculty) {
-		this.faculty = faculty;
 	}
 
 	public String getState() {

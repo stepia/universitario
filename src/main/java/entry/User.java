@@ -10,7 +10,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class User {
 
-	private long usaa;
+	private long id;
 	private String username;
 	private String password;
 	private boolean enabled = true;
@@ -18,6 +18,14 @@ public class User {
 	private Set<Authority> authorities = new HashSet<Authority>();
 	private Person person;
 	private Employee employee;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public Employee getEmployee() {
 		return employee;
@@ -49,14 +57,6 @@ public class User {
 
 	public void setAuthorities(Set<Authority> authorities) {
 		this.authorities = authorities;
-	}
-
-	public long getUsaa() {
-		return usaa;
-	}
-
-	public void setUsaa(long usaa) {
-		this.usaa = usaa;
 	}
 
 	public String getUsername() {

@@ -17,7 +17,7 @@ public class UserDaoHibernate extends HibernateDaoSupport implements UserDao {
 	@SuppressWarnings("unchecked")
 	public User getUserById(long id) {
 		return (User) DataAccessUtils.uniqueResult(getHibernateTemplate().find(
-				"from User where usaa=?", new Object[] { id }));
+				"from User where id=?", new Object[] { id }));
 	}
 
 	@SuppressWarnings("unchecked")

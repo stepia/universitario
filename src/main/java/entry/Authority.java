@@ -7,7 +7,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class Authority {
 
-	private long authorityaa;
+	private long id;
 
 	private String username;
 
@@ -23,12 +23,12 @@ public class Authority {
 		this.user = user;
 	}
 
-	public long getAuthorityaa() {
-		return authorityaa;
+	public long getId() {
+		return id;
 	}
 
-	public void setAuthorityaa(long authorityaa) {
-		this.authorityaa = authorityaa;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getUsername() {
