@@ -14,17 +14,17 @@
 </h:head>
 
 <h:body
-	style="color: Yellow; background: Teal;position: fixed; left:40%; top:30%">
+	style="position: fixed; left:40%; top:30%;font-family:verdana;">
 
 	<h:form id="form">
 		<h:panelGrid id="pnlLogin" columns="3" border="0"
 			title="Universitario">
-			<h:outputText value="User name:" />
+			<h:outputText value="username:" />
 			<h:inputText id="username" required="true"
 				value="#{loginbean.username}" requiredMessage="required"
 				converterMessage="not a valid name" />
 			<h:message for="username" errorStyle="color:red" />
-			<h:outputText value="Password:" />
+			<h:outputText value="password:" />
 			<h:inputSecret id="password" required="true"
 				value="#{loginbean.password}" requiredMessage="required"
 				converterMessage="not a valid password" />

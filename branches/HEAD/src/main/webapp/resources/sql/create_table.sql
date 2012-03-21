@@ -1,20 +1,3 @@
-create table users(
-      id int not null primary key,
-      perid int not null,
-      empid int not null,
-      username varchar(50) not null ,
-      password varchar(100) not null,
-      enabled boolean not null,
-      modified datetime,
-      created datetime);
-      
-create table authorities (
-      id int not null AUTO_INCREMENT primary key,
-      username varchar(50) not null,
-      authority varchar(50) not null);
-      /*foreign key(username) references users(username));*/
-      create unique index ix_auth_username on authorities (username,authority);
-      
 create table person (
       id int not null primary key,
       firstname varchar(50),
@@ -28,7 +11,6 @@ create table person (
       code varchar(50),
       modified datetime,
       created datetime);
-      /*constraint fk_employee foreign key(perid) references employee(empid));*/
 
       
 create table employee(
@@ -42,6 +24,27 @@ create table employee(
       academicdegree varchar(200),
       modified datetime,
       created datetime);
+      
+create table users(
+      id int not null primary key,
+      perid int not null,
+      empid int not null,
+      username varchar(50) not null ,
+      password varchar(100) not null,
+      enabled boolean not null,
+      modified datetime,
+      created datetime,
+      constraint `pers_constr` foreign key(`perid`) references `person`(`id`),
+      constraint `emp_constr` foreign key(`empid`) references `employee`(`id`));
+      
+create table authorities (
+      id int not null AUTO_INCREMENT primary key,
+      username varchar(50) not null,
+      authority varchar(50) not null);
+      /*foreign key(username) references users(username));*/
+      create unique index ix_auth_username on authorities (username,authority);
+      
+
 
 create table university(
       id int not null AUTO_INCREMENT primary key,

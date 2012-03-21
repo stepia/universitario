@@ -4,27 +4,34 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.springframework.dao.support.DataAccessUtils;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.hibernate.SessionFactory;
+import org.springframework.transaction.annotation.Transactional;
 
 import entry.Authority;
 import entry.Employee;
 import entry.Person;
 import entry.User;
 
-public class UserDaoHibernate extends HibernateDaoSupport implements UserDao {
+public class UserDaoHibernate implements UserDao {
 
-	@SuppressWarnings("unchecked")
-	public User getUserById(long id) {
-		return (User) DataAccessUtils.uniqueResult(getHibernateTemplate().find(
-				"from User where id=?", new Object[] { id }));
+	private SessionFactory sessionFactory;
+
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
 	}
 
 	@SuppressWarnings("unchecked")
+	@Transactional
 	public List<User> getUsers() {
-		return getHibernateTemplate().find("from User");
+		return sessionFactory.getCurrentSession().createCriteria(User.class)
+				.list();
 	}
 
+	@Transactional
 	public void createUser(User user) {
 		Set<Authority> authorities = new HashSet<Authority>();
 		Authority authority = new Authority();
@@ -35,22 +42,14 @@ public class UserDaoHibernate extends HibernateDaoSupport implements UserDao {
 
 		user.setPerson(new Person());
 		user.setEmployee(new Employee());
-		getHibernateTemplate().save(user);
+
+		sessionFactory.getCurrentSession().save(user);
 
 	}
 
-	public void deleteUser(User user) {
-		getHibernateTemplate().delete(user);
-		getHibernateTemplate().flush();
-	}
-
+	@Transactional
 	public void editUser(User user) {
-		try {
-			getHibernateTemplate().update(user);
-		} catch (Exception e) {
-			System.out.println("some shit:" + e);
-		}
-
+		sessionFactory.getCurrentSession().saveOrUpdate(user);
 	}
 
 }

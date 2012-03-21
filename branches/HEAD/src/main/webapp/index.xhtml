@@ -69,14 +69,14 @@
 						</p:panel>	
 						
 						<p:panel header="Personal" styleClass="panel">
-							first name:<h:inputText value="#{userAction.person.firstName}"/><br/>
-							last name:<h:inputText value="#{userAction.person.lastName}"/><br/>
-							middle name:<h:inputText value="#{userAction.person.middleName}"/><br/>
-							DOB:<p:calendar value="#{userAction.person.dob}"/><br/>
+							first name:<h:inputText value="#{userAction.user.person.firstName}"/><br/>
+							last name:<h:inputText value="#{userAction.user.person.lastName}"/><br/>
+							middle name:<h:inputText value="#{userAction.user.person.middleName}"/><br/>
+							DOB:<p:calendar value="#{userAction.user.person.dob}"/><br/>
 						</p:panel>
 						
 						<p:panel header="Employee" styleClass="panel">
-							state:<h:inputText value="#{userAction.employee.state}"/><br/>
+							state:<h:inputText value="#{userAction.user.employee.state}"/><br/>
 						</p:panel>
 						
 						<h:commandButton action="#{userAction.editUser}" value="ok"/>
