@@ -6,7 +6,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
-import service.UserManager;
+import service.IUserManager;
 import entry.Employee;
 import entry.Person;
 import entry.User;
@@ -22,7 +22,7 @@ public class UserAction {
 	@ManagedProperty(value = "#{employee}")
 	private Employee employee;
 	@ManagedProperty(value = "#{userManager}")
-	private UserManager userManager;
+	private IUserManager userManager;
 
 	private int length;
 
@@ -34,11 +34,11 @@ public class UserAction {
 		this.length = length;
 	}
 
-	public UserManager getUserManager() {
+	public IUserManager getUserManager() {
 		return userManager;
 	}
 
-	public void setUserManager(UserManager userManager) {
+	public void setUserManager(IUserManager userManager) {
 		this.userManager = userManager;
 	}
 
@@ -82,11 +82,6 @@ public class UserAction {
 	}
 
 	public void editUser() {
-		long userId = user.getId();
-		employee.setId(userId);
-		person.setId(userId);
-		user.setPerson(person);
-		user.setEmployee(employee);
 		userManager.editUser(user);
 	}
 }
