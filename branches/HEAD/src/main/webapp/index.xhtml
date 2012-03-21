@@ -21,7 +21,7 @@
 			<ui:insert name="content">
 
 				<p:panel header="List of Users (#{userAction.length})" styleClass="panel"
-					rendered="#{facesContext.externalContext.isUserInRole('ROLE_ADMIN')}">
+					rendered="#{request.isUserInRole('ROLE_ADMIN')}">
 					<h:commandButton onclick="createDlg.show()" value="new user" styleClass="create-user" type="button"/>
 					
 					
@@ -84,7 +84,7 @@
 				
 
 				
-				<p:panel header="Personal Info" rendered="#{facesContext.externalContext.isUserInRole('ROLE_USER')}">
+				<p:panel header="Personal Info" rendered="#{request.isUserInRole('ROLE_USER')}">
 					personal info...
 				</p:panel>
 
