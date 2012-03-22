@@ -6,6 +6,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
+import org.hibernate.Hibernate;
+import org.springframework.transaction.annotation.Transactional;
+
 import service.IUserManager;
 import entry.Employee;
 import entry.Person;
@@ -72,11 +75,13 @@ public class UserAction {
 
 	public List<User> getUsers() {
 		List<User> users = userManager.getUsers();
+//		users.get(0).getEmployees().size();
 		this.length = users.size();
 		return users;
 	}
 
 	public String editUserAction(User user) {
+		// userManager.fetchEmployees(user);
 		user.setEditable(true);
 		return null;
 	}

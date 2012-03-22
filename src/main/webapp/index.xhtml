@@ -75,9 +75,11 @@
 							DOB:<p:calendar value="#{userAction.user.person.dob}"/><br/>
 						</p:panel>
 						
-						<p:panel header="Employee" styleClass="panel">
-							state:<h:inputText value="#{userAction.user.employee.state}"/><br/>
-						</p:panel>
+						<ui:repeat var="emp" value="#{userAction.user.employees}">
+							<p:panel header="Employee" styleClass="panel">
+								state:<h:inputText value="#{emp.state}"/><br/>
+							</p:panel>
+						</ui:repeat>
 						
 						<h:commandButton action="#{userAction.editUser}" value="ok"/>
 					</h:form>	
