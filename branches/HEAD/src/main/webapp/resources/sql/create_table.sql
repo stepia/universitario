@@ -11,19 +11,6 @@ create table person (
       code varchar(50),
       modified datetime,
       created datetime);
-
-      
-create table employee(
-      id int not null primary key,
-      positionid int,
-      groupid int,
-      personid int,
-      userid int,
-      state varchar(50),
-      recordbook int,
-      academicdegree varchar(200),
-      modified datetime,
-      created datetime);
       
 create table users(
       id int not null primary key,
@@ -36,6 +23,20 @@ create table users(
       created datetime,
       constraint `pers_constr` foreign key(`perid`) references `person`(`id`),
       constraint `emp_constr` foreign key(`empid`) references `employee`(`id`));
+
+      
+create table employee(
+      id int not null primary key,
+      positionid int,
+      groupid int,
+      personid int,
+      userid int,
+      state varchar(50),
+      recordbook int,
+      academicdegree varchar(200),
+      modified datetime,
+      created datetime,
+      constraint `usr_constr` foreign key(`userid`) references `users`(`id`));
       
 create table authorities (
       id int not null AUTO_INCREMENT primary key,

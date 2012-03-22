@@ -10,6 +10,7 @@
         <property name="username" column="username"/>
         <property name="password" column="password"/>
         <property name="enabled" column="enabled"/>
+        <property name="empId" column="empid"/>
         
         <set name="authorities" cascade="all" inverse="true">
         	<key column="authorityaa" not-null="true"/>
@@ -17,7 +18,11 @@
         </set>
         
         <many-to-one name="person" class="entry.Person" column="perid" not-null="true" cascade="all" fetch="join"/>
-        <many-to-one name="employee" class="entry.Employee" column="empid" not-null="true" cascade="all" fetch="join"/>
+        
+        <bag name="employees" table="employee" lazy="false" optimistic-lock="false">
+	        <key column="userid" not-null="true"/>
+        	<one-to-many class="entry.Employee"/>
+        </bag>
         
     </class>
 </hibernate-mapping>

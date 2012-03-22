@@ -1,6 +1,8 @@
 package entry;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.faces.bean.ManagedBean;
@@ -11,13 +13,14 @@ import javax.faces.bean.SessionScoped;
 public class User {
 
 	private long id;
+	private long empId;
 	private String username;
 	private String password;
 	private boolean enabled = true;
 	private boolean editable;
 	private Set<Authority> authorities = new HashSet<Authority>();
 	private Person person;
-	private Employee employee;
+	private List<Employee> employees = new ArrayList<Employee>();
 
 	public long getId() {
 		return id;
@@ -27,12 +30,20 @@ public class User {
 		this.id = id;
 	}
 
-	public Employee getEmployee() {
-		return employee;
+	public long getEmpId() {
+		return empId;
 	}
 
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
+	public void setEmpId(long empId) {
+		this.empId = empId;
+	}
+
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
 	}
 
 	public Person getPerson() {
