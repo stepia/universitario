@@ -11,7 +11,5 @@ public interface UserDao {
 	public void createUser(User contact);
 
 	public void editUser(User user);
-	
-	public void fetchEmployees(User user);
 
 }

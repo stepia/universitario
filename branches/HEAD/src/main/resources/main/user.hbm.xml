@@ -12,14 +12,16 @@
         <property name="enabled" column="enabled"/>
         <property name="empId" column="empid"/>
         
-        <set name="authorities" cascade="all" inverse="true">
-        	<key column="authorityaa" not-null="true"/>
+        <!--  
+        <set name="authorities" table="authorities" lazy="false" cascade="all">
+        	<key column="id" not-null="true"/>
         	<one-to-many class="entry.Authority"/>
         </set>
+        -->
         
         <many-to-one name="person" class="entry.Person" column="perid" not-null="true" cascade="all" fetch="join"/>
         
-        <bag name="employees" table="employee" lazy="false" optimistic-lock="false">
+        <bag name="employees" table="employee" lazy="false" cascade="all">
 	        <key column="userid" not-null="true"/>
         	<one-to-many class="entry.Employee"/>
         </bag>

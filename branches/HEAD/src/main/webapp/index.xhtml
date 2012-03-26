@@ -81,6 +81,17 @@
 							</p:panel>
 						</ui:repeat>
 						
+						
+					<p:dialog header="create" widgetVar="addEmplDlg" modal="true" height="200" width="400">
+						<h:form>
+							state:<br/>
+							<h:inputText value="#{userAction.employee.state}"/><br/>
+							<h:commandButton action = "#{userAction.addEmployee}" value="add employee"/>
+						</h:form>
+					</p:dialog>
+						
+						<h:commandButton onclick="addEmplDlg.show()" value="add employee" styleClass="create-user" type="button"/>
+						
 						<h:commandButton action="#{userAction.editUser}" value="ok"/>
 					</h:form>	
 				

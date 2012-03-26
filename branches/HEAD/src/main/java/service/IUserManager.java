@@ -11,7 +11,5 @@ public interface IUserManager {
 	public void createUser(User user);
 
 	public void editUser(User user);
-	
-	public void fetchEmployees(User user);
 
 }
