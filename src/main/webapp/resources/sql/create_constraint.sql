@@ -1,14 +1,19 @@
+ALTER TABLE authorities ADD CONSTRAINT authorities_users FOREIGN KEY(username) REFERENCES users (username);
 ALTER TABLE users ADD CONSTRAINT users_empid FOREIGN KEY(empid) REFERENCES employee(id);
 ALTER TABLE users ADD CONSTRAINT users_perid FOREIGN KEY(perid) REFERENCES person(id);
-ALTER TABLE person ADD CONSTRAINT users_empid FOREIGN KEY(empid) REFERENCES employee(id);
-ALTER TABLE employee ADD CONSTRAINT employee_perid FOREIGN KEY(perid) REFERENCES person(id);
+ALTER TABLE employee ADD CONSTRAINT employee_perid FOREIGN KEY(personid) REFERENCES person(id);
 ALTER TABLE employee ADD CONSTRAINT employee_userid FOREIGN KEY(userid) REFERENCES users(id);
 ALTER TABLE employee ADD CONSTRAINT employee_positionid FOREIGN KEY(positionid) REFERENCES positions(id);
 ALTER TABLE faculty ADD CONSTRAINT faculty_universityid FOREIGN KEY(universityid) REFERENCES university(id);
+ALTER TABLE faculty ADD CONSTRAINT faculty_initialdeputy FOREIGN KEY(initialdeputy) REFERENCES employee(id);
+ALTER TABLE faculty ADD CONSTRAINT faculty_scientificdeputy FOREIGN KEY(scientificdeputy) REFERENCES employee(id);
+ALTER TABLE faculty ADD CONSTRAINT faculty_educationaldeputy FOREIGN KEY(educationaldeputy) REFERENCES employee(id);
+ALTER TABLE faculty ADD CONSTRAINT faculty_dean FOREIGN KEY(dean) REFERENCES employee(id);
 ALTER TABLE chair ADD CONSTRAINT chair_facultyid FOREIGN KEY(facultyid) REFERENCES faculty(id);
+ALTER TABLE chair ADD CONSTRAINT chair_chairhead FOREIGN KEY(chairhead) REFERENCES employee(id);
 ALTER TABLE profession ADD CONSTRAINT profession_chairid FOREIGN KEY(chairid) REFERENCES chair(id);
 ALTER TABLE groups ADD CONSTRAINT groups_professionid FOREIGN KEY(professionid) REFERENCES profession(id);
-ALTER TABLE subgroup ADD CONSTRAINT subgroup_groupsid FOREIGN KEY(groupsid) REFERENCES groups(id);
+ALTER TABLE subgroup ADD CONSTRAINT subgroup_groupsid FOREIGN KEY(groupid) REFERENCES groups(id);
 ALTER TABLE subgroup ADD CONSTRAINT subgroup_planid FOREIGN KEY(planid) REFERENCES plan(id);
 ALTER TABLE plan ADD CONSTRAINT plan_disciplineid FOREIGN KEY(disciplineid) REFERENCES discipline(id);
 ALTER TABLE plan ADD CONSTRAINT plan_lessontypeid FOREIGN KEY(lessontypeid) REFERENCES lessontype(id);
@@ -18,4 +23,3 @@ ALTER TABLE plan ADD CONSTRAINT plan_marktypeid FOREIGN KEY(marktypeid) REFERENC
 ALTER TABLE report ADD CONSTRAINT plan_empid FOREIGN KEY(empid) REFERENCES employee(id);
 ALTER TABLE lesson ADD CONSTRAINT plan_facultyid FOREIGN KEY(facultyid) REFERENCES faculty(id);
 ALTER TABLE lesson ADD CONSTRAINT plan_lessontimeid FOREIGN KEY(lessontimeid) REFERENCES lessontime(id);
-      

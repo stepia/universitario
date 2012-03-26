@@ -1,6 +1,6 @@
+ALTER TABLE users DROP INDEX authorities_users
 ALTER TABLE users DROP INDEX users_empid;
 ALTER TABLE users DROP INDEX users_perid;
-ALTER TABLE person DROP INDEX users_empid;
 ALTER TABLE employee DROP INDEX employee_perid;
 ALTER TABLE employee DROP INDEX employee_userid;
 ALTER TABLE employee DROP INDEX employee_positionid;
