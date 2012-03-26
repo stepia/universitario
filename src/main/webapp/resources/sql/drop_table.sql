@@ -20,4 +20,3 @@ drop table report;
 drop table lesson;
 drop table time;
 drop table week;
-SET FOREIGN_KEY_CHECKS = 1;

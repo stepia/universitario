@@ -1,13 +1,11 @@
 package user;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
-
-import org.hibernate.Hibernate;
-import org.springframework.transaction.annotation.Transactional;
 
 import service.IUserManager;
 import entry.Employee;
@@ -26,9 +24,9 @@ public class UserAction {
 	private Employee employee;
 	@ManagedProperty(value = "#{userManager}")
 	private IUserManager userManager;
-
+	
 	private int length;
-
+	
 	public int getLength() {
 		return length;
 	}
@@ -70,18 +68,27 @@ public class UserAction {
 	}
 
 	public void createUser() {
+		List<Employee> employees = new ArrayList<Employee>();
+		Employee employee = new Employee();
+		employee.setUserId(user.getId());
+		employees.add(employee);
+		user.setEmployees(employees);
 		userManager.createUser(user);
+	}
+	
+	public void addEmployee(){
+		employee.setUserId(user.getId());
+		user.getEmployees().add(employee);
+		userManager.editUser(user);
 	}
 
 	public List<User> getUsers() {
 		List<User> users = userManager.getUsers();
-//		users.get(0).getEmployees().size();
 		this.length = users.size();
 		return users;
 	}
 
 	public String editUserAction(User user) {
-		// userManager.fetchEmployees(user);
 		user.setEditable(true);
 		return null;
 	}

@@ -28,9 +28,5 @@ public class UserManager implements IUserManager {
 	public void editUser(User user) {
 		getUserDao().editUser(user);
 	}
-	
-	public void fetchEmployees(User user){
-		getUserDao().fetchEmployees(user);
-	}
 
 }
