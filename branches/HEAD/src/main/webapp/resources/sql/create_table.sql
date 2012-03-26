@@ -41,7 +41,9 @@ create table employee(
 create table authorities (
       id int not null AUTO_INCREMENT primary key,
       username varchar(50) not null,
-      authority varchar(50) not null);
+      authority varchar(50) not null,
+      modified datetime,
+      created datetime);
       /*foreign key(username) references users(username));*/
       create unique index ix_auth_username on authorities (username,authority);
       
@@ -58,6 +60,14 @@ create table faculty(
       id int not null AUTO_INCREMENT primary key,
       name varchar(200) not null ,
       universityid int not null,
+      dean int not null,
+      initialdeputy int not null,
+      scientificdeputy int not null,
+      educationaldeputy int not null,
+      address varchar(250),
+      phone varchar(50),
+      email varchar(50),
+      site varchar(50),
       modified datetime not null,
       created datetime not null);
       
@@ -65,6 +75,8 @@ create table chair(
       id int not null AUTO_INCREMENT primary key,
       name varchar(200) not null ,
       facultyid int not null,
+      chairhead int not null,
+      phone varchar(50),
       modified datetime not null,
       created datetime not null);
 
