@@ -21,8 +21,7 @@ create table users(
       enabled boolean not null,
       modified datetime,
       created datetime,
-      constraint `pers_constr` foreign key(`perid`) references `person`(`id`),
-      constraint `emp_constr` foreign key(`empid`) references `employee`(`id`));
+      constraint `pers_constr` foreign key(`perid`) references `person`(`id`));
 
       
 create table employee(
