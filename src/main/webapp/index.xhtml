@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -11,104 +11,237 @@
 </h:head>
 
 <h:body>
+	<p:growl id="growl" showDetail="true" />
 	<div id="header">
+		<h:outputText value="#{loginbean.username}" />
 		<ui:insert name="header">
-			<h:outputText value="#{loginbean.username}" />
 			<ui:include src="/header.xhtml" />
 		</ui:insert>
 	</div>
-		<div id="content">
-			<ui:insert name="content">
 
-				<p:panel header="List of Users (#{userAction.length})" styleClass="panel"
-					rendered="#{request.isUserInRole('ROLE_ADMIN')}">
-					<h:commandButton onclick="createDlg.show()" value="new user" styleClass="create-user" type="button"/>
-					
-					
-					<p:dialog header="create" widgetVar="createDlg" modal="true" height="200" width="400">
-						<h:form>
-							username:<br/>
-							<h:inputText value="#{userAction.user.username}"/><br/>
-							password:<br/>
-							<h:inputSecret value="#{userAction.user.password}"/><br/>
-							<h:commandButton action = "#{userAction.createUser}" value="create"/>
-						</h:form>
-					</p:dialog>
-					
-					<br/>
-					<ui:repeat var="usr" value="#{userAction.users}">
-						<div class="user-row">
-							<h:form id="show-form">
-								<div style="width:100px;float:left;">
-									<h:outputText value="#{usr.username}" styleClass="#{userAction.user.editable?'d':'pppp'}"/>
-								</div>	
-								<div style="float:left;">
-									<p:commandLink action="#{userAction.editUserAction(usr)}" value="edit" process="@this" update=":edit-form" immediate="true" ajax="false">
-										<f:setPropertyActionListener target="#{userAction.user}" value="#{usr}" />
-									 </p:commandLink>
-								</div>	
-							</h:form>
-						</div>		
-					</ui:repeat>
-									<p:ajaxStatus style="width:16px;height:16px;">
-                                        <f:facet name="start">
-                                            <h:graphicImage value="resources/img/ajax-loader.gif"/>
-                                        </f:facet>
+	<div id="content">
+		<h:form id="formid">
 
-                                        <f:facet name="complete">
-                                            <h:outputText value=""/>
-                                        </f:facet>
-                                    </p:ajaxStatus>
-				</p:panel>
+			<p:tabView id="tabView">
+				<p:tab id="mainTab" title="Main">
+					<h:panelGrid columns="1" cellspacing="20">
+						<h:commandLink value="My data"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Change password"
+							action="#{mainbean.doAction('changepassword')}" />
+					</h:panelGrid>
+				</p:tab>
+				<p:tab id="groupTab" title="Group">
+					<h:panelGrid columns="1" cellspacing="20">
+						<h:commandLink value="My data"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Change password"
+							action="#{mainbean.doAction('changepassword')}" />
+					</h:panelGrid>
+				</p:tab>
+				<p:tab id="chairTab" title="Chair">
+					<h:panelGrid columns="1" cellspacing="20">
+						<h:commandLink value="My data"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Change password"
+							action="#{mainbean.doAction('changepassword')}" />
+					</h:panelGrid>
+				</p:tab>
+				<p:tab id="facultyTab" title="Faculty">
+					<h:panelGrid columns="1" cellspacing="20">
+						<h:commandLink value="My data"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Change password"
+							action="#{mainbean.doAction('changepassword')}" />
+					</h:panelGrid>
+				</p:tab>
+				<p:tab id="EmployeeTab" title="Employee">
+					<div id="content">
+						<ui:insert name="content">
 
-				
-					<h:form id="edit-form" rendered="#{userAction.user.editable}">
-					
-						<p:panel header="User" styleClass="panel">
-							<h:inputText value="#{userAction.user.username}"/><br/>
-						</p:panel>	
-						
-						<p:panel header="Personal" styleClass="panel">
-							first name:<h:inputText value="#{userAction.user.person.firstName}"/><br/>
-							last name:<h:inputText value="#{userAction.user.person.lastName}"/><br/>
-							middle name:<h:inputText value="#{userAction.user.person.middleName}"/><br/>
-							DOB:<p:calendar value="#{userAction.user.person.dob}"/><br/>
-						</p:panel>
-						
-						<ui:repeat var="emp" value="#{userAction.user.employees}">
-							<p:panel header="Employee" styleClass="panel">
-								state:<h:inputText value="#{emp.state}"/><br/>
+							<p:panel header="List of Users (#{userAction.length})"
+								styleClass="panel"
+								rendered="#{request.isUserInRole('ROLE_ADMIN')}">
+								<h:commandButton onclick="createDlg.show()" value="new user"
+									styleClass="create-user" type="button" />
+
+
+								<p:dialog header="create" widgetVar="createDlg" modal="true"
+									height="200" width="400">
+									<h:form>
+							username:<br />
+										<h:inputText value="#{userAction.user.username}" />
+										<br />
+							password:<br />
+										<h:inputSecret value="#{userAction.user.password}" />
+										<br />
+										<h:commandButton action="#{userAction.createUser}"
+											value="create" />
+									</h:form>
+								</p:dialog>
+
+								<br />
+								<ui:repeat var="usr" value="#{userAction.users}">
+									<div class="user-row">
+										<h:form id="show-form">
+											<div style="width: 100px; float: left;">
+												<h:outputText value="#{usr.username}"
+													styleClass="#{userAction.user.editable?'d':'pppp'}" />
+											</div>
+											<div style="float: left;">
+												<p:commandLink action="#{userAction.editUserAction(usr)}"
+													value="edit" process="@this" update=":edit-form"
+													immediate="true" ajax="false">
+													<f:setPropertyActionListener target="#{userAction.user}"
+														value="#{usr}" />
+												</p:commandLink>
+											</div>
+										</h:form>
+									</div>
+								</ui:repeat>
+								<p:ajaxStatus style="width:16px;height:16px;">
+									<f:facet name="start">
+										<h:graphicImage value="resources/img/ajax-loader.gif" />
+									</f:facet>
+
+									<f:facet name="complete">
+										<h:outputText value="" />
+									</f:facet>
+								</p:ajaxStatus>
 							</p:panel>
-						</ui:repeat>
-						
-						
-					<p:dialog header="create" widgetVar="addEmplDlg" modal="true" height="200" width="400">
-						<h:form>
-							state:<br/>
-							<h:inputText value="#{userAction.employee.state}"/><br/>
-							<h:commandButton action = "#{userAction.addEmployee}" value="add employee"/>
-						</h:form>
-					</p:dialog>
-						
-						<h:commandButton onclick="addEmplDlg.show()" value="add employee" styleClass="create-user" type="button"/>
-						
-						<h:commandButton action="#{userAction.editUser}" value="ok"/>
-					</h:form>	
-				
 
-				
-				<p:panel header="Personal Info" rendered="#{request.isUserInRole('ROLE_USER')}">
+
+							<h:form id="edit-form" rendered="#{userAction.user.editable}">
+
+								<p:panel header="User" styleClass="panel">
+									<h:inputText value="#{userAction.user.username}" />
+									<br />
+								</p:panel>
+
+								<p:panel header="Personal" styleClass="panel">
+							first name:<h:inputText
+										value="#{userAction.user.person.firstName}" />
+									<br />
+							last name:<h:inputText value="#{userAction.user.person.lastName}" />
+									<br />
+							middle name:<h:inputText
+										value="#{userAction.user.person.middleName}" />
+									<br />
+							DOB:<p:calendar value="#{userAction.user.person.dob}" />
+									<br />
+								</p:panel>
+
+								<ui:repeat var="emp" value="#{userAction.user.employees}">
+									<p:panel header="Employee" styleClass="panel">
+								state:<h:inputText value="#{emp.state}" />
+										<br />
+									</p:panel>
+								</ui:repeat>
+
+
+								<p:dialog header="create" widgetVar="addEmplDlg" modal="true"
+									height="200" width="400">
+									<h:form>
+							state:<br />
+										<h:inputText value="#{userAction.employee.state}" />
+										<br />
+										<h:commandButton action="#{userAction.addEmployee}"
+											value="add employee" />
+									</h:form>
+								</p:dialog>
+
+								<h:commandButton onclick="addEmplDlg.show()"
+									value="add employee" styleClass="create-user" type="button" />
+
+								<h:commandButton action="#{userAction.editUser}" value="ok" />
+							</h:form>
+
+
+
+							<p:panel header="Personal Info"
+								rendered="#{request.isUserInRole('ROLE_USER')}">
 					personal info...
 				</p:panel>
 
-			</ui:insert>
-		</div>
-	
+						</ui:insert>
+					</div>
+				</p:tab>
+				<p:tab id="scheduleTab" title="Schedule">
+					<h:panelGrid columns="1" cellspacing="20">
+						<h:commandLink value="My data"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Change password"
+							action="#{mainbean.doAction('changepassword')}" />
+					</h:panelGrid>
+				</p:tab>
+				<p:tab id="marksTab" title="Marks">
+					<h:panelGrid columns="1" cellspacing="20">
+						<h:commandLink value="My data"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Change password"
+							action="#{mainbean.doAction('changepassword')}" />
+					</h:panelGrid>
+				</p:tab>
+				<p:tab id="planTab" title="Plan">
+					<h:panelGrid columns="1" cellspacing="20">
+						<h:commandLink value="My data"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Change password"
+							action="#{mainbean.doAction('changepassword')}" />
+					</h:panelGrid>
+				</p:tab>
+				<p:tab id="adminTab" title="Admin">
+					<h:panelGrid columns="5" cellpadding="70" cellspacing="70">
+						<h:commandLink value="University"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Faculty"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Chair"
+							action="#{mainbean.doAction('changepassword')}" />
+						<h:commandLink value="Profession"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Group"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Subgroup"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Employee"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Person"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Users"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Authorities"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Lesson"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Lesson time"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Lesson type"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Mark Type"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Period"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Plan"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Discipline"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Report"
+							action="#{mainbean.doAction('edituser')}" />
+						<h:commandLink value="Mark"
+							action="#{mainbean.doAction('edituser')}" />
+					</h:panelGrid>
+				</p:tab>
+			</p:tabView>
+
+
+		</h:form>
+	</div>
+
 	<div id="footer">
 		<ui:insert name="footer">
 			<ui:include src="/footer.xhtml" />
 		</ui:insert>
 	</div>
-
 </h:body>
 </html>
