@@ -70,14 +70,16 @@ public class UserAction {
 	public void createUser() {
 		List<Employee> employees = new ArrayList<Employee>();
 		Employee employee = new Employee();
-		employee.setUserId(user.getId());
+		//employee.setUserId(user.getId());
+		employee.setUsrname(user.getUsername());
 		employees.add(employee);
 		user.setEmployees(employees);
 		userManager.createUser(user);
 	}
 	
 	public void addEmployee(){
-		employee.setUserId(user.getId());
+//		employee.setUserId(user.getId());
+		employee.setUsrname(user.getUsername());
 		user.getEmployees().add(employee);
 		userManager.editUser(user);
 	}
