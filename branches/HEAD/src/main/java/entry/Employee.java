@@ -9,19 +9,48 @@ public class Employee {
 
 	private String state;
 	private Long id;
-	private Long userId;
+	private String usrname;
+	//private Long userId;
 
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
+//	public Long getUserId() {
+//		return userId;
+//	}
+//
+//	public void setUserId(Long userId) {
+//		this.userId = userId;
+//	}
+	
+	
 
 	public Long getId() {
 		return id;
 	}
+
+
+
+
+
+
+
+	public String getUsrname() {
+		return usrname;
+	}
+
+
+
+
+
+
+
+	public void setUsrname(String usrname) {
+		this.usrname = usrname;
+	}
+
+
+
+
+
+
 
 	public void setId(Long id) {
 		this.id = id;

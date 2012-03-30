@@ -13,10 +13,10 @@ create table person (
       created datetime);
       
 create table users(
-      id int not null primary key,
+      id int not null,
       perid int not null,
       empid int not null,
-      username varchar(50) not null ,
+      username varchar(50) not null primary key,
       password varchar(100) not null,
       enabled boolean not null,
       modified datetime,
@@ -29,21 +29,21 @@ create table employee(
       positionid int,
       groupid int,
       personid int,
-      userid int,
+      usrname varchar(50) not null,
       state varchar(50),
       recordbook int,
       academicdegree varchar(200),
       modified datetime,
       created datetime,
-      constraint `usr_constr` foreign key(`userid`) references `users`(`id`));
+      foreign key(usrname) references users(username));
       
 create table authorities (
       id int not null AUTO_INCREMENT primary key,
       username varchar(50) not null,
       authority varchar(50) not null,
       modified datetime,
-      created datetime);
-      /*foreign key(username) references users(username));*/
+      created datetime,
+      foreign key(username) references users(username));
       create unique index ix_auth_username on authorities (username,authority);
       
 

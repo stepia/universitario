@@ -48,7 +48,7 @@ public class UserDaoHibernate implements UserDao {
 
 	@Transactional
 	public void editUser(User user) {
-		sessionFactory.getCurrentSession().saveOrUpdate(user);
+		sessionFactory.getCurrentSession().merge(user);
 	}
 
 }
