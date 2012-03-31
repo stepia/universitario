@@ -22,7 +22,8 @@
 	<div id="content">
 		<h:form id="formid">
 
-			<p:tabView id="tabView">
+			<p:tabView id="tabView" activeIndex="#{mainbean.activeTabIndex}">
+			 <p:ajax event="tabChange" listener="#{mainbean.onTabChange}"/>  
 				<p:tab id="mainTab" title="Main">
 					<h:panelGrid columns="1" cellspacing="20">
 						<h:commandLink value="My data"
