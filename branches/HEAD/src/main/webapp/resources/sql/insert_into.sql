@@ -1,5 +1,5 @@
 INSERT INTO person (id) VALUES ('1');
-INSERT INTO employee (id,usrname) VALUES ('1','admin');
+INSERT INTO employee (id,usrname,stateid) VALUES ('1','admin',1);
 INSERT INTO users (perid,empid,id,username,password,enabled) VALUES ('1','1','1','admin','123','1');
 INSERT INTO authorities (username, authority) VALUES ('admin','ROLE_ADMIN');
 
