@@ -133,7 +133,7 @@
 
 								<ui:repeat var="emp" value="#{userAction.user.employees}">
 									<p:panel header="Employee" styleClass="panel">
-								state:<h:inputText value="#{emp.state}" />
+								state:<h:inputText value="#{emp.stateid}" />
 										<br />
 									</p:panel>
 								</ui:repeat>
@@ -143,7 +143,7 @@
 									height="200" width="400">
 									<h:form>
 							state:<br />
-										<h:inputText value="#{userAction.employee.state}" />
+										<h:inputText value="#{userAction.employee.stateid}" />
 										<br />
 										<h:commandButton action="#{userAction.addEmployee}"
 											value="add employee" />
