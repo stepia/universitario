@@ -20,3 +20,7 @@ drop table report;
 drop table lesson;
 drop table time;
 drop table week;
+drop table reporttype;
+drop table role;
+drop table state;
+drop table occupation;

@@ -356,3 +356,72 @@ BEGIN
     SET NEW.modified = NOW();
 END;//
 delimiter ;    
+
+
+delimiter //
+CREATE TRIGGER state_OnInsert BEFORE INSERT ON `state`
+FOR EACH ROW
+BEGIN
+    SET NEW.created = NOW();
+    SET NEW.modified = NOW();
+END;//
+delimiter ;
+
+delimiter //
+CREATE TRIGGER state_OnUpdate BEFORE UPDATE ON `state`
+FOR EACH ROW
+BEGIN
+    SET NEW.modified = NOW();
+END;//int not null
+delimiter ;  
+
+delimiter //
+CREATE TRIGGER occupation_OnInsert BEFORE INSERT ON `occupation`
+FOR EACH ROW
+BEGIN
+    SET NEW.created = NOW();
+    SET NEW.modified = NOW();
+END;//
+delimiter ;
+
+delimiter //
+CREATE TRIGGER occupation_OnUpdate BEFORE UPDATE ON `occupation`
+FOR EACH ROW
+BEGIN
+    SET NEW.modified = NOW();
+END;//
+delimiter ;  
+
+delimiter //
+CREATE TRIGGER role_OnInsert BEFORE INSERT ON `role`
+FOR EACH ROW
+BEGIN
+    SET NEW.created = NOW();
+    SET NEW.modified = NOW();
+END;//
+delimiter ;
+
+delimiter //
+CREATE TRIGGER role_OnUpdate BEFORE UPDATE ON `role`
+FOR EACH ROW
+BEGIN
+    SET NEW.modified = NOW();
+END;//
+delimiter ;  
+
+delimiter //
+CREATE TRIGGER reporttype_OnInsert BEFORE INSERT ON `reporttype`
+FOR EACH ROW
+BEGIN
+    SET NEW.created = NOW();
+    SET NEW.modified = NOW();
+END;//
+delimiter ;
+
+delimiter //
+CREATE TRIGGER reporttype_OnUpdate BEFORE UPDATE ON `reporttype`
+FOR EACH ROW
+BEGIN
+    SET NEW.modified = NOW();
+END;//
+delimiter ; 
