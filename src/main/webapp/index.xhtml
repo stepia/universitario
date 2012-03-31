@@ -89,15 +89,15 @@
 												<h:outputText value="#{usr.username}"
 													styleClass="#{userAction.user.editable?'d':'pppp'}" />
 											</div>
-											<div style="float: left;">
-												<p:commandLink action="#{userAction.editUserAction(usr)}"
-													value="edit" process="@this" update=":edit-form"
-													immediate="true" ajax="false">
-													<f:setPropertyActionListener target="#{userAction.user}"
-														value="#{usr}" />
-												</p:commandLink>
-											</div>
 										</h:form>
+										<div style="float: left;">
+											<p:commandLink action="#{userAction.editUserAction(usr)}"
+												value="edit" process="@this" update=":edit-form"
+												immediate="true" ajax="false">
+												<f:setPropertyActionListener target="#{userAction.user}"
+													value="#{usr}" />
+											</p:commandLink>
+										</div>
 									</div>
 								</ui:repeat>
 								<p:ajaxStatus style="width:16px;height:16px;">
