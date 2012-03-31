@@ -5,6 +5,7 @@ create table person (
       middlename varchar(50),
       dob date,
       address varchar(250),
+      academicdegree varchar(200),
       sex varchar(10),
       phone varchar(50),
       email varchar(50),
@@ -30,12 +31,30 @@ create table employee(
       groupid int,
       personid int,
       usrname varchar(50) not null,
-      state varchar(50),
+      stateid int,
       recordbook int,
-      academicdegree varchar(200),
+      chairid int,
       modified datetime,
       created datetime,
       foreign key(usrname) references users(username));
+
+create table state (
+      id int not null AUTO_INCREMENT primary key,
+      name varchar(50) not null,
+      modified datetime,
+      created datetime);
+
+create table occupation (
+      id int not null AUTO_INCREMENT primary key,
+      name varchar(50) not null,
+      modified datetime,
+      created datetime);
+
+create table role (
+      id int not null AUTO_INCREMENT primary key,
+      name varchar(50) not null,
+      modified datetime,
+      created datetime);
       
 create table authorities (
       id int not null AUTO_INCREMENT primary key,
@@ -67,6 +86,7 @@ create table faculty(
       phone varchar(50),
       email varchar(50),
       site varchar(50),
+      stateid int,
       modified datetime not null,
       created datetime not null);
       
@@ -76,6 +96,7 @@ create table chair(
       facultyid int not null,
       chairhead int not null,
       phone varchar(50),
+      stateid int,
       modified datetime not null,
       created datetime not null);
 
@@ -84,6 +105,7 @@ create table profession(
       code varchar(200) not null ,
       name varchar(200) not null ,
       chairid int not null,
+      stateid int,
       modified datetime not null,
       created datetime not null);
 
@@ -104,7 +126,7 @@ create table subgroup(
 
 create table positions(
       id int not null AUTO_INCREMENT primary key,
-      name int not null,
+      name varchar(100) not null,
       modified datetime not null,
       created datetime not null);
       
@@ -157,6 +179,13 @@ create table report(
       name varchar(50) not null ,
       modified datetime not null,
       created datetime not null);
+
+create table reporttype(
+      id int not null AUTO_INCREMENT primary key,
+      name varchar(50) not null ,
+      modified datetime not null,
+      created datetime not null);
+
 
 create table lesson (
       id int not null AUTO_INCREMENT primary key,

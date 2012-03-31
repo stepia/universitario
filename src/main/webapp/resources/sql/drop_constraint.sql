@@ -18,3 +18,7 @@ ALTER TABLE plan DROP INDEX plan_marktypeid;
 ALTER TABLE report DROP INDEX plan_empid;
 ALTER TABLE lesson DROP INDEX plan_facultyid;
 ALTER TABLE lesson DROP INDEX plan_lessontimeid;
+ALTER TABLE employee DROP INDEX employee_stateid;
+ALTER TABLE faculty DROP INDEX faculty_stateid;
+ALTER TABLE chair DROP INDEX chair_stateid;
+ALTER TABLE profession DROP INDEX profession_stateid;

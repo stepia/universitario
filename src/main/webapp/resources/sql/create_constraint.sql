@@ -23,3 +23,7 @@ ALTER TABLE plan ADD CONSTRAINT plan_marktypeid FOREIGN KEY(marktypeid) REFERENC
 ALTER TABLE report ADD CONSTRAINT plan_empid FOREIGN KEY(empid) REFERENCES employee(id);
 ALTER TABLE lesson ADD CONSTRAINT plan_facultyid FOREIGN KEY(facultyid) REFERENCES faculty(id);
 ALTER TABLE lesson ADD CONSTRAINT plan_lessontimeid FOREIGN KEY(lessontimeid) REFERENCES lessontime(id);
+ALTER TABLE employee ADD CONSTRAINT employee_stateid FOREIGN KEY(stateid) REFERENCES state(id);
+ALTER TABLE faculty ADD CONSTRAINT faculty_stateid FOREIGN KEY(stateid) REFERENCES state(id);
+ALTER TABLE chair ADD CONSTRAINT chair_stateid FOREIGN KEY(stateid) REFERENCES state(id);
+ALTER TABLE profession ADD CONSTRAINT profession_stateid FOREIGN KEY(stateid) REFERENCES state(id);
