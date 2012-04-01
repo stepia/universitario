@@ -56,6 +56,11 @@
 							action="#{mainbean.doAction('changepassword')}" />
 					</h:panelGrid>
 				</p:tab>
+				<p:tab id="EmployeeTab1" title="Employee1">
+					<h:panelGrid columns="1" cellspacing="20">
+						<ui:include src="/user.xhtml" />
+					</h:panelGrid>
+				</p:tab>
 				<p:tab id="EmployeeTab" title="Employee">
 					<div id="content">
 						<ui:insert name="content">
