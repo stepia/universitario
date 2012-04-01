@@ -2,42 +2,49 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:s="http://jboss.com/products/seam/taglib">
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<title>Create new user</title>
 </h:head>
 
-<h:body style="color: Yellow; background: Teal;position: fixed; left:40%; top:30%">
+<h:body>
 
-	<h:panelGrid id="pnlUser" columns="3" border="0"
-		title="Create new user">
-		<h:outputText value="User name:" />
-		<h:inputText id="user" required="true"
-			value="#{user.username}" requiredMessage="required"
-			converterMessage="not a valid name">
-			<f:validateLength minimum="4" maximum="8" />
-		</h:inputText>
-		<h:message for="user" errorStyle="color:red" />
-		<h:outputText value="New password:" />
-		<h:inputSecret id="newpassword" required="true"
-			value="#{user.password}" requiredMessage="required"
-			converterMessage="not a valid password">
-			<f:validateLength minimum="6" />
-		</h:inputSecret>
-		<h:message for="newpassword" errorStyle="color:red" />
-		<h:outputText value="Confirm new password:" />
-		<h:inputSecret id="comfirmpassword" required="true"
-			value="" requiredMessage="required"
-			converterMessage="not a valid password">
-			<f:validateLength minimum="6" />
-		</h:inputSecret>
-		<h:message for="comfirmpassword" errorStyle="color:red" />
-		<h:outputText value="&lt;br/&gt;" escape="false"/>
-		<h:outputText value="&lt;br/&gt;" escape="false"/>
-		<h:outputText value="&lt;br/&gt;" escape="false"/>
-		<h:commandButton action="#{UserInfo.createUser}" style="color:#000000; background:#FFCC00" value="Create" />
-		<h:commandButton onclick="history.go(-1)" style="color:#ffffff; background:#DC2827" value="Cancel" />
-	</h:panelGrid>
+	<p:panel header="User" styleClass="panel">
+		<h:inputText value="#{userAction.user.username}" />
+		<br />
+	</p:panel>
+	<p:panel header="Employee" styleClass="panel">
+				state:<h:inputText value="#" />
+		<br />
+		<p:selectOneMenu value="#" effect="fade">
+			<f:selectItem itemLabel="Select One" itemValue="" />
+			<f:selectItems value="#" var="state" itemLabel="#" itemValue="#" />
+		</p:selectOneMenu>
+	</p:panel>
+
+
+
+	<p:panel header="Personal" styleClass="panel">
+							first name:<h:inputText
+			value="#{userAction.user.person.firstName}" />
+		<br />
+							last name:<h:inputText value="#{userAction.user.person.lastName}" />
+		<br />
+							middle name:<h:inputText
+			value="#{userAction.user.person.middleName}" />
+		<br />
+							DOB:<p:calendar value="#{userAction.user.person.dob}" />
+		<br />
+	</p:panel>
+
+	<ui:repeat var="emp" value="#{userAction.user.employees}">
+		<p:panel header="Employee" styleClass="panel">
+								state:<h:inputText value="#{emp.stateid}" />
+			<br />
+		</p:panel>
+	</ui:repeat>
 </h:body>
 
 </html>
