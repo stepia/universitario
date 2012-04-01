@@ -9,6 +9,8 @@
         <property name="id" column="id"/>
         <property name="enabled" column="enabled"/>
         <property name="empId" column="empid"/>
+        <property name="modified" column="modified"/>
+        <property name="created" column="created"/>
         
         <set name="authorities" table="authorities" lazy="false" cascade="all" inverse="true">
         	<key column="username" not-null="true"/>
