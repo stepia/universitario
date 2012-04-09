@@ -24,13 +24,18 @@
             <redirect/>
         </navigation-case>
         <navigation-case>
-            <from-outcome>createuser</from-outcome>
-            <to-view-id>/userDetail.xhtml</to-view-id>
+            <from-outcome>edituser</from-outcome>
+            <to-view-id>/user.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
-            <from-outcome>edituser</from-outcome>
-            <to-view-id>/userResult.xhtml</to-view-id>
+            <from-outcome>changepassword</from-outcome>
+            <to-view-id>/changepassword.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>passwordchanges</from-outcome>
+            <to-view-id>/passwordchanges.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
     </navigation-rule>
