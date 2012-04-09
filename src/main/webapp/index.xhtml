@@ -23,14 +23,16 @@
 		<h:form id="formid">
 
 			<p:tabView id="tabView" activeIndex="#{mainbean.activeTabIndex}">
-			 <p:ajax event="tabChange" listener="#{mainbean.onTabChange}"/>  
+				<p:ajax event="tabChange" listener="#{mainbean.onTabChange}" />
 				<p:tab id="mainTab" title="Main">
-					<h:panelGrid columns="1" cellspacing="20">
-						<h:commandLink value="My data"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Change password"
-							action="#{mainbean.doAction('changepassword')}" />
-					</h:panelGrid>
+					<f:ajax>
+						<h:panelGrid columns="1" cellspacing="20">
+							<h:commandLink value="My data"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Change password"
+								action="#{mainbean.doAction('changepassword')}" />
+						</h:panelGrid>
+					</f:ajax>
 				</p:tab>
 				<p:tab id="groupTab" title="Group">
 					<h:panelGrid columns="1" cellspacing="20">
@@ -197,46 +199,50 @@
 					</h:panelGrid>
 				</p:tab>
 				<p:tab id="adminTab" title="Admin">
-					<h:panelGrid columns="5" cellpadding="70" cellspacing="70">
-						<h:commandLink value="University"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Faculty"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Chair"
-							action="#{mainbean.doAction('changepassword')}" />
-						<h:commandLink value="Profession"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Group"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Subgroup"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Employee"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Person"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Users"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Authorities"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Lesson"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Lesson time"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Lesson type"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Mark Type"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Period"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Plan"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Discipline"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Report"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Mark"
-							action="#{mainbean.doAction('edituser')}" />
-					</h:panelGrid>
+					<f:ajax>
+						<h:panelGrid columns="5" cellpadding="70" cellspacing="70">
+							<h:commandLink value="Password Changes"
+								action="#{mainbean.doAction('passwordchanges')}" />
+							<h:commandLink value="University"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Faculty"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Chair"
+								action="#{mainbean.doAction('changepassword')}" />
+							<h:commandLink value="Profession"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Group"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Subgroup"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Employee"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Person"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Users"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Authorities"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Lesson"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Lesson time"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Lesson type"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Mark Type"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Period"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Plan"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Discipline"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Report"
+								action="#{mainbean.doAction('edituser')}" />
+							<h:commandLink value="Mark"
+								action="#{mainbean.doAction('edituser')}" />
+						</h:panelGrid>
+					</f:ajax>
 				</p:tab>
 			</p:tabView>
 
