@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Transactional;
 
 import entry.Authority;
@@ -13,42 +14,52 @@ import entry.User;
 
 public class UserDaoHibernate implements UserDao {
 
-	private SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
-	public SessionFactory getSessionFactory() {
-		return sessionFactory;
-	}
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
 
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
-	@SuppressWarnings("unchecked")
-	@Transactional
-	public List<User> getUsers() {
-		return sessionFactory.getCurrentSession().createCriteria(User.class)
-				.list();
-	}
+    @SuppressWarnings("unchecked")
+    @Transactional
+    public List<User> getUsers() {
+        return sessionFactory.getCurrentSession().createCriteria(User.class)
+                    .list();
+    }
 
-	@Transactional
-	public void createUser(User user) {
-		Set<Authority> authorities = new HashSet<Authority>();
-		Authority authority = new Authority();
-		authority.setAuthority("ROLE_USER");
-		authorities.add(authority);
+    @Transactional
+    public void createUser(User user) {
+        Set<Authority> authorities = new HashSet<Authority>();
+        Authority authority = new Authority();
+        authority.setAuthority("ROLE_USER");
+        authorities.add(authority);
 
-		authority.setUsername(user.getUsername());
-		user.setAuthorities(authorities);
+        authority.setUsername(user.getUsername());
+        user.setAuthorities(authorities);
 
-		user.setPerson(new Person());
+        user.setPerson(new Person());
 
-		sessionFactory.getCurrentSession().save(user);
+        sessionFactory.getCurrentSession().save(user);
 
-	}
+    }
 
-	@Transactional
-	public void editUser(User user) {
-		sessionFactory.getCurrentSession().merge(user);
-	}
+    @Transactional
+    public void editUser(User user) {
+        sessionFactory.getCurrentSession().merge(user);
+    }
 
+    @Transactional
+    public User getUser(String username) {
+        List users = sessionFactory.getCurrentSession().createCriteria(User.class)
+                    .add(Restrictions.eq("username", username)).list();
+        User user = null;
+        if ((users != null) && (users.size() > 0)) {
+            user = (User) users.get(0);
+        }
+        return user;
+    }
 }
