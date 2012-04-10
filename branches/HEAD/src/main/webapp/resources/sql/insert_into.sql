@@ -1,3 +1,5 @@
+
+
 INSERT INTO person (id) VALUES ('1');
 INSERT INTO employee (id,usrname,stateid) VALUES ('1','admin',1);
 INSERT INTO users (perid,empid,id,username,password,enabled) VALUES ('1','1','1','admin','123','1');
@@ -342,7 +344,7 @@ INSERT INTO employee (id,personid) VALUES ('106','106');
 INSERT INTO employee (id,personid) VALUES ('107','107');
 INSERT INTO employee (id,personid) VALUES ('108','108');
 INSERT INTO employee (id,personid) VALUES ('109','109');
-INSERT INTO employee (id,personid) VALUES ('100','100');
+INSERT INTO employee (id,personid) VALUES ('110','110');
 INSERT INTO employee (id,personid) VALUES ('111','111');
 INSERT INTO employee (id,personid) VALUES ('112','112');
 INSERT INTO employee (id,personid) VALUES ('113','113');
@@ -598,241 +600,256 @@ INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('30','1818
 INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('181','181','181','user181',1218,1);
 INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('182','182','182','user182',1218,1);
 
+ 
+ 
+
+
+
+
+
+INSERT INTO teamtype (id,name,stateid) VALUES (1, 'university',1);
+INSERT INTO teamtype (id,name,stateid) VALUES (2, 'faculty',1);
+INSERT INTO teamtype (id,name,stateid) VALUES (3, 'chair',1);
+INSERT INTO teamtype (id,name,stateid) VALUES (4, 'profession',1);
+INSERT INTO teamtype (id,name,stateid) VALUES (5, 'groups',1);
+INSERT INTO teamtype (id,name,stateid) VALUES (6, 'subgroup',1);
+
+
 /*university*/
-INSERT INTO university (name,accreditation) VALUES ('Дніпропетровський національний університет імені Олеся Гончара','4');
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (1,'Дніпропетровський національний університет імені Олеся Гончара',1,0,1);
 /*faculty*/
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,stateid) VALUES (1,'Факультет української й іноземної філології та мистецтвознавства',1,1,1,1,1,'просп. Гагаріна,  72.', '(056) 374-98-81',1);
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,stateid) VALUES (2,'Факультет суспільних наук і міжнародних відносин',1,1,1,1,1,'пр. Гагаріна,  72.','(056) 374-98-66',1); 
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,stateid) VALUES (3,'Факультет систем та засобів масової комунікації',1,1,1,1,1,'вул. Наукова, 13, корп. 9','(056) 776-82-01',1);
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,email,stateid) VALUES (4,'Факультет міжнародної економіки',1,1,1,1,1,'вул. Наукова, 13, 9 корпус ДНУ, кімн. 421','(056) 373-12-73','dekanat_fme@mail.ru',1);
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,email,stateid) VALUES (5,'Економічний факультет',1,1,1,1,1,'пр. К.Маркса, 35,корпус ДНУ № 5','(056) 744-86-37','inec.dnu@smirnov.dp.ua',1);
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,stateid) VALUES (6,'Історичний факультет',1,1,1,1,1,'просп. Гагаріна,  72.','(056) 374-98-60.',1);
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,email,stateid) VALUES (7,'Факультет психології',1,1,1,1,1,'пр. Карла Маркса, 36, 2-й корпус ДНУ','(056) 744-86-11','dec_fps@mail.dsu.dp.ua',1);
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,email,stateid) VALUES (8,'Юридичний факультет',1,1,1,1,1,'вул. Наукова, 13, корп. №9.','(056) 374–97–12','DNU_pravo@mail.ru, DNU_pravo@i.ua',1);
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,stateid) VALUES (9,'Факультет фізики, електроніки та комп''ютерних систем',1,1,1,1,1,'м. Дніпропетровськ, вул. Наукова, 9, навчальні корпуси №12, №15','(056) 373-12-63, (056) 776-90-92',1);
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,site,stateid) VALUES (10,'Хімічний факультет',1,1,1,1,1,'вул. Козакова, 22, 16–й корпус ДНУ.','(056) 776-82-48.','cf.dnu.dp.ua',1);
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,email,stateid) VALUES (11,'Факультет біології, екології та медицини',1,1,1,1,1,'вул. Казакова, 24, 17-й корпус ДНУ,вул. Наукова, 10, 11 корпус ДНУ.','(0562)46-92-43','dekanat.bef.dnu@i.ua',1);
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,site,email,stateid) VALUES (12,'Геолого-географічний факультет',1,1,1,1,1,'пр. Карла Маркса, 36, корп. № 2','(056) 744-82-65','www.ggf-dnu.at.ua','zelenskili@mail.ru',1);
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,site,stateid) VALUES (13,'Факультет прикладної математики',1,1,1,1,1,'просп. Карла Маркса, 35, 3 і 4 корпуси ДНУ.','(0562) 745-24-83','fpm.dnu.dp.ua, primat.dp.ua',1);
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,site,stateid) VALUES (14,'Механіко-математичний факультет',1,1,1,1,1,'вул. Козакова 18 , корпус № 14.','(056) 776-82-41','mmf.dsu.dp.ua',1);
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,stateid) VALUES (15,'Фізико-технічний факультет',1,1,1,1,1,'вул. Наукова, 11, 13, корпуси 10, 9','(056) 760-94-62',1);
-INSERT INTO faculty (id,name,universityid,dean,initialdeputy,scientificdeputy,educationaldeputy,address,phone,stateid) VALUES (16,'Центр заочної та вечірньої форм навчання',1,1,1,1,1,'вул. Казакова, 22, корпус 16.','(056) 373-58-32.',1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (2,'Факультет української й іноземної філології та мистецтвознавства',2,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (3,'Факультет суспільних наук і міжнародних відносин',2,1,1); 
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (4,'Факультет систем та засобів масової комунікації',2,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (5,'Факультет міжнародної економіки',2,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (6,'Економічний факультет',2,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (7,'Історичний факультет',2,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (8,'Факультет психології',2,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (9,'Юридичний факультет',2,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (10,'Факультет фізики, електроніки та комп''ютерних систем',2,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (11,'Хімічний факультет',2,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (12,'Факультет біології, екології та медицини',2,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (13,'Геолого-географічний факультет',2,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (14,'Факультет прикладної математики',2,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (15,'Механіко-математичний факультет',2,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (16,'Фізико-технічний факультет',2,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (17,'Центр заочної та вечірньої форм навчання',2,1,1);
 /*chair*/
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (1,'Кафедра української мови.',1,1,'374-98-85.',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (2,'Кафедра англійської філології.',1,1,'374-98-73',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (3,'Кафедра германської філології.',1,1,'374-98-75',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (4,'Кафедра романської філології.',1,1,'374-98-74',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (5,'Кафедра порівняльної філології східних та англомовних країн.',1,1,'374-98-79',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (6,'Кафедра загального та російського мовознавства.',1,1,'374-98-80',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (7,'Кафедра української літератури.',1,1,'374-98-72',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (8,'Кафедра зарубіжної літератури.',1,1,'374-98-78',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (9,'Кафедра іноземних мов для гуманітарних факультетів.',1,1,'374-98-82',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (10,'Кафедра образотворчого мистецтва та дизайну.',1,1,'374-98-08',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (11,'Кафедра перекладу та лінгвістичної підготовки іноземців.',1,1,'374-98-86',1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (18,'Кафедра української мови.',3,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (19,'Кафедра англійської філології.',3,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (20,'Кафедра германської філології.',3,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (21,'Кафедра романської філології.',3,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (22,'Кафедра порівняльної філології східних та англомовних країн.',3,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (23,'Кафедра загального та російського мовознавства.',3,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (24,'Кафедра української літератури.',3,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (25,'Кафедра зарубіжної літератури.',3,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (26,'Кафедра іноземних мов для гуманітарних факультетів.',3,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (27,'Кафедра образотворчого мистецтва та дизайну.',3,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (28,'Кафедра перекладу та лінгвістичної підготовки іноземців.',3,2,1);
 
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (12,'Кафедра філософії.',2,1,'374-98-71',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (13,'Кафедра соціології',2,1,'374-98-65',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (14,'Кафедра політології.',2,1,'374-98-67',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (15,'Кафедра міжнародних відносин. ',2,1,'374-98-69',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (16,'Кафедра соціальної роботи. ',2,1,'374-98-70',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (17,'Кафедра масової та міжнародної комунікації. ',3,1,'776-57-16',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (18,'Кафедра лінгвістичної та країнознавчої підготовки журналістів.',3,1,'760-94-52',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (19,'Кафедра видавничої справи та міжкультурної комунікації.',3,1,'776-57-16',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (20,'Кафедра реклами та зв’язків з громадськістю.',3,1,'776-82-01',1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (29,'Кафедра філософії.',3,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (30,'Кафедра соціології',3,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (31,'Кафедра політології.',3,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (32,'Кафедра міжнародних відносин. ',3,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (33,'Кафедра соціальної роботи. ',3,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (34,'Кафедра масової та міжнародної комунікації. ',3,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (35,'Кафедра лінгвістичної та країнознавчої підготовки журналістів.',3,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (36,'Кафедра видавничої справи та міжкультурної комунікації.',3,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (37,'Кафедра реклами та зв’язків з громадськістю.',3,3,1);
 
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (21,'Кафедра міжнародних фінансів.',4,1,'373-12-21',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (22,'Кафедра економіки та управління національним господарством.',4,1,'373-12-14',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (23,'Кафедра менеджменту та туризму',4,1,'373-12-16',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (24,'Кафедра іноземних мов.',4,1,'373-12-73',1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (38,'Кафедра міжнародних фінансів.',3,4,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (39,'Кафедра економіки та управління національним господарством.',3,4,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (40,'Кафедра менеджменту та туризму',3,4,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (41,'Кафедра іноземних мов.',3,4,1);
 
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (25,'Кафедра фінансів.',5,1,'745-24-50',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (26,'Кафедра банківської справи.',5,1,'46-04-03.',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (27,'Кафедра обліку і аудиту.',5,1,'744-30-56',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (28,'Кафедра економіки і управління підприємством.',5,1,'744-24-97',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (29,'Кафедра економічної інформатики та статистики.',5,1,'745-43-24',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (30,'Кафедра маркетингу та менеджменту.',5,1,'744-86-68',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (31,'Кафедра економічної теорії.',5,1,'744-86-38',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (32,'Кафедра економічної кібернетики. ',5,1,'745-12-85.',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (33,'Кафедра комп''ютерної обробки фінансово-економічної інформації.',5,1,'744-01-83',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (34,'Кафедра іноземних мов для економічних спеціальностей',5,1,'744-32-24',1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (42,'Кафедра фінансів.',3,5,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (43,'Кафедра банківської справи.',3,5,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (44,'Кафедра обліку і аудиту.',3,5,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (45,'Кафедра економіки і управління підприємством.',3,5,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (46,'Кафедра економічної інформатики та статистики.',3,5,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (47,'Кафедра маркетингу та менеджменту.',3,5,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (48,'Кафедра економічної теорії.',3,5,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (49,'Кафедра економічної кібернетики. ',3,5,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (50,'Кафедра комп''ютерної обробки фінансово-економічної інформації.',3,5,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (51,'Кафедра іноземних мов для економічних спеціальностей',3,5,1);
 
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (35,'Кафедра всесвітньої історії.',6,1,'374–98–59',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (36,'Кафедра історії України.',6,1,'374–98–64',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (37,'Кафедра історіографії, джерелознавства та архівознавства.',6,1,'374–98–62',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (38,'Кафедра російської історії',6,1,'374-98-61',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (39,'Кафедра української історії та етнополітики.',6,1,'374–98–63',1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (52,'Кафедра всесвітньої історії.',3,6,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (53,'Кафедра історії України.',3,6,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (54,'Кафедра історіографії, джерелознавства та архівознавства.',3,6,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (55,'Кафедра російської історії',3,6,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (56,'Кафедра української історії та етнополітики.',3,6,1);
 
 
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (40,'Кафедра педагогічної та вікової психології.',7,1,'745-51-34',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (41,'Кафедра загальної та медичної психології.',7,1,'745-40-60',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (42,'Кафедра соціальної психології та психології управління.',7,1,' 745-23-39',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (43,'Кафедра педагогіки та корекційної освіти.',7,1,'745-31-10',1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (57,'Кафедра педагогічної та вікової психології.',3,7,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (58,'Кафедра загальної та медичної психології.',3,7,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (59,'Кафедра соціальної психології та психології управління.',3,7,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (60,'Кафедра педагогіки та корекційної освіти.',3,7,1);
 
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (44,'Кафедра міжнародного права',8,1,'377–81–79',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (45,'Кафедра теорії держави і права, конституційного права та державного управління.',8,1,'(056) 377-81-93',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (46,'Кафедра цивільного, трудового та господарського права',8,1,'(056) 373–12–68',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (47,'Кафедра адміністративного та кримінального права',8,1,'(056) 373–12–19',1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (61,'Кафедра міжнародного права',3,8,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (62,'Кафедра теорії держави і права, конституційного права та державного управління.',3,8,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (63,'Кафедра цивільного, трудового та господарського права',3,8,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (64,'Кафедра адміністративного та кримінального права',3,8,1);
 
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (48,'Кафедра електронних засобів телекомунікацій.',9,1,1);
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (49,'Кафедра прикладної і комп''ютерної радіофізики.',9,1,1);
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (50,'Кафедра електронних обчислювальних машин.',9,1,1);
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (51,'Кафедра автоматизованих систем обробки інформації.',9,1,1);
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (52,'Кафедра теоретичної фізики.',9,1,1);
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (53,'Кафедра квантової макрофізики.',9,1,1);
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (54,'Кафедра радіоелектроніки.',9,1,1);
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (55,'Кафедра експериментальної фізики.',9,1,1);
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (56,'Кафедра металофізики.',9,1,1);
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (57,'Кафедра фізики твердого тіла та оптоелектроніки.',9,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (65,'Кафедра електронних засобів телекомунікацій.',3,9,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (66,'Кафедра прикладної і комп''ютерної радіофізики.',3,9,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (67,'Кафедра електронних обчислювальних машин.',3,9,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (68,'Кафедра автоматизованих систем обробки інформації.',3,9,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (69,'Кафедра теоретичної фізики.',3,9,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (70,'Кафедра квантової макрофізики.',3,9,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (71,'Кафедра радіоелектроніки.',3,9,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (72,'Кафедра експериментальної фізики.',3,9,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (73,'Кафедра металофізики.',3,9,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (74,'Кафедра фізики твердого тіла та оптоелектроніки.',3,9,1);
 
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (58,'Кафедра харчових технологій.',10,1,1);
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (59,'Кафедра фізичної та неорганічної хімії.',10,1,1);
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (60,'Кафедра аналітичної хімії.',10,1,1);
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (61,'Кафедра органічної хімії.',10,1,1);
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (62,'Кафедра хімії та хімічної технології високомолекулярних сполук.',10,1,1);
-INSERT INTO chair (id,name,facultyid,chairhead,stateid) VALUES (63,'Науково-дослідна лабораторія електроосадження металів.',10,1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (75,'Кафедра харчових технологій.',3,10,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (76,'Кафедра фізичної та неорганічної хімії.',3,10,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (77,'Кафедра аналітичної хімії.',3,10,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (78,'Кафедра органічної хімії.',3,10,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (79,'Кафедра хімії та хімічної технології високомолекулярних сполук.',3,10,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (80,'Науково-дослідна лабораторія електроосадження металів.',3,10,1);
 
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (64,'Кафедра фізіології людини і тварин',11,1,'(0562)46-92-17',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (65,'Кафедра фізіології рослин та інтродукції',11,1,'(0562) 46-92-44',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (66,'Кафедра біофізики та біохімії',11,1,'(056)373-12-49',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (67,'Кафедра іхтіології та гідробіології',11,1,'(0562)46-92-81',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (68,'Кафедра мікробіології та вірусології',11,1,'(056)373-12-66',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (69,'Кафедра зоології та екології',11,1,'(056)7768253',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (70,'Кафедра геоботаніки, ґрунтознавства та екології',11,1,'(0562) 46-92-63.',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (71,'Кафедра клінічної лабораторної діагностики',11,1,'47-36-10',1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (81,'Кафедра фізіології людини і тварин',3,11,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (82,'Кафедра фізіології рослин та інтродукції',3,11,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (83,'Кафедра біофізики та біохімії',3,11,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (84,'Кафедра іхтіології та гідробіології',3,11,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (85,'Кафедра мікробіології та вірусології',3,11,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (86,'Кафедра зоології та екології',3,11,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (87,'Кафедра геоботаніки, ґрунтознавства та екології',3,11,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (88,'Кафедра клінічної лабораторної діагностики',3,11,1);
 
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (72,'Кафедра геології та гідрогеології.',12,1,'744–86–03',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (73,'Кафедра гідрометеорологіїї і геоекології.',12,1,'31-86-98',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (74,'Кафедра фізичної та економічної географії.',12,1,'744–86–03',1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (89,'Кафедра геології та гідрогеології.',3,12,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (90,'Кафедра гідрометеорологіїї і геоекології.',3,12,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (91,'Кафедра фізичної та економічної географії.',3,12,1);
 
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (75,'Кафедра обчислювальної математики та математичної кібернетики.',13,1,'745-14-11',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (76,'Кафедра математичного забезпечення електронних обчислювальних машин.',13,1,'744-76-83',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (77,'Кафедра математичного моделювання.',13,1,'744-51-18',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (78,'Кафедра комп''ютерних технологій.',13,1,'744-86-38',1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (92,'Кафедра обчислювальної математики та математичної кібернетики.',3,13,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (93,'Кафедра математичного забезпечення електронних обчислювальних машин.',3,13,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (94,'Кафедра математичного моделювання.',3,13,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (95,'Кафедра комп''ютерних технологій.',3,13,1);
 
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (79,'Кафедра математичного аналізу і теорії функцій.',14,1,'776-82-41 ',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (80,'федра геометрії та алгебри.',14,1,'776-82-41',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (81,'Кафедра диференціальних рівнянь',14,1,'374-98-00, 776-82-41',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (82,'Кафедра статистики й теорії ймовірностей.',14,1,'776-82-41',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (83,'Кафедра теоретичної та прикладної механіки.',14,1,'776-82-41',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (84,'Кафедра аерогідромеханіки та енергомасопереносу.',14,1,'374-98-02; 776-82-41',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (85,'Кафедра обчислювальної механіки та міцності конструкцій.',14,1,'745-00-85',1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (96,'Кафедра математичного аналізу і теорії функцій.',3,14,1,);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (97,'федра геометрії та алгебри.',3,14,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (98,'Кафедра диференціальних рівнянь',3,14,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (99,'Кафедра статистики й теорії ймовірностей.',3,14,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (100,'Кафедра теоретичної та прикладної механіки.',3,14,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (101,'Кафедра аерогідромеханіки та енергомасопереносу.',3,14,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (102,'Кафедра обчислювальної механіки та міцності конструкцій.',3,14,1);
 
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (86,'Кафедра проектування і конструкцій літальних апаратів.',15,1,'776–82–26',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (87,'Кафедра двигунобудування',15,1,'46–30–26',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (88,'Кафедра энергетики',15,1,'374–23–47',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (89,'Кафедра систем автоматизованого управління.',15,1,'776–57–27',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (90,'Кафедра радіоелектронної автоматики.',15,1,'46–57–81',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (91,'Кафедра робототехнічних систем.',15,1,'46–92–10',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (92,'Кафедра технології виробництва літальних апаратів.',15,1,' 776–83–79',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (93,'Кафедра технічної механіки.',15,1,'776–58–49',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (94,'Кафедра безпеки життєдіяльності.',15,1,'776–58–85',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (95,'Кафедра іноземних мов для технічних та природознавчих специальностей.',15,1,'46–92–89',1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (103,'Кафедра проектування і конструкцій літальних апаратів.',3,15,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (104,'Кафедра двигунобудування',3,15,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (105,'Кафедра энергетики',3,15,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (106,'Кафедра систем автоматизованого управління.',3,15,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (107,'Кафедра радіоелектронної автоматики.',3,15,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (108,'Кафедра робототехнічних систем.',3,15,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (109,'Кафедра технології виробництва літальних апаратів.',3,15,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (110,'Кафедра технічної механіки.',3,15,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (111,'Кафедра безпеки життєдіяльності.',3,15,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (112,'Кафедра іноземних мов для технічних та природознавчих специальностей.',3,15,1);
 
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (96,'Відділення вечірньої форми навчання',16,1,'(056) 373-58-32',1);
-INSERT INTO chair (id,name,facultyid,chairhead,phone,stateid) VALUES (97,'Відділення заочної форми навчання',16,1,'(056) 760-86-83',1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (113,'Відділення вечірньої форми навчання',3,16,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (114,'Відділення заочної форми навчання',3,16,1);
 
 
 
 
 /*profession*/
 /*Факультет української й іноземної філології та мистецтвознавства*/ 
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (1,'6.020205','Образотворче мистецтво',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (2,'6.020207','Дизайн',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (3,'6.020303','Філологія (українська мова та література)',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (4,'6.020303','Філологія (російська мова та література)',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (5,'6.020303','Переклад',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (6,'6.020303','Філологія (англійська мова та література)',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (7,'6.020303','Філологія (китайська мова та література)',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (8,'6.020303','Філологія (японська мова та література)',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (9,'6.020303','Філологія (німецька мова та література)',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (10,'6.020303','Філологія (французька мова та література)',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (115,'6.020205 Образотворче мистецтво',4,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (116,'6.020207 Дизайн',4,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (117,'6.020303 Філологія (українська мова та література)',4,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (118,'6.020303 Філологія (російська мова та література)',4,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (119,'6.020303 Переклад',4,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (120,'6.020303 Філологія (англійська мова та література)',4,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (121,'6.020303 Філологія (китайська мова та література)',4,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (122,'6.020303 Філологія (японська мова та література)',4,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (123,'6.020303 Філологія (німецька мова та література)',4,2,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (124,'6.020303 Філологія (французька мова та література)',4,2,1);
 
 
 /*Факультет суспільних наук і міжнародних відносин*/
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (11,'6.030201','Міжнародні відносини',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (12,'6.030104','Політологія',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (13,'6.130102','Соціальна робота',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (14,'6.020301','Філософія',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (15,'6.030101','Соціологія',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (125,'6.030201 Міжнародні відносини',4,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (126,'6.030104 Політологія',4,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (127,'6.130102 Соціальна робота',4,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (128,'6.020301 Філософія',4,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (129,'6.030101 Соціологія',4,3,1);
 /* Факультет систем та засобів масової комунікації*/
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (16,'6.030301','Журналістика',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (17,'6.030302','Реклама і зв''язки з громадськістю',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (18,'6.030303','Видавнича справа та редагування',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (130,'6.030301 Журналістика',5,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (131,'6.030302 Реклама і зв''язки з громадськістю',5,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (132,'6.030303 Видавнича справа та редагування',5,3,1);
 /* Факультет міжнародної економіки*/
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (19,'6.140103','Туризм',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (20,'6.030505','Управління персоналом і економіка праці',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (21,'6.030503','Міжнародна економіка',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (22,'6.030601','Менеджмент',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (23,'6.030203','Міжнародні економічні відносини',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (133,'6.140103 Туризм',6,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (134,'6.030505 Управління персоналом і економіка праці',6,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (135,'6.030503 Міжнародна економіка',6,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (136,'6.030601 Менеджмент',6,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (137,'6.030203 Міжнародні економічні відносини',6,3,1);
 /* Економічний факультет*/
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (24,'6.030502','Економічна кібернетика',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (25,'6.030504','Економіка підприємства',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (26,'6.030506','Прикладна статистика',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (27,'6.030507','Маркетинг',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (28,'6.030508','Фінанси і кредит',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (29,'6.030509','Облік і аудит',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (138,'6.030502 Економічна кібернетика',7,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (139,'6.030504 Економіка підприємства',7,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (140,'6.030506 Прикладна статистика',7,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (141,'6.030507 Маркетинг',7,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (142,'6.030508 Фінанси і кредит',7,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (143,'6.030509 Облік і аудит',7,3,1);
 /* Історичний факультет*/
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (30,'6.020302','Історія',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (144,'6.020302 Історія',8,3,1);
 /* Факультет психології*/
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (31,'6.030102','Психологія',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (32,'6.010105','Корекційна освіта',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (145,'6.030102 Психологія',9,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (146,'6.010105 Корекційна освіта',9,3,1);
 /* Юридичний факультет*/
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (33,'6.030402','Правознавство',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (147,'6.030402 Правознавство',10,3,1);
 /* Факультет фізики, електроніки та комп''ютерних систем*/
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (34,'6.040203','Фізика',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (35,'6.040204','Прикладна фізика',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (36,'6.050801','Мікро- та наноелектроніка',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (37,'6.050101','Комп''ютерні науки',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (38,'6.050903','Телекомунікації',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (39,'6.050102','Комп''ютерна інженерія',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (40,'6.050902','Радіоелектронні апарати',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (148,'6.040203 Фізика',11,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (149,'6.040204 Прикладна фізика',11,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (150,'6.050801 Мікро- та наноелектроніка',11,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (151,'6.050101 Комп''ютерні науки',11,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (152,'6.050903 Телекомунікації',11,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (153,'6.050102 Комп''ютерна інженерія',11,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (154,'6.050902 Радіоелектронні апарати',11,3,1);
 /*Хімічний факультет*/
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (41,'6.040101','Хімія',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (42,'6.051301','Хімічна технологія',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (43,'6.051701','Харчова технологія та інженерія',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (155,'6.040101 Хімія',12,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (156,'6.051301 Хімічна технологія',12,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (157,'6.051701 Харчова технологія та інженерія',12,3,1);
 /* Факультет біології, екології та медицини*/
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (44,'6.040102','Біологія',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (45,'6.040106','Екологія, охорона навколишнього середовища та збалансоване природокористування',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (46,'6.120102','Лабораторна діагностика',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (158,'6.040102 Біологія',13,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (159,'6.040106 Екологія, охорона навколишнього середовища та збалансоване природокористування',13,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (160,'6.120102 Лабораторна діагностика',13,3,1);
 /*Геолого-географічний факультет*/
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (47,'6.040104','Географія',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (48,'6.040105','Гідрометеорологія',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (49,'6.040103','Геологія',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (161,'6.040104 Географія',14,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (162,'6.040105 Гідрометеорологія',14,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (163,'6.040103 Геологія',14,3,1);
 /*Факультет прикладної математики*/
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (50,'6.040301','Прикладна математика',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (51,'6.040302','Інформатика',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (52,'6.040303','Системний аналіз',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (53,'6.050103','Програмна інженерія',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (164,'6.040301 Прикладна математика',15,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (165,'6.040302 Інформатика',15,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (166,'6.040303 Системний аналіз',15,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (167,'6.050103 Програмна інженерія',15,3,1);
 /* Механіко-математичний факультет*/
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (54,'6.040202','Механіка',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (55,'6.040201','Математика',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (56,'6.040205','Статистика',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (57,'6.050601','Теплоенергетика',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (168,'6.040202 Механіка',16,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (169,'6.040201 Математика',16,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (170,'6.040205 Статистика',16,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (171,'6.050601 Теплоенергетика',16,3,1);
 /* Фізико-технічний факультет*/
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (58,'6.050701','Електротехніка та електротехнології',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (59,'6.050403','Інженерне матеріалознавство',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (60,'6.050503','Машинобудування',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (61,'6.050501','Прикладна механіка',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (62,'6.051102','6.051102 Двигуни та енергетичні установки літальних апаратів',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (63,'6.051003','Приладобудування',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (64,'6.050901','6.050901 Радіотехніка',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (65,'6.051103','6.051103 Авіоніка',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (66,'6.051101','Авіа- і ракетобудування',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (67,'6.170102','Системи технічного захисту інформації',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (172,'6.050701 Електротехніка та електротехнології',17,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (173,'6.050403 Інженерне матеріалознавство',17,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (174,'6.050503 Машинобудування',17,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (175,'6.050501 Прикладна механіка',17,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (176,'6.051102 6.051102 Двигуни та енергетичні установки літальних апаратів',17,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (177,'6.051003 Приладобудування',17,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (178,'6.050901 6.050901 Радіотехніка',17,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (179,'6.051103 6.051103 Авіоніка',17,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (180,'6.051101 Авіа- і ракетобудування',17,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (181,'6.170102 Системи технічного захисту інформації',17,3,1);
 
 /*Центр заочної та вечірньої форм навчання*/
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (68,'6.020303','Філологія (українська мова та література)',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (69,'6.020303','Філологія (англійська мова та література)',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (70,'6.030301','Журналістика',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (71,'6.030504','Економіка підприємства',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (72,'6.030508','Фінанси і кредит',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (73,'6.030601','Менеджмент',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (74,'6.020302','Історія',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (75,'6.030104','Політологія',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (76,'6.030101','Соціологія',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (77,'6.030102','Психологія',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (78,'6.030402','Правознавство',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (79,'6.040102','Біологія',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (80,'6.040104','Географія',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (81,'6.040201','Математика',1,1);
-INSERT INTO profession (id,code,name,chairid,stateid) VALUES (82,'6.040302','Інформатика',1,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (182,'6.020303 Філологія (українська мова та література)',18,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (183,'6.020303 Філологія (англійська мова та література)',18,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (184,'6.030301 Журналістика',18,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (185,'6.030504 Економіка підприємства',18,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (186,'6.030508 Фінанси і кредит',18,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (187,'6.030601 Менеджмент',18,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (188,'6.020302 Історія',18,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (189,'6.030104 Політологія',18,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (190,'6.030101 Соціологія',18,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (191,'6.030102 Психологія',18,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (192,'6.030402 Правознавство',18,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (193,'6.040102 Біологія',18,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (194,'6.040104 Географія',18,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (195,'6.040201 Математика',18,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (196,'6.040302 Інформатика',18,3,1);
