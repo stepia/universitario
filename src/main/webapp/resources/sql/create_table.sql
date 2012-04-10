@@ -27,13 +27,10 @@ create table users(
       
 create table employee(
       id int not null primary key,
-      positionid int,
-      groupid int,
       personid int,
       usrname varchar(50) not null,
       stateid int,
       recordbook int,
-      chairid int,
       modified datetime,
       created datetime,
       foreign key(usrname) references users(username));
@@ -65,63 +62,33 @@ create table authorities (
       foreign key(username) references users(username));
       create unique index ix_auth_username on authorities (username,authority);
       
-
-
-create table university(
+create table team(
       id int not null AUTO_INCREMENT primary key,
       name varchar(200) not null ,
-      accreditation varchar(100) not null,
-      modified datetime not null,
-      created datetime not null);
-
-create table faculty(
-      id int not null AUTO_INCREMENT primary key,
-      name varchar(200) not null ,
-      universityid int not null,
-      dean int not null,
-      initialdeputy int not null,
-      scientificdeputy int not null,
-      educationaldeputy int not null,
-      address varchar(250),
-      phone varchar(50),
-      email varchar(50),
-      site varchar(50),
-      stateid int,
-      modified datetime not null,
-      created datetime not null);
-      
-create table chair(
-      id int not null AUTO_INCREMENT primary key,
-      name varchar(200) not null ,
-      facultyid int not null,
-      chairhead int not null,
-      phone varchar(50),
+      teamtypeid int not null,
+      rootid int not null,
+      details varchar(200) not null ,
       stateid int,
       modified datetime not null,
       created datetime not null);
 
-create table profession(
+create table teamtype(
       id int not null AUTO_INCREMENT primary key,
-      code varchar(200) not null ,
       name varchar(200) not null ,
-      chairid int not null,
       stateid int,
       modified datetime not null,
       created datetime not null);
 
-create table groups(
+create table emp2team(
       id int not null AUTO_INCREMENT primary key,
-      code varchar(200) not null ,
-      professionid int not null,
+      empid int not null,
+      teamid int not null,
+      positionid int,
+      occupationid int,
+      stateid int,
       modified datetime not null,
       created datetime not null);
 
-create table subgroup(
-      id int not null AUTO_INCREMENT primary key,
-      groupid int not null,
-      planid int not null,
-      modified datetime not null,
-      created datetime not null);
 
 
 create table positions(

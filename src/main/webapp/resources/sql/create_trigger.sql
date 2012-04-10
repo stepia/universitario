@@ -67,7 +67,7 @@ END;//
 delimiter ;
 
 delimiter //
-CREATE TRIGGER university_OnInsert BEFORE INSERT ON `university`
+CREATE TRIGGER team_OnInsert BEFORE INSERT ON `team`
 FOR EACH ROW
 BEGIN
     SET NEW.created = NOW();
@@ -76,7 +76,7 @@ END;//
 delimiter ;
 
 delimiter //
-CREATE TRIGGER university_OnUpdate BEFORE UPDATE ON `university`
+CREATE TRIGGER team_OnUpdate BEFORE UPDATE ON `team`
 FOR EACH ROW
 BEGIN
     SET NEW.modified = NOW();
@@ -84,24 +84,7 @@ END;//
 delimiter ;
 
 delimiter //
-CREATE TRIGGER faculty_OnInsert BEFORE INSERT ON `faculty`
-FOR EACH ROW
-BEGIN
-    SET NEW.created = NOW();
-    SET NEW.modified = NOW();
-END;//
-delimiter ;
-
-delimiter //
-CREATE TRIGGER faculty_OnUpdate BEFORE UPDATE ON `faculty`
-FOR EACH ROW
-BEGIN
-    SET NEW.modified = NOW();
-END;//
-delimiter ;
-
-delimiter //
-CREATE TRIGGER chair_OnInsert BEFORE INSERT ON `chair`
+CREATE TRIGGER teamtype_OnInsert BEFORE INSERT ON `teamtype`
 FOR EACH ROW
 BEGIN
     SET NEW.created = NOW();
@@ -110,7 +93,7 @@ END;//
 delimiter ;
 
 delimiter //
-CREATE TRIGGER chair_OnUpdate BEFORE UPDATE ON `chair`
+CREATE TRIGGER teamtype_OnUpdate BEFORE UPDATE ON `teamtype`
 FOR EACH ROW
 BEGIN
     SET NEW.modified = NOW();
@@ -118,24 +101,7 @@ END;//
 delimiter ;
 
 delimiter //
-CREATE TRIGGER profession_OnInsert BEFORE INSERT ON `profession`
-FOR EACH ROW
-BEGIN
-    SET NEW.created = NOW();
-    SET NEW.modified = NOW();
-END;//
-delimiter ;
-
-delimiter //
-CREATE TRIGGER profession_OnUpdate BEFORE UPDATE ON `profession`
-FOR EACH ROW
-BEGIN
-    SET NEW.modified = NOW();
-END;//
-delimiter ;
-
-delimiter //
-CREATE TRIGGER groups_OnInsert BEFORE INSERT ON `groups`
+CREATE TRIGGER emp2team_OnInsert BEFORE INSERT ON `emp2team`
 FOR EACH ROW
 BEGIN
     SET NEW.created = NOW();
@@ -144,25 +110,7 @@ END;//
 delimiter ;
 
 delimiter //
-CREATE TRIGGER groups_OnUpdate BEFORE UPDATE ON `groups`
-FOR EACH ROW
-BEGIN
-    SET NEW.modified = NOW();
-END;//
-delimiter ;
-
-
-delimiter //
-CREATE TRIGGER subgroup_OnInsert BEFORE INSERT ON `subgroup`
-FOR EACH ROW
-BEGIN
-    SET NEW.created = NOW();
-    SET NEW.modified = NOW();
-END;//
-delimiter ;
-
-delimiter //
-CREATE TRIGGER subgroup_OnUpdate BEFORE UPDATE ON `subgroup`
+CREATE TRIGGER emp2team_OnUpdate BEFORE UPDATE ON `emp2team`
 FOR EACH ROW
 BEGIN
     SET NEW.modified = NOW();
@@ -372,7 +320,7 @@ CREATE TRIGGER state_OnUpdate BEFORE UPDATE ON `state`
 FOR EACH ROW
 BEGIN
     SET NEW.modified = NOW();
-END;//int not null
+END;//
 delimiter ;  
 
 delimiter //
