@@ -129,4 +129,31 @@ public class PasswordBean {
         }
         return status;
     }
+
+    public String doReset(ActionEvent actionEvent) {
+        String status = "success";
+        if (isNewPasswordValid()) {
+            if (getUsername() == null || getUsername().isEmpty()) {
+                setUsername(String.valueOf(FacesContext.getCurrentInstance().getExternalContext().getRemoteUser()));
+            }
+            User user = userManager.getUser(username);
+            if (user == null) {
+                FacesContext.getCurrentInstance().addMessage(
+                            null,
+                            new FacesMessage(FacesMessage.SEVERITY_ERROR, "Wrong username",
+                                        "Username is wrong"));
+                status = "failure";
+            } else {
+                user.setPassword(newPassword);
+                userManager.editUser(user);
+                FacesContext.getCurrentInstance().addMessage(
+                            null,
+                            new FacesMessage(FacesMessage.SEVERITY_INFO, "Password was changed",
+                                        "Wrong username or password"));
+                setUsername("");
+            }
+        }
+        return status;
+
+    }
 }
