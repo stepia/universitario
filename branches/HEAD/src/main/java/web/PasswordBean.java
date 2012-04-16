@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
@@ -14,7 +14,7 @@ import service.UserManager;
 import entry.User;
 
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class PasswordBean {
     @ManagedProperty(value = "#{userManager}")
     private UserManager userManager;
@@ -93,7 +93,6 @@ public class PasswordBean {
                             null,
                             new FacesMessage(FacesMessage.SEVERITY_INFO, "Password was changed",
                                         "Wrong username or password"));
-                setUsername("");
             }
         }
         return status;

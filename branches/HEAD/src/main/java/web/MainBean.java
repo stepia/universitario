@@ -3,14 +3,14 @@ package web;
 import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.component.tabview.TabView;
 import org.primefaces.event.TabChangeEvent;
 
 @ManagedBean(name = "mainbean")
-@SessionScoped
+@RequestScoped
 public class MainBean {
 
     private int activeTabIndex = 0;

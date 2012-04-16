@@ -1,5 +1,7 @@
 package login;
 
+import java.util.ResourceBundle;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -45,10 +47,13 @@ public class LoginBean {
             isAuthenticated = true;
             return "success";
         }
+        FacesContext context = FacesContext.getCurrentInstance();
+        ResourceBundle bundle = context.getApplication().getResourceBundle(
+                    context, "msg");
+        String errorMessage = bundle.getString("loginError");
         FacesContext.getCurrentInstance().addMessage(
                     "form:username",
-                    new FacesMessage(FacesMessage.SEVERITY_ERROR, "Wrong username or password",
-                                "Wrong username or password"));
+                    new FacesMessage(FacesMessage.SEVERITY_ERROR, errorMessage, errorMessage));
         return null;
 
     }

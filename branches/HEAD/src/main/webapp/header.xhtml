@@ -10,7 +10,24 @@
 
 <h:body>
 	<h:form>
-		<h:commandLink value="logout" action="#{loginbean.doLogout}" />
+		<table style="height: 100%; width: 100%">
+			<tr>
+				<td width="85%">
+					<div id="content">#{title}</div></td>
+				<td width="5%"> <h:selectOneMenu value="#{language.localeCode}"
+						onchange="submit()"
+						valueChangeListener="#{language.countryLocaleCodeChanged}">
+						<f:selectItems value="#{language.countriesInMap}" />
+					</h:selectOneMenu></td>
+				<td width="5%"><h:commandLink value="#{msg.home}"
+						action="/index1.xhtml?faces-redirect=true" /></td>
+
+				<td width="5%"><h:commandLink value="#{msg.logout}"
+						action="#{loginbean.doLogout}" /></td>
+
+
+			</tr>
+		</table>
 	</h:form>
 </h:body>
 </h:html>
