@@ -13,14 +13,16 @@
 <h:body>
 	<p:growl id="growl" showDetail="true" />
 	<div id="header">
-		<h:outputText value="#{loginbean.username}" />
 		<ui:insert name="header">
-			<ui:include src="/header.xhtml" />
+			<ui:include src="/header.xhtml">
+			    <ui:param name="title" value="#{loginbean.username}"/>
+			</ui:include>
 		</ui:insert>
 	</div>
 
 	<div id="content">
 		<h:form id="formid">
+		
 
 			<p:tabView id="tabView" activeIndex="#{mainbean.activeTabIndex}">
 				<p:ajax event="tabChange" listener="#{mainbean.onTabChange}" />
@@ -44,10 +46,7 @@
 				</p:tab>
 				<p:tab id="chairTab" title="Chair">
 					<h:panelGrid columns="1" cellspacing="20">
-						<h:commandLink value="My data"
-							action="#{mainbean.doAction('edituser')}" />
-						<h:commandLink value="Change password"
-							action="#{mainbean.doAction('changepassword')}" />
+						<ui:include src="/chair.xhtml" />
 					</h:panelGrid>
 				</p:tab>
 				<p:tab id="facultyTab" title="Faculty">
@@ -201,6 +200,7 @@
 				<p:tab id="adminTab" title="Admin">
 					<f:ajax>
 						<h:panelGrid columns="5" cellpadding="70" cellspacing="70">
+							
 							<h:commandLink value="Password Changes"
 								action="#{mainbean.doAction('passwordchanges')}" />
 							<h:commandLink value="University"

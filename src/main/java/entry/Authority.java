@@ -1,50 +1,50 @@
 package entry;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class Authority {
 
-	private long id;
+    private long id;
 
-	private String username;
+    private String username;
 
-	private String authority;
+    private String authority;
 
-	private User user;
+    private User user;
 
-	public User getUser() {
-		return user;
-	}
+    public User getUser() {
+        return user;
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+    public void setUser(User user) {
+        this.user = user;
+    }
 
-	public long getId() {
-		return id;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getUsername() {
-		return username;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public String getAuthority() {
-		return authority;
-	}
+    public String getAuthority() {
+        return authority;
+    }
 
-	public void setAuthority(String authority) {
-		this.authority = authority;
-	}
+    public void setAuthority(String authority) {
+        this.authority = authority;
+    }
 
 }

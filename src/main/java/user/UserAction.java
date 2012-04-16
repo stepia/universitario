@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 
 import service.IUserManager;
 import entry.Employee;
@@ -13,7 +13,7 @@ import entry.Person;
 import entry.User;
 
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class UserAction {
 
     @ManagedProperty(value = "#{user}")
