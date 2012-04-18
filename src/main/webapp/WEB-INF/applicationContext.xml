@@ -41,6 +41,7 @@
                 <value>main/user.hbm.xml</value>
                 <value>main/person.hbm.xml</value>
                 <value>main/employee.hbm.xml</value>
+                <value>main/team.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -65,6 +66,18 @@
     <bean id="userManager" class="service.UserManager">
         <property name="userDao">
             <ref local="userDao"/>
+        </property>
+    </bean>
+    
+    <bean id="teamDao" class="dao.TeamDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="teamManager" class="service.TeamManager">
+        <property name="teamDao">
+            <ref local="teamDao"/>
         </property>
     </bean>
 
