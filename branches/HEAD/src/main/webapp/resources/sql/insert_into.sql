@@ -236,6 +236,41 @@ INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (180
 INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (181,'Коломоєць','Ю','І','кандидат історичних наук, доцент'); 
 INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (182,'Совіт','Ю','П','кандидат фізико-математичних наук, доцент'); 
 
+
+/*КП-11-1, 13 студентів*/
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (183,'Васильєв','Артем','Сергійович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (184,'Глоба','Юрій','Сергійович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (185,'Голубенко','Вячеслав','Євгенійович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (186,'Двойцов','Дмитро','Володимирович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (187,'Коломоєць','Андрій','Васильович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (188,'Мороз','Станіслава','Вадимівна','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (189,'Павліков','Юрій','Михайлович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (190,'Петрух','Михайло','Вікторович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (191,'Сахарова','Вікторія','Євгеніївна','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (192,'Сивоконь','Олексій','Леонідович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (193,'Сопін','Дмитро','Сергійович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (194,'Усов','Дмитро','Олександрович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (195,'Фірсова','Софія','Олегівна','студент');
+/*КМ-11-1, 18 студентів*/
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (196,'Бауман','Сергій','Вадимович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (197,'Гаращенко','Нікіта','Вячеславович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (198,'Гречуха','Володимир','Євгенович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (199,'Казакевич','Денис','Вікторович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (200,'Лапіцька','Анна','Олегівна','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (201,'Литвиненко','Віталіна','Сергіївна','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (202,'Панчішний','Артем','Сергійович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (203,'Попов','Денис','Ігорович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (204,'Савін','Костянтин','Олексійович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (205,'Салієв','Єгор','Вікторович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (206,'Свиридонов','Богдан','Євгенійович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (207,'Сімченко','Ілля','Олександрович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (208,'Скурідін','Владислав','Анатолійович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (209,'Талатік','Олег','Іванович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (210,'Фесенко','Станіслав','Євгенійович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (211,'Чорнойван','Сергій','Анатолійович','студент');
+INSERT INTO person (id,firstname,lastname,middlename,academicdegree) VALUES (212,'Шатайло','Артур','Дмитрович','студент');
+
+
 INSERT INTO employee (id,personid) VALUES ('2','2');
 INSERT INTO employee (id,personid) VALUES ('3','3');
 INSERT INTO employee (id,personid) VALUES ('4','4');
@@ -417,6 +452,36 @@ INSERT INTO employee (id,personid) VALUES ('179','179');
 INSERT INTO employee (id,personid) VALUES ('180','180');
 INSERT INTO employee (id,personid) VALUES ('181','181');
 INSERT INTO employee (id,personid) VALUES ('182','182');
+INSERT INTO employee (id,personid) VALUES ('183','183');
+INSERT INTO employee (id,personid) VALUES ('184','184');
+INSERT INTO employee (id,personid) VALUES ('185','185');
+INSERT INTO employee (id,personid) VALUES ('186','186');
+INSERT INTO employee (id,personid) VALUES ('187','187');
+INSERT INTO employee (id,personid) VALUES ('188','188');
+INSERT INTO employee (id,personid) VALUES ('189','189');
+INSERT INTO employee (id,personid) VALUES ('190','190');
+INSERT INTO employee (id,personid) VALUES ('191','191');
+INSERT INTO employee (id,personid) VALUES ('192','192');
+INSERT INTO employee (id,personid) VALUES ('193','193');
+INSERT INTO employee (id,personid) VALUES ('194','194');
+INSERT INTO employee (id,personid) VALUES ('195','195');
+INSERT INTO employee (id,personid) VALUES ('196','196');
+INSERT INTO employee (id,personid) VALUES ('197','197');
+INSERT INTO employee (id,personid) VALUES ('198','198');
+INSERT INTO employee (id,personid) VALUES ('199','199');
+INSERT INTO employee (id,personid) VALUES ('200','200');
+INSERT INTO employee (id,personid) VALUES ('201','201');
+INSERT INTO employee (id,personid) VALUES ('202','202');
+INSERT INTO employee (id,personid) VALUES ('203','203');
+INSERT INTO employee (id,personid) VALUES ('204','204');
+INSERT INTO employee (id,personid) VALUES ('205','205');
+INSERT INTO employee (id,personid) VALUES ('206','206');
+INSERT INTO employee (id,personid) VALUES ('207','207');
+INSERT INTO employee (id,personid) VALUES ('208','208');
+INSERT INTO employee (id,personid) VALUES ('209','209');
+INSERT INTO employee (id,personid) VALUES ('210','210');
+INSERT INTO employee (id,personid) VALUES ('211','211');
+INSERT INTO employee (id,personid) VALUES ('212','212');
 
 INSERT INTO users (id,perid,empid,username,password,enabled) VALUES ('2','2','2','user2',120,1);
 INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('3','3','3','user3',120,1);
@@ -599,7 +664,36 @@ INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('179','179
 INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('30','1818','180','user180',1218,1);
 INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('181','181','181','user181',1218,1);
 INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('182','182','182','user182',1218,1);
-
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('183','183','183','user183',1219,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('184','184','184','user184',1219,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('185','185','185','user185',1219,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('186','186','186','user186',1219,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('187','187','187','user187',1219,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('188','188','188','user188',1219,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('189','189','189','user189',1219,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('190','190','190','user190',1219,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('191','191','191','user191',1219,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('192','192','192','user192',1219,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('193','193','193','user193',1219,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('194','194','194','user194',1219,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('195','195','195','user195',1219,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('196','196','196','user196',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('197','197','197','user197',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('198','198','198','user198',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('199','199','199','user199',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('200','200','200','user200',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('201','201','201','user201',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('202','202','202','user202',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('203','203','203','user203',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('204','204','204','user204',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('205','205','205','user205',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('206','206','206','user206',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('207','207','207','user207',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('208','208','208','user208',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('209','209','209','user209',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('210','210','210','user210',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('211','211','211','user211',1220,1);
+INSERT INTO users (id,perid,empid,username,password,enabled)  VALUES ('212','212','212','user212',1220,1);
  
  
 
@@ -853,3 +947,7 @@ INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (193,'6.040102 Бі�
 INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (194,'6.040104 Географія',18,3,1);
 INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (195,'6.040201 Математика',18,3,1);
 INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (196,'6.040302 Інформатика',18,3,1);
+
+/*Групи*/
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (197,'КП-11-1',5,149,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (198,'КМ-11-1',5,150,1);
