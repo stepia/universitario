@@ -726,7 +726,7 @@ INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (93,'Кафедра 
 INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (94,'Кафедра математичного моделювання.',3,13,1);
 INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (95,'Кафедра комп''ютерних технологій.',3,13,1);
 
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (96,'Кафедра математичного аналізу і теорії функцій.',3,14,1,);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (96,'Кафедра математичного аналізу і теорії функцій.',3,14,1);
 INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (97,'федра геометрії та алгебри.',3,14,1);
 INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (98,'Кафедра диференціальних рівнянь',3,14,1);
 INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (99,'Кафедра статистики й теорії ймовірностей.',3,14,1);
