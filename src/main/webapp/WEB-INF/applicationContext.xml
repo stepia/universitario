@@ -80,6 +80,18 @@
             <ref local="teamDao"/>
         </property>
     </bean>
+    
+     <bean id="personDao" class="dao.PersonDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="personManager" class="service.PersonManager">
+        <property name="personDao">
+            <ref local="personDao"/>
+        </property>
+    </bean>
 
     <bean id="authorityDao" class="dao.AuthorityDaoHibernate">
         <property name="sessionFactory">
