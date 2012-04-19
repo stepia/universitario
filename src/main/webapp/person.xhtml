@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:utils="http://java.sun.com/jsf/composite/utils"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+</h:head>
+
+<h:body>
+	<div id="header">
+		<ui:insert name="header">
+			<ui:include src="/header.xhtml">
+			    <ui:param name="title" value="Person"/>
+			</ui:include>
+		</ui:insert>
+	</div>
+
+	<h:form id="personform">
+		<p:dataTable var="rec"
+			rowKey="#{rec.id}" paginator="true" rows="5" value="#{personViewBean.persons}"
+			selection="#{personViewBean.selectedPerson}" selectionMode="single"
+			id="personTable" rowsPerPageTemplate="5,10,15,25,50,100">
+
+			<f:facet name="header">  
+            List of Persons (#{personViewBean.length}) 
+        </f:facet>
+        <p:column headerText="ID" sortBy="#{rec.id}"
+				filterBy="#{rec.id}" id="id">  
+            #{rec.id}  
+        </p:column>
+			<p:column headerText="FirstName" sortBy="#{rec.firstName}"
+				filterBy="#{rec.firstName}" id="firstName">  
+            #{rec.firstName}  
+        </p:column>
+        
+        <p:column headerText="LastName" sortBy="#{rec.lastName}"
+				filterBy="#{rec.lastName}" id="lastName">  
+            #{rec.lastName}  
+        </p:column>
+                <p:column headerText="MiddleName" sortBy="#{rec.middleName}"
+				filterBy="#{rec.middleName}" id="middleName">  
+            #{rec.middleName}  
+        </p:column>
+	        
+			<f:facet name="footer">
+				<p:commandButton id="viewButton" value="View" icon="ui-icon-search"
+					oncomplete="personDialog.show()" />
+				<p:commandButton id="createButton" value="Create"
+					icon="ui-icon-search" oncomplete="personDialog.show()" />
+			</f:facet>
+		</p:dataTable>
+
+		<p:dialog header="Person Detail" widgetVar="personDialog"
+			resizable="false" showEffect="explode"
+			hideEffect="explode" modal="true">
+			<h:panelGrid columns="1" cellspacing="20">
+				<ui:include src="/personDetail.xhtml" />
+			</h:panelGrid>
+		</p:dialog>
+	</h:form>
+	<div id="footer">
+		<ui:insert name="footer">
+			<ui:include src="/footer.xhtml" />
+		</ui:insert>
+	</div>
+</h:body>
+</html>
