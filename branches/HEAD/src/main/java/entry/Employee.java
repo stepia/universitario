@@ -9,6 +9,7 @@ public class Employee {
 
     private int stateid;
     private Long id;
+    private Long personid;
     private String usrname;
 
     // private Long userId;
@@ -43,6 +44,13 @@ public class Employee {
 
     public void setStateid(int stateid) {
         this.stateid = stateid;
+    }
+    public Long getpersonid() {
+        return personid;
+    }
+
+    public void setpersonid(Long personid) {
+        this.personid = personid;
     }
 
 }
