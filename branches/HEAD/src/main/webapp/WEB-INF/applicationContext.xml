@@ -39,8 +39,8 @@
             <list>
                 <value>main/authority.hbm.xml</value>
                 <value>main/user.hbm.xml</value>
-                <value>main/person.hbm.xml</value>
                 <value>main/employee.hbm.xml</value>
+                <value>main/person.hbm.xml</value>
                 <value>main/team.hbm.xml</value>
             </list>
         </property>
@@ -92,7 +92,19 @@
             <ref local="personDao"/>
         </property>
     </bean>
+    
+    <bean id="employeeDao" class="dao.EmployeeDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
 
+    <bean id="employeeManager" class="service.EmployeeManager">
+        <property name="employeeDao">
+            <ref local="employeeDao"/>
+        </property>
+    </bean>
+    
     <bean id="authorityDao" class="dao.AuthorityDaoHibernate">
         <property name="sessionFactory">
             <ref local="sessionFactory"/>
