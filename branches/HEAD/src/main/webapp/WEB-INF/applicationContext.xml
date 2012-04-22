@@ -42,6 +42,7 @@
                 <value>main/employee.hbm.xml</value>
                 <value>main/person.hbm.xml</value>
                 <value>main/team.hbm.xml</value>
+                <value>main/emp2team.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -114,6 +115,18 @@
     <bean id="authorityManager" class="service.AuthorityManager">
         <property name="authorityDao">
             <ref local="authorityDao"/>
+        </property>
+    </bean>
+    
+        <bean id="emp2TeamDao" class="dao.Emp2TeamDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="emp2TeamManager" class="service.Emp2TeamManager">
+        <property name="emp2TeamDao">
+            <ref local="emp2TeamDao"/>
         </property>
     </bean>
     

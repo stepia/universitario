@@ -22,12 +22,12 @@
 
 	<h:form id="emp2teamform">
 		<p:dataTable var="rec"
-			rowKey="#{rec.id}" paginator="true" rows="5" value="#{emp2teamViewBean.emp2teams}"
-			selection="#{emp2teamViewBean.selectedEmp2team}" selectionMode="single"
-			id="emp2teamTable" rowsPerPageTemplate="5,10,15,25,50,100">
+			rowKey="#{rec.id}" paginator="true" rows="5" value="#{emp2TeamViewBean.emp2Teams}"
+			selection="#{emp2TeamViewBean.selectedEmp2Team}" selectionMode="single"
+			id="emp2TeamTable" rowsPerPageTemplate="5,10,15,25,50,100">
 
 			<f:facet name="header">  
-            List of Emp2teams (#{emp2teamViewBean.length}) 
+            List of Emp2teams (#{emp2TeamViewBean.length}) 
         </f:facet>
         <p:column headerText="ID" sortBy="#{rec.id}"
 				filterBy="#{rec.id}" id="id">  
@@ -65,13 +65,13 @@
 	        
 			<f:facet name="footer">
 				<p:commandButton id="viewButton" value="View" icon="ui-icon-search"
-					oncomplete="emp2teamDialog.show()" />
+					oncomplete="emp2TeamDialog.show()" />
 				<p:commandButton id="createButton" value="Create"
-					icon="ui-icon-search" oncomplete="emp2teamDialog.show()" />
+					icon="ui-icon-search" oncomplete="emp2TeamDialog.show()" />
 			</f:facet>
 		</p:dataTable>
 
-		<p:dialog header="Emp2team Detail" widgetVar="emp2teamDialog"
+		<p:dialog header="Emp2Team Detail" widgetVar="emp2TeamDialog"
 			resizable="false" showEffect="explode"
 			hideEffect="explode" modal="true">
 			<h:panelGrid columns="1" cellspacing="20">
