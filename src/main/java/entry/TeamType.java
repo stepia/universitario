@@ -7,7 +7,7 @@ import javax.faces.bean.RequestScoped;
 
 @ManagedBean
 @RequestScoped
-public class Teamtype {
+public class TeamType {
 
     private Long id;
     private String name;
