@@ -43,6 +43,7 @@
                 <value>main/person.hbm.xml</value>
                 <value>main/team.hbm.xml</value>
                 <value>main/emp2team.hbm.xml</value>
+                <value>main/teamtype.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -127,6 +128,18 @@
     <bean id="emp2TeamManager" class="service.Emp2TeamManager">
         <property name="emp2TeamDao">
             <ref local="emp2TeamDao"/>
+        </property>
+    </bean>
+    
+    <bean id="teamTypeDao" class="dao.TeamTypeDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="teamTypeManager" class="service.TeamTypeManager">
+        <property name="teamTypeDao">
+            <ref local="teamTypeDao"/>
         </property>
     </bean>
     

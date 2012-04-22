@@ -15,19 +15,19 @@
 	<div id="header">
 		<ui:insert name="header">
 			<ui:include src="/header.xhtml">
-			    <ui:param name="title" value="Teamtype"/>
+			    <ui:param name="title" value="TeamType"/>
 			</ui:include>
 		</ui:insert>
 	</div>
 
 	<h:form id="teamtypeform">
 		<p:dataTable var="rec"
-			rowKey="#{rec.id}" paginator="true" rows="5" value="#{teamtypeViewBean.teamtypes}"
-			selection="#{teamtypeViewBean.selectedTeamtype}" selectionMode="single"
-			id="teamtypeTable" rowsPerPageTemplate="5,10,15,25,50,100">
+			rowKey="#{rec.id}" paginator="true" rows="5" value="#{teamTypeViewBean.teamTypes}"
+			selection="#{teamTypeViewBean.selectedTeamType}" selectionMode="single"
+			id="teamTypeTable" rowsPerPageTemplate="5,10,15,25,50,100">
 
 			<f:facet name="header">  
-            List of Teamtypes (#{teamtypeViewBean.length}) 
+            List of TeamTypes (#{teamTypeViewBean.length}) 
         </f:facet>
         <p:column headerText="ID" sortBy="#{rec.id}"
 				filterBy="#{rec.id}" id="id">  
@@ -53,13 +53,13 @@
 	        
 			<f:facet name="footer">
 				<p:commandButton id="viewButton" value="View" icon="ui-icon-search"
-					oncomplete="teamtypeDialog.show()" />
+					oncomplete="teamTypeDialog.show()" />
 				<p:commandButton id="createButton" value="Create"
-					icon="ui-icon-search" oncomplete="teamtypeDialog.show()" />
+					icon="ui-icon-search" oncomplete="teamTypeDialog.show()" />
 			</f:facet>
 		</p:dataTable>
 
-		<p:dialog header="Teamtype Detail" widgetVar="teamtypeDialog"
+		<p:dialog header="TeamType Detail" widgetVar="teamTypeDialog"
 			resizable="false" showEffect="explode"
 			hideEffect="explode" modal="true">
 			<h:panelGrid columns="1" cellspacing="20">
