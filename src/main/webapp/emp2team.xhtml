@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:utils="http://java.sun.com/jsf/composite/utils"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+</h:head>
+
+<h:body>
+	<div id="header">
+		<ui:insert name="header">
+			<ui:include src="/header.xhtml">
+			    <ui:param name="title" value="Emp2team"/>
+			</ui:include>
+		</ui:insert>
+	</div>
+
+	<h:form id="emp2teamform">
+		<p:dataTable var="rec"
+			rowKey="#{rec.id}" paginator="true" rows="5" value="#{emp2teamViewBean.emp2teams}"
+			selection="#{emp2teamViewBean.selectedEmp2team}" selectionMode="single"
+			id="emp2teamTable" rowsPerPageTemplate="5,10,15,25,50,100">
+
+			<f:facet name="header">  
+            List of Emp2teams (#{emp2teamViewBean.length}) 
+        </f:facet>
+        <p:column headerText="ID" sortBy="#{rec.id}"
+				filterBy="#{rec.id}" id="id">  
+            #{rec.id}  
+        </p:column>
+			<p:column headerText="empid" sortBy="#{rec.empid}"
+				filterBy="#{rec.empid}" id="empid">  
+            #{rec.empid}  
+        </p:column>
+        
+        <p:column headerText="teamid" sortBy="#{rec.teamid}"
+				filterBy="#{rec.teamid}" id="teamid">  
+            #{rec.teamid}  
+        </p:column>
+                <p:column headerText="positionid" sortBy="#{rec.positionid}"
+				filterBy="#{rec.positionid}" id="positionid">  
+            #{rec.positionid}  
+        </p:column>
+        <p:column headerText="occupationid" sortBy="#{rec.occupationid}"
+				filterBy="#{rec.occupationid}" id="occupationid">  
+            #{rec.occupationid}  
+        </p:column>
+        <p:column headerText="stateid" sortBy="#{rec.stateid}"
+				filterBy="#{rec.stateid}" id="stateid">  
+            #{rec.stateid}  
+        </p:column>
+        <p:column headerText="modified" sortBy="#{rec.modified}"
+				filterBy="#{rec.modified}" id="modified">  
+            #{rec.modified}  
+        </p:column>
+        <p:column headerText="created" sortBy="#{rec.created}"
+				filterBy="#{rec.created}" id="created">  
+            #{rec.created}  
+        </p:column>
+	        
+			<f:facet name="footer">
+				<p:commandButton id="viewButton" value="View" icon="ui-icon-search"
+					oncomplete="emp2teamDialog.show()" />
+				<p:commandButton id="createButton" value="Create"
+					icon="ui-icon-search" oncomplete="emp2teamDialog.show()" />
+			</f:facet>
+		</p:dataTable>
+
+		<p:dialog header="Emp2team Detail" widgetVar="emp2teamDialog"
+			resizable="false" showEffect="explode"
+			hideEffect="explode" modal="true">
+			<h:panelGrid columns="1" cellspacing="20">
+				<ui:include src="/emp2teamDetail.xhtml" />
+			</h:panelGrid>
+		</p:dialog>
+	</h:form>
+	<div id="footer">
+		<ui:insert name="footer">
+			<ui:include src="/footer.xhtml" />
+		</ui:insert>
+	</div>
+</h:body>
+</html>
