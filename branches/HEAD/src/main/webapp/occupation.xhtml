@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:utils="http://java.sun.com/jsf/composite/utils"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+</h:head>
+
+<h:body>
+	<div id="header">
+		<ui:insert name="header">
+			<ui:include src="/header.xhtml">
+			    <ui:param name="title" value="Occupation"/>
+			</ui:include>
+		</ui:insert>
+	</div>
+
+	<h:form id="occupationform">
+		<p:dataTable var="rec"
+			rowKey="#{rec.id}" paginator="true" rows="5" value="#{occupationViewBean.occupations}"
+			selection="#{occupationViewBean.selectedOccupation}" selectionMode="single"
+			id="occupationTable" rowsPerPageTemplate="5,10,15,25,50,100">
+
+			<f:facet name="header">  
+            List of Occupations (#{occupationViewBean.length}) 
+        </f:facet>
+        <p:column headerText="ID" sortBy="#{rec.id}"
+				filterBy="#{rec.id}" id="id">  
+            #{rec.id}  
+        </p:column>
+			<p:column headerText="Name" sortBy="#{rec.name}"
+				filterBy="#{rec.name}" id="name">  
+            #{rec.name}  
+        </p:column>
+        
+        <p:column headerText="Modified" sortBy="#{rec.modified}"
+				filterBy="#{rec.modified}" id="modified">  
+            #{rec.modified}  
+        </p:column>
+        <p:column headerText="Created" sortBy="#{rec.created}"
+				filterBy="#{rec.created}" id="created">  
+            #{rec.created}  
+        </p:column>
+	        
+			<f:facet name="footer">
+				<p:commandButton id="viewButton" value="View" icon="ui-icon-search"
+					oncomplete="occupationDialog.show()" />
+				<p:commandButton id="createButton" value="Create"
+					icon="ui-icon-search" oncomplete="occupationDialog.show()" />
+			</f:facet>
+		</p:dataTable>
+
+		<p:dialog header="Occupation Detail" widgetVar="occupationDialog"
+			resizable="false" showEffect="explode"
+			hideEffect="explode" modal="true">
+			<h:panelGrid columns="1" cellspacing="20">
+				<ui:include src="/occupationDetail.xhtml" />
+			</h:panelGrid>
+		</p:dialog>
+	</h:form>
+	<div id="footer">
+		<ui:insert name="footer">
+			<ui:include src="/footer.xhtml" />
+		</ui:insert>
+	</div>
+</h:body>
+</html>
