@@ -44,6 +44,11 @@
                 <value>main/team.hbm.xml</value>
                 <value>main/emp2team.hbm.xml</value>
                 <value>main/teamtype.hbm.xml</value>
+                <value>main/state.hbm.xml</value>
+                <value>main/occupation.hbm.xml</value>
+                <value>main/role.hbm.xml</value>
+                <value>main/positions.hbm.xml</value>
+                <value>main/lessontype.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -140,6 +145,66 @@
     <bean id="teamTypeManager" class="service.TeamTypeManager">
         <property name="teamTypeDao">
             <ref local="teamTypeDao"/>
+        </property>
+    </bean>
+    
+    <bean id="stateDao" class="dao.StateDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="stateManager" class="service.StateManager">
+        <property name="stateDao">
+            <ref local="stateDao"/>
+        </property>
+    </bean>
+    
+    <bean id="occupationDao" class="dao.OccupationDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="occupationManager" class="service.OccupationManager">
+        <property name="occupationDao">
+            <ref local="occupationDao"/>
+        </property>
+    </bean>
+    
+    <bean id="roleDao" class="dao.RoleDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="roleManager" class="service.RoleManager">
+        <property name="roleDao">
+            <ref local="roleDao"/>
+        </property>
+    </bean>
+    
+    <bean id="positionDao" class="dao.PositionDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="positionManager" class="service.PositionManager">
+        <property name="positionDao">
+            <ref local="positionDao"/>
+        </property>
+    </bean>
+    
+    <bean id="lessontypeDao" class="dao.LessontypeDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="lessontypeManager" class="service.LessontypeManager">
+        <property name="lessontypeDao">
+            <ref local="lessontypeDao"/>
         </property>
     </bean>
     
