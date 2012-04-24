@@ -49,6 +49,10 @@
                 <value>main/role.hbm.xml</value>
                 <value>main/positions.hbm.xml</value>
                 <value>main/lessontype.hbm.xml</value>
+                <value>main/marktype.hbm.xml</value>
+                <value>main/period.hbm.xml</value>
+                <value>main/plan.hbm.xml</value>
+                <value>main/discipline.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -205,6 +209,54 @@
     <bean id="lessontypeManager" class="service.LessontypeManager">
         <property name="lessontypeDao">
             <ref local="lessontypeDao"/>
+        </property>
+    </bean>
+    
+    <bean id="markTypeDao" class="dao.MarkTypeDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="markTypeManager" class="service.MarkTypeManager">
+        <property name="markTypeDao">
+            <ref local="markTypeDao"/>
+        </property>
+    </bean>
+    
+    <bean id="periodDao" class="dao.PeriodDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="periodManager" class="service.PeriodManager">
+        <property name="periodDao">
+            <ref local="periodDao"/>
+        </property>
+    </bean>
+    
+    <bean id="planDao" class="dao.PlanDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="planManager" class="service.PlanManager">
+        <property name="planDao">
+            <ref local="planDao"/>
+        </property>
+    </bean>
+    
+    <bean id="disciplineDao" class="dao.DisciplineDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="disciplineManager" class="service.DisciplineManager">
+        <property name="disciplineDao">
+            <ref local="disciplineDao"/>
         </property>
     </bean>
     
