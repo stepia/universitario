@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:utils="http://java.sun.com/jsf/composite/utils"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+</h:head>
+
+<h:body>
+	<div id="header">
+		<ui:insert name="header">
+			<ui:include src="/header.xhtml">
+			    <ui:param name="title" value="Plan"/>
+			</ui:include>
+		</ui:insert>
+	</div>
+
+	<h:form id="planform">
+		<p:dataTable var="rec"
+			rowKey="#{rec.id}" paginator="true" rows="5" value="#{planViewBean.plans}"
+			selection="#{planViewBean.selectedPlan}" selectionMode="single"
+			id="planTable" rowsPerPageTemplate="5,10,15,25,50,100">
+
+			<f:facet name="header">  
+            List of Plans (#{planViewBean.length}) 
+        </f:facet>
+        <p:column headerText="ID" sortBy="#{rec.id}"
+				filterBy="#{rec.id}" id="id">  
+            #{rec.id}  
+        </p:column>
+			<p:column headerText="PlanId" sortBy="#{rec.planid}"
+				filterBy="#{rec.planid}" id="planid">  
+            #{rec.planid}  
+        </p:column>
+        
+        <p:column headerText="DisciplineId" sortBy="#{rec.disciplineid}"
+				filterBy="#{rec.disciplineid}" id="disciplineid">  
+            #{rec.disciplineid}  
+        </p:column>
+                <p:column headerText="LessonTypeId" sortBy="#{rec.lessontypeid}"
+				filterBy="#{rec.lessontypeid}" id="lessontypeid">  
+            #{rec.lessontypeid}  
+        </p:column>
+        
+        <p:column headerText="EmpId" sortBy="#{rec.empid}"
+				filterBy="#{rec.empid}" id="empid">  
+            #{rec.empid}  
+        </p:column>
+        
+        <p:column headerText="PeriodId" sortBy="#{rec.periodid}"
+				filterBy="#{rec.periodid}" id="periodid">  
+            #{rec.periodid}  
+        </p:column>
+        
+        <p:column headerText="Hours" sortBy="#{rec.hours}"
+				filterBy="#{rec.hours}" id="hours">  
+            #{rec.hours}  
+        </p:column>
+        
+        <p:column headerText="MarkTypeId" sortBy="#{rec.marktypeid}"
+				filterBy="#{rec.marktypeid}" id="marktypeid">  
+            #{rec.marktypeid}  
+        </p:column>
+        
+        <p:column headerText="Modified" sortBy="#{rec.modified}"
+				filterBy="#{rec.modified}" id="modified">  
+            #{rec.modified}  
+        </p:column>
+        <p:column headerText="Created" sortBy="#{rec.created}"
+				filterBy="#{rec.created}" id="created">  
+            #{rec.created}  
+        </p:column>
+	        
+			<f:facet name="footer">
+				<p:commandButton id="viewButton" value="View" icon="ui-icon-search"
+					oncomplete="planDialog.show()" />
+				<p:commandButton id="createButton" value="Create"
+					icon="ui-icon-search" oncomplete="planDialog.show()" />
+			</f:facet>
+		</p:dataTable>
+
+		<p:dialog header="Plan Detail" widgetVar="planDialog"
+			resizable="false" showEffect="explode"
+			hideEffect="explode" modal="true">
+			<h:panelGrid columns="1" cellspacing="20">
+				<ui:include src="/planDetail.xhtml" />
+			</h:panelGrid>
+		</p:dialog>
+	</h:form>
+	<div id="footer">
+		<ui:insert name="footer">
+			<ui:include src="/footer.xhtml" />
+		</ui:insert>
+	</div>
+</h:body>
+</html>
