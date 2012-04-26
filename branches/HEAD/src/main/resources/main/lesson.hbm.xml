@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="entry.Lesson" table="lesson">
+        <id name="id" column="id">
+			<generator class="increment" />
+		</id>
+        <property name="planid" column="planid"/>
+        <property name="facultyid" column="facultyid"/>
+        <property name="room" column="room"/>
+        <property name="lessontimeid" column="lessontimeid"/>
+        <property name="dayid" column="dayid"/>
+        <property name="weekid" column="weekid"/>
+        <property name="modified" column="modified"/>
+        <property name="created" column="created"/>
+    </class>
+</hibernate-mapping>
