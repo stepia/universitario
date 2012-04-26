@@ -53,6 +53,12 @@
                 <value>main/period.hbm.xml</value>
                 <value>main/plan.hbm.xml</value>
                 <value>main/discipline.hbm.xml</value>
+                <value>main/mark.hbm.xml</value>
+                <value>main/reporttype.hbm.xml</value>
+                <value>main/time.hbm.xml</value>
+                <value>main/week.hbm.xml</value>
+                <value>main/lesson.hbm.xml</value>
+                <value>main/report.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -257,6 +263,78 @@
     <bean id="disciplineManager" class="service.DisciplineManager">
         <property name="disciplineDao">
             <ref local="disciplineDao"/>
+        </property>
+    </bean>
+    
+    <bean id="markDao" class="dao.MarkDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="markManager" class="service.MarkManager">
+        <property name="markDao">
+            <ref local="markDao"/>
+        </property>
+    </bean>
+    
+    <bean id="reportTypeDao" class="dao.ReportTypeDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="reportTypeManager" class="service.ReportTypeManager">
+        <property name="reportTypeDao">
+            <ref local="reportTypeDao"/>
+        </property>
+    </bean>
+    
+    <bean id="timeDao" class="dao.TimeDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="timeManager" class="service.TimeManager">
+        <property name="timeDao">
+            <ref local="timeDao"/>
+        </property>
+    </bean>
+    
+    <bean id="weekDao" class="dao.WeekDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="weekManager" class="service.WeekManager">
+        <property name="weekDao">
+            <ref local="weekDao"/>
+        </property>
+    </bean>
+    
+    <bean id="lessonDao" class="dao.LessonDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="lessonManager" class="service.LessonManager">
+        <property name="lessonDao">
+            <ref local="lessonDao"/>
+        </property>
+    </bean>
+    
+    <bean id="reportDao" class="dao.ReportDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="reportManager" class="service.ReportManager">
+        <property name="reportDao">
+            <ref local="reportDao"/>
         </property>
     </bean>
     
