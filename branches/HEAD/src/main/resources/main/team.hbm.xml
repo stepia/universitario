@@ -14,5 +14,9 @@
         <property name="stateid" column="stateid"/>
         <property name="created" column="created"/>
         <property name="modified" column="modified"/>
+        <bag name="empTeams" table="emp2team" lazy="false" cascade="all">
+            <key column="teamid"/>
+            <one-to-many class="entry.Emp2Team"/>
+        </bag>
     </class>
 </hibernate-mapping>

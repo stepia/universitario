@@ -1,6 +1,8 @@
 package entry;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -16,6 +18,7 @@ public class Team {
     private long stateid;
     private Date created;
     private Date modified;
+    private List<Emp2Team> empTeams = new ArrayList<Emp2Team>();
 
     public long getId() {
         return id;
@@ -79,6 +82,14 @@ public class Team {
 
     public void setModified(Date modified) {
         this.modified = modified;
+    }
+
+    public List<Emp2Team> getEmpTeams() {
+        return empTeams;
+    }
+
+    public void setEmpTeams(List<Emp2Team> empTeams) {
+        this.empTeams = empTeams;
     }
 
 }

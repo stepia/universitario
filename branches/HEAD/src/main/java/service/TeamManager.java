@@ -33,4 +33,12 @@ public class TeamManager implements ITeamManager {
         return getTeamDao().getTeam(name);
     }
 
+    public List<Team> getParentTeams(int teamId) {
+        return getTeamDao().getParentTeams(teamId);
+    }
+    
+    public List<Team> getSubTeams(int teamId) {
+        return getTeamDao().getSubTeams(teamId);
+    }
+
 }

@@ -42,7 +42,7 @@ public class LoginBean {
     }
 
     public String doLogin() {
-        boolean isLoggedIn = authenticationService.login(username, password);
+        boolean isLoggedIn = authenticationService.login(getUsername(), getPassword());
         if (isLoggedIn) {
             isAuthenticated = true;
             return "success";
