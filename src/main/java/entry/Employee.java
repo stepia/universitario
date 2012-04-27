@@ -1,5 +1,8 @@
 package entry;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -11,6 +14,7 @@ public class Employee {
     private Long id;
     private Long personid;
     private String usrname;
+    private List<Emp2Team> empTeams = new ArrayList<Emp2Team>();
 
     // private Long userId;
 
@@ -45,12 +49,21 @@ public class Employee {
     public void setStateid(int stateid) {
         this.stateid = stateid;
     }
+
     public Long getpersonid() {
         return personid;
     }
 
     public void setpersonid(Long personid) {
         this.personid = personid;
+    }
+
+    public List<Emp2Team> getEmpTeams() {
+        return empTeams;
+    }
+
+    public void setEmpTeams(List<Emp2Team> empTeams) {
+        this.empTeams = empTeams;
     }
 
 }

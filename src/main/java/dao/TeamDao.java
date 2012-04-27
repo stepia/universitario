@@ -14,4 +14,8 @@ public interface TeamDao {
 
     public Team getTeam(String name);
 
+    public List<Team> getParentTeams(int teamid);
+
+    public List<Team> getSubTeams(int teamid);
+
 }

@@ -5,9 +5,13 @@
 <hibernate-mapping>
     <class name="entry.Employee" table="employee">
         <id name="id" column="id">
-        	<generator class="increment" />
+            <generator class="increment"/>
         </id>
-        <!--<property name="stateid" column="stateid"/>-->
+        <!--<property name="stateid" column="stateid"/> -->
         <property name="personid" column="personid"/>
+        <bag name="empTeams" table="emp2team" lazy="false" cascade="all">
+            <key column="empid"/>
+            <one-to-many class="entry.Emp2Team"/>
+        </bag>
     </class>
 </hibernate-mapping>

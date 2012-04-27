@@ -27,6 +27,26 @@ public class TeamDaoHibernate implements TeamDao {
                     .list();
     }
 
+    @SuppressWarnings("unchecked")
+    @Transactional
+    public List<Team> getParentTeams(int teamid) {
+        List<Team> teams = sessionFactory.getCurrentSession().createSQLQuery(
+                    "CALL getParentTeams(:teamid)")
+                    .addEntity(Team.class)
+                    .setParameter("teamid", teamid).list();
+        return teams;
+    }
+
+    @SuppressWarnings("unchecked")
+    @Transactional
+    public List<Team> getSubTeams(int teamid) {
+        List<Team> teams = sessionFactory.getCurrentSession().createSQLQuery(
+                    "CALL getSubTeams(:teamid)")
+                    .addEntity(Team.class)
+                    .setParameter("teamid", teamid).list();
+        return teams;
+    }
+
     @Transactional
     public void createTeam(Team team) {
         sessionFactory.getCurrentSession().save(team);

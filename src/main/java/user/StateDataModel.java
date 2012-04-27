@@ -18,19 +18,20 @@ public class StateDataModel extends ListDataModel<State> implements SelectableDa
     }
 
     public State getRowData(String rowKey) {
+        Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<State> states = (List<State>) getWrappedData();
 
         for (State state : states) {
-            if (state.getName().equals(rowKey))
+            if (state.getId().equals(id))
                 return state;
         }
 
         return null;
     }
 
-    public String getRowKey(State state) {
-        return state.getName();
+    public Long getRowKey(State state) {
+        return state.getId();
     }
 }

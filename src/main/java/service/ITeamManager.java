@@ -12,4 +12,8 @@ public interface ITeamManager {
 
     public void editTeam(Team team);
 
+    public List<Team> getSubTeams(int teamId);
+
+    public List<Team> getParentTeams(int teamId);
+
 }

@@ -20,17 +20,17 @@ public class Emp2TeamDataModel extends ListDataModel<Emp2Team> implements Select
     public Emp2Team getRowData(String rowKey) {
 
         @SuppressWarnings("unchecked")
-        List<Emp2Team> empTeams = (List<Emp2Team>) getWrappedData();
+        List<Emp2Team> emp2Teams = (List<Emp2Team>) getWrappedData();
 
-        for (Emp2Team empTeam : empTeams) {
-            if (empTeam.getId().equals(rowKey))
-                return empTeam;
+        for (Emp2Team emp2Team : emp2Teams) {
+            if (emp2Team.getId().equals(rowKey))
+                return emp2Team;
         }
 
         return null;
     }
 
-    public Long getRowKey(Emp2Team empTeam) {
-        return empTeam.getId();
+    public Long getRowKey(Emp2Team emp2Team) {
+        return emp2Team.getId();
     }
 }

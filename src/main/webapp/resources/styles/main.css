@@ -72,6 +72,11 @@ html, body {
  float: left;
 }
 
+.resTable {
+ width: 900px;
+ height: 300px; 
+}
+
 .user-row a{
 	text-decoration:none;
 	border-bottom:1px dotted #000;
