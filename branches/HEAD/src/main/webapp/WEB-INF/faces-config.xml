@@ -89,4 +89,30 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
+     <navigation-rule>
+        <from-view-id>/state.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/index1.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>create</from-outcome>
+            <to-view-id>/stateDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+     </navigation-rule>
+     <navigation-rule>
+        <from-view-id>/stateDetail.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/state.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>save</from-outcome>
+            <to-view-id>/state.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
