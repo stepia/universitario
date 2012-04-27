@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:utils="http://java.sun.com/jsf/composite/utils">
+
+
+<h:body>
+	<div id="header">
+		<ui:insert name="header">
+			<ui:include src="/header.xhtml">
+				<ui:param name="title" value="#{msg.state}" />
+			</ui:include>
+		</ui:insert>
+		<h:form>
+			<table style="height: 100%; width: 100%">
+				<tr>
+					<td style="padding: 5px;"><h:commandButton id="btnSave" value="#{msg.create}"
+							action="#{mainbean.doAction('create')}"  style="width: 50px;"/></td>
+					<td style="padding: 5px;"><h:commandButton id="btnCancel" value="#{msg.cancel}"
+							action="#{mainbean.doAction('cancel')}" style="width: 50px;" /></td>
+					<td width="97%"></td>
+				</tr>
+			</table>
+		</h:form>
+	</div>
+</h:body>
+</h:html>
