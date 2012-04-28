@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 
@@ -16,7 +16,7 @@ import service.IStateManager;
 import entry.State;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class StateViewBean {
 
     @ManagedProperty(value = "#{stateManager}")
@@ -76,4 +76,9 @@ public class StateViewBean {
         request.setAttribute("selectedState", getSelectedState());
         FacesContext.getCurrentInstance().getExternalContext().redirect("stateDetail.xhtml");
     }
+
+    public void init() throws IOException {
+        setSelectedState(null);
+    }
+
 }

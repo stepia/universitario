@@ -10,6 +10,8 @@
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
+<f:event type="preRenderView" listener="#{stateViewBean.init}"/>
+
 <h:body>
 	<div id="header">
 		<ui:insert name="header">
@@ -33,7 +35,7 @@
             List of States (#{stateViewBean.length}) 
         </f:facet>
         <p:column selectionMode="single" style="width:18px"/>
-        <p:ajax event="rowSelect" listener="#{stateViewBean.onRowSelect}"/>  
+        <p:ajax event="rowSelect" listener="#{stateViewBean.onRowSelect}" update=":stateform" />
         <p:column headerText="ID" sortBy="#{rec.id}"
 				filterBy="#{rec.id}" id="id">  
             #{rec.id}  
