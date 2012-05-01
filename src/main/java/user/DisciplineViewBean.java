@@ -1,20 +1,23 @@
 package user;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.event.SelectEvent;
 
 import service.IDisciplineManager;
 import entry.Discipline;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class DisciplineViewBean {
 
-    private Discipline discipline;
     @ManagedProperty(value = "#{disciplineManager}")
     private IDisciplineManager disciplineManager;
     private Discipline selectedDiscipline;
@@ -61,12 +64,16 @@ public class DisciplineViewBean {
         this.selectedDiscipline = selectedDiscipline;
     }
 
-    public Discipline getDiscipline() {
-        return discipline;
+    public String doAction(String action) {
+        return action;
     }
 
-    public void setDiscipline(Discipline discipline) {
-        this.discipline = discipline;
+    public void onRowSelect(SelectEvent event) throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("disciplineDetail.xhtml");
+    }
+
+    public void init() throws IOException {
+        setSelectedDiscipline(null);
     }
 
 }

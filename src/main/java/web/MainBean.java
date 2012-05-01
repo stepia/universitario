@@ -3,7 +3,7 @@ package web;
 import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.component.tabview.TabView;
@@ -12,7 +12,7 @@ import org.primefaces.event.TabChangeEvent;
 import service.IUserManager;
 
 @ManagedBean(name = "mainbean")
-@RequestScoped
+@SessionScoped
 public class MainBean {
 
     private int activeTabIndex = 0;
@@ -20,7 +20,7 @@ public class MainBean {
     private IUserManager userManager;
 
     public MainBean() {
-        // String user = FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
+        String user = FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
         // Person per = getUserManager().getUser(user).getPerson();
         // setTitle(per.getLastName() + " " + per.getFirstName());
     }
