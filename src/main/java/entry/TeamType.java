@@ -23,19 +23,19 @@ public class TeamType {
         this.id = id;
     }
 
-    public String getname() {
+    public String getName() {
         return name;
     }
 
-    public void setname(String name) {
+    public void setName(String name) {
         this.name = name;
     }
     
-    public Long getstateid() {
+    public Long getStateid() {
         return stateid;
     }
 
-    public void setstateid(Long stateid) {
+    public void setStateid(Long stateid) {
         this.stateid = stateid;
     }
     

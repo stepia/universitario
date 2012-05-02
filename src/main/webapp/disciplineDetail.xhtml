@@ -13,13 +13,13 @@
 	<div id="header">
 		<ui:insert name="header">
 			<ui:include src="/detail.xhtml">
-				<ui:param name="title1" value="#{msg.discipline}" />
+				<ui:param name="title" value="#{msg.discipline}" />
 			</ui:include>
 		</ui:insert>
 	</div>
 	<h:form id="disciplineDetailForm">
 		<p:panel header="Discipline" styleClass="panel">
-	    Discipline name:<h:inputText value="#{disciplineViewBean.selectedDiscipline.name}" />
+	    Discipline name:<h:inputText value="#{disciplineViewBean.selectedDiscipline.id}" />
 
 			<br />
 		</p:panel>

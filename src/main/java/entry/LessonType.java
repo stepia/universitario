@@ -7,7 +7,7 @@ import javax.faces.bean.RequestScoped;
 
 @ManagedBean
 @RequestScoped
-public class Lessontype {
+public class LessonType {
 
 	private Long id;
 	private String name;

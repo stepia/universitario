@@ -1,20 +1,23 @@
 package user;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.event.SelectEvent;
 
 import service.ITimeManager;
 import entry.Time;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class TimeViewBean {
 
-    private Time time;
     @ManagedProperty(value = "#{timeManager}")
     private ITimeManager timeManager;
     private Time selectedTime;
@@ -61,12 +64,12 @@ public class TimeViewBean {
         this.selectedTime = selectedTime;
     }
 
-    public Time getTime() {
-        return time;
+    public void onRowSelect(SelectEvent event) throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("timeDetail.xhtml");
     }
 
-    public void setTime(Time time) {
-        this.time = time;
+    public void init() throws IOException {
+        setSelectedTime(null);
     }
 
 }

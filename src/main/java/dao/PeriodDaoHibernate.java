@@ -39,9 +39,9 @@ public class PeriodDaoHibernate implements PeriodDao {
     }
 
     @Transactional
-    public Period getPeriod(String value) {
+    public Period getPeriod(Long id) {
         List periods = sessionFactory.getCurrentSession().createCriteria(Period.class)
-                    .add(Restrictions.eq("value", value)).list();
+                    .add(Restrictions.eq("id", id)).list();
         Period period = null;
         if ((periods != null) && (periods.size() > 0)) {
         	period = (Period) periods.get(0);

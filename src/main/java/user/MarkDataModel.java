@@ -18,19 +18,20 @@ public class MarkDataModel extends ListDataModel<Mark> implements SelectableData
     }
 
     public Mark getRowData(String rowKey) {
+    	Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<Mark> marks = (List<Mark>) getWrappedData();
 
         for (Mark mark : marks) {
-            if (mark.getName().equals(rowKey))
+            if (mark.getId().equals(id))
                 return mark;
         }
 
         return null;
     }
 
-    public String getRowKey(Mark mark) {
-        return mark.getName();
+    public Long getRowKey(Mark mark) {
+        return mark.getId();
     }
 }

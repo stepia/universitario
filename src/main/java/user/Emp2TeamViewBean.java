@@ -1,20 +1,23 @@
 package user;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.event.SelectEvent;
 
 import service.IEmp2TeamManager;
 import entry.Emp2Team;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class Emp2TeamViewBean {
 
-    private Emp2Team emp2Team;
     @ManagedProperty(value = "#{emp2TeamManager}")
     private IEmp2TeamManager emp2TeamManager;
     private Emp2Team selectedEmp2Team;
@@ -61,12 +64,12 @@ public class Emp2TeamViewBean {
         this.selectedEmp2Team = selectedEmp2Team;
     }
 
-    public Emp2Team getEmp2Team() {
-        return emp2Team;
+    public void onRowSelect(SelectEvent event) throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("emp2teamDetail.xhtml");
     }
 
-    public void setEmp2Team(Emp2Team emp2Team) {
-        this.emp2Team = emp2Team;
+    public void init() throws IOException {
+        setSelectedEmp2Team(null);
     }
 
 }

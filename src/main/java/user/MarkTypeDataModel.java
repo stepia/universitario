@@ -18,12 +18,13 @@ public class MarkTypeDataModel extends ListDataModel<MarkType> implements Select
     }
 
     public MarkType getRowData(String rowKey) {
+    	String name = String.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<MarkType> marktypes = (List<MarkType>) getWrappedData();
 
         for (MarkType marktype : marktypes) {
-            if (marktype.getName().equals(rowKey))
+            if (marktype.getName().equals(name))
                 return marktype;
         }
 

@@ -12,6 +12,6 @@ public interface DisciplineDao {
 
     public void editDiscipline(Discipline discipline);
 
-    public Discipline getDiscipline(String name);
+    public Discipline getDiscipline(Long id);
 
 }

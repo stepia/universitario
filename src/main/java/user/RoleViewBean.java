@@ -1,20 +1,23 @@
 package user;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.event.SelectEvent;
 
 import service.IRoleManager;
 import entry.Role;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class RoleViewBean {
 
-    private Role role;
     @ManagedProperty(value = "#{roleManager}")
     private IRoleManager roleManager;
     private Role selectedRole;
@@ -61,12 +64,12 @@ public class RoleViewBean {
         this.selectedRole = selectedRole;
     }
 
-    public Role getRole() {
-        return role;
+    public void onRowSelect(SelectEvent event) throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("roleDetail.xhtml");
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void init() throws IOException {
+        setSelectedRole(null);
     }
 
 }

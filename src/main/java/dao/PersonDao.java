@@ -12,6 +12,6 @@ public interface PersonDao {
 
     public void editPerson(Person person);
 
-    public Person getPerson(String firstName);
+    public Person getPerson(Long id);
 
 }

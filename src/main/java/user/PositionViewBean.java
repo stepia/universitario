@@ -1,20 +1,23 @@
 package user;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.event.SelectEvent;
 
 import service.IPositionManager;
 import entry.Position;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class PositionViewBean {
 
-    private Position position;
     @ManagedProperty(value = "#{positionManager}")
     private IPositionManager positionManager;
     private Position selectedPosition;
@@ -61,12 +64,12 @@ public class PositionViewBean {
         this.selectedPosition = selectedPosition;
     }
 
-    public Position getPosition() {
-        return position;
+    public void onRowSelect(SelectEvent event) throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("positionDetail.xhtml");
     }
 
-    public void setPosition(Position position) {
-        this.position = position;
+    public void init() throws IOException {
+        setSelectedPosition(null);
     }
 
 }

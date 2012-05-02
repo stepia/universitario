@@ -28,7 +28,7 @@
         <p:graphicImage value="/resources/img/ajax-loader.gif"/> 
     </p:blockUI>
     
-		<p:dataTable var="rec" rowKey="#{rec.name}" paginator="true" rows="5" value="#{disciplineViewBean.disciplines}"
+		<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5" value="#{disciplineViewBean.disciplines}"
 			selection="#{disciplineViewBean.selectedDiscipline}" id="disciplineTable" rowsPerPageTemplate="5,10,15,25,50,100" styleClass="resTable">
 
 			<f:facet name="header">
@@ -44,7 +44,6 @@
 				filterBy="#{rec.name}" id="name">
             #{rec.name}
         </p:column>
-        
         <p:column headerText="Modified" sortBy="#{rec.modified}"
 				filterBy="#{rec.modified}" id="modified">
             #{rec.modified}

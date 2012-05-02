@@ -18,19 +18,20 @@ public class PositionDataModel extends ListDataModel<Position> implements Select
     }
 
     public Position getRowData(String rowKey) {
+    	Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<Position> positions = (List<Position>) getWrappedData();
 
         for (Position position : positions) {
-            if (position.getName().equals(rowKey))
+            if (position.getId().equals(id))
                 return position;
         }
 
         return null;
     }
 
-    public String getRowKey(Position position) {
-        return position.getName();
+    public Long getRowKey(Position position) {
+        return position.getId();
     }
 }

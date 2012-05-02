@@ -39,9 +39,9 @@ public class OccupationDaoHibernate implements OccupationDao {
     }
 
     @Transactional
-    public Occupation getOccupation(String name) {
+    public Occupation getOccupation(Long id) {
         List occupations = sessionFactory.getCurrentSession().createCriteria(Occupation.class)
-                    .add(Restrictions.eq("name", name)).list();
+                    .add(Restrictions.eq("id", id)).list();
         Occupation occupation = null;
         if ((occupations != null) && (occupations.size() > 0)) {
         	occupation = (Occupation) occupations.get(0);

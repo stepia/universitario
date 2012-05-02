@@ -29,8 +29,8 @@ public class DisciplineManager implements IDisciplineManager {
         getDisciplineDao().editDiscipline(discipline);
     }
 
-    public Discipline getDiscipline(String name) {
-        return getDisciplineDao().getDiscipline(name);
+    public Discipline getDiscipline(Long id) {
+        return getDisciplineDao().getDiscipline(id);
     }
 
 }

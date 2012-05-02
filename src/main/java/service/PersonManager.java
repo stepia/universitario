@@ -29,8 +29,8 @@ public class PersonManager implements IPersonManager {
         getPersonDao().editPerson(person);
     }
 
-    public Person getPerson(String firstname) {
-        return getPersonDao().getPerson(firstname);
+    public Person getPerson(Long id) {
+        return getPersonDao().getPerson(id);
     }
 
 }

@@ -29,8 +29,8 @@ public class PositionManager implements IPositionManager {
         getPositionDao().editPosition(position);
     }
 
-    public Position getPosition(String name) {
-        return getPositionDao().getPosition(name);
+    public Position getPosition(Long id) {
+        return getPositionDao().getPosition(id);
     }
 
 }

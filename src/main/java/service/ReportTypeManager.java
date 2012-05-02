@@ -29,8 +29,8 @@ public class ReportTypeManager implements IReportTypeManager {
         getReportTypeDao().editReportType(reportType);
     }
 
-    public ReportType getReportType(String name) {
-        return getReportTypeDao().getReportType(name);
+    public ReportType getReportType(Long id) {
+        return getReportTypeDao().getReportType(id);
     }
 
 }

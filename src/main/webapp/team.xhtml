@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -11,24 +10,32 @@
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
+<f:event type="preRenderView" listener="#{teamViewBean.init}"/>
+
 <h:body>
 	<div id="header">
 		<ui:insert name="header">
-			<ui:include src="/header.xhtml">
-			    <ui:param name="title" value="Team"/>
+			<ui:include src="/query.xhtml">
+			    <ui:param name="title" value="#{msg.team}"/>
 			</ui:include>
 		</ui:insert>
 	</div>
 
-	<h:form id="teamform">
-		<p:dataTable var="rec" value="#{teamViewBean.teams}"
-			rowKey="#{rec.name}" paginator="true" rows="5"
-			selection="#{teamViewBean.selectedTeam}" selectionMode="single"
-			id="teamsTable" rowsPerPageTemplate="5,10,15,25,50,100">
+<h:form id="teamform">
+	<p:blockUI block="teamTable" trigger="teamTable" styleClass="resTable">  
+            Loading<br/>
+            <br/>
+        <p:graphicImage value="/resources/img/ajax-loader.gif"/> 
+    </p:blockUI>
+    
+		<p:dataTable var="rec" value="#{teamViewBean.teams}" rowKey="#{rec.name}" paginator="true" rows="5"
+			selection="#{teamViewBean.selectedTeam}" id="teamTable" rowsPerPageTemplate="5,10,15,25,50,100" styleClass="resTable">
 
 			<f:facet name="header">  
             List of Teams (#{teamViewBean.length}) 
         </f:facet>
+        <p:column selectionMode="single" style="width:18px"/>
+        <p:ajax event="rowSelect" listener="#{teamViewBean.onRowSelect}" update=":teamform" />
         <p:column headerText="ID" sortBy="#{rec.id}"
 				filterBy="#{rec.id}" id="id">  
             #{rec.id}  
@@ -57,21 +64,8 @@
 				filterBy="#{rec.created}" id="created">  
             #{rec.created}  
         </p:column>
-			<f:facet name="footer">
-				<p:commandButton id="viewButton" value="View" icon="ui-icon-search"
-					oncomplete="teamDialog.show()" />
-				<p:commandButton id="createButton" value="Create"
-					icon="ui-icon-search" oncomplete="teamDialog.show()" />
-			</f:facet>
 		</p:dataTable>
 
-		<p:dialog header="Team Detail" widgetVar="teamDialog"
-			resizable="false" showEffect="explode"
-			hideEffect="explode" modal="true">
-			<h:panelGrid columns="1" cellspacing="20">
-				<ui:include src="/teamPrimeDetail.xhtml" />
-			</h:panelGrid>
-		</p:dialog>
 	</h:form>
 	<div id="footer">
 		<ui:insert name="footer">

@@ -1,20 +1,23 @@
 package user;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.event.SelectEvent;
 
 import service.IReportManager;
 import entry.Report;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class ReportViewBean {
 
-    private Report report;
     @ManagedProperty(value = "#{reportManager}")
     private IReportManager reportManager;
     private Report selectedReport;
@@ -61,12 +64,12 @@ public class ReportViewBean {
         this.selectedReport = selectedReport;
     }
 
-    public Report getReport() {
-        return report;
+    public void onRowSelect(SelectEvent event) throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("reportDetail.xhtml");
     }
 
-    public void setReport(Report report) {
-        this.report = report;
+    public void init() throws IOException {
+        setSelectedReport(null);
     }
 
 }

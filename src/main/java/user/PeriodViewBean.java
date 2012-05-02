@@ -1,20 +1,23 @@
 package user;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.event.SelectEvent;
 
 import service.IPeriodManager;
 import entry.Period;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class PeriodViewBean {
 
-    private Period period;
     @ManagedProperty(value = "#{periodManager}")
     private IPeriodManager periodManager;
     private Period selectedPeriod;
@@ -61,12 +64,12 @@ public class PeriodViewBean {
         this.selectedPeriod = selectedPeriod;
     }
 
-    public Period getPeriod() {
-        return period;
+    public void onRowSelect(SelectEvent event) throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("periodDetail.xhtml");
     }
 
-    public void setPeriod(Period period) {
-        this.period = period;
+    public void init() throws IOException {
+        setSelectedPeriod(null);
     }
 
 }

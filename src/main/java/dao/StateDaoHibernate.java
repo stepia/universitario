@@ -39,9 +39,9 @@ public class StateDaoHibernate implements StateDao {
     }
 
     @Transactional
-    public State getState(String name) {
+    public State getState(Long id) {
         List states = sessionFactory.getCurrentSession().createCriteria(State.class)
-                    .add(Restrictions.eq("name", name)).list();
+                    .add(Restrictions.eq("id", id)).list();
         State state = null;
         if ((states != null) && (states.size() > 0)) {
         	state = (State) states.get(0);

@@ -29,8 +29,8 @@ public class StateManager implements IStateManager {
         getStateDao().editState(state);
     }
 
-    public State getState(String name) {
-        return getStateDao().getState(name);
+    public State getState(Long id) {
+        return getStateDao().getState(id);
     }
 
 }

@@ -12,6 +12,6 @@ public interface StateDao {
 
     public void editState(State state);
 
-    public State getState(String name);
+    public State getState(Long id);
 
 }

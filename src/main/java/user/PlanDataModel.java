@@ -18,12 +18,13 @@ public class PlanDataModel extends ListDataModel<Plan> implements SelectableData
     }
 
     public Plan getRowData(String rowKey) {
+    	Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<Plan> plans = (List<Plan>) getWrappedData();
 
         for (Plan plan : plans) {
-            if (plan.getId().equals(rowKey))
+            if (plan.getId().equals(id))
                 return plan;
         }
 

@@ -12,6 +12,6 @@ public interface PeriodDao {
 
     public void editPeriod(Period period);
 
-    public Period getPeriod(String value);
+    public Period getPeriod(Long id);
 
 }

@@ -1,20 +1,23 @@
 package user;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.event.SelectEvent;
 
 import service.IMarkManager;
 import entry.Mark;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class MarkViewBean {
 
-    private Mark mark;
     @ManagedProperty(value = "#{markManager}")
     private IMarkManager markManager;
     private Mark selectedMark;
@@ -61,12 +64,12 @@ public class MarkViewBean {
         this.selectedMark = selectedMark;
     }
 
-    public Mark getMark() {
-        return mark;
+    public void onRowSelect(SelectEvent event) throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("markDetail.xhtml");
     }
 
-    public void setMark(Mark mark) {
-        this.mark = mark;
+    public void init() throws IOException {
+        setSelectedMark(null);
     }
 
 }

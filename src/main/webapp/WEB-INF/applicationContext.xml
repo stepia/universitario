@@ -206,15 +206,15 @@
         </property>
     </bean>
     
-    <bean id="lessontypeDao" class="dao.LessontypeDaoHibernate">
+    <bean id="lessonTypeDao" class="dao.LessonTypeDaoHibernate">
         <property name="sessionFactory">
             <ref local="sessionFactory"/>
         </property>
     </bean>
 
-    <bean id="lessontypeManager" class="service.LessontypeManager">
-        <property name="lessontypeDao">
-            <ref local="lessontypeDao"/>
+    <bean id="lessonTypeManager" class="service.LessonTypeManager">
+        <property name="lessonTypeDao">
+            <ref local="lessonTypeDao"/>
         </property>
     </bean>
     
