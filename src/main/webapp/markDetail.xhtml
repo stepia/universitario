@@ -22,7 +22,14 @@
 		<div id="content">
 			<h:form id="markDetailForm">
 				<p:panel header="Mark" styleClass="panel">
-	    Mark name:<h:inputText value="#{markViewBean.selectedMark.id}" />
+	    Mark Id:<h:inputText
+	    				value="#{markViewBean.selectedMark.id}" />
+	    Mark Name:<h:inputText
+	    				value="#{markViewBean.selectedMark.name}" />
+	    Mark Created:<h:inputText
+	    				value="#{markViewBean.selectedMark.created}" />
+	    Mark Modified:<h:inputText
+	    				value="#{markViewBean.selectedMark.modified}" />
 
 					<br />
 				</p:panel>

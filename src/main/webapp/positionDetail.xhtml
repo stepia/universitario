@@ -22,8 +22,14 @@
 		<div id="content">
 			<h:form id="positionDetailForm">
 				<p:panel header="Position" styleClass="panel">
-	    Position name:<h:inputText
+	    Position Id:<h:inputText
 						value="#{positionViewBean.selectedPosition.id}" />
+		Position Name:<h:inputText
+						value="#{positionViewBean.selectedPosition.name}" />
+		Position Modified:<h:inputText
+						value="#{positionViewBean.selectedPosition.modified}" />
+		Position Created:<h:inputText
+						value="#{positionViewBean.selectedPosition.created}" />
 
 					<br />
 				</p:panel>

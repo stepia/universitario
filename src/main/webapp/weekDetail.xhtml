@@ -22,7 +22,14 @@
 		<div id="content">
 			<h:form id="weekDetailForm">
 				<p:panel header="Week" styleClass="panel">
-	    Week name:<h:inputText value="#{weekViewBean.selectedWeek.id}" />
+	    Week Id:<h:inputText
+	    				value="#{weekViewBean.selectedWeek.id}" />
+	    Week Value:<h:inputText
+	    				value="#{weekViewBean.selectedWeek.value}" />
+	    Week Created:<h:inputText
+	    				value="#{weekViewBean.selectedWeek.created}" />
+	    Week Modified:<h:inputText
+	    				value="#{weekViewBean.selectedWeek.modified}" />
 
 					<br />
 				</p:panel>

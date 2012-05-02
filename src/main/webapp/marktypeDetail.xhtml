@@ -22,8 +22,14 @@
 		<div id="content">
 			<h:form id="marktypeDetailForm">
 				<p:panel header="MarkType" styleClass="panel">
-	    MarkType name:<h:inputText
+	    MarkType Id:<h:inputText
+						value="#{markTypeViewBean.selectedMarkType.id}" />
+		MarkType Name:<h:inputText
 						value="#{markTypeViewBean.selectedMarkType.name}" />
+		MarkType Created:<h:inputText
+						value="#{markTypeViewBean.selectedMarkType.created}" />
+		MarkType Modified:<h:inputText
+						value="#{markTypeViewBean.selectedMarkType.modified}" />
 
 					<br />
 				</p:panel>

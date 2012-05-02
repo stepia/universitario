@@ -22,7 +22,14 @@
 		<div id="content">
 			<h:form id="timeDetailForm">
 				<p:panel header="Time" styleClass="panel">
-	    Time name:<h:inputText value="#{timeViewBean.selectedTime.id}" />
+	    Time Id:<h:inputText
+	    				value="#{timeViewBean.selectedTime.id}" />
+	    Time Value:<h:inputText
+	    				value="#{timeViewBean.selectedTime.value}" />
+	    Time Created:<h:inputText
+	    				value="#{timeViewBean.selectedTime.created}" />
+	    Time Modified:<h:inputText
+	    				value="#{timeViewBean.selectedTime.modified}" />
 
 					<br />
 				</p:panel>

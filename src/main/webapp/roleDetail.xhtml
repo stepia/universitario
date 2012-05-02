@@ -22,7 +22,14 @@
 		<div id="content">
 			<h:form id="roleDetailForm">
 				<p:panel header="Role" styleClass="panel">
-	    Role name:<h:inputText value="#{roleViewBean.selectedRole.id}" />
+	    Role Id:<h:inputText
+	    				value="#{roleViewBean.selectedRole.id}" />
+	    Role Name:<h:inputText
+						value="#{roleViewBean.selectedRole.name}" />
+	    Role Created:<h:inputText
+	    				value="#{roleViewBean.selectedRole.created}" />
+	    Role Modified:<h:inputText
+	    				value="#{roleViewBean.selectedRole.modified}" />
 
 					<br />
 				</p:panel>

@@ -22,8 +22,16 @@
 		<div id="content">
 			<h:form id="teamtypeDetailForm">
 				<p:panel header="TeamType" styleClass="panel">
-	    TeamType name:<h:inputText
+	    TeamType Id:<h:inputText
 						value="#{teamTypeViewBean.selectedTeamType.id}" />
+		TeamType Name:<h:inputText
+						value="#{teamTypeViewBean.selectedTeamType.name}" />
+		TeamType StateId:<h:inputText
+						value="#{teamTypeViewBean.selectedTeamType.stateid}" />
+		TeamType Created:<h:inputText
+						value="#{teamTypeViewBean.selectedTeamType.created}" />
+		TeamType Modified:<h:inputText
+						value="#{teamTypeViewBean.selectedTeamType.modified}" />
 
 					<br />
 				</p:panel>
