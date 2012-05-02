@@ -13,56 +13,64 @@
 <f:event type="preRenderView" listener="#{teamTypeViewBean.init}" />
 
 <h:body>
-	<div id="header">
-		<ui:insert name="header">
-			<ui:include src="/query.xhtml">
-			    <ui:param name="title" value="#{msg.teamtype}"/>
-			</ui:include>
-		</ui:insert>
-	</div>
+	<f:view locale="#{language.localeCode}" />
+	<div id="container">
+		<div id="header">
+			<ui:insert name="header">
+				<ui:include src="/query.xhtml">
+					<ui:param name="title" value="#{msg.teamtype}" />
+				</ui:include>
+			</ui:insert>
+		</div>
+		<div id="content">
+			<h:form id="teamtypeform">
+				<p:blockUI block="teamTypeTable" trigger="teamTypeTable"
+					styleClass="resTable">  
+            Loading<br />
+					<br />
+					<p:graphicImage value="/resources/img/ajax-loader.gif" />
+				</p:blockUI>
 
-<h:form id="teamtypeform">
-	<p:blockUI block="teamTypeTable" trigger="teamTypeTable" styleClass="resTable">  
-            Loading<br/>
-            <br/>
-        <p:graphicImage value="/resources/img/ajax-loader.gif"/> 
-    </p:blockUI>
-    
-		<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5" value="#{teamTypeViewBean.teamTypes}"
-			selection="#{teamTypeViewBean.selectedTeamType}" id="teamTypeTable" rowsPerPageTemplate="5,10,15,25,50,100" styleClass="resTable">
+				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
+					value="#{teamTypeViewBean.teamTypes}"
+					selection="#{teamTypeViewBean.selectedTeamType}" id="teamTypeTable"
+					rowsPerPageTemplate="5,10,15,25,50,100" styleClass="resTable">
 
-			<f:facet name="header">  
+					<f:facet name="header">  
             List of TeamTypes (#{teamTypeViewBean.length}) 
         </f:facet>
-        <p:column selectionMode="single" style="width:20px"/>
-        <p:ajax event="rowSelect" listener="#{teamTypeViewBean.onRowSelect}" update=":teamtypeform" />
-        <p:column headerText="ID" sortBy="#{rec.id}"
-				filterBy="#{rec.id}" id="id">  
+					<p:column selectionMode="single" style="width:20px" />
+					<p:ajax event="rowSelect"
+						listener="#{teamTypeViewBean.onRowSelect}" update=":teamtypeform" />
+					<p:column headerText="ID" sortBy="#{rec.id}" filterBy="#{rec.id}"
+						id="id">  
             #{rec.id}  
         </p:column>
-			<p:column headerText="Name" sortBy="#{rec.name}"
-				filterBy="#{rec.name}" id="name">  
+					<p:column headerText="Name" sortBy="#{rec.name}"
+						filterBy="#{rec.name}" id="name">  
             #{rec.name}  
         </p:column>
-        <p:column headerText="StateId" sortBy="#{rec.stateid}"
-				filterBy="#{rec.stateid}" id="stateid">  
+					<p:column headerText="StateId" sortBy="#{rec.stateid}"
+						filterBy="#{rec.stateid}" id="stateid">  
             #{rec.stateid}  
         </p:column>
-        <p:column headerText="Modified" sortBy="#{rec.modified}"
-				filterBy="#{rec.modified}" id="modified">  
+					<p:column headerText="Modified" sortBy="#{rec.modified}"
+						filterBy="#{rec.modified}" id="modified">  
             #{rec.modified}  
         </p:column>
-        <p:column headerText="Created" sortBy="#{rec.created}"
-				filterBy="#{rec.created}" id="created">  
+					<p:column headerText="Created" sortBy="#{rec.created}"
+						filterBy="#{rec.created}" id="created">  
             #{rec.created}  
         </p:column>
-		</p:dataTable>
+				</p:dataTable>
 
-	</h:form>
-	<div id="footer">
-		<ui:insert name="footer">
-			<ui:include src="/footer.xhtml" />
-		</ui:insert>
+			</h:form>
+		</div>
+		<div id="footer">
+			<ui:insert name="footer">
+				<ui:include src="/footer.xhtml" />
+			</ui:insert>
+		</div>
 	</div>
 </h:body>
 </html>

@@ -1,10 +1,7 @@
-
 <!DOCTYPE html>
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:utils="http://java.sun.com/jsf/composite/utils"
-	xmlns:sec="http://www.springframework.org/security/tags"
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
@@ -12,55 +9,61 @@
 </h:head>
 
 <h:body>
-	<div id="header">
-		<ui:insert name="header">
-			<ui:include src="/header.xhtml">
-			    <ui:param name="title" value="Chair"/>
-			</ui:include>
-		</ui:insert>
-	</div>
+	<f:view locale="#{language.localeCode}"/>
+	<div id="container">
+		<div id="container">
+			<div id="header">
+				<ui:insert name="header">
+					<ui:include src="/header.xhtml">
+						<ui:param name="title" value="Chair" />
+					</ui:include>
+				</ui:insert>
+			</div>
+			<div id="content">
+				<h:form id="chairform">
+					<p:dataTable var="rec" value="#{chairViewBean.teams}"
+						rowKey="#{rec.name}" paginator="true" rows="5"
+						selection="#{chairViewBean.selectedTeam}" selectionMode="single"
+						id="teamsTable" rowsPerPageTemplate="5,10,15,25,50,100">
 
-	<h:form id="chairform">
-		<p:dataTable var="rec" value="#{chairViewBean.teams}"
-			rowKey="#{rec.name}" paginator="true" rows="5"
-			selection="#{chairViewBean.selectedTeam}" selectionMode="single"
-			id="teamsTable" rowsPerPageTemplate="5,10,15,25,50,100">
-
-			<f:facet name="header">  
+						<f:facet name="header">  
             List of Teams (#{chairViewBean.length}) 
         </f:facet>
-			<p:column headerText="Name" sortBy="#{rec.name}"
-				filterBy="#{rec.name}" id="name">  
+						<p:column headerText="Name" sortBy="#{rec.name}"
+							filterBy="#{rec.name}" id="name">  
             #{rec.name}  
         </p:column>
-        <p:column headerText="Modified" sortBy="#{rec.modified}"
-				filterBy="#{rec.modified}" id="modified">  
+						<p:column headerText="Modified" sortBy="#{rec.modified}"
+							filterBy="#{rec.modified}" id="modified">  
             #{rec.modified}  
         </p:column>
-			<p:column headerText="Created" sortBy="#{rec.created}"
-				filterBy="#{rec.created}" id="created">  
+						<p:column headerText="Created" sortBy="#{rec.created}"
+							filterBy="#{rec.created}" id="created">  
             #{rec.created}  
         </p:column>
-			<f:facet name="footer">
-				<p:commandButton id="viewButton" value="View" icon="ui-icon-search"
-					oncomplete="teamDialog.show()" />
-				<p:commandButton id="createButton" value="Create"
-					icon="ui-icon-search" oncomplete="teamDialog.show()" />
-			</f:facet>
-		</p:dataTable>
+						<f:facet name="footer">
+							<p:commandButton id="viewButton" value="View"
+								icon="ui-icon-search" oncomplete="teamDialog.show()" />
+							<p:commandButton id="createButton" value="Create"
+								icon="ui-icon-search" oncomplete="teamDialog.show()" />
+						</f:facet>
+					</p:dataTable>
 
-		<p:dialog header="Team Detail" widgetVar="teamDialog"
-			resizable="false" showEffect="explode"
-			hideEffect="explode" modal="true">
-			<h:panelGrid columns="1" cellspacing="20">
-				<ui:include src="/teamDetail.xhtml" />
-			</h:panelGrid>
-		</p:dialog>
-	</h:form>
-	<div id="footer">
-		<ui:insert name="footer">
-			<ui:include src="/footer.xhtml" />
-		</ui:insert>
-	</div>
+					<p:dialog header="Team Detail" widgetVar="teamDialog"
+						resizable="false" showEffect="explode" hideEffect="explode"
+						modal="true">
+						<h:panelGrid columns="1" cellspacing="20">
+							<ui:include src="/teamDetail.xhtml" />
+						</h:panelGrid>
+					</p:dialog>
+				</h:form>
+			</div>
+			<div id="footer">
+				<ui:insert name="footer">
+					<ui:include src="/footer.xhtml" />
+				</ui:insert>
+			</div>
+		</div>
+</div>
 </h:body>
 </html>

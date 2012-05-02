@@ -10,41 +10,45 @@
 </h:head>
 
 <h:body>
-
-	<p:panel header="User" styleClass="panel">
-		<h:inputText value="#{userAction.user.username}" />
-		<br />
-	</p:panel>
-	<p:panel header="Employee" styleClass="panel">
+	<f:view locale="#{language.localeCode}" />
+	<div id="container">
+		<div id="content">
+			<p:panel header="User" styleClass="panel">
+				<h:inputText value="#{userAction.user.username}" />
+				<br />
+			</p:panel>
+			<p:panel header="Employee" styleClass="panel">
 				state:<h:inputText value="#" />
-		<br />
-		<p:selectOneMenu value="#" effect="fade">
-			<f:selectItem itemLabel="Select One" itemValue="" />
-			<f:selectItems value="#" var="state" itemLabel="#" itemValue="#" />
-		</p:selectOneMenu>
-	</p:panel>
+				<br />
+				<p:selectOneMenu value="#" effect="fade">
+					<f:selectItem itemLabel="Select One" itemValue="" />
+					<f:selectItems value="#" var="state" itemLabel="#" itemValue="#" />
+				</p:selectOneMenu>
+			</p:panel>
 
 
 
-	<p:panel header="Personal" styleClass="panel">
+			<p:panel header="Personal" styleClass="panel">
 							first name:<h:inputText
-			value="#{userAction.user.person.firstName}" />
-		<br />
+					value="#{userAction.user.person.firstName}" />
+				<br />
 							last name:<h:inputText value="#{userAction.user.person.lastName}" />
-		<br />
+				<br />
 							middle name:<h:inputText
-			value="#{userAction.user.person.middleName}" />
-		<br />
+					value="#{userAction.user.person.middleName}" />
+				<br />
 							DOB:<p:calendar value="#{userAction.user.person.dob}" />
-		<br />
-	</p:panel>
+				<br />
+			</p:panel>
 
-	<ui:repeat var="emp" value="#{userAction.user.employees}">
-		<p:panel header="Employee" styleClass="panel">
+			<ui:repeat var="emp" value="#{userAction.user.employees}">
+				<p:panel header="Employee" styleClass="panel">
 								state:<h:inputText value="#{emp.stateid}" />
-			<br />
-		</p:panel>
-	</ui:repeat>
+					<br />
+				</p:panel>
+			</ui:repeat>
+		</div>
+	</div>
 </h:body>
 
 </html>

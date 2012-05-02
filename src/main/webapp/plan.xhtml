@@ -10,79 +10,88 @@
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
-<f:event type="preRenderView" listener="#{planViewBean.init}"/>
+<f:event type="preRenderView" listener="#{planViewBean.init}" />
 
 <h:body>
-	<div id="header">
-		<ui:insert name="header">
-			<ui:include src="/query.xhtml">
-			    <ui:param name="title" value="#{msg.plan}"/>
-			</ui:include>
-		</ui:insert>
-	</div>
+	<f:view locale="#{language.localeCode}" />
+	<div id="container">
+		<div id="header">
+			<ui:insert name="header">
+				<ui:include src="/query.xhtml">
+					<ui:param name="title" value="#{msg.plan}" />
+				</ui:include>
+			</ui:insert>
+		</div>
+		<div id="content">
 
-<h:form id="planform">
-	<p:blockUI block="planTable" trigger="planTable" styleClass="resTable">  
-            Loading<br/>
-            <br/>
-        <p:graphicImage value="/resources/img/ajax-loader.gif"/> 
-    </p:blockUI>
-    
-		<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5" value="#{planViewBean.plans}"
-			selection="#{planViewBean.selectedPlan}" id="planTable" rowsPerPageTemplate="5,10,15,25,50,100" styleClass="resTable">
+			<h:form id="planform">
+				<p:blockUI block="planTable" trigger="planTable"
+					styleClass="resTable">  
+            Loading<br />
+					<br />
+					<p:graphicImage value="/resources/img/ajax-loader.gif" />
+				</p:blockUI>
 
-			<f:facet name="header">  
+				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
+					value="#{planViewBean.plans}"
+					selection="#{planViewBean.selectedPlan}" id="planTable"
+					rowsPerPageTemplate="5,10,15,25,50,100" styleClass="resTable">
+
+					<f:facet name="header">  
             List of Plans (#{planViewBean.length}) 
         </f:facet>
-        <p:column selectionMode="single" style="width:18px"/>
-        <p:ajax event="rowSelect" listener="#{planViewBean.onRowSelect}" update=":planform" />
-        <p:column headerText="ID" sortBy="#{rec.id}"
-				filterBy="#{rec.id}" id="id">  
+					<p:column selectionMode="single" style="width:18px" />
+					<p:ajax event="rowSelect" listener="#{planViewBean.onRowSelect}"
+						update=":planform" />
+					<p:column headerText="ID" sortBy="#{rec.id}" filterBy="#{rec.id}"
+						id="id">  
             #{rec.id}  
         </p:column>
-			<p:column headerText="PlanId" sortBy="#{rec.planid}"
-				filterBy="#{rec.planid}" id="planid">  
+					<p:column headerText="PlanId" sortBy="#{rec.planid}"
+						filterBy="#{rec.planid}" id="planid">  
             #{rec.planid}  
         </p:column>
-        <p:column headerText="DisciplineId" sortBy="#{rec.disciplineid}"
-				filterBy="#{rec.disciplineid}" id="disciplineid">  
+					<p:column headerText="DisciplineId" sortBy="#{rec.disciplineid}"
+						filterBy="#{rec.disciplineid}" id="disciplineid">  
             #{rec.disciplineid}  
         </p:column>
-                <p:column headerText="LessonTypeId" sortBy="#{rec.lessontypeid}"
-				filterBy="#{rec.lessontypeid}" id="lessontypeid">  
+					<p:column headerText="LessonTypeId" sortBy="#{rec.lessontypeid}"
+						filterBy="#{rec.lessontypeid}" id="lessontypeid">  
             #{rec.lessontypeid}  
         </p:column>
-        <p:column headerText="EmpId" sortBy="#{rec.empid}"
-				filterBy="#{rec.empid}" id="empid">  
+					<p:column headerText="EmpId" sortBy="#{rec.empid}"
+						filterBy="#{rec.empid}" id="empid">  
             #{rec.empid}  
         </p:column>
-        <p:column headerText="PeriodId" sortBy="#{rec.periodid}"
-				filterBy="#{rec.periodid}" id="periodid">  
+					<p:column headerText="PeriodId" sortBy="#{rec.periodid}"
+						filterBy="#{rec.periodid}" id="periodid">  
             #{rec.periodid}  
         </p:column>
-        <p:column headerText="Hours" sortBy="#{rec.hours}"
-				filterBy="#{rec.hours}" id="hours">  
+					<p:column headerText="Hours" sortBy="#{rec.hours}"
+						filterBy="#{rec.hours}" id="hours">  
             #{rec.hours}  
         </p:column>
-        <p:column headerText="MarkTypeId" sortBy="#{rec.marktypeid}"
-				filterBy="#{rec.marktypeid}" id="marktypeid">  
+					<p:column headerText="MarkTypeId" sortBy="#{rec.marktypeid}"
+						filterBy="#{rec.marktypeid}" id="marktypeid">  
             #{rec.marktypeid}  
         </p:column>
-        <p:column headerText="Modified" sortBy="#{rec.modified}"
-				filterBy="#{rec.modified}" id="modified">  
+					<p:column headerText="Modified" sortBy="#{rec.modified}"
+						filterBy="#{rec.modified}" id="modified">  
             #{rec.modified}  
         </p:column>
-        <p:column headerText="Created" sortBy="#{rec.created}"
-				filterBy="#{rec.created}" id="created">  
+					<p:column headerText="Created" sortBy="#{rec.created}"
+						filterBy="#{rec.created}" id="created">  
             #{rec.created}  
         </p:column>
-		</p:dataTable>
+				</p:dataTable>
 
-	</h:form>
-	<div id="footer">
-		<ui:insert name="footer">
-			<ui:include src="/footer.xhtml" />
-		</ui:insert>
+			</h:form>
+		</div>
+		<div id="footer">
+			<ui:insert name="footer">
+				<ui:include src="/footer.xhtml" />
+			</ui:insert>
+		</div>
 	</div>
 </h:body>
 </html>

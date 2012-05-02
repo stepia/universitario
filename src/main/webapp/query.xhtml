@@ -1,15 +1,9 @@
-<!DOCTYPE html>
 <h:html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:composite="http://java.sun.com/jsf/composite"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.prime.com.tr/ui"
-	xmlns:utils="http://java.sun.com/jsf/composite/utils">
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 
 <h:body>
-	<div id="header">
 		<ui:insert name="header">
 			<ui:include src="/header.xhtml">
 				<ui:param name="title" value="#{title}" />
@@ -26,6 +20,5 @@
 				</tr>
 			</table>
 		</h:form>
-	</div>
 </h:body>
 </h:html>

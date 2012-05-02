@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:utils="http://java.sun.com/jsf/composite/utils"
-	xmlns:sec="http://www.springframework.org/security/tags"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
 	<h:title>#{msg.adminTools}</h:title>
@@ -12,157 +9,156 @@
 </h:head>
 
 <h:body>
-<f:view locale="#{language.localeCode}">
-	<div id="header">
-		<ui:insert name="header">
-			<ui:include src="/header.xhtml">
-			    <ui:param name="title" value="#{msg.adminTools}"/>
-			</ui:include>
-		</ui:insert>
-	</div>
+	<f:view locale="#{language.localeCode}" />
+	<div id="container">
+		<div id="header">
+			<ui:insert name="header">
+				<ui:include src="/header.xhtml">
+					<ui:param name="title" value="#{msg.adminTools}" />
+				</ui:include>
+			</ui:insert>
+		</div>
 
-	<div id="content">
-		<ui:insert name="content">
-          <f:ajax>
-			<h:panelGrid columns="6" cellpadding="10" cellspacing="100"
-				styleClass="centered">
+		<div id="content">
+			<ui:insert name="content">
+				<f:ajax>
+					<h:panelGrid columns="6" cellpadding="10" cellspacing="100"
+						styleClass="centered">
 
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/system-password.png"
-						action="#{mainbean.doAction('passwordchanges')}" />
-					<h:outputText value="#{msg.passwordChanges}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/discipline.png"
-						action="#{mainbean.doAction('discipline')}" />
-					<h:outputText value="#{msg.discipline}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image=""
-						action="#{mainbean.doAction('emp2team')}" />
-					<h:outputText value="#{msg.emp2team}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/employee.png"
-						action="#{mainbean.doAction('employee')}" />
-					<h:outputText value="#{msg.employee}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/lesson.png"
-						action="#{mainbean.doAction('lesson')}" />
-					<h:outputText value="#{msg.lesson}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/lesson.png"
-						action="#{mainbean.doAction('lessontype')}" />
-					<h:outputText value="#{msg.lessontype}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image=""
-						action="#{mainbean.doAction('mark')}" />
-					<h:outputText value="#{msg.mark}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image=""
-						action="#{mainbean.doAction('marktype')}" />
-					<h:outputText value="#{msg.marktype}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/occupation.png"
-						action="#{mainbean.doAction('occupation')}" />
-					<h:outputText value="#{msg.occupation}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image=""
-						action="#{mainbean.doAction('period')}" />
-					<h:outputText value="#{msg.period}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/person.png"
-						action="#{mainbean.doAction('person')}" />
-					<h:outputText value="#{msg.person}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/plan.png"
-						action="#{mainbean.doAction('plan')}" />
-					<h:outputText value="#{msg.plan}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/position.png"
-						action="#{mainbean.doAction('position')}" />
-					<h:outputText value="#{msg.position}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/report.png"
-						action="#{mainbean.doAction('report')}" />
-					<h:outputText value="#{msg.report}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/report.png"
-						action="#{mainbean.doAction('reporttype')}" />
-					<h:outputText value="#{msg.reporttype}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/role.png"
-						action="#{mainbean.doAction('role')}" />
-					<h:outputText value="#{msg.role}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/state.png"
-						action="#{mainbean.doAction('state')}" />
-					<h:outputText value="#{msg.state}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/team.png"
-						action="#{mainbean.doAction('team')}" />
-					<h:outputText value="#{msg.team}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/team.png"
-						action="#{mainbean.doAction('teamtype')}" />
-					<h:outputText value="#{msg.teamtype}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/time.png"
-						action="#{mainbean.doAction('time')}" />
-					<h:outputText value="#{msg.time}" />
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1" cellpadding="10">
-					<h:commandButton image="/resources/img/week.png"
-						action="#{mainbean.doAction('week')}" />
-					<h:outputText value="#{msg.week}" />
-				</h:panelGrid>
-				
-			</h:panelGrid>
-			</f:ajax>
-		</ui:insert>
-	</div>
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/system-password.png"
+								action="#{mainbean.doAction('passwordchanges')}" />
+							<h:outputText value="#{msg.passwordChanges}" />
+						</h:panelGrid>
 
-	<div id="footer">
-		<ui:insert name="footer">
-			<ui:include src="/footer.xhtml" />
-		</ui:insert>
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/discipline.png"
+								action="#{mainbean.doAction('discipline')}" />
+							<h:outputText value="#{msg.discipline}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image=""
+								action="#{mainbean.doAction('emp2team')}" />
+							<h:outputText value="#{msg.emp2team}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/employee.png"
+								action="#{mainbean.doAction('employee')}" />
+							<h:outputText value="#{msg.employee}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/lesson.png"
+								action="#{mainbean.doAction('lesson')}" />
+							<h:outputText value="#{msg.lesson}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/lesson.png"
+								action="#{mainbean.doAction('lessontype')}" />
+							<h:outputText value="#{msg.lessontype}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="" action="#{mainbean.doAction('mark')}" />
+							<h:outputText value="#{msg.mark}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image=""
+								action="#{mainbean.doAction('marktype')}" />
+							<h:outputText value="#{msg.marktype}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/occupation.png"
+								action="#{mainbean.doAction('occupation')}" />
+							<h:outputText value="#{msg.occupation}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="" action="#{mainbean.doAction('period')}" />
+							<h:outputText value="#{msg.period}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/person.png"
+								action="#{mainbean.doAction('person')}" />
+							<h:outputText value="#{msg.person}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/plan.png"
+								action="#{mainbean.doAction('plan')}" />
+							<h:outputText value="#{msg.plan}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/position.png"
+								action="#{mainbean.doAction('position')}" />
+							<h:outputText value="#{msg.position}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/report.png"
+								action="#{mainbean.doAction('report')}" />
+							<h:outputText value="#{msg.report}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/report.png"
+								action="#{mainbean.doAction('reporttype')}" />
+							<h:outputText value="#{msg.reporttype}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/role.png"
+								action="#{mainbean.doAction('role')}" />
+							<h:outputText value="#{msg.role}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/state.png"
+								action="#{mainbean.doAction('state')}" />
+							<h:outputText value="#{msg.state}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/team.png"
+								action="#{mainbean.doAction('team')}" />
+							<h:outputText value="#{msg.team}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/team.png"
+								action="#{mainbean.doAction('teamtype')}" />
+							<h:outputText value="#{msg.teamtype}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/time.png"
+								action="#{mainbean.doAction('time')}" />
+							<h:outputText value="#{msg.time}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/week.png"
+								action="#{mainbean.doAction('week')}" />
+							<h:outputText value="#{msg.week}" />
+						</h:panelGrid>
+
+					</h:panelGrid>
+				</f:ajax>
+			</ui:insert>
+		</div>
+
+		<div id="footer">
+			<ui:insert name="footer">
+				<ui:include src="/footer.xhtml" />
+			</ui:insert>
+		</div>
 	</div>
-	</f:view>
 </h:body>
 </html>
