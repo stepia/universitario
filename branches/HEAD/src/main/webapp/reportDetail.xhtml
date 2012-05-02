@@ -22,8 +22,18 @@
 		<div id="content">
 			<h:form id="reportDetailForm">
 				<p:panel header="Report" styleClass="panel">
-	    Report name:<h:inputText
+	    Report Id:<h:inputText
 						value="#{reportViewBean.selectedReport.id}" />
+		Report ReportId:<h:inputText
+						value="#{reportViewBean.selectedReport.reportid}" />
+		Report EmpId:<h:inputText
+						value="#{reportViewBean.selectedReport.empid}" />
+		Report Name:<h:inputText
+						value="#{reportViewBean.selectedReport.name}" />
+		Report Modified:<h:inputText
+						value="#{reportViewBean.selectedReport.modified}" />
+		Report Created:<h:inputText
+						value="#{reportViewBean.selectedReport.created}" />
 
 					<br />
 				</p:panel>

@@ -22,8 +22,14 @@
 		<div id="content">
 			<h:form id="occupationDetailForm">
 				<p:panel header="Occupation" styleClass="panel">
-	    Occupation name:<h:inputText
+	    Occupation Id:<h:inputText
 						value="#{occupationViewBean.selectedOccupation.id}" />
+		Occupation Name:<h:inputText
+						value="#{occupationViewBean.selectedOccupation.name}" />
+		Occupation Created:<h:inputText
+						value="#{occupationViewBean.selectedOccupation.created}" />
+		Occupation Modified:<h:inputText
+						value="#{occupationViewBean.selectedOccupation.modified}" />
 
 					<br />
 				</p:panel>

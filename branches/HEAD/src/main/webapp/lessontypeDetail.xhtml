@@ -22,8 +22,14 @@
 		<div id="content">
 			<h:form id="lessontypeDetailForm">
 				<p:panel header="LessonType" styleClass="panel">
-	    Lessontype name:<h:inputText
+	    Lessontype Id:<h:inputText
 						value="#{lessonTypeViewBean.selectedLessonType.id}" />
+		Lessontype Name:<h:inputText
+						value="#{lessonTypeViewBean.selectedLessonType.name}" />
+		Lessontype Created:<h:inputText
+						value="#{lessonTypeViewBean.selectedLessonType.created}" />
+		Lessontype Modified:<h:inputText
+						value="#{lessonTypeViewBean.selectedLessonType.modified}" />
 
 					<br />
 				</p:panel>

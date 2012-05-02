@@ -22,8 +22,16 @@
 		<div id="content">
 			<h:form id="personDetailForm">
 				<p:panel header="Person" styleClass="panel">
-	    Person name:<h:inputText
+	    Person Id:<h:inputText
 						value="#{personViewBean.selectedPerson.id}" />
+		Person FirstName:<h:inputText
+						value="#{personViewBean.selectedPerson.firstname}" />
+		Person LastName:<h:inputText
+						value="#{personViewBean.selectedPerson.lastname}" />
+		Person MiddleName:<h:inputText
+						value="#{personViewBean.selectedPerson.middlename}" />
+		Person Dob:<h:inputText
+						value="#{personViewBean.selectedPerson.dob}" />
 
 					<br />
 				</p:panel>

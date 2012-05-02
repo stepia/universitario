@@ -22,7 +22,14 @@
 		<div id="content">
 			<h:form id="stateDetailForm">
 				<p:panel header="State" styleClass="panel">
-	    State name:<h:inputText value="#{stateViewBean.selectedState.id}" />
+	    State Id:<h:inputText
+	    				value="#{stateViewBean.selectedState.id}" />
+	    State Name:<h:inputText
+	    				value="#{stateViewBean.selectedState.name}" />
+	    State Created:<h:inputText
+	    				value="#{stateViewBean.selectedState.created}" />
+	    State Modified:<h:inputText
+	    				value="#{stateViewBean.selectedState.modified}" />
 
 					<br />
 				</p:panel>

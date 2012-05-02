@@ -22,8 +22,14 @@
 		<div id="content">
 			<h:form id="periodDetailForm">
 				<p:panel header="Period" styleClass="panel">
-	    Period name:<h:inputText
+	    Period Id:<h:inputText
 						value="#{periodViewBean.selectedPeriod.id}" />
+		Period Value:<h:inputText
+						value="#{periodViewBean.selectedPeriod.value}" />
+		Period Created:<h:inputText
+						value="#{periodViewBean.selectedPeriod.created}" />
+		Period Modified:<h:inputText
+						value="#{periodViewBean.selectedPeriod.modified}" />
 
 					<br />
 				</p:panel>

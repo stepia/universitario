@@ -22,8 +22,14 @@
 		<div id="content">
 			<h:form id="disciplineDetailForm">
 				<p:panel header="Discipline" styleClass="panel">
-	    Discipline name:<h:inputText
-						value="#{disciplineViewBean.selectedDiscipline.id}" />
+	    Discipline Id:<h:inputText
+	    				value="#{disciplineViewBean.selectedDiscipline.id}" />
+	    Discipline Name:<h:inputText
+	    				value="#{disciplineViewBean.selectedDiscipline.name}" />
+	    Discipline Created:<h:inputText
+	    				value="#{disciplineViewBean.selectedDiscipline.created}" />
+	    Discipline Modified:<h:inputText
+	    				value="#{disciplineViewBean.selectedDiscipline.modified}" />
 
 					<br />
 				</p:panel>

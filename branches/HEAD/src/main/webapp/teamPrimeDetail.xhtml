@@ -22,7 +22,22 @@
 		<div id="content">
 			<h:form id="teamDetailForm">
 				<p:panel header="Team" styleClass="panel">
-	    Team name:<h:inputText value="#{teamViewBean.selectedTeam.name}" />
+		Team Id:<h:inputText
+	    			value="#{teamViewBean.selectedTeam.id}" />
+	    Team Name:<h:inputText
+	    			value="#{teamViewBean.selectedTeam.name}" />
+	    Team TeamtypeId:<h:inputText
+	    			value="#{teamViewBean.selectedTeam.teamtypeid}" />
+	    Team RootId:<h:inputText
+	    			value="#{teamViewBean.selectedTeam.rootid}" />
+	    Team Details:<h:inputText
+	    			value="#{teamViewBean.selectedTeam.details}" />
+	    Team StateId:<h:inputText
+	    			value="#{teamViewBean.selectedTeam.stateid}" />
+	    Team Created:<h:inputText
+	    			value="#{teamViewBean.selectedTeam.created}" />
+	    Team Modified:<h:inputText
+	    			value="#{teamViewBean.selectedTeam.modified}" />
 
 					<br />
 				</p:panel>
