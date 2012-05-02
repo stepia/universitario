@@ -39,9 +39,9 @@ public class PersonDaoHibernate implements PersonDao {
     }
 
     @Transactional
-    public Person getPerson(String firstname) {
+    public Person getPerson(Long id) {
         List persons = sessionFactory.getCurrentSession().createCriteria(Person.class)
-                    .add(Restrictions.eq("firstname", firstname)).list();
+                    .add(Restrictions.eq("id", id)).list();
         Person person = null;
         if ((persons != null) && (persons.size() > 0)) {
             person = (Person) persons.get(0);

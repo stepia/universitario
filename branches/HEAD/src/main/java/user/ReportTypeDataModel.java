@@ -18,19 +18,20 @@ public class ReportTypeDataModel extends ListDataModel<ReportType> implements Se
     }
 
     public ReportType getRowData(String rowKey) {
+    	Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<ReportType> reportTypes = (List<ReportType>) getWrappedData();
 
         for (ReportType reportType : reportTypes) {
-            if (reportType.getName().equals(rowKey))
+            if (reportType.getId().equals(id))
                 return reportType;
         }
 
         return null;
     }
 
-    public String getRowKey(ReportType reportType) {
-        return reportType.getName();
+    public Long getRowKey(ReportType reportType) {
+        return reportType.getId();
     }
 }

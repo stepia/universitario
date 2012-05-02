@@ -1,20 +1,23 @@
 package user;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.event.SelectEvent;
 
 import service.IOccupationManager;
 import entry.Occupation;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class OccupationViewBean {
 
-    private Occupation occupation;
     @ManagedProperty(value = "#{occupationManager}")
     private IOccupationManager occupationManager;
     private Occupation selectedOccupation;
@@ -61,12 +64,12 @@ public class OccupationViewBean {
         this.selectedOccupation = selectedOccupation;
     }
 
-    public Occupation getOccupation() {
-        return occupation;
+    public void onRowSelect(SelectEvent event) throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("occupationDetail.xhtml");
     }
 
-    public void setOccupation(Occupation occupation) {
-        this.occupation = occupation;
+    public void init() throws IOException {
+        setSelectedOccupation(null);
     }
 
 }

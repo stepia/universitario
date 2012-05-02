@@ -12,6 +12,6 @@ public interface OccupationDao {
 
     public void editOccupation(Occupation occupation);
 
-    public Occupation getOccupation(String name);
+    public Occupation getOccupation(Long id);
 
 }

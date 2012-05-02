@@ -1,20 +1,23 @@
 package user;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.event.SelectEvent;
 
 import service.ITeamTypeManager;
 import entry.TeamType;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class TeamTypeViewBean {
 
-    private TeamType teamType;
     @ManagedProperty(value = "#{teamTypeManager}")
     private ITeamTypeManager teamTypeManager;
     private TeamType selectedTeamType;
@@ -61,12 +64,12 @@ public class TeamTypeViewBean {
         this.selectedTeamType = selectedTeamType;
     }
 
-    public TeamType getTeamType() {
-        return teamType;
+    public void onRowSelect(SelectEvent event) throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("teamtypeDetail.xhtml");
     }
 
-    public void setTeamType(TeamType teamType) {
-        this.teamType = teamType;
+    public void init() throws IOException {
+        setSelectedTeamType(null);
     }
 
 }

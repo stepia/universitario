@@ -12,6 +12,6 @@ public interface PositionDao {
 
     public void editPosition(Position position);
 
-    public Position getPosition(String name);
+    public Position getPosition(Long id);
 
 }

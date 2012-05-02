@@ -29,8 +29,8 @@ public class PeriodManager implements IPeriodManager {
         getPeriodDao().editPeriod(period);
     }
 
-    public Period getPeriod(String value) {
-        return getPeriodDao().getPeriod(value);
+    public Period getPeriod(Long id) {
+        return getPeriodDao().getPeriod(id);
     }
 
 }

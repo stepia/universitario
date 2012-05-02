@@ -29,8 +29,8 @@ public class RoleManager implements IRoleManager {
         getRoleDao().editRole(role);
     }
 
-    public Role getRole(String name) {
-        return getRoleDao().getRole(name);
+    public Role getRole(Long id) {
+        return getRoleDao().getRole(id);
     }
 
 }

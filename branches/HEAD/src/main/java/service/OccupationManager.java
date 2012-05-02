@@ -29,8 +29,8 @@ public class OccupationManager implements IOccupationManager {
         getOccupationDao().editOccupation(occupation);
     }
 
-    public Occupation getOccupation(String name) {
-        return getOccupationDao().getOccupation(name);
+    public Occupation getOccupation(Long id) {
+        return getOccupationDao().getOccupation(id);
     }
 
 }

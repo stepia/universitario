@@ -18,19 +18,20 @@ public class PeriodDataModel extends ListDataModel<Period> implements Selectable
     }
 
     public Period getRowData(String rowKey) {
+    	Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<Period> periods = (List<Period>) getWrappedData();
 
         for (Period period : periods) {
-            if (period.getValue().equals(rowKey))
+            if (period.getId().equals(id))
                 return period;
         }
 
         return null;
     }
 
-    public String getRowKey(Period period) {
-        return period.getValue();
+    public Long getRowKey(Period period) {
+        return period.getId();
     }
 }

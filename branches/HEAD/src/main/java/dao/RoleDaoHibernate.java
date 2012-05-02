@@ -39,9 +39,9 @@ public class RoleDaoHibernate implements RoleDao {
     }
 
     @Transactional
-    public Role getRole(String name) {
+    public Role getRole(Long id) {
         List roles = sessionFactory.getCurrentSession().createCriteria(Role.class)
-                    .add(Restrictions.eq("name", name)).list();
+                    .add(Restrictions.eq("id", id)).list();
         Role role = null;
         if ((roles != null) && (roles.size() > 0)) {
         	role = (Role) roles.get(0);

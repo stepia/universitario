@@ -1,20 +1,23 @@
 package user;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.event.SelectEvent;
 
 import service.IWeekManager;
 import entry.Week;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class WeekViewBean {
 
-    private Week week;
     @ManagedProperty(value = "#{weekManager}")
     private IWeekManager weekManager;
     private Week selectedWeek;
@@ -61,12 +64,12 @@ public class WeekViewBean {
         this.selectedWeek = selectedWeek;
     }
 
-    public Week getWeek() {
-        return week;
+    public void onRowSelect(SelectEvent event) throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("weekDetail.xhtml");
     }
 
-    public void setWeek(Week week) {
-        this.week = week;
+    public void init() throws IOException {
+        setSelectedWeek(null);
     }
 
 }

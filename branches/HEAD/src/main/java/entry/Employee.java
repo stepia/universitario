@@ -30,16 +30,16 @@ public class Employee {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
     public String getUsrname() {
         return usrname;
     }
 
     public void setUsrname(String usrname) {
         this.usrname = usrname;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public int getStateid() {
@@ -50,11 +50,11 @@ public class Employee {
         this.stateid = stateid;
     }
 
-    public Long getpersonid() {
+    public Long getPersonid() {
         return personid;
     }
 
-    public void setpersonid(Long personid) {
+    public void setPersonid(Long personid) {
         this.personid = personid;
     }
 

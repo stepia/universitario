@@ -30,43 +30,43 @@ public class Emp2Team {
         this.id = id;
     }
 
-    public Long getempid() {
+    public Long getEmpid() {
         return empid;
     }
 
-    public void setempid(Long empid) {
+    public void setEmpid(Long empid) {
         this.empid = empid;
     }
 
-    public Long getteamid() {
+    public Long getTeamid() {
         return teamid;
     }
 
-    public void setteamid(Long teamid) {
+    public void setTeamid(Long teamid) {
         this.teamid = teamid;
     }
 
-    public Long getpositionid() {
+    public Long getPositionid() {
         return positionid;
     }
 
-    public void setpositionid(Long positionid) {
+    public void setPositionid(Long positionid) {
         this.positionid = positionid;
     }
 
-    public Long getoccupationid() {
+    public Long getOccupationid() {
         return occupationid;
     }
 
-    public void setoccupationid(Long occupationid) {
+    public void setOccupationid(Long occupationid) {
         this.occupationid = occupationid;
     }
 
-    public Long getstateid() {
+    public Long getStateid() {
         return stateid;
     }
 
-    public void setstateid(Long stateid) {
+    public void setStateid(Long stateid) {
         this.stateid = stateid;
     }
 

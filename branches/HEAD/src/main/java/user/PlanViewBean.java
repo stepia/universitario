@@ -1,20 +1,23 @@
 package user;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.event.SelectEvent;
 
 import service.IPlanManager;
 import entry.Plan;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class PlanViewBean {
 
-    private Plan plan;
     @ManagedProperty(value = "#{planManager}")
     private IPlanManager planManager;
     private Plan selectedPlan;
@@ -61,12 +64,12 @@ public class PlanViewBean {
         this.selectedPlan = selectedPlan;
     }
 
-    public Plan getPlan() {
-        return plan;
+    public void onRowSelect(SelectEvent event) throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("planDetail.xhtml");
     }
 
-    public void setPlan(Plan plan) {
-        this.plan = plan;
+    public void init() throws IOException {
+        setSelectedPlan(null);
     }
 
 }

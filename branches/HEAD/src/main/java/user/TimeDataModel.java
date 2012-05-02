@@ -18,12 +18,13 @@ public class TimeDataModel extends ListDataModel<Time> implements SelectableData
     }
 
     public Time getRowData(String rowKey) {
+    	Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<Time> times = (List<Time>) getWrappedData();
 
         for (Time time : times) {
-            if (time.getId().equals(rowKey))
+            if (time.getId().equals(id))
                 return time;
         }
 

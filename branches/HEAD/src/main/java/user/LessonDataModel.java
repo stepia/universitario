@@ -18,12 +18,13 @@ public class LessonDataModel extends ListDataModel<Lesson> implements Selectable
     }
 
     public Lesson getRowData(String rowKey) {
+    	Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<Lesson> lessons = (List<Lesson>) getWrappedData();
 
         for (Lesson lesson : lessons) {
-            if (lesson.getId().equals(rowKey))
+            if (lesson.getId().equals(id))
                 return lesson;
         }
 

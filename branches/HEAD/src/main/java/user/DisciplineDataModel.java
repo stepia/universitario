@@ -18,20 +18,20 @@ public class DisciplineDataModel extends ListDataModel<Discipline> implements Se
     }
 
     public Discipline getRowData(String rowKey) {
-    	String name = String.valueOf(rowKey);
+    	Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<Discipline> disciplines = (List<Discipline>) getWrappedData();
 
         for (Discipline discipline : disciplines) {
-            if (discipline.getName().equals(name))
+            if (discipline.getId().equals(id))
                 return discipline;
         }
 
         return null;
     }
 
-    public String getRowKey(Discipline discipline) {
-        return discipline.getName();
+    public Long getRowKey(Discipline discipline) {
+        return discipline.getId();
     }
 }

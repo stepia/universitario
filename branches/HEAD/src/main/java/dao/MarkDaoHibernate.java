@@ -39,9 +39,9 @@ public class MarkDaoHibernate implements MarkDao {
     }
 
     @Transactional
-    public Mark getMark(String name) {
+    public Mark getMark(Long id) {
         List marks = sessionFactory.getCurrentSession().createCriteria(Mark.class)
-                    .add(Restrictions.eq("name", name)).list();
+                    .add(Restrictions.eq("id", id)).list();
         Mark mark = null;
         if ((marks != null) && (marks.size() > 0)) {
         	mark = (Mark) marks.get(0);

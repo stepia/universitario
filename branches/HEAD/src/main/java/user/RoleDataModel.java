@@ -18,19 +18,20 @@ public class RoleDataModel extends ListDataModel<Role> implements SelectableData
     }
 
     public Role getRowData(String rowKey) {
+    	Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<Role> roles = (List<Role>) getWrappedData();
 
         for (Role role : roles) {
-            if (role.getName().equals(rowKey))
+            if (role.getId().equals(id))
                 return role;
         }
 
         return null;
     }
 
-    public String getRowKey(Role role) {
-        return role.getName();
+    public Long getRowKey(Role role) {
+        return role.getId();
     }
 }

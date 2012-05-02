@@ -39,9 +39,9 @@ public class PositionDaoHibernate implements PositionDao {
     }
 
     @Transactional
-    public Position getPosition(String name) {
+    public Position getPosition(Long id) {
         List positions = sessionFactory.getCurrentSession().createCriteria(Position.class)
-                    .add(Restrictions.eq("name", name)).list();
+                    .add(Restrictions.eq("id", id)).list();
         Position position = null;
         if ((positions != null) && (positions.size() > 0)) {
         	position = (Position) positions.get(0);

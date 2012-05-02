@@ -12,6 +12,6 @@ public interface ReportTypeDao {
 
     public void editReportType(ReportType reporttype);
 
-    public ReportType getReportType(String name);
+    public ReportType getReportType(Long id);
 
 }

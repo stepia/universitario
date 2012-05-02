@@ -18,12 +18,13 @@ public class TeamDataModel extends ListDataModel<Team> implements SelectableData
     }
 
     public Team getRowData(String rowKey) {
+    	String name = String.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<Team> teams = (List<Team>) getWrappedData();
 
         for (Team team : teams) {
-            if (team.getName().equals(rowKey))
+            if (team.getName().equals(name))
                 return team;
         }
 

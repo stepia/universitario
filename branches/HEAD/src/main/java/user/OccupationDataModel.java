@@ -18,19 +18,20 @@ public class OccupationDataModel extends ListDataModel<Occupation> implements Se
     }
 
     public Occupation getRowData(String rowKey) {
+    	Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<Occupation> occupations = (List<Occupation>) getWrappedData();
 
         for (Occupation occupation : occupations) {
-            if (occupation.getName().equals(rowKey))
+            if (occupation.getId().equals(id))
                 return occupation;
         }
 
         return null;
     }
 
-    public String getRowKey(Occupation occupation) {
-        return occupation.getName();
+    public Long getRowKey(Occupation occupation) {
+        return occupation.getId();
     }
 }

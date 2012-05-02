@@ -64,10 +64,6 @@ public class DisciplineViewBean {
         this.selectedDiscipline = selectedDiscipline;
     }
 
-    public String doAction(String action) {
-        return action;
-    }
-
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("disciplineDetail.xhtml");
     }

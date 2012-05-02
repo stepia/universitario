@@ -18,19 +18,20 @@ public class PersonDataModel extends ListDataModel<Person> implements Selectable
     }
 
     public Person getRowData(String rowKey) {
+    	Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<Person> persons = (List<Person>) getWrappedData();
 
         for (Person person : persons) {
-            if (person.getLastName().equals(rowKey))
+            if (person.getId().equals(id))
                 return person;
         }
 
         return null;
     }
 
-    public String getRowKey(Person person) {
-        return person.getLastName();
+    public Long getRowKey(Person person) {
+        return person.getId();
     }
 }

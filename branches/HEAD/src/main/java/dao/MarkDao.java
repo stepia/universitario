@@ -12,6 +12,6 @@ public interface MarkDao {
 
     public void editMark(Mark mark);
 
-    public Mark getMark(String name);
+    public Mark getMark(Long id);
 
 }

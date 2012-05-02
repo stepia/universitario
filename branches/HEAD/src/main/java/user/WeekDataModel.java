@@ -18,12 +18,13 @@ public class WeekDataModel extends ListDataModel<Week> implements SelectableData
     }
 
     public Week getRowData(String rowKey) {
+    	Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<Week> weeks = (List<Week>) getWrappedData();
 
         for (Week week : weeks) {
-            if (week.getId().equals(rowKey))
+            if (week.getId().equals(id))
                 return week;
         }
 

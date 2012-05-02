@@ -18,12 +18,13 @@ public class ReportDataModel extends ListDataModel<Report> implements Selectable
     }
 
     public Report getRowData(String rowKey) {
+    	Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<Report> reports = (List<Report>) getWrappedData();
 
         for (Report report : reports) {
-            if (report.getId().equals(rowKey))
+            if (report.getId().equals(id))
                 return report;
         }
 

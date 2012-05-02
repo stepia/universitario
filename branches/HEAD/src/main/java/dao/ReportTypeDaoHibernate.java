@@ -39,9 +39,9 @@ public class ReportTypeDaoHibernate implements ReportTypeDao {
     }
 
     @Transactional
-    public ReportType getReportType(String name) {
+    public ReportType getReportType(Long id) {
         List reporttypes = sessionFactory.getCurrentSession().createCriteria(ReportType.class)
-                    .add(Restrictions.eq("name", name)).list();
+                    .add(Restrictions.eq("id", id)).list();
         ReportType reporttype = null;
         if ((reporttypes != null) && (reporttypes.size() > 0)) {
         	reporttype = (ReportType) reporttypes.get(0);

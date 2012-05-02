@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -11,59 +10,60 @@
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
+<f:event type="preRenderView" listener="#{lessonViewBean.init}"/>
+
 <h:body>
 	<div id="header">
 		<ui:insert name="header">
-			<ui:include src="/header.xhtml">
-			    <ui:param name="title" value="Lesson"/>
+			<ui:include src="/query.xhtml">
+			    <ui:param name="title" value="#{msg.lesson}"/>
 			</ui:include>
 		</ui:insert>
 	</div>
 
-	<h:form id="lessonform">
-		<p:dataTable var="rec"
-			rowKey="#{rec.id}" paginator="true" rows="5" value="#{lessonViewBean.lessons}"
-			selection="#{lessonViewBean.selectedLesson}" selectionMode="single"
-			id="lessonTable" rowsPerPageTemplate="5,10,15,25,50,100">
+<h:form id="lessonform">
+	<p:blockUI block="lessonTable" trigger="lessonTable" styleClass="resTable">  
+            Loading<br/>
+            <br/>
+        <p:graphicImage value="/resources/img/ajax-loader.gif"/> 
+    </p:blockUI>
+    
+		<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5" value="#{lessonViewBean.lessons}"
+			selection="#{lessonViewBean.selectedLesson}" id="lessonTable" rowsPerPageTemplate="5,10,15,25,50,100" styleClass="resTable">
 
 			<f:facet name="header">  
             List of Lessons (#{lessonViewBean.length}) 
         </f:facet>
+        <p:column selectionMode="single" style="width:18px"/>
+        <p:ajax event="rowSelect" listener="#{lessonViewBean.onRowSelect}" update=":lessonform" />
         <p:column headerText="ID" sortBy="#{rec.id}"
 				filterBy="#{rec.id}" id="id">  
             #{rec.id}  
         </p:column>
-		
 		<p:column headerText="PlanId" sortBy="#{rec.planid}"
 				filterBy="#{rec.planid}" id="planid">  
             #{rec.planid}  
         </p:column>
-        
         <p:column headerText="FacultyId" sortBy="#{rec.facultyid}"
 				filterBy="#{rec.facultyid}" id="facultyid">  
             #{rec.facultyid}  
         </p:column>
-        
         <p:column headerText="Room" sortBy="#{rec.room}"
 				filterBy="#{rec.room}" id="room">  
             #{rec.room}  
         </p:column>
-        
         <p:column headerText="LessonTimeId" sortBy="#{rec.lessontimeid}"
 				filterBy="#{rec.lessontimeid}" id="lessontimeid">  
             #{rec.lessontimeid}  
         </p:column>
-        
         <p:column headerText="DayId" sortBy="#{rec.dayid}"
 				filterBy="#{rec.dayid}" id="dayid">  
             #{rec.dayid}  
         </p:column>
-        
         <p:column headerText="WeekId" sortBy="#{rec.weekid}"
 				filterBy="#{rec.weekid}" id="weekid">  
             #{rec.weekid}  
         </p:column>
-        
         <p:column headerText="Modified" sortBy="#{rec.modified}"
 				filterBy="#{rec.modified}" id="modified">  
             #{rec.modified}  
@@ -72,22 +72,8 @@
 				filterBy="#{rec.created}" id="created">  
             #{rec.created}  
         </p:column>
-	        
-			<f:facet name="footer">
-				<p:commandButton id="viewButton" value="View" icon="ui-icon-search"
-					oncomplete="lessonDialog.show()" />
-				<p:commandButton id="createButton" value="Create"
-					icon="ui-icon-search" oncomplete="lessonDialog.show()" />
-			</f:facet>
-		</p:dataTable>
-
-		<p:dialog header="Lesson Detail" widgetVar="lessonDialog"
-			resizable="false" showEffect="explode"
-			hideEffect="explode" modal="true">
-			<h:panelGrid columns="1" cellspacing="20">
-				<ui:include src="/lessonDetail.xhtml" />
-			</h:panelGrid>
-		</p:dialog>
+        </p:dataTable>
+        
 	</h:form>
 	<div id="footer">
 		<ui:insert name="footer">

@@ -18,12 +18,13 @@ public class TeamTypeDataModel extends ListDataModel<TeamType> implements Select
     }
 
     public TeamType getRowData(String rowKey) {
+    	Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<TeamType> teamTypes = (List<TeamType>) getWrappedData();
 
         for (TeamType teamType : teamTypes) {
-            if (teamType.getId().equals(rowKey))
+            if (teamType.getId().equals(id))
                 return teamType;
         }
 

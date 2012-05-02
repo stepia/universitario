@@ -29,8 +29,8 @@ public class MarkManager implements IMarkManager {
         getMarkDao().editMark(mark);
     }
 
-    public Mark getMark(String name) {
-        return getMarkDao().getMark(name);
+    public Mark getMark(Long id) {
+        return getMarkDao().getMark(id);
     }
 
 }
