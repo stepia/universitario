@@ -10,24 +10,30 @@
 </h:head>
 
 <h:body>
-	<div id="header">
-		<ui:insert name="header">
-			<ui:include src="/detail.xhtml">
-				<ui:param name="title" value="#{msg.person}" />
-			</ui:include>
-		</ui:insert>
-	</div>
-	<h:form id="personDetailForm">
-		<p:panel header="Person" styleClass="panel">
-	    Person name:<h:inputText value="#{personViewBean.selectedPerson.id}" />
+	<f:view locale="#{language.localeCode}" />
+	<div id="container">
+		<div id="header">
+			<ui:insert name="header">
+				<ui:include src="/detail.xhtml">
+					<ui:param name="title" value="#{msg.person}" />
+				</ui:include>
+			</ui:insert>
+		</div>
+		<div id="content">
+			<h:form id="personDetailForm">
+				<p:panel header="Person" styleClass="panel">
+	    Person name:<h:inputText
+						value="#{personViewBean.selectedPerson.id}" />
 
-			<br />
-		</p:panel>
-	</h:form>
-	<div id="footer">
-		<ui:insert name="footer">
-			<ui:include src="/footer.xhtml" />
-		</ui:insert>
+					<br />
+				</p:panel>
+			</h:form>
+		</div>
+		<div id="footer">
+			<ui:insert name="footer">
+				<ui:include src="/footer.xhtml" />
+			</ui:insert>
+		</div>
 	</div>
 </h:body>
 </html>

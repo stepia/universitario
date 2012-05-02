@@ -13,68 +13,76 @@
 <f:event type="preRenderView" listener="#{emp2TeamViewBean.init}" />
 
 <h:body>
-	<div id="header">
-		<ui:insert name="header">
-			<ui:include src="/query.xhtml">
-			    <ui:param name="title" value="#{msg.emp2team}"/>
-			</ui:include>
-		</ui:insert>
-	</div>
+	<f:view locale="#{language.localeCode}" />
+	<div id="container">
+		<div id="header">
+			<ui:insert name="header">
+				<ui:include src="/query.xhtml">
+					<ui:param name="title" value="#{msg.emp2team}" />
+				</ui:include>
+			</ui:insert>
+		</div>
+		<div id="content">
+			<h:form id="emp2teamform">
+				<p:blockUI block="emp2TeamTable" trigger="emp2TeamTable"
+					styleClass="resTable">  
+            Loading<br />
+					<br />
+					<p:graphicImage value="/resources/img/ajax-loader.gif" />
+				</p:blockUI>
 
-<h:form id="emp2teamform">
-	<p:blockUI block="emp2TeamTable" trigger="emp2TeamTable" styleClass="resTable">  
-            Loading<br/>
-            <br/>
-        <p:graphicImage value="/resources/img/ajax-loader.gif"/> 
-    </p:blockUI>
-    
-		<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5" value="#{emp2TeamViewBean.emp2Teams}"
-			selection="#{emp2TeamViewBean.selectedEmp2Team}" id="emp2TeamTable" rowsPerPageTemplate="5,10,15,25,50,100" styleClass="resTable">
+				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
+					value="#{emp2TeamViewBean.emp2Teams}"
+					selection="#{emp2TeamViewBean.selectedEmp2Team}" id="emp2TeamTable"
+					rowsPerPageTemplate="5,10,15,25,50,100" styleClass="resTable">
 
-			<f:facet name="header">  
+					<f:facet name="header">  
             List of Emp2teams (#{emp2TeamViewBean.length}) 
         </f:facet>
-        <p:column selectionMode="single" style="width:20px"/>
-        <p:ajax event="rowSelect" listener="#{emp2TeamViewBean.onRowSelect}" update=":emp2teamform" />
-        <p:column headerText="ID" sortBy="#{rec.id}"
-				filterBy="#{rec.id}" id="id">  
+					<p:column selectionMode="single" style="width:20px" />
+					<p:ajax event="rowSelect"
+						listener="#{emp2TeamViewBean.onRowSelect}" update=":emp2teamform" />
+					<p:column headerText="ID" sortBy="#{rec.id}" filterBy="#{rec.id}"
+						id="id">  
             #{rec.id}  
         </p:column>
-			<p:column headerText="EmpId" sortBy="#{rec.empid}"
-				filterBy="#{rec.empid}" id="empid">  
+					<p:column headerText="EmpId" sortBy="#{rec.empid}"
+						filterBy="#{rec.empid}" id="empid">  
             #{rec.empid}  
         </p:column>
-        <p:column headerText="TeamId" sortBy="#{rec.teamid}"
-				filterBy="#{rec.teamid}" id="teamid">  
+					<p:column headerText="TeamId" sortBy="#{rec.teamid}"
+						filterBy="#{rec.teamid}" id="teamid">  
             #{rec.teamid}  
         </p:column>
-                <p:column headerText="PositionId" sortBy="#{rec.positionid}"
-				filterBy="#{rec.positionid}" id="positionid">  
+					<p:column headerText="PositionId" sortBy="#{rec.positionid}"
+						filterBy="#{rec.positionid}" id="positionid">  
             #{rec.positionid}  
         </p:column>
-        <p:column headerText="OccupationId" sortBy="#{rec.occupationid}"
-				filterBy="#{rec.occupationid}" id="occupationid">  
+					<p:column headerText="OccupationId" sortBy="#{rec.occupationid}"
+						filterBy="#{rec.occupationid}" id="occupationid">  
             #{rec.occupationid}  
         </p:column>
-        <p:column headerText="StateId" sortBy="#{rec.stateid}"
-				filterBy="#{rec.stateid}" id="stateid">  
+					<p:column headerText="StateId" sortBy="#{rec.stateid}"
+						filterBy="#{rec.stateid}" id="stateid">  
             #{rec.stateid}  
         </p:column>
-        <p:column headerText="Modified" sortBy="#{rec.modified}"
-				filterBy="#{rec.modified}" id="modified">  
+					<p:column headerText="Modified" sortBy="#{rec.modified}"
+						filterBy="#{rec.modified}" id="modified">  
             #{rec.modified}  
         </p:column>
-        <p:column headerText="Created" sortBy="#{rec.created}"
-				filterBy="#{rec.created}" id="created">  
+					<p:column headerText="Created" sortBy="#{rec.created}"
+						filterBy="#{rec.created}" id="created">  
             #{rec.created}  
         </p:column>
-        </p:dataTable>
+				</p:dataTable>
 
-	</h:form>
-	<div id="footer">
-		<ui:insert name="footer">
-			<ui:include src="/footer.xhtml" />
-		</ui:insert>
+			</h:form>
+		</div>
+		<div id="footer">
+			<ui:insert name="footer">
+				<ui:include src="/footer.xhtml" />
+			</ui:insert>
+		</div>
 	</div>
 </h:body>
 </html>

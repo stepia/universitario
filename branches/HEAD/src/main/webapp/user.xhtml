@@ -12,47 +12,51 @@
 </h:head>
 
 <h:body>
+	<f:view locale="#{language.localeCode}" />
+	<div id="container">
+		<div id="content">
+			<h:form id="form">
+				<p:dataTable var="rec" value="#{userAction.users}"
+					rowKey="#{rec.username}" paginator="true" rows="5"
+					selection="#{userAction.selectedUser}" selectionMode="single"
+					id="usersTable" rowsPerPageTemplate="5,10,15,25,50,100">
 
-	<h:form id="form">
-		<p:dataTable var="rec" value="#{userAction.users}"
-			rowKey="#{rec.username}" paginator="true" rows="5"
-			selection="#{userAction.selectedUser}" selectionMode="single"
-			id="usersTable" rowsPerPageTemplate="5,10,15,25,50,100">
-
-			<f:facet name="header">  
+					<f:facet name="header">  
             List of Users (#{userAction.length}) 
         </f:facet>
-			<p:column headerText="Username" sortBy="#{rec.username}"
-				filterBy="#{rec.username}" id="username">  
+					<p:column headerText="Username" sortBy="#{rec.username}"
+						filterBy="#{rec.username}" id="username">  
             #{rec.username}  
         </p:column>
-			<p:column headerText="enabled" sortBy="#{user.enabled}"
-				filterBy="#{user.enabled}" id="enabled">  
+					<p:column headerText="enabled" sortBy="#{user.enabled}"
+						filterBy="#{user.enabled}" id="enabled">  
             #{rec.enabled}  
         </p:column>
-			<p:column headerText="Modified" sortBy="#{rec.modified}"
-				filterBy="#{rec.modified}" id="modified">  
+					<p:column headerText="Modified" sortBy="#{rec.modified}"
+						filterBy="#{rec.modified}" id="modified">  
             #{rec.modified}  
         </p:column>
-			<p:column headerText="Created" sortBy="#{rec.created}"
-				filterBy="#{rec.created}" id="created">  
+					<p:column headerText="Created" sortBy="#{rec.created}"
+						filterBy="#{rec.created}" id="created">  
             #{rec.created}  
         </p:column>
-			<f:facet name="footer">
-				<p:commandButton id="viewButton" value="View" icon="ui-icon-search"
-					oncomplete="userDialog.show()" />
-				<p:commandButton id="createButton" value="Create"
-					icon="ui-icon-search" oncomplete="userDialog.show()" />
-			</f:facet>
-		</p:dataTable>
+					<f:facet name="footer">
+						<p:commandButton id="viewButton" value="View"
+							icon="ui-icon-search" oncomplete="userDialog.show()" />
+						<p:commandButton id="createButton" value="Create"
+							icon="ui-icon-search" oncomplete="userDialog.show()" />
+					</f:facet>
+				</p:dataTable>
 
-		<p:dialog header="User Detail" widgetVar="userDialog"
-			resizable="false" showEffect="explode"
-			hideEffect="explode" modal="true">
-			<h:panelGrid columns="1" cellspacing="20">
-				<ui:include src="/userDetail.xhtml" />
-			</h:panelGrid>
-		</p:dialog>
-	</h:form>
+				<p:dialog header="User Detail" widgetVar="userDialog"
+					resizable="false" showEffect="explode" hideEffect="explode"
+					modal="true">
+					<h:panelGrid columns="1" cellspacing="20">
+						<ui:include src="/userDetail.xhtml" />
+					</h:panelGrid>
+				</p:dialog>
+			</h:form>
+		</div>
+	</div>
 </h:body>
 </html>

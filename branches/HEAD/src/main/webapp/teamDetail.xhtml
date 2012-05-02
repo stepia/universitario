@@ -10,12 +10,16 @@
 </h:head>
 
 <h:body>
+	<f:view locale="#{language.localeCode}" />
+	<div id="container">
+		<div id="content">
+			<p:panel header="Team" styleClass="panel">
+	    Team name:<h:inputText value="#{chairViewBean.selectedTeam.name}" />
 
-	<p:panel header="Team" styleClass="panel">
-	    Team name:<h:inputText	value="#{chairViewBean.selectedTeam.name}" />
-		
-		<br />
-	</p:panel>
+				<br />
+			</p:panel>
+		</div>
+	</div>
 </h:body>
 
 </html>

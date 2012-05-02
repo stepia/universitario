@@ -10,55 +10,63 @@
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
-<f:event type="preRenderView" listener="#{personViewBean.init}"/>
+<f:event type="preRenderView" listener="#{personViewBean.init}" />
 
 <h:body>
-	<div id="header">
-		<ui:insert name="header">
-			<ui:include src="/query.xhtml">
-			    <ui:param name="title" value="#{msg.person}"/>
-			</ui:include>
-		</ui:insert>
-	</div>
+	<f:view locale="#{language.localeCode}" />
+	<div id="container">
+		<div id="header">
+			<ui:insert name="header">
+				<ui:include src="/query.xhtml">
+					<ui:param name="title" value="#{msg.person}" />
+				</ui:include>
+			</ui:insert>
+		</div>
+		<div id="content">
+			<h:form id="personform">
+				<p:blockUI block="personTable" trigger="personTable"
+					styleClass="resTable">  
+            Loading<br />
+					<br />
+					<p:graphicImage value="/resources/img/ajax-loader.gif" />
+				</p:blockUI>
 
-<h:form id="personform">
-	<p:blockUI block="personTable" trigger="personTable" styleClass="resTable">  
-            Loading<br/>
-            <br/>
-        <p:graphicImage value="/resources/img/ajax-loader.gif"/> 
-    </p:blockUI>
-    
-		<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5" value="#{personViewBean.persons}"
-			selection="#{personViewBean.selectedPerson}" id="personTable" rowsPerPageTemplate="5,10,15,25,50,100" styleClass="resTable">
+				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
+					value="#{personViewBean.persons}"
+					selection="#{personViewBean.selectedPerson}" id="personTable"
+					rowsPerPageTemplate="5,10,15,25,50,100" styleClass="resTable">
 
-			<f:facet name="header">  
+					<f:facet name="header">  
             List of Persons (#{personViewBean.length}) 
         </f:facet>
-        <p:column selectionMode="single" style="width:18px"/>
-        <p:ajax event="rowSelect" listener="#{personViewBean.onRowSelect}" update=":personform" />
-        <p:column headerText="ID" sortBy="#{rec.id}"
-				filterBy="#{rec.id}" id="id">  
+					<p:column selectionMode="single" style="width:18px" />
+					<p:ajax event="rowSelect" listener="#{personViewBean.onRowSelect}"
+						update=":personform" />
+					<p:column headerText="ID" sortBy="#{rec.id}" filterBy="#{rec.id}"
+						id="id">  
             #{rec.id}  
         </p:column>
-			<p:column headerText="FirstName" sortBy="#{rec.firstName}"
-				filterBy="#{rec.firstName}" id="firstName">  
+					<p:column headerText="FirstName" sortBy="#{rec.firstName}"
+						filterBy="#{rec.firstName}" id="firstName">  
             #{rec.firstName}  
         </p:column>
-        <p:column headerText="LastName" sortBy="#{rec.lastName}"
-				filterBy="#{rec.lastName}" id="lastName">  
+					<p:column headerText="LastName" sortBy="#{rec.lastName}"
+						filterBy="#{rec.lastName}" id="lastName">  
             #{rec.lastName}  
         </p:column>
-                <p:column headerText="MiddleName" sortBy="#{rec.middleName}"
-				filterBy="#{rec.middleName}" id="middleName">  
+					<p:column headerText="MiddleName" sortBy="#{rec.middleName}"
+						filterBy="#{rec.middleName}" id="middleName">  
             #{rec.middleName}  
         </p:column>
-		</p:dataTable>
-		
-	</h:form>
-	<div id="footer">
-		<ui:insert name="footer">
-			<ui:include src="/footer.xhtml" />
-		</ui:insert>
+				</p:dataTable>
+
+			</h:form>
+		</div>
+		<div id="footer">
+			<ui:insert name="footer">
+				<ui:include src="/footer.xhtml" />
+			</ui:insert>
+		</div>
 	</div>
 </h:body>
 </html>

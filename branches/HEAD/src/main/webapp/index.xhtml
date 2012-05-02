@@ -11,85 +11,88 @@
 </h:head>
 
 <h:body>
-<f:view locale="#{language.localeCode}">
-	<div id="header">
-		<ui:insert name="header">
-			<ui:include src="/header.xhtml">
-			    <ui:param name="title" value="#{loginbean.username}"/>
-			</ui:include>
-		</ui:insert>
+	<f:view locale="#{language.localeCode}" />
+	<div id="container">
+		<div id="header">
+			<ui:insert name="header">
+				<ui:include src="/header.xhtml">
+					<ui:param name="title" value="#{mainbean.title}" />
+				</ui:include>
+			</ui:insert>
+		</div>
+
+		<div id="content">
+			<ui:insert name="content">
+				<f:ajax>
+					<h:panelGrid columns="6" cellpadding="10" cellspacing="100"
+						styleClass="centered">
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton
+								image="/resources/img/preferences-contact-list.png"
+								action="#{mainbean.doAction('myData')}" />
+							<h:outputText value="#{msg.myData}" />
+						</h:panelGrid>
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/dialog-password.png"
+								action="#{mainbean.doAction('changepassword')}" />
+							<h:outputText value="#{msg.changePassword}" />
+						</h:panelGrid>
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/emblem-office.png"
+								action="#{mainbean.doAction('faculty')}" />
+							<h:outputText value="#{msg.faculty}" />
+						</h:panelGrid>
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton
+								image="/resources/img/accessories-dictionary.png"
+								action="#{mainbean.doAction('plan')}" />
+							<h:outputText value="#{msg.plan}" />
+						</h:panelGrid>
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/system-users-3.png"
+								action="#{mainbean.doAction('employee')}" />
+							<h:outputText value="#{msg.employee}" />
+						</h:panelGrid>
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/applications-other-2.png"
+								action="#{mainbean.doAction('chair')}" />
+							<h:outputText value="#{msg.chair}" />
+						</h:panelGrid>
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton
+								image="/resources/img/accessories-text-editor-8.png"
+								action="#{mainbean.doAction('marks')}" />
+							<h:outputText value="#{msg.marks}" />
+						</h:panelGrid>
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton image="/resources/img/accessories-clock.png"
+								action="#{mainbean.doAction('schedule')}" />
+							<h:outputText value="#{msg.schedule}" />
+						</h:panelGrid>
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton
+								image="/resources/img/internet-web-browser-4.png"
+								action="#{mainbean.doAction('admin')}" />
+							<h:outputText value="#{msg.adminTools}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" cellpadding="10">
+							<h:commandButton
+								image="/resources/img/applications-engineering-2.png"
+								action="#{mainbean.doAction('group')}" />
+							<h:outputText value="#{msg.group}" />
+						</h:panelGrid>
+
+					</h:panelGrid>
+				</f:ajax>
+			</ui:insert>
+		</div>
+
+		<div id="footer">
+			<ui:insert name="footer">
+				<ui:include src="/footer.xhtml" />
+			</ui:insert>
+		</div>
 	</div>
-
-	<div id="content">
-		<ui:insert name="content">
-			<f:ajax>
-				<h:panelGrid columns="6" cellpadding="10" cellspacing="100"
-					styleClass="centered">
-					<h:panelGrid columns="1" cellpadding="10">
-						<h:commandButton
-							image="/resources/img/preferences-contact-list.png"
-							action="#{mainbean.doAction('myData')}" />
-						<h:outputText value="#{msg.myData}" />
-					</h:panelGrid>
-					<h:panelGrid columns="1" cellpadding="10">
-						<h:commandButton image="/resources/img/dialog-password.png"
-							action="#{mainbean.doAction('changepassword')}" />
-						<h:outputText value="#{msg.changePassword}" />
-					</h:panelGrid>
-					<h:panelGrid columns="1" cellpadding="10">
-						<h:commandButton image="/resources/img/emblem-office.png"
-							action="#{mainbean.doAction('faculty')}" />
-						<h:outputText value="#{msg.faculty}" />
-					</h:panelGrid>
-					<h:panelGrid columns="1" cellpadding="10">
-						<h:commandButton image="/resources/img/accessories-dictionary.png"
-							action="#{mainbean.doAction('plan')}" />
-						<h:outputText value="#{msg.plan}" />
-					</h:panelGrid>
-					<h:panelGrid columns="1" cellpadding="10">
-						<h:commandButton image="/resources/img/system-users-3.png"
-							action="#{mainbean.doAction('employee')}" />
-						<h:outputText value="#{msg.employee}" />
-					</h:panelGrid>
-					<h:panelGrid columns="1" cellpadding="10">
-						<h:commandButton image="/resources/img/applications-other-2.png"
-							action="#{mainbean.doAction('chair')}" />
-						<h:outputText value="#{msg.chair}" />
-					</h:panelGrid>
-					<h:panelGrid columns="1" cellpadding="10">
-						<h:commandButton
-							image="/resources/img/accessories-text-editor-8.png"
-							action="#{mainbean.doAction('marks')}" />
-						<h:outputText value="#{msg.marks}" />
-					</h:panelGrid>
-					<h:panelGrid columns="1" cellpadding="10">
-						<h:commandButton image="/resources/img/accessories-clock.png"
-							action="#{mainbean.doAction('schedule')}" />
-						<h:outputText value="#{msg.schedule}" />
-					</h:panelGrid>
-					<h:panelGrid columns="1" cellpadding="10">
-						<h:commandButton image="/resources/img/internet-web-browser-4.png"
-							action="#{mainbean.doAction('admin')}" />
-						<h:outputText value="#{msg.adminTools}" />
-					</h:panelGrid>
-
-					<h:panelGrid columns="1" cellpadding="10">
-						<h:commandButton
-							image="/resources/img/applications-engineering-2.png"
-							action="#{mainbean.doAction('group')}" />
-						<h:outputText value="#{msg.group}" />
-					</h:panelGrid>
-
-				</h:panelGrid>
-			</f:ajax>
-		</ui:insert>
-	</div>
-
-	<div id="footer">
-		<ui:insert name="footer">
-			<ui:include src="/footer.xhtml" />
-		</ui:insert>
-	</div>
-	</f:view>
 </h:body>
 </html>
