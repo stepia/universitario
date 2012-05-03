@@ -84,7 +84,20 @@ public class EmployeeViewBean {
     }
 
     public String doAction(String action) {
+        Action act = Action.fromString(action);
+        switch (act)
+            {
+            case DELETE:
+                System.out.println("Penny coin");
+                break;
+            case CREATE:
+                System.out.println("Nickle coin");
+                break;
+            case SAVE:
+                System.out.println("Dime coin");
+                break;
+
+            }
         return action;
     }
-
 }

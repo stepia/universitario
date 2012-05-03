@@ -17,8 +17,8 @@ public class StateManager implements IStateManager {
         this.stateDao = stateDao;
     }
 
-    public void createState(State state) {
-        getStateDao().createState(state);
+    public void saveState(State state) {
+        getStateDao().saveState(state);
     }
 
     public List<State> getStates() {
