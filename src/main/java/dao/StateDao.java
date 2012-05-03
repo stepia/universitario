@@ -8,7 +8,7 @@ public interface StateDao {
 
     public List<State> getStates();
 
-    public void createState(State state);
+    public void saveState(State state);
 
     public void editState(State state);
 

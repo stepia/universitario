@@ -28,8 +28,8 @@ public class StateDaoHibernate implements StateDao {
     }
 
     @Transactional
-    public void createState(State state) {
-        sessionFactory.getCurrentSession().save(state);
+    public void saveState(State state) {
+        sessionFactory.getCurrentSession().saveOrUpdate(state);
 
     }
 
@@ -44,7 +44,7 @@ public class StateDaoHibernate implements StateDao {
                     .add(Restrictions.eq("id", id)).list();
         State state = null;
         if ((states != null) && (states.size() > 0)) {
-        	state = (State) states.get(0);
+            state = (State) states.get(0);
         }
         return state;
     }

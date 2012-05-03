@@ -66,6 +66,20 @@ public class StateViewBean {
     }
 
     public String doAction(String action) {
+        Action act = Action.fromString(action);
+        switch (act)
+            {
+            case DELETE:
+                System.out.println("Penny coin");
+                break;
+            case CREATE:
+                setSelectedState(new State());
+                break;
+            case SAVE:
+                getStateManager().saveState(getSelectedState());
+                break;
+
+            }
         return action;
     }
 
