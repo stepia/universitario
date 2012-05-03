@@ -23,7 +23,7 @@ public class EmployeeViewBean {
     private Employee selectedEmployee;
     private Employee[] selectedEmployees;
     private List<Employee> employees = new ArrayList<Employee>();
-    private boolean editible = false;
+    private boolean editible;
 
     private int length;
 
