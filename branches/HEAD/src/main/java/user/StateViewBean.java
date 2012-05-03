@@ -23,6 +23,7 @@ public class StateViewBean {
     private State selectedState;
     private State[] selectedStates;
     private List<State> states = new ArrayList<State>();
+    private boolean editible;
 
     private int length;
 
@@ -70,10 +71,20 @@ public class StateViewBean {
 
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("stateDetail.xhtml");
+        setEditible(true);
     }
 
     public void init() throws IOException {
         setSelectedState(null);
+        setEditible(false);
+    }
+
+    public boolean isEditible() {
+        return editible;
+    }
+
+    public void setEditible(boolean editible) {
+        this.editible = editible;
     }
 
 }
