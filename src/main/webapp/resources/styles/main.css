@@ -14,7 +14,7 @@ html,body {
 }
 
 #content {
-	padding: 20px;
+	padding: 40px;
 	height:100%;
 }
 
@@ -30,7 +30,7 @@ html,body {
 }
 
 #header td {
-	padding: 10px;
+	padding: 5px;
 	valign: "top";
 }
 
@@ -43,31 +43,10 @@ html,body {
 	height: 25px;
 }
 
-.product-container {
-	width: 815px;
-	margin: 0pt auto;
+.actionButton {
+ padding:2px;
 }
 
-.digest {
-	width: 627px;
-	height: 100px;
-}
-
-.person {
-	display: inline;
-	margin: 5px 0 5px 10px;
-	float: left;
-	border-width: 1px;
-	border-color: #ccc;
-	border-style: solid;
-	width: 307px; /* border-radius */
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px; /* box-shadow */
-	-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
-	-moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
-	box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
-}
 
 .panel {
 	width: 350px;
