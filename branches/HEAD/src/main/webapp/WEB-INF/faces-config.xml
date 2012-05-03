@@ -197,6 +197,11 @@
             <redirect/>
         </navigation-case>
         <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/state.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/stateDetail.xhtml</to-view-id>
             <redirect/>
@@ -206,6 +211,16 @@
         <from-view-id>/stateDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
+            <to-view-id>/state.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/stateDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
             <to-view-id>/state.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
