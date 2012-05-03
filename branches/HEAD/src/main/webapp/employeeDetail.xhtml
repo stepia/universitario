@@ -16,6 +16,7 @@
 			<ui:insert name="header">
 				<ui:include src="/detail.xhtml">
 					<ui:param name="title" value="#{msg.employee}" />
+					<ui:param name="bean" value="#{employeeViewBean}" />
 				</ui:include>
 			</ui:insert>
 		</div>
@@ -25,7 +26,7 @@
 	    Employee Id:<h:inputText
 	    				value="#{employeeViewBean.selectedEmployee.id}" />
 	    Employee PersonId:<h:inputText
-	    				value="#{employeeViewBean.selectedEmployee.personid}" />
+	    				value="#{employeeViewBean.selectedEmployee.personid}"/>
 
 					<br />
 				</p:panel>

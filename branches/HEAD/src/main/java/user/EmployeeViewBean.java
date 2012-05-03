@@ -23,6 +23,7 @@ public class EmployeeViewBean {
     private Employee selectedEmployee;
     private Employee[] selectedEmployees;
     private List<Employee> employees = new ArrayList<Employee>();
+    private boolean editible = false;
 
     private int length;
 
@@ -51,7 +52,7 @@ public class EmployeeViewBean {
     }
 
     public List<Employee> getEmployees() {
-    	employees = employeeManager.getEmployees();
+        employees = employeeManager.getEmployees();
         this.length = employees.size();
         return employees;
     }
@@ -66,10 +67,24 @@ public class EmployeeViewBean {
 
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("employeeDetail.xhtml");
+        setEditible(true);
     }
 
     public void init() throws IOException {
         setSelectedEmployee(null);
+        setEditible(false);
+    }
+
+    public boolean isEditible() {
+        return editible;
+    }
+
+    public void setEditible(boolean editible) {
+        this.editible = editible;
+    }
+
+    public String doAction(String action) {
+        return action;
     }
 
 }

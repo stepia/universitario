@@ -4,21 +4,28 @@
 
 
 <h:body>
-		<ui:insert name="header">
-			<ui:include src="/header.xhtml">
-				<ui:param name="title" value="#{title}" />
-			</ui:include>
-		</ui:insert>
-		<h:form>
-			<table style="height: 100%; width: 100%">
-				<tr>
-					<td style="padding: 5px;"><h:commandButton id="btnSave" value="#{msg.create}"
-							action="#{mainbean.doAction('create')}"  style="width: 50px;"/></td>
-					<td style="padding: 5px;"><h:commandButton id="btnCancel" value="#{msg.cancel}"
-							action="#{mainbean.doAction('cancel')}" style="width: 50px;" /></td>
-					<td width="97%"></td>
-				</tr>
-			</table>
-		</h:form>
+	<ui:insert name="header">
+		<ui:include src="/header.xhtml">
+			<ui:param name="title" value="#{title}" />
+		</ui:include>
+	</ui:insert>
+	<h:form>
+		<table style="height: 100%; width: 100%">
+			<tr>
+				<td style="padding: 2px;"><h:commandButton id="btnSave"
+						value="#{msg.create}" action="#{bean.doAction('create')}"
+						styleClass="actionButton" />
+				</td>
+				<td style="padding: 2px;"><h:commandButton id="btnRefresh"
+						value="#{msg.refresh}" action="#{bean.doAction('refresh')}"
+						styleClass="actionButton" /></td>
+				<td style="padding: 2px;"><h:commandButton id="btnCancel"
+						value="#{msg.cancel}" action="#{bean.doAction('cancel')}"
+						styleClass="actionButton" />
+				</td>
+				<td width="97%"></td>
+			</tr>
+		</table>
+	</h:form>
 </h:body>
 </h:html>

@@ -193,7 +193,7 @@
         <from-view-id>/state.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -220,7 +220,7 @@
         <from-view-id>/discipline.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -247,7 +247,7 @@
         <from-view-id>/emp2team.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -273,8 +273,13 @@
     <navigation-rule>
         <from-view-id>/employee.xhtml</from-view-id>
         <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/employee.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -285,6 +290,16 @@
      </navigation-rule>
      <navigation-rule>
         <from-view-id>/employeeDetail.xhtml</from-view-id>
+         <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/employeeDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
+            <to-view-id>/employee.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
             <to-view-id>/employee.xhtml</to-view-id>
@@ -301,7 +316,7 @@
         <from-view-id>/lesson.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -328,7 +343,7 @@
         <from-view-id>/lessontype.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -355,7 +370,7 @@
         <from-view-id>/mark.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -382,7 +397,7 @@
         <from-view-id>/marktype.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -409,7 +424,7 @@
         <from-view-id>/occupation.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -436,7 +451,7 @@
         <from-view-id>/period.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -463,7 +478,7 @@
         <from-view-id>/person.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -490,7 +505,7 @@
         <from-view-id>/plan.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -517,7 +532,7 @@
         <from-view-id>/position.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -544,7 +559,7 @@
         <from-view-id>/report.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -571,7 +586,7 @@
         <from-view-id>/reporttype.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -598,7 +613,7 @@
         <from-view-id>/role.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -625,7 +640,7 @@
         <from-view-id>/team.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -652,7 +667,7 @@
         <from-view-id>/teamtype.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -679,7 +694,7 @@
         <from-view-id>/time.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -706,7 +721,7 @@
         <from-view-id>/week.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
