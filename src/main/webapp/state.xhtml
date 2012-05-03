@@ -2,8 +2,6 @@
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:utils="http://java.sun.com/jsf/composite/utils"
-	xmlns:sec="http://www.springframework.org/security/tags"
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
@@ -34,7 +32,8 @@
 				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
 					value="#{stateViewBean.states}"
 					selection="#{stateViewBean.selectedState}" id="stateTable"
-					rowsPerPageTemplate="5,10,15,25,50,100" styleClass="resTable">
+					rowsPerPageTemplate="5,10,15,25,50,100" 
+					emptyMessage="#{msg.norecordsfound}">
 
 					<f:facet name="header">  
             List of States (#{stateViewBean.length}) 
