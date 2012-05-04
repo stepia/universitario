@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,10 +27,21 @@ public class WeekDaoHibernate implements WeekDao {
         return sessionFactory.getCurrentSession().createCriteria(Week.class)
                     .list();
     }
+    
+    @SuppressWarnings("unchecked")
+    @Transactional
+    public List<Week> getWeeks(String sortBy, boolean sortOrder) {
+        if (sortOrder) {
+            return sessionFactory.getCurrentSession().createCriteria(Week.class).addOrder(Order.asc(sortBy)).list();
+        } else {
+            return sessionFactory.getCurrentSession().createCriteria(Week.class).addOrder(Order.desc(sortBy)).list();
+        }
+
+    }
 
     @Transactional
-    public void createWeek(Week week) {
-        sessionFactory.getCurrentSession().save(week);
+    public void saveWeek(Week week) {
+        sessionFactory.getCurrentSession().saveOrUpdate(week);
 
     }
 

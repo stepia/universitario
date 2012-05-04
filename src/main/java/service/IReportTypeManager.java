@@ -8,8 +8,10 @@ public interface IReportTypeManager {
 
     public List<ReportType> getReportTypes();
 
-    public void createReportType(ReportType reportType);
+    public void saveReportType(ReportType reportType);
 
     public void editReportType(ReportType reportType);
+
+    public List<ReportType> getReportTypes(String sortBy, boolean sortOrder);
 
 }

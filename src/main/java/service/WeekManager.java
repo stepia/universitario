@@ -17,12 +17,16 @@ public class WeekManager implements IWeekManager {
         this.weekDao = weekDao;
     }
 
-    public void createWeek(Week week) {
-        getWeekDao().createWeek(week);
+    public void saveWeek(Week week) {
+        getWeekDao().saveWeek(week);
     }
 
     public List<Week> getWeeks() {
         return getWeekDao().getWeeks();
+    }
+
+    public List<Week> getWeeks(String sortBy, boolean sortOrder) {
+        return getWeekDao().getWeeks(sortBy, sortOrder);
     }
 
     public void editWeek(Week week) {

@@ -8,7 +8,9 @@ public interface MarkDao {
 
     public List<Mark> getMarks();
 
-    public void createMark(Mark mark);
+    public List<Mark> getMarks(String sortBy, boolean sortOrder);
+
+    public void saveMark(Mark mark);
 
     public void editMark(Mark mark);
 

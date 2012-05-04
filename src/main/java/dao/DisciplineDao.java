@@ -8,7 +8,9 @@ public interface DisciplineDao {
 
     public List<Discipline> getDisciplines();
 
-    public void createDiscipline(Discipline discipline);
+    public List<Discipline> getDisciplines(String sortBy, boolean sortOrder);
+
+    public void saveDiscipline(Discipline discipline);
 
     public void editDiscipline(Discipline discipline);
 

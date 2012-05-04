@@ -8,7 +8,9 @@ public interface PositionDao {
 
     public List<Position> getPositions();
 
-    public void createPosition(Position position);
+    public List<Position> getPositions(String sortBy, boolean sortOrder);
+
+    public void savePosition(Position position);
 
     public void editPosition(Position position);
 

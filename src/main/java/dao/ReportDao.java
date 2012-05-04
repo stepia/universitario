@@ -8,7 +8,9 @@ public interface ReportDao {
 
     public List<Report> getReports();
 
-    public void createReport(Report report);
+    public List<Report> getReports(String sortBy, boolean sortOrder);
+
+    public void saveReport(Report report);
 
     public void editReport(Report report);
 

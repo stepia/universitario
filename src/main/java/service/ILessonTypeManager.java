@@ -8,8 +8,10 @@ public interface ILessonTypeManager {
 
     public List<LessonType> getLessonTypes();
 
-    public void createLessonType(LessonType lessonType);
+    public void saveLessonType(LessonType lessonType);
 
     public void editLessonType(LessonType lessonType);
+
+    public List<LessonType> getLessonTypes(String sortBy, boolean sortOrder);
 
 }

@@ -17,12 +17,16 @@ public class LessonTypeManager implements ILessonTypeManager {
         this.lessonTypeDao = lessonTypeDao;
     }
 
-    public void createLessonType(LessonType lessonType) {
-        getLessonTypeDao().createLessonType(lessonType);
+    public void saveLessonType(LessonType lessonType) {
+        getLessonTypeDao().saveLessonType(lessonType);
     }
 
     public List<LessonType> getLessonTypes() {
         return getLessonTypeDao().getLessonTypes();
+    }
+
+    public List<LessonType> getLessonTypes(String sortBy, boolean sortOrder) {
+        return getLessonTypeDao().getLessonTypes(sortBy, sortOrder);
     }
 
     public void editLessonType(LessonType lessonType) {

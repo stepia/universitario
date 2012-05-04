@@ -8,7 +8,9 @@ public interface TeamTypeDao {
 
     public List<TeamType> getTeamTypes();
 
-    public void createTeamType(TeamType teamType);
+    public List<TeamType> getTeamTypes(String sortBy, boolean sortOrder);
+
+    public void saveTeamType(TeamType teamType);
 
     public void editTeamType(TeamType teamType);
 

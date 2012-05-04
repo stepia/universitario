@@ -8,7 +8,9 @@ public interface ReportTypeDao {
 
     public List<ReportType> getReportTypes();
 
-    public void createReportType(ReportType reporttype);
+    public List<ReportType> getReportTypes(String sortBy, boolean sortOrder);
+
+    public void saveReportType(ReportType reporttype);
 
     public void editReportType(ReportType reporttype);
 

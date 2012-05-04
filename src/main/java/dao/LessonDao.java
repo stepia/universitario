@@ -8,7 +8,9 @@ public interface LessonDao {
 
     public List<Lesson> getLessons();
 
-    public void createLesson(Lesson lesson);
+    public List<Lesson> getLessons(String sortBy, boolean sortOrder);
+
+    public void saveLesson(Lesson lesson);
 
     public void editLesson(Lesson lesson);
 

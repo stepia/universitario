@@ -17,12 +17,16 @@ public class PersonManager implements IPersonManager {
         this.personDao = personDao;
     }
 
-    public void createPerson(Person person) {
-        getPersonDao().createPerson(person);
+    public void savePerson(Person person) {
+        getPersonDao().savePerson(person);
     }
 
     public List<Person> getPersons() {
         return getPersonDao().getPersons();
+    }
+
+    public List<Person> getPersons(String sortBy, boolean sortOrder) {
+        return getPersonDao().getPersons(sortBy, sortOrder);
     }
 
     public void editPerson(Person person) {

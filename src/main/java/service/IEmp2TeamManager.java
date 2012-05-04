@@ -8,8 +8,10 @@ public interface IEmp2TeamManager {
 
     public List<Emp2Team> getEmp2Teams();
 
-    public void createEmp2Team(Emp2Team empTeam);
+    public void saveEmp2Team(Emp2Team empTeam);
 
     public void editEmp2Team(Emp2Team empTeam);
+
+    public List<Emp2Team> getEmp2Teams(String sortBy, boolean sortOrder);
 
 }

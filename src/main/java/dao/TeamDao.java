@@ -8,7 +8,9 @@ public interface TeamDao {
 
     public List<Team> getTeams();
 
-    public void createTeam(Team team);
+    public List<Team> getTeams(String sortBy, boolean sortOrder);
+
+    public void saveTeam(Team team);
 
     public void editTeam(Team team);
 

@@ -17,12 +17,16 @@ public class ReportManager implements IReportManager {
         this.reportDao = reportDao;
     }
 
-    public void createReport(Report report) {
-        getReportDao().createReport(report);
+    public void saveReport(Report report) {
+        getReportDao().saveReport(report);
     }
 
     public List<Report> getReports() {
         return getReportDao().getReports();
+    }
+
+    public List<Report> getReports(String sortBy, boolean sortOrder) {
+        return getReportDao().getReports(sortBy, sortOrder);
     }
 
     public void editReport(Report report) {

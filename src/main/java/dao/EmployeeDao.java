@@ -8,7 +8,9 @@ public interface EmployeeDao {
 
     public List<Employee> getEmployees();
 
-    public void createEmployee(Employee employee);
+    public List<Employee> getEmployees(String sortBy, boolean sortOrder);
+
+    public void saveEmployee(Employee employee);
 
     public void editEmployee(Employee employee);
 

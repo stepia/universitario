@@ -17,12 +17,16 @@ public class TeamManager implements ITeamManager {
         this.teamDao = teamDao;
     }
 
-    public void createTeam(Team team) {
-        getTeamDao().createTeam(team);
+    public void saveTeam(Team team) {
+        getTeamDao().saveTeam(team);
     }
 
     public List<Team> getTeams() {
         return getTeamDao().getTeams();
+    }
+
+    public List<Team> getTeams(String sortBy, boolean sortOrder) {
+        return getTeamDao().getTeams(sortBy, sortOrder);
     }
 
     public void editTeam(Team team) {

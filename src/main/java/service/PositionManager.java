@@ -17,12 +17,16 @@ public class PositionManager implements IPositionManager {
         this.positionDao = positionDao;
     }
 
-    public void createPosition(Position position) {
-        getPositionDao().createPosition(position);
+    public void savePosition(Position position) {
+        getPositionDao().savePosition(position);
     }
 
     public List<Position> getPositions() {
         return getPositionDao().getPositions();
+    }
+
+    public List<Position> getPositions(String sortBy, boolean sortOrder) {
+        return getPositionDao().getPositions(sortBy, sortOrder);
     }
 
     public void editPosition(Position position) {

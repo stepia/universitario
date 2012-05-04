@@ -17,12 +17,16 @@ public class TimeManager implements ITimeManager {
         this.timeDao = timeDao;
     }
 
-    public void createTime(Time time) {
-        getTimeDao().createTime(time);
+    public void saveTime(Time time) {
+        getTimeDao().saveTime(time);
     }
 
     public List<Time> getTimes() {
         return getTimeDao().getTimes();
+    }
+
+    public List<Time> getTimes(String sortBy, boolean sortOrder) {
+        return getTimeDao().getTimes(sortBy, sortOrder);
     }
 
     public void editTime(Time time) {

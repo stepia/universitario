@@ -8,7 +8,9 @@ public interface WeekDao {
 
     public List<Week> getWeeks();
 
-    public void createWeek(Week week);
+    public List<Week> getWeeks(String sortBy, boolean sortOrder);
+
+    public void saveWeek(Week week);
 
     public void editWeek(Week week);
 

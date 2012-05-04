@@ -8,8 +8,10 @@ public interface IPositionManager {
 
     public List<Position> getPositions();
 
-    public void createPosition(Position position);
+    public void savePosition(Position position);
 
     public void editPosition(Position position);
+
+    public List<Position> getPositions(String sortBy, boolean sortOrder);
 
 }

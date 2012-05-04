@@ -8,8 +8,10 @@ public interface IDisciplineManager {
 
     public List<Discipline> getDisciplines();
 
-    public void createDiscipline(Discipline discipline);
+    public void saveDiscipline(Discipline discipline);
 
     public void editDiscipline(Discipline discipline);
+    
+    public List<Discipline> getDisciplines(String sortBy, boolean sortOrder);
 
 }

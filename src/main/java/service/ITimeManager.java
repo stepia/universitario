@@ -8,8 +8,10 @@ public interface ITimeManager {
 
     public List<Time> getTimes();
 
-    public void createTime(Time time);
+    public void saveTime(Time time);
 
     public void editTime(Time time);
+
+    public List<Time> getTimes(String sortBy, boolean sortOrder);
 
 }

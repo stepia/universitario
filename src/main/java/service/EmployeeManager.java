@@ -17,12 +17,16 @@ public class EmployeeManager implements IEmployeeManager {
         this.employeeDao = employeeDao;
     }
 
-    public void createEmployee(Employee employee) {
-        getEmployeeDao().createEmployee(employee);
+    public void saveEmployee(Employee employee) {
+        getEmployeeDao().saveEmployee(employee);
     }
 
     public List<Employee> getEmployees() {
         return getEmployeeDao().getEmployees();
+    }
+
+    public List<Employee> getEmployees(String sortBy, boolean sortOrder) {
+        return getEmployeeDao().getEmployees(sortBy, sortOrder);
     }
 
     public void editEmployee(Employee employee) {

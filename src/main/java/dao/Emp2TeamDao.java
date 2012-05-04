@@ -8,7 +8,9 @@ public interface Emp2TeamDao {
 
     public List<Emp2Team> getEmp2Teams();
 
-    public void createEmp2Team(Emp2Team empteam);
+    public List<Emp2Team> getEmp2Teams(String sortBy, boolean sortOrder);
+
+    public void saveEmp2Team(Emp2Team empteam);
 
     public void editEmp2Team(Emp2Team empteam);
 

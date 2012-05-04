@@ -17,12 +17,16 @@ public class TeamTypeManager implements ITeamTypeManager {
         this.teamTypeDao = teamTypeDao;
     }
 
-    public void createTeamType(TeamType teamType) {
-        getTeamTypeDao().createTeamType(teamType);
+    public void saveTeamType(TeamType teamType) {
+        getTeamTypeDao().saveTeamType(teamType);
     }
 
     public List<TeamType> getTeamTypes() {
         return getTeamTypeDao().getTeamTypes();
+    }
+
+    public List<TeamType> getTeamTypes(String sortBy, boolean sortOrder) {
+        return getTeamTypeDao().getTeamTypes(sortBy, sortOrder);
     }
 
     public void editTeamType(TeamType teamType) {

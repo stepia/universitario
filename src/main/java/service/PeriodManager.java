@@ -17,12 +17,16 @@ public class PeriodManager implements IPeriodManager {
         this.periodDao = periodDao;
     }
 
-    public void createPeriod(Period period) {
-        getPeriodDao().createPeriod(period);
+    public void savePeriod(Period period) {
+        getPeriodDao().savePeriod(period);
     }
 
     public List<Period> getPeriods() {
         return getPeriodDao().getPeriods();
+    }
+
+    public List<Period> getPeriods(String sortBy, boolean sortOrder) {
+        return getPeriodDao().getPeriods(sortBy, sortOrder);
     }
 
     public void editPeriod(Period period) {

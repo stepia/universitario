@@ -8,8 +8,10 @@ public interface IPlanManager {
 
     public List<Plan> getPlans();
 
-    public void createPlan(Plan plan);
+    public void savePlan(Plan plan);
 
     public void editPlan(Plan plan);
+
+    public List<Plan> getPlans(String sortBy, boolean sortOrder);
 
 }

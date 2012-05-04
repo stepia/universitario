@@ -8,8 +8,10 @@ public interface IMarkManager {
 
     public List<Mark> getMarks();
 
-    public void createMark(Mark mark);
+    public void saveMark(Mark mark);
 
     public void editMark(Mark mark);
+
+    public List<Mark> getMarks(String sortBy, boolean sortOrder);
 
 }

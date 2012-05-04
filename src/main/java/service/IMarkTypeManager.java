@@ -8,8 +8,10 @@ public interface IMarkTypeManager {
 
     public List<MarkType> getMarkTypes();
 
-    public void createMarkType(MarkType markType);
+    public void saveMarkType(MarkType markType);
 
     public void editMarkType(MarkType markType);
+
+    public List<MarkType> getMarkTypes(String sortBy, boolean sortOrder);
 
 }
