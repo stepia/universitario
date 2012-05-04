@@ -13,60 +13,60 @@
 <f:event type="preRenderView" listener="#{periodViewBean.init}" />
 
 <h:body>
-	<f:view locale="#{language.localeCode}">
-		<div id="container">
-			<div id="header">
-				<ui:insert name="header">
-					<ui:include src="/query.xhtml">
-						<ui:param name="title" value="#{msg.period}" />
-					</ui:include>
-				</ui:insert>
-			</div>
-			<div id="content">
-				<h:form id="periodform">
-					<p:blockUI block="periodTable" trigger="periodTable"
-						styleClass="resTable">  
-            Loading<br />
-						<br />
-						<p:graphicImage value="/resources/img/ajax-loader.gif" />
-					</p:blockUI>
+	<p:ajaxStatus onstart="statusDialog.show();"
+		onsuccess="statusDialog.hide();" />
+	<p:dialog modal="true" widgetVar="statusDialog" header="#{msg.loading}"
+		draggable="false" closable="false">
+		<p:graphicImage value="/resources/img/ajaxloadingbar.gif" />
+	</p:dialog>
+	<f:view locale="#{language.localeCode}" />
+	<div id="container">
+		<div id="header">
+			<ui:include src="/query.xhtml">
+				<ui:param name="title" value="#{msg.period}" />
+				<ui:param name="bean" value="#{periodViewBean}" />
+			</ui:include>
+		</div>
+		<div id="content">
+			<h:form id="periodform">
 
-					<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
-						value="#{periodViewBean.periods}"
-						selection="#{periodViewBean.selectedPeriod}" id="periodTable"
-						rowsPerPageTemplate="5,10,15,25,50,100" styleClass="resTable">
+				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
+					value="#{periodViewBean.periods}"
+					selection="#{periodViewBean.selectedPeriod}" id="periodTable"
+					rowsPerPageTemplate="5,10,15,25,50,100">
 
-						<f:facet name="header">  
+					<f:facet name="header">  
             List of Periods (#{periodViewBean.length}) 
         </f:facet>
-						<p:column selectionMode="single" style="width:18px" />
-						<p:ajax event="rowSelect" listener="#{periodViewBean.onRowSelect}"
-							update=":periodform" />
-						<p:column headerText="ID" sortBy="#{rec.id}" filterBy="#{rec.id}"
+					<p:column selectionMode="single" style="width:18px" />
+					<p:ajax event="rowSelect"
+						listener="#{periodViewBean.onRowSelect}"
+						update=":periodform" />
+					<p:column headerText="ID" sortBy="#{rec.id}" filterBy="#{rec.id}"
 							id="id">  
             #{rec.id}  
         </p:column>
-						<p:column headerText="Value" sortBy="#{rec.value}"
-							filterBy="#{rec.value}" id="value">  
+					<p:column headerText="Value" sortBy="#{rec.value}"
+						filterBy="#{rec.value}" id="value">  
             #{rec.value}  
         </p:column>
-						<p:column headerText="Modified" sortBy="#{rec.modified}"
-							filterBy="#{rec.modified}" id="modified">  
+					<p:column headerText="Modified" sortBy="#{rec.modified}"
+						filterBy="#{rec.modified}" id="modified">  
             #{rec.modified}  
         </p:column>
-						<p:column headerText="Created" sortBy="#{rec.created}"
-							filterBy="#{rec.created}" id="created">  
+					<p:column headerText="Created" sortBy="#{rec.created}"
+						filterBy="#{rec.created}" id="created">  
             #{rec.created}  
         </p:column>
-					</p:dataTable>
+				</p:dataTable>
+			</h:form>
 
-				</h:form>
-			</div>
-			<div id="footer">
-				<ui:insert name="footer">
-					<ui:include src="/footer.xhtml" />
-				</ui:insert>
-			</div>
 		</div>
+		<div id="footer">
+			<ui:insert name="footer">
+				<ui:include src="/footer.xhtml" />
+			</ui:insert>
+		</div>
+	</div>
 </h:body>
 </html>

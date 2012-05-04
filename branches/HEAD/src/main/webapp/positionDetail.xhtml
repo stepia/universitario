@@ -16,6 +16,7 @@
 			<ui:insert name="header">
 				<ui:include src="/detail.xhtml">
 					<ui:param name="title" value="#{msg.position}" />
+					<ui:param name="bean" value="#{positionViewBean}" />
 				</ui:include>
 			</ui:insert>
 		</div>
@@ -23,13 +24,13 @@
 			<h:form id="positionDetailForm">
 				<p:panel header="Position" styleClass="panel">
 	    Position Id:<h:inputText
-						value="#{positionViewBean.selectedPosition.id}" />
+						value="#{positionViewBean.selectedPosition.id}"/>
 		Position Name:<h:inputText
-						value="#{positionViewBean.selectedPosition.name}" />
+						value="#{positionViewBean.selectedPosition.name}"/>
 		Position Modified:<h:inputText
-						value="#{positionViewBean.selectedPosition.modified}" />
+						value="#{positionViewBean.selectedPosition.modified}"/>
 		Position Created:<h:inputText
-						value="#{positionViewBean.selectedPosition.created}" />
+						value="#{positionViewBean.selectedPosition.created}"/>
 
 					<br />
 				</p:panel>

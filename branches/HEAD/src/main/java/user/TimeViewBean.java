@@ -23,6 +23,7 @@ public class TimeViewBean {
     private Time selectedTime;
     private Time[] selectedTimes;
     private List<Time> times = new ArrayList<Time>();
+    private boolean editible;
 
     private int length;
 
@@ -66,10 +67,24 @@ public class TimeViewBean {
 
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("timeDetail.xhtml");
+        setEditible(true);
     }
 
     public void init() throws IOException {
         setSelectedTime(null);
+        setEditible(false);
+    }
+
+    public boolean isEditible() {
+        return editible;
+    }
+
+    public void setEditible(boolean editible) {
+        this.editible = editible;
+    }
+
+    public String doAction(String action) {
+        return action;
     }
 
 }

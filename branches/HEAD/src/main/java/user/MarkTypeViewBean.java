@@ -23,6 +23,7 @@ public class MarkTypeViewBean {
     private MarkType selectedMarkType;
     private MarkType[] selectedMarkTypes;
     private List<MarkType> markTypes = new ArrayList<MarkType>();
+    private boolean editible;
 
     private int length;
 
@@ -66,10 +67,24 @@ public class MarkTypeViewBean {
 
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("marktypeDetail.xhtml");
+        setEditible(true);
     }
 
     public void init() throws IOException {
         setSelectedMarkType(null);
+        setEditible(false);
+    }
+
+    public boolean isEditible() {
+        return editible;
+    }
+
+    public void setEditible(boolean editible) {
+        this.editible = editible;
+    }
+
+    public String doAction(String action) {
+        return action;
     }
 
 }

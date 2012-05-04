@@ -23,6 +23,7 @@ public class WeekViewBean {
     private Week selectedWeek;
     private Week[] selectedWeeks;
     private List<Week> weeks = new ArrayList<Week>();
+    private boolean editible;
 
     private int length;
 
@@ -66,10 +67,24 @@ public class WeekViewBean {
 
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("weekDetail.xhtml");
+        setEditible(true);
     }
 
     public void init() throws IOException {
         setSelectedWeek(null);
+        setEditible(false);
+    }
+
+    public boolean isEditible() {
+        return editible;
+    }
+
+    public void setEditible(boolean editible) {
+        this.editible = editible;
+    }
+
+    public String doAction(String action) {
+        return action;
     }
 
 }

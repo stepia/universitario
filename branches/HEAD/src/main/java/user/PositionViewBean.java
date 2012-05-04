@@ -23,6 +23,7 @@ public class PositionViewBean {
     private Position selectedPosition;
     private Position[] selectedPositions;
     private List<Position> positions = new ArrayList<Position>();
+    private boolean editible;
 
     private int length;
 
@@ -66,10 +67,24 @@ public class PositionViewBean {
 
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("positionDetail.xhtml");
+        setEditible(true);
     }
 
     public void init() throws IOException {
         setSelectedPosition(null);
+        setEditible(false);
+    }
+
+    public boolean isEditible() {
+        return editible;
+    }
+
+    public void setEditible(boolean editible) {
+        this.editible = editible;
+    }
+
+    public String doAction(String action) {
+        return action;
     }
 
 }

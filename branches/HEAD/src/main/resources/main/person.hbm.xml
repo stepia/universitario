@@ -11,5 +11,13 @@
         <property name="lastName" column="lastname"/>
         <property name="middleName" column="middlename"/>
         <property name="dob" column="dob"/>
+        <property name="address" column="address"/>
+        <property name="academicdegree" column="academicdegree"/>
+        <property name="sex" column="sex"/>
+        <property name="phone" column="phone"/>
+        <property name="email" column="email"/>
+        <property name="code" column="code"/>
+        <property name="modified" column="modified"/>
+        <property name="created" column="created"/>
     </class>
 </hibernate-mapping>

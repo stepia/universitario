@@ -23,6 +23,7 @@ public class LessonTypeViewBean {
     private LessonType selectedLessonType;
     private LessonType[] selectedLessonTypes;
     private List<LessonType> lessonTypes = new ArrayList<LessonType>();
+    private boolean editible;
 
     private int length;
 
@@ -66,10 +67,24 @@ public class LessonTypeViewBean {
 
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("lessontypeDetail.xhtml");
+        setEditible(true);
     }
 
     public void init() throws IOException {
         setSelectedLessonType(null);
+        setEditible(false);
+    }
+
+    public boolean isEditible() {
+        return editible;
+    }
+
+    public void setEditible(boolean editible) {
+        this.editible = editible;
+    }
+
+    public String doAction(String action) {
+        return action;
     }
 
 }

@@ -23,6 +23,7 @@ public class PersonViewBean {
     private Person selectedPerson;
     private Person[] selectedPersons;
     private List<Person> persons = new ArrayList<Person>();
+    private boolean editible;
 
     private int length;
 
@@ -66,10 +67,24 @@ public class PersonViewBean {
 
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("personDetail.xhtml");
+        setEditible(true);
     }
 
     public void init() throws IOException {
         setSelectedPerson(null);
+        setEditible(false);
+    }
+
+    public boolean isEditible() {
+        return editible;
+    }
+
+    public void setEditible(boolean editible) {
+        this.editible = editible;
+    }
+
+    public String doAction(String action) {
+        return action;
     }
 
 }

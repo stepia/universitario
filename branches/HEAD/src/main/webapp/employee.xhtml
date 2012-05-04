@@ -25,7 +25,6 @@
 			<ui:include src="/query.xhtml">
 				<ui:param name="title" value="#{msg.employee}" />
 				<ui:param name="bean" value="#{employeeViewBean}" />
-
 			</ui:include>
 		</div>
 		<div id="content">
@@ -41,7 +40,8 @@
         </f:facet>
 					<p:column selectionMode="single" style="width:18px" />
 					<p:ajax event="rowSelect"
-						listener="#{employeeViewBean.onRowSelect}" />
+						listener="#{employeeViewBean.onRowSelect}"
+						update=":employeeform" />
 					<p:column headerText="ID" sortBy="#{rec.id}" filterBy="#{rec.id}"
 						id="id">  
             #{rec.id}  
@@ -49,6 +49,26 @@
 					<p:column headerText="PersonId" sortBy="#{rec.personid}"
 						filterBy="#{rec.personid}" id="personid">  
             #{rec.personid}  
+        </p:column>
+        			<p:column headerText="UsrName" sortBy="#{rec.usrname}"
+						filterBy="#{rec.usrname}" id="usrname">  
+            #{rec.usrname}  
+        </p:column>
+        			<p:column headerText="StateId" sortBy="#{rec.stateid}"
+						filterBy="#{rec.stateid}" id="stateid">  
+            #{rec.stateid}  
+        </p:column>
+        			<p:column headerText="RecordBook" sortBy="#{rec.recordbook}"
+						filterBy="#{rec.recordbook}" id="recordbook">  
+            #{rec.recordbook}  
+        </p:column>
+        			<p:column headerText="Modified" sortBy="#{rec.modified}"
+						filterBy="#{rec.modified}" id="modified">  
+            #{rec.modified}  
+        </p:column>
+        			<p:column headerText="Created" sortBy="#{rec.created}"
+						filterBy="#{rec.created}" id="created">  
+            #{rec.created}  
         </p:column>
 				</p:dataTable>
 			</h:form>

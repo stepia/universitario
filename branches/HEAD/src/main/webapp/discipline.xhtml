@@ -13,34 +13,32 @@
 <f:event type="preRenderView" listener="#{disciplineViewBean.init}" />
 
 <h:body>
+	<p:ajaxStatus onstart="statusDialog.show();"
+		onsuccess="statusDialog.hide();" />
+	<p:dialog modal="true" widgetVar="statusDialog" header="#{msg.loading}"
+		draggable="false" closable="false">
+		<p:graphicImage value="/resources/img/ajaxloadingbar.gif" />
+	</p:dialog>
 	<f:view locale="#{language.localeCode}" />
 	<div id="container">
 		<div id="header">
-			<ui:insert name="header">
-				<ui:include src="/query.xhtml">
-					<ui:param name="title" value="#{msg.discipline}" />
-				</ui:include>
-			</ui:insert>
+			<ui:include src="/query.xhtml">
+				<ui:param name="title" value="#{msg.discipline}" />
+				<ui:param name="bean" value="#{disciplineViewBean}" />
+			</ui:include>
 		</div>
 		<div id="content">
 			<h:form id="disciplineform">
-				<p:blockUI block="disciplineTable" trigger="disciplineTable"
-					styleClass="resTable">  
-            Loading<br />
-					<br />
-					<p:graphicImage value="/resources/img/ajax-loader.gif" />
-				</p:blockUI>
 
 				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
 					value="#{disciplineViewBean.disciplines}"
-					selection="#{disciplineViewBean.selectedDiscipline}"
-					id="disciplineTable" rowsPerPageTemplate="5,10,15,25,50,100"
-					styleClass="resTable">
+					selection="#{disciplineViewBean.selectedDiscipline}" id="disciplineTable"
+					rowsPerPageTemplate="5,10,15,25,50,100">
 
 					<f:facet name="header">
             List of Disciplines (#{disciplineViewBean.length})
         </f:facet>
-					<p:column selectionMode="single" style="width:20px" />
+					<p:column selectionMode="single" style="width:18px" />
 					<p:ajax event="rowSelect"
 						listener="#{disciplineViewBean.onRowSelect}"
 						update=":disciplineform" />
@@ -61,8 +59,8 @@
             #{rec.created}
         </p:column>
 				</p:dataTable>
-
 			</h:form>
+
 		</div>
 		<div id="footer">
 			<ui:insert name="footer">

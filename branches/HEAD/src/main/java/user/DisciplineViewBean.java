@@ -23,6 +23,7 @@ public class DisciplineViewBean {
     private Discipline selectedDiscipline;
     private Discipline[] selectedDisciplines;
     private List<Discipline> disciplines = new ArrayList<Discipline>();
+    private boolean editible;
 
     private int length;
 
@@ -66,10 +67,24 @@ public class DisciplineViewBean {
 
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("disciplineDetail.xhtml");
+        setEditible(true);
     }
 
     public void init() throws IOException {
         setSelectedDiscipline(null);
+        setEditible(false);
+    }
+    
+    public boolean isEditible() {
+        return editible;
+    }
+
+    public void setEditible(boolean editible) {
+        this.editible = editible;
+    }
+
+    public String doAction(String action) {
+        return action;
     }
 
 }

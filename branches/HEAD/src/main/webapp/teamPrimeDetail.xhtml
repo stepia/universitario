@@ -16,6 +16,7 @@
 			<ui:insert name="header">
 				<ui:include src="/detail.xhtml">
 					<ui:param name="title" value="#{msg.team}" />
+					<ui:param name="bean" value="#{teamViewBean}" />
 				</ui:include>
 			</ui:insert>
 		</div>
@@ -23,21 +24,21 @@
 			<h:form id="teamDetailForm">
 				<p:panel header="Team" styleClass="panel">
 		Team Id:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.id}" />
+	    			value="#{teamViewBean.selectedTeam.id}"/>
 	    Team Name:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.name}" />
+	    			value="#{teamViewBean.selectedTeam.name}"/>
 	    Team TeamtypeId:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.teamtypeid}" />
+	    			value="#{teamViewBean.selectedTeam.teamtypeid}"/>
 	    Team RootId:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.rootid}" />
+	    			value="#{teamViewBean.selectedTeam.rootid}"/>
 	    Team Details:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.details}" />
+	    			value="#{teamViewBean.selectedTeam.details}"/>
 	    Team StateId:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.stateid}" />
+	    			value="#{teamViewBean.selectedTeam.stateid}"/>
 	    Team Created:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.created}" />
+	    			value="#{teamViewBean.selectedTeam.created}"/>
 	    Team Modified:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.modified}" />
+	    			value="#{teamViewBean.selectedTeam.modified}"/>
 
 					<br />
 				</p:panel>

@@ -23,6 +23,7 @@ public class PlanViewBean {
     private Plan selectedPlan;
     private Plan[] selectedPlans;
     private List<Plan> plans = new ArrayList<Plan>();
+    private boolean editible;
 
     private int length;
 
@@ -66,10 +67,24 @@ public class PlanViewBean {
 
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("planDetail.xhtml");
+        setEditible(true);
     }
 
     public void init() throws IOException {
         setSelectedPlan(null);
+        setEditible(false);
+    }
+
+    public boolean isEditible() {
+        return editible;
+    }
+
+    public void setEditible(boolean editible) {
+        this.editible = editible;
+    }
+
+    public String doAction(String action) {
+        return action;
     }
 
 }
