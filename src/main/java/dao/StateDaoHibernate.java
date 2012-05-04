@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,6 +28,17 @@ public class StateDaoHibernate implements StateDao {
                     .list();
     }
 
+    @SuppressWarnings("unchecked")
+    @Transactional
+    public List<State> getStates(String sortBy, boolean sortOrder) {
+        if (sortOrder) {
+            return sessionFactory.getCurrentSession().createCriteria(State.class).addOrder(Order.asc(sortBy)).list();
+        } else {
+            return sessionFactory.getCurrentSession().createCriteria(State.class).addOrder(Order.desc(sortBy)).list();
+        }
+
+    }
+
     @Transactional
     public void saveState(State state) {
         sessionFactory.getCurrentSession().saveOrUpdate(state);
@@ -48,4 +60,5 @@ public class StateDaoHibernate implements StateDao {
         }
         return state;
     }
+
 }
