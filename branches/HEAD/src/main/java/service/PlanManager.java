@@ -17,12 +17,16 @@ public class PlanManager implements IPlanManager {
         this.planDao = planDao;
     }
 
-    public void createPlan(Plan plan) {
-        getPlanDao().createPlan(plan);
+    public void savePlan(Plan plan) {
+        getPlanDao().savePlan(plan);
     }
 
     public List<Plan> getPlans() {
         return getPlanDao().getPlans();
+    }
+
+    public List<Plan> getPlans(String sortBy, boolean sortOrder) {
+        return getPlanDao().getPlans(sortBy, sortOrder);
     }
 
     public void editPlan(Plan plan) {

@@ -10,6 +10,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.event.SelectEvent;
+import org.primefaces.event.data.SortEvent;
 
 import service.IPersonManager;
 import entry.Person;
@@ -21,9 +22,10 @@ public class PersonViewBean {
     @ManagedProperty(value = "#{personManager}")
     private IPersonManager personManager;
     private Person selectedPerson;
-    private Person[] selectedPersons;
     private List<Person> persons = new ArrayList<Person>();
     private boolean editible;
+    private boolean sortOrder;
+    private String sortBy;
 
     private int length;
 
@@ -35,14 +37,6 @@ public class PersonViewBean {
         this.length = length;
     }
 
-    public Person[] getSelectedPersons() {
-        return selectedPersons;
-    }
-
-    public void setSelectedPersons(Person[] selectedPersons) {
-        this.selectedPersons = selectedPersons;
-    }
-
     public IPersonManager getPersonManager() {
         return personManager;
     }
@@ -52,7 +46,11 @@ public class PersonViewBean {
     }
 
     public List<Person> getPersons() {
-        persons = personManager.getPersons();
+    	if (sortBy == null) {
+    		persons = getPersonManager().getPersons();
+        } else {
+        	persons = getPersonManager().getPersons(sortBy, sortOrder);
+        }
         this.length = persons.size();
         return persons;
     }
@@ -84,7 +82,46 @@ public class PersonViewBean {
     }
 
     public String doAction(String action) {
+        Action act = Action.fromString(action);
+        switch (act)
+            {
+            case DELETE:
+                System.out.println("Penny coin");
+                break;
+            case CREATE:
+                setSelectedPerson(new Person());
+                break;
+            case SAVE:
+                getPersonManager().savePerson(getSelectedPerson());
+                break;
+
+            }
         return action;
+    }
+    
+    public void caseListSortListner(SortEvent sortEvent) {
+        setSortBy(sortEvent.getSortColumn().getId());
+        if (sortEvent.isAscending()) {
+            setSortOrder(true);
+        } else {
+            setSortOrder(false);
+        }
+    }
+
+    public boolean isSortOrder() {
+        return sortOrder;
+    }
+
+    public void setSortOrder(boolean sortOrder) {
+        this.sortOrder = sortOrder;
+    }
+
+    public String getSortBy() {
+        return sortBy;
+    }
+
+    public void setSortBy(String sortBy) {
+        this.sortBy = sortBy;
     }
 
 }

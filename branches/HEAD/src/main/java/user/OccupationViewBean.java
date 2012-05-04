@@ -10,6 +10,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.event.SelectEvent;
+import org.primefaces.event.data.SortEvent;
 
 import service.IOccupationManager;
 import entry.Occupation;
@@ -21,9 +22,10 @@ public class OccupationViewBean {
     @ManagedProperty(value = "#{occupationManager}")
     private IOccupationManager occupationManager;
     private Occupation selectedOccupation;
-    private Occupation[] selectedOccupations;
     private List<Occupation> occupations = new ArrayList<Occupation>();
     private boolean editible;
+    private boolean sortOrder;
+    private String sortBy;
 
     private int length;
 
@@ -35,14 +37,6 @@ public class OccupationViewBean {
         this.length = length;
     }
 
-    public Occupation[] getSelectedOccupations() {
-        return selectedOccupations;
-    }
-
-    public void setSelectedOccupations(Occupation[] selectedOccupations) {
-        this.selectedOccupations = selectedOccupations;
-    }
-
     public IOccupationManager getOccupationManager() {
         return occupationManager;
     }
@@ -52,7 +46,11 @@ public class OccupationViewBean {
     }
 
     public List<Occupation> getOccupations() {
-    	occupations = occupationManager.getOccupations();
+    	if (sortBy == null) {
+    		occupations = getOccupationManager().getOccupations();
+        } else {
+        	occupations = getOccupationManager().getOccupations(sortBy, sortOrder);
+        }
         this.length = occupations.size();
         return occupations;
     }
@@ -84,7 +82,46 @@ public class OccupationViewBean {
     }
 
     public String doAction(String action) {
+        Action act = Action.fromString(action);
+        switch (act)
+            {
+            case DELETE:
+                System.out.println("Penny coin");
+                break;
+            case CREATE:
+                setSelectedOccupation(new Occupation());
+                break;
+            case SAVE:
+                getOccupationManager().saveOccupation(getSelectedOccupation());
+                break;
+
+            }
         return action;
+    }
+    
+    public void caseListSortListner(SortEvent sortEvent) {
+        setSortBy(sortEvent.getSortColumn().getId());
+        if (sortEvent.isAscending()) {
+            setSortOrder(true);
+        } else {
+            setSortOrder(false);
+        }
+    }
+
+    public boolean isSortOrder() {
+        return sortOrder;
+    }
+
+    public void setSortOrder(boolean sortOrder) {
+        this.sortOrder = sortOrder;
+    }
+
+    public String getSortBy() {
+        return sortBy;
+    }
+
+    public void setSortBy(String sortBy) {
+        this.sortBy = sortBy;
     }
 
 }

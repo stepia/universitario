@@ -8,7 +8,9 @@ public interface RoleDao {
 
     public List<Role> getRoles();
 
-    public void createRole(Role role);
+    public List<Role> getRoles(String sortBy, boolean sortOrder);
+
+    public void saveRole(Role role);
 
     public void editRole(Role role);
 

@@ -10,6 +10,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.event.SelectEvent;
+import org.primefaces.event.data.SortEvent;
 
 import service.IWeekManager;
 import entry.Week;
@@ -21,9 +22,10 @@ public class WeekViewBean {
     @ManagedProperty(value = "#{weekManager}")
     private IWeekManager weekManager;
     private Week selectedWeek;
-    private Week[] selectedWeeks;
     private List<Week> weeks = new ArrayList<Week>();
     private boolean editible;
+    private boolean sortOrder;
+    private String sortBy;
 
     private int length;
 
@@ -35,14 +37,6 @@ public class WeekViewBean {
         this.length = length;
     }
 
-    public Week[] getSelectedWeeks() {
-        return selectedWeeks;
-    }
-
-    public void setSelectedWeeks(Week[] selectedWeeks) {
-        this.selectedWeeks = selectedWeeks;
-    }
-
     public IWeekManager getWeekManager() {
         return weekManager;
     }
@@ -52,7 +46,11 @@ public class WeekViewBean {
     }
 
     public List<Week> getWeeks() {
-    	weeks = weekManager.getWeeks();
+    	if (sortBy == null) {
+    		weeks = getWeekManager().getWeeks();
+        } else {
+        	weeks = getWeekManager().getWeeks(sortBy, sortOrder);
+        }
         this.length = weeks.size();
         return weeks;
     }
@@ -84,7 +82,46 @@ public class WeekViewBean {
     }
 
     public String doAction(String action) {
+        Action act = Action.fromString(action);
+        switch (act)
+            {
+            case DELETE:
+                System.out.println("Penny coin");
+                break;
+            case CREATE:
+                setSelectedWeek(new Week());
+                break;
+            case SAVE:
+                getWeekManager().saveWeek(getSelectedWeek());
+                break;
+
+            }
         return action;
+    }
+    
+    public void caseListSortListner(SortEvent sortEvent) {
+        setSortBy(sortEvent.getSortColumn().getId());
+        if (sortEvent.isAscending()) {
+            setSortOrder(true);
+        } else {
+            setSortOrder(false);
+        }
+    }
+
+    public boolean isSortOrder() {
+        return sortOrder;
+    }
+
+    public void setSortOrder(boolean sortOrder) {
+        this.sortOrder = sortOrder;
+    }
+
+    public String getSortBy() {
+        return sortBy;
+    }
+
+    public void setSortBy(String sortBy) {
+        this.sortBy = sortBy;
     }
 
 }

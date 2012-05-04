@@ -17,12 +17,16 @@ public class ReportTypeManager implements IReportTypeManager {
         this.reportTypeDao = reportTypeDao;
     }
 
-    public void createReportType(ReportType reportType) {
-        getReportTypeDao().createReportType(reportType);
+    public void saveReportType(ReportType reportType) {
+        getReportTypeDao().saveReportType(reportType);
     }
 
     public List<ReportType> getReportTypes() {
         return getReportTypeDao().getReportTypes();
+    }
+
+    public List<ReportType> getReportTypes(String sortBy, boolean sortOrder) {
+        return getReportTypeDao().getReportTypes(sortBy, sortOrder);
     }
 
     public void editReportType(ReportType reportType) {

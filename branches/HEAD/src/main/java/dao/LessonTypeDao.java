@@ -8,7 +8,9 @@ public interface LessonTypeDao {
 
     public List<LessonType> getLessonTypes();
 
-    public void createLessonType(LessonType lessonType);
+    public List<LessonType> getLessonTypes(String sortBy, boolean sortOrder);
+
+    public void saveLessonType(LessonType lessonType);
 
     public void editLessonType(LessonType lessonType);
 

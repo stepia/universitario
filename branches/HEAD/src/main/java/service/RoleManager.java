@@ -17,12 +17,16 @@ public class RoleManager implements IRoleManager {
         this.roleDao = roleDao;
     }
 
-    public void createRole(Role role) {
-        getRoleDao().createRole(role);
+    public void saveRole(Role role) {
+        getRoleDao().saveRole(role);
     }
 
     public List<Role> getRoles() {
         return getRoleDao().getRoles();
+    }
+
+    public List<Role> getRoles(String sortBy, boolean sortOrder) {
+        return getRoleDao().getRoles(sortBy, sortOrder);
     }
 
     public void editRole(Role role) {

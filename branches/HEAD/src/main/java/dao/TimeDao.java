@@ -8,7 +8,9 @@ public interface TimeDao {
 
     public List<Time> getTimes();
 
-    public void createTime(Time time);
+    public List<Time> getTimes(String sortBy, boolean sortOrder);
+
+    public void saveTime(Time time);
 
     public void editTime(Time time);
 

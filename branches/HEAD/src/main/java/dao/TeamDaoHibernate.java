@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,6 +27,17 @@ public class TeamDaoHibernate implements TeamDao {
         return sessionFactory.getCurrentSession().createCriteria(Team.class)
                     .list();
     }
+    
+    @SuppressWarnings("unchecked")
+    @Transactional
+    public List<Team> getTeams(String sortBy, boolean sortOrder) {
+        if (sortOrder) {
+            return sessionFactory.getCurrentSession().createCriteria(Team.class).addOrder(Order.asc(sortBy)).list();
+        } else {
+            return sessionFactory.getCurrentSession().createCriteria(Team.class).addOrder(Order.desc(sortBy)).list();
+        }
+
+    }
 
     @SuppressWarnings("unchecked")
     @Transactional
@@ -48,8 +60,8 @@ public class TeamDaoHibernate implements TeamDao {
     }
 
     @Transactional
-    public void createTeam(Team team) {
-        sessionFactory.getCurrentSession().save(team);
+    public void saveTeam(Team team) {
+        sessionFactory.getCurrentSession().saveOrUpdate(team);
 
     }
 

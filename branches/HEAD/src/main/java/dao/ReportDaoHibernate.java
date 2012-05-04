@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,10 +27,21 @@ public class ReportDaoHibernate implements ReportDao {
         return sessionFactory.getCurrentSession().createCriteria(Report.class)
                     .list();
     }
+    
+    @SuppressWarnings("unchecked")
+    @Transactional
+    public List<Report> getReports(String sortBy, boolean sortOrder) {
+        if (sortOrder) {
+            return sessionFactory.getCurrentSession().createCriteria(Report.class).addOrder(Order.asc(sortBy)).list();
+        } else {
+            return sessionFactory.getCurrentSession().createCriteria(Report.class).addOrder(Order.desc(sortBy)).list();
+        }
+
+    }
 
     @Transactional
-    public void createReport(Report report) {
-        sessionFactory.getCurrentSession().save(report);
+    public void saveReport(Report report) {
+        sessionFactory.getCurrentSession().saveOrUpdate(report);
 
     }
 

@@ -2,8 +2,6 @@
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:utils="http://java.sun.com/jsf/composite/utils"
-	xmlns:sec="http://www.springframework.org/security/tags"
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
@@ -33,11 +31,14 @@
 				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
 					value="#{roleViewBean.roles}"
 					selection="#{roleViewBean.selectedRole}" id="roleTable"
-					rowsPerPageTemplate="5,10,15,25,50,100">
+					rowsPerPageTemplate="5,10,15,25,50,100"
+					emptyMessage="#{msg.norecordsfound}">
 
 					<f:facet name="header">  
             List of Roles (#{roleViewBean.length}) 
         </f:facet>
+        <p:ajax event="sort"
+                            listener="#{roleViewBean.caseListSortListner}" update=":roleform:roleTable" />
 					<p:column selectionMode="single" style="width:18px" />
 					<p:ajax event="rowSelect"
 						listener="#{roleViewBean.onRowSelect}"
@@ -63,9 +64,7 @@
 
 		</div>
 		<div id="footer">
-			<ui:insert name="footer">
-				<ui:include src="/footer.xhtml" />
-			</ui:insert>
+			<ui:include src="/footer.xhtml" />
 		</div>
 	</div>
 </h:body>

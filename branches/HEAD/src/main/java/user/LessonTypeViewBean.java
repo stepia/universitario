@@ -10,6 +10,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.event.SelectEvent;
+import org.primefaces.event.data.SortEvent;
 
 import service.ILessonTypeManager;
 import entry.LessonType;
@@ -21,9 +22,10 @@ public class LessonTypeViewBean {
     @ManagedProperty(value = "#{lessonTypeManager}")
     private ILessonTypeManager lessonTypeManager;
     private LessonType selectedLessonType;
-    private LessonType[] selectedLessonTypes;
     private List<LessonType> lessonTypes = new ArrayList<LessonType>();
     private boolean editible;
+    private boolean sortOrder;
+    private String sortBy;
 
     private int length;
 
@@ -35,14 +37,6 @@ public class LessonTypeViewBean {
         this.length = length;
     }
 
-    public LessonType[] getSelectedLessonTypes() {
-        return selectedLessonTypes;
-    }
-
-    public void setSelectedLessonTypes(LessonType[] selectedLessonTypes) {
-        this.selectedLessonTypes = selectedLessonTypes;
-    }
-
     public ILessonTypeManager getLessonTypeManager() {
         return lessonTypeManager;
     }
@@ -52,7 +46,11 @@ public class LessonTypeViewBean {
     }
 
     public List<LessonType> getLessonTypes() {
-    	lessonTypes = lessonTypeManager.getLessonTypes();
+    	if (sortBy == null) {
+    		lessonTypes = getLessonTypeManager().getLessonTypes();
+        } else {
+        	lessonTypes = getLessonTypeManager().getLessonTypes(sortBy, sortOrder);
+        }
         this.length = lessonTypes.size();
         return lessonTypes;
     }
@@ -84,7 +82,46 @@ public class LessonTypeViewBean {
     }
 
     public String doAction(String action) {
+        Action act = Action.fromString(action);
+        switch (act)
+            {
+            case DELETE:
+                System.out.println("Penny coin");
+                break;
+            case CREATE:
+                setSelectedLessonType(new LessonType());
+                break;
+            case SAVE:
+                getLessonTypeManager().saveLessonType(getSelectedLessonType());
+                break;
+
+            }
         return action;
+    }
+    
+    public void caseListSortListner(SortEvent sortEvent) {
+        setSortBy(sortEvent.getSortColumn().getId());
+        if (sortEvent.isAscending()) {
+            setSortOrder(true);
+        } else {
+            setSortOrder(false);
+        }
+    }
+
+    public boolean isSortOrder() {
+        return sortOrder;
+    }
+
+    public void setSortOrder(boolean sortOrder) {
+        this.sortOrder = sortOrder;
+    }
+
+    public String getSortBy() {
+        return sortBy;
+    }
+
+    public void setSortBy(String sortBy) {
+        this.sortBy = sortBy;
     }
 
 }

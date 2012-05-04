@@ -84,6 +84,11 @@
     <navigation-rule>
         <from-view-id>/admin.xhtml</from-view-id>
         <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>passwordchanges</from-outcome>
             <to-view-id>/passwordchanges.xhtml</to-view-id>
             <redirect/>
@@ -189,6 +194,16 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/passwordchanges.xhtml</from-view-id>
+         <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+     </navigation-rule>
+    
      <navigation-rule>
         <from-view-id>/state.xhtml</from-view-id>
         <navigation-case>
@@ -204,6 +219,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/stateDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -229,6 +249,11 @@
             <to-view-id>/state.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
 	
 	<navigation-rule>
@@ -246,6 +271,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/disciplineDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -271,6 +301,11 @@
             <to-view-id>/discipline.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -288,6 +323,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/emp2teamDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -313,6 +353,11 @@
             <to-view-id>/emp2team.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -330,6 +375,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/employeeDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -355,6 +405,11 @@
             <to-view-id>/employee.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -372,6 +427,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/lessonDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -397,6 +457,11 @@
             <to-view-id>/lesson.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -414,6 +479,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/lessontypeDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -439,6 +509,11 @@
             <to-view-id>/lessontype.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -456,6 +531,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/markDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -481,6 +561,11 @@
             <to-view-id>/mark.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -498,6 +583,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/marktypeDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -523,6 +613,11 @@
             <to-view-id>/marktype.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -540,6 +635,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/occupationDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -565,6 +665,11 @@
             <to-view-id>/occupation.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -582,6 +687,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/periodDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -607,6 +717,11 @@
             <to-view-id>/period.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -624,6 +739,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/personDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -649,6 +769,11 @@
             <to-view-id>/person.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -666,6 +791,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/planDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -691,6 +821,11 @@
             <to-view-id>/plan.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -708,6 +843,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/positionDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -733,6 +873,11 @@
             <to-view-id>/position.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -750,6 +895,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/reportDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -775,6 +925,11 @@
             <to-view-id>/report.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -792,6 +947,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/reporttypeDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -817,6 +977,11 @@
             <to-view-id>/reporttype.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -834,6 +999,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/roleDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -859,6 +1029,11 @@
             <to-view-id>/role.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -876,6 +1051,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/teamPrimeDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -901,6 +1081,11 @@
             <to-view-id>/team.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -918,6 +1103,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/teamtypeDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -943,6 +1133,11 @@
             <to-view-id>/teamtype.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -960,6 +1155,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/timeDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -985,6 +1185,11 @@
             <to-view-id>/time.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -1002,6 +1207,11 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/weekDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
      </navigation-rule>
@@ -1025,6 +1235,11 @@
         <navigation-case>
             <from-outcome>save</from-outcome>
             <to-view-id>/week.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
     </navigation-rule>

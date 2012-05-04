@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,10 +27,21 @@ public class PeriodDaoHibernate implements PeriodDao {
         return sessionFactory.getCurrentSession().createCriteria(Period.class)
                     .list();
     }
+    
+    @SuppressWarnings("unchecked")
+    @Transactional
+    public List<Period> getPeriods(String sortBy, boolean sortOrder) {
+        if (sortOrder) {
+            return sessionFactory.getCurrentSession().createCriteria(Period.class).addOrder(Order.asc(sortBy)).list();
+        } else {
+            return sessionFactory.getCurrentSession().createCriteria(Period.class).addOrder(Order.desc(sortBy)).list();
+        }
+
+    }
 
     @Transactional
-    public void createPeriod(Period period) {
-        sessionFactory.getCurrentSession().save(period);
+    public void savePeriod(Period period) {
+        sessionFactory.getCurrentSession().saveOrUpdate(period);
 
     }
 

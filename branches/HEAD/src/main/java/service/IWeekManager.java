@@ -8,8 +8,10 @@ public interface IWeekManager {
 
     public List<Week> getWeeks();
 
-    public void createWeek(Week week);
+    public void saveWeek(Week week);
 
     public void editWeek(Week week);
+
+    public List<Week> getWeeks(String sortBy, boolean sortOrder);
 
 }

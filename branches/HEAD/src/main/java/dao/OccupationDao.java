@@ -8,7 +8,9 @@ public interface OccupationDao {
 
     public List<Occupation> getOccupations();
 
-    public void createOccupation(Occupation occupation);
+    public List<Occupation> getOccupations(String sortBy, boolean sortOrder);
+
+    public void saveOccupation(Occupation occupation);
 
     public void editOccupation(Occupation occupation);
 

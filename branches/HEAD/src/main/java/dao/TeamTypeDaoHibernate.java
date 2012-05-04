@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,10 +27,21 @@ public class TeamTypeDaoHibernate implements TeamTypeDao {
         return sessionFactory.getCurrentSession().createCriteria(TeamType.class)
                     .list();
     }
+    
+    @SuppressWarnings("unchecked")
+    @Transactional
+    public List<TeamType> getTeamTypes(String sortBy, boolean sortOrder) {
+        if (sortOrder) {
+            return sessionFactory.getCurrentSession().createCriteria(TeamType.class).addOrder(Order.asc(sortBy)).list();
+        } else {
+            return sessionFactory.getCurrentSession().createCriteria(TeamType.class).addOrder(Order.desc(sortBy)).list();
+        }
+
+    }
 
     @Transactional
-    public void createTeamType(TeamType teamType) {
-        sessionFactory.getCurrentSession().save(teamType);
+    public void saveTeamType(TeamType teamType) {
+        sessionFactory.getCurrentSession().saveOrUpdate(teamType);
 
     }
 

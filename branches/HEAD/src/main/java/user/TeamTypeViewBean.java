@@ -10,6 +10,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.event.SelectEvent;
+import org.primefaces.event.data.SortEvent;
 
 import service.ITeamTypeManager;
 import entry.TeamType;
@@ -21,9 +22,10 @@ public class TeamTypeViewBean {
     @ManagedProperty(value = "#{teamTypeManager}")
     private ITeamTypeManager teamTypeManager;
     private TeamType selectedTeamType;
-    private TeamType[] selectedTeamTypes;
     private List<TeamType> teamTypes = new ArrayList<TeamType>();
     private boolean editible;
+    private boolean sortOrder;
+    private String sortBy;
 
     private int length;
 
@@ -35,14 +37,6 @@ public class TeamTypeViewBean {
         this.length = length;
     }
 
-    public TeamType[] getSelectedTeamTypes() {
-        return selectedTeamTypes;
-    }
-
-    public void setSelectedTeamTypes(TeamType[] selectedTeamTypes) {
-        this.selectedTeamTypes = selectedTeamTypes;
-    }
-
     public ITeamTypeManager getTeamTypeManager() {
         return teamTypeManager;
     }
@@ -52,7 +46,11 @@ public class TeamTypeViewBean {
     }
 
     public List<TeamType> getTeamTypes() {
-    	teamTypes = teamTypeManager.getTeamTypes();
+    	if (sortBy == null) {
+    		teamTypes = getTeamTypeManager().getTeamTypes();
+        } else {
+        	teamTypes = getTeamTypeManager().getTeamTypes(sortBy, sortOrder);
+        }
         this.length = teamTypes.size();
         return teamTypes;
     }
@@ -84,7 +82,46 @@ public class TeamTypeViewBean {
     }
 
     public String doAction(String action) {
+        Action act = Action.fromString(action);
+        switch (act)
+            {
+            case DELETE:
+                System.out.println("Penny coin");
+                break;
+            case CREATE:
+                setSelectedTeamType(new TeamType());
+                break;
+            case SAVE:
+                getTeamTypeManager().saveTeamType(getSelectedTeamType());
+                break;
+
+            }
         return action;
+    }
+    
+    public void caseListSortListner(SortEvent sortEvent) {
+        setSortBy(sortEvent.getSortColumn().getId());
+        if (sortEvent.isAscending()) {
+            setSortOrder(true);
+        } else {
+            setSortOrder(false);
+        }
+    }
+
+    public boolean isSortOrder() {
+        return sortOrder;
+    }
+
+    public void setSortOrder(boolean sortOrder) {
+        this.sortOrder = sortOrder;
+    }
+
+    public String getSortBy() {
+        return sortBy;
+    }
+
+    public void setSortBy(String sortBy) {
+        this.sortBy = sortBy;
     }
 
 }

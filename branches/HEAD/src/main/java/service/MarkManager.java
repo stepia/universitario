@@ -17,12 +17,16 @@ public class MarkManager implements IMarkManager {
         this.markDao = markDao;
     }
 
-    public void createMark(Mark mark) {
-        getMarkDao().createMark(mark);
+    public void saveMark(Mark mark) {
+        getMarkDao().saveMark(mark);
     }
 
     public List<Mark> getMarks() {
         return getMarkDao().getMarks();
+    }
+
+    public List<Mark> getMarks(String sortBy, boolean sortOrder) {
+        return getMarkDao().getMarks(sortBy, sortOrder);
     }
 
     public void editMark(Mark mark) {

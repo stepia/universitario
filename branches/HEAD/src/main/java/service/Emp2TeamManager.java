@@ -17,12 +17,16 @@ public class Emp2TeamManager implements IEmp2TeamManager {
         this.empTeamDao = empTeamDao;
     }
 
-    public void createEmp2Team(Emp2Team empTeam) {
-        getEmp2TeamDao().createEmp2Team(empTeam);
+    public void saveEmp2Team(Emp2Team empTeam) {
+        getEmp2TeamDao().saveEmp2Team(empTeam);
     }
 
     public List<Emp2Team> getEmp2Teams() {
         return getEmp2TeamDao().getEmp2Teams();
+    }
+
+    public List<Emp2Team> getEmp2Teams(String sortBy, boolean sortOrder) {
+        return getEmp2TeamDao().getEmp2Teams(sortBy, sortOrder);
     }
 
     public void editEmp2Team(Emp2Team empTeam) {

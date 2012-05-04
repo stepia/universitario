@@ -8,8 +8,10 @@ public interface IPersonManager {
 
     public List<Person> getPersons();
 
-    public void createPerson(Person person);
+    public void savePerson(Person person);
 
     public void editPerson(Person person);
+
+    public List<Person> getPersons(String sortBy, boolean sortOrder);
 
 }

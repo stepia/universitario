@@ -8,7 +8,9 @@ public interface PlanDao {
 
     public List<Plan> getPlans();
 
-    public void createPlan(Plan plan);
+    public List<Plan> getPlans(String sortBy, boolean sortOrder);
+
+    public void savePlan(Plan plan);
 
     public void editPlan(Plan plan);
 

@@ -17,12 +17,16 @@ public class LessonManager implements ILessonManager {
         this.lessonDao = lessonDao;
     }
 
-    public void createLesson(Lesson lesson) {
-        getLessonDao().createLesson(lesson);
+    public void saveLesson(Lesson lesson) {
+        getLessonDao().saveLesson(lesson);
     }
 
     public List<Lesson> getLessons() {
         return getLessonDao().getLessons();
+    }
+
+    public List<Lesson> getLessons(String sortBy, boolean sortOrder) {
+        return getLessonDao().getLessons(sortBy, sortOrder);
     }
 
     public void editLesson(Lesson lesson) {

@@ -10,6 +10,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.event.SelectEvent;
+import org.primefaces.event.data.SortEvent;
 
 import service.IEmployeeManager;
 import entry.Employee;
@@ -21,9 +22,10 @@ public class EmployeeViewBean {
     @ManagedProperty(value = "#{employeeManager}")
     private IEmployeeManager employeeManager;
     private Employee selectedEmployee;
-    private Employee[] selectedEmployees;
     private List<Employee> employees = new ArrayList<Employee>();
     private boolean editible;
+    private boolean sortOrder;
+    private String sortBy;
 
     private int length;
 
@@ -35,14 +37,6 @@ public class EmployeeViewBean {
         this.length = length;
     }
 
-    public Employee[] getSelectedEmployees() {
-        return selectedEmployees;
-    }
-
-    public void setSelectedEmployees(Employee[] selectedEmployees) {
-        this.selectedEmployees = selectedEmployees;
-    }
-
     public IEmployeeManager getEmployeeManager() {
         return employeeManager;
     }
@@ -52,7 +46,11 @@ public class EmployeeViewBean {
     }
 
     public List<Employee> getEmployees() {
-        employees = employeeManager.getEmployees();
+    	if (sortBy == null) {
+    		employees = getEmployeeManager().getEmployees();
+        } else {
+        	employees = getEmployeeManager().getEmployees(sortBy, sortOrder);
+        }
         this.length = employees.size();
         return employees;
     }
@@ -100,4 +98,30 @@ public class EmployeeViewBean {
             }
         return action;
     }
+    
+    public void caseListSortListner(SortEvent sortEvent) {
+        setSortBy(sortEvent.getSortColumn().getId());
+        if (sortEvent.isAscending()) {
+            setSortOrder(true);
+        } else {
+            setSortOrder(false);
+        }
+    }
+
+    public boolean isSortOrder() {
+        return sortOrder;
+    }
+
+    public void setSortOrder(boolean sortOrder) {
+        this.sortOrder = sortOrder;
+    }
+
+    public String getSortBy() {
+        return sortBy;
+    }
+
+    public void setSortBy(String sortBy) {
+        this.sortBy = sortBy;
+    }
+    
 }

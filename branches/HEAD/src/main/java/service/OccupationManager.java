@@ -17,12 +17,16 @@ public class OccupationManager implements IOccupationManager {
         this.occupationDao = occupationDao;
     }
 
-    public void createOccupation(Occupation occupation) {
-        getOccupationDao().createOccupation(occupation);
+    public void saveOccupation(Occupation occupation) {
+        getOccupationDao().saveOccupation(occupation);
     }
 
     public List<Occupation> getOccupations() {
         return getOccupationDao().getOccupations();
+    }
+
+    public List<Occupation> getOccupations(String sortBy, boolean sortOrder) {
+        return getOccupationDao().getOccupations(sortBy, sortOrder);
     }
 
     public void editOccupation(Occupation occupation) {

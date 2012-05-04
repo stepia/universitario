@@ -8,9 +8,11 @@ public interface ITeamManager {
 
     public List<Team> getTeams();
 
-    public void createTeam(Team team);
+    public void saveTeam(Team team);
 
     public void editTeam(Team team);
+
+    public List<Team> getTeams(String sortBy, boolean sortOrder);
 
     public List<Team> getSubTeams(int teamId);
 

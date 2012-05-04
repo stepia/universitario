@@ -17,12 +17,16 @@ public class DisciplineManager implements IDisciplineManager {
         this.disciplineDao = disciplineDao;
     }
 
-    public void createDiscipline(Discipline discipline) {
-        getDisciplineDao().createDiscipline(discipline);
+    public void saveDiscipline(Discipline discipline) {
+        getDisciplineDao().saveDiscipline(discipline);
     }
 
     public List<Discipline> getDisciplines() {
         return getDisciplineDao().getDisciplines();
+    }
+
+    public List<Discipline> getDisciplines(String sortBy, boolean sortOrder) {
+        return getDisciplineDao().getDisciplines(sortBy, sortOrder);
     }
 
     public void editDiscipline(Discipline discipline) {

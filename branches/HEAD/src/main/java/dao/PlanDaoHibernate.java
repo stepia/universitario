@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,10 +27,21 @@ public class PlanDaoHibernate implements PlanDao {
         return sessionFactory.getCurrentSession().createCriteria(Plan.class)
                     .list();
     }
+    
+    @SuppressWarnings("unchecked")
+    @Transactional
+    public List<Plan> getPlans(String sortBy, boolean sortOrder) {
+        if (sortOrder) {
+            return sessionFactory.getCurrentSession().createCriteria(Plan.class).addOrder(Order.asc(sortBy)).list();
+        } else {
+            return sessionFactory.getCurrentSession().createCriteria(Plan.class).addOrder(Order.desc(sortBy)).list();
+        }
+
+    }
 
     @Transactional
-    public void createPlan(Plan plan) {
-        sessionFactory.getCurrentSession().save(plan);
+    public void savePlan(Plan plan) {
+        sessionFactory.getCurrentSession().saveOrUpdate(plan);
 
     }
 

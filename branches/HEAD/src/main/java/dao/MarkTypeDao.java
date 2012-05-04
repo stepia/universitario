@@ -8,7 +8,9 @@ public interface MarkTypeDao {
 
     public List<MarkType> getMarkTypes();
 
-    public void createMarkType(MarkType markType);
+    public List<MarkType> getMarkTypes(String sortBy, boolean sortOrder);
+
+    public void saveMarkType(MarkType markType);
 
     public void editMarkType(MarkType markType);
 

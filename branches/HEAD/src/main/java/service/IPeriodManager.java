@@ -8,8 +8,10 @@ public interface IPeriodManager {
 
     public List<Period> getPeriods();
 
-    public void createPeriod(Period period);
+    public void savePeriod(Period period);
 
     public void editPeriod(Period period);
+
+    public List<Period> getPeriods(String sortBy, boolean sortOrder);
 
 }

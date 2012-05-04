@@ -17,12 +17,16 @@ public class MarkTypeManager implements IMarkTypeManager {
         this.markTypeDao = markTypeDao;
     }
 
-    public void createMarkType(MarkType markType) {
-        getMarkTypeDao().createMarkType(markType);
+    public void saveMarkType(MarkType markType) {
+        getMarkTypeDao().saveMarkType(markType);
     }
 
     public List<MarkType> getMarkTypes() {
         return getMarkTypeDao().getMarkTypes();
+    }
+
+    public List<MarkType> getMarkTypes(String sortBy, boolean sortOrder) {
+        return getMarkTypeDao().getMarkTypes(sortBy, sortOrder);
     }
 
     public void editMarkType(MarkType markType) {
