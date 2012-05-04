@@ -8,6 +8,8 @@ public interface StateDao {
 
     public List<State> getStates();
 
+    public List<State> getStates(String sortBy, boolean sortOrder);
+
     public void saveState(State state);
 
     public void editState(State state);

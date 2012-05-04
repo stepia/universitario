@@ -25,6 +25,10 @@ public class StateManager implements IStateManager {
         return getStateDao().getStates();
     }
 
+    public List<State> getStates(String sortBy, boolean sortOrder) {
+        return getStateDao().getStates(sortBy, sortOrder);
+    }
+
     public void editState(State state) {
         getStateDao().editState(state);
     }

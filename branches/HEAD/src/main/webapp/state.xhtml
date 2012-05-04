@@ -38,6 +38,8 @@
 					<f:facet name="header">  
             List of States (#{stateViewBean.length}) 
         </f:facet>
+        <p:ajax event="sort"
+                            listener="#{stateViewBean.caseListSortListner}" update=":stateform:stateTable" />
 					<p:column selectionMode="single" style="width:18px" />
 					<p:ajax event="rowSelect" listener="#{stateViewBean.onRowSelect}"
 						update=":stateform" />

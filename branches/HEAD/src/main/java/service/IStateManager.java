@@ -12,4 +12,6 @@ public interface IStateManager {
 
     public void editState(State state);
 
+    public List<State> getStates(String sortBy, boolean sortOrder);
+
 }

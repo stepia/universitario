@@ -10,6 +10,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.event.SelectEvent;
+import org.primefaces.event.data.SortEvent;
 
 import service.IStateManager;
 import entry.State;
@@ -21,9 +22,10 @@ public class StateViewBean {
     @ManagedProperty(value = "#{stateManager}")
     private IStateManager stateManager;
     private State selectedState;
-    private State[] selectedStates;
     private List<State> states = new ArrayList<State>();
     private boolean editible;
+    private boolean sortOrder;
+    private String sortBy;
 
     private int length;
 
@@ -35,14 +37,6 @@ public class StateViewBean {
         this.length = length;
     }
 
-    public State[] getSelectedStates() {
-        return selectedStates;
-    }
-
-    public void setSelectedStates(State[] selectedStates) {
-        this.selectedStates = selectedStates;
-    }
-
     public IStateManager getStateManager() {
         return stateManager;
     }
@@ -52,7 +46,11 @@ public class StateViewBean {
     }
 
     public List<State> getStates() {
-        states = getStateManager().getStates();
+        if (sortBy == null) {
+            states = getStateManager().getStates();
+        } else {
+            states = getStateManager().getStates(sortBy, sortOrder);
+        }
         this.length = states.size();
         return states;
     }
@@ -99,6 +97,31 @@ public class StateViewBean {
 
     public void setEditible(boolean editible) {
         this.editible = editible;
+    }
+
+    public void caseListSortListner(SortEvent sortEvent) {
+        setSortBy(sortEvent.getSortColumn().getId());
+        if (sortEvent.isAscending()) {
+            setSortOrder(true);
+        } else {
+            setSortOrder(false);
+        }
+    }
+
+    public boolean isSortOrder() {
+        return sortOrder;
+    }
+
+    public void setSortOrder(boolean sortOrder) {
+        this.sortOrder = sortOrder;
+    }
+
+    public String getSortBy() {
+        return sortBy;
+    }
+
+    public void setSortBy(String sortBy) {
+        this.sortBy = sortBy;
     }
 
 }
