@@ -16,6 +16,7 @@
 			<ui:insert name="header">
 				<ui:include src="/detail.xhtml">
 					<ui:param name="title" value="#{msg.lesson}" />
+					<ui:param name="bean" value="#{lessonViewBean}" />
 				</ui:include>
 			</ui:insert>
 		</div>
@@ -23,23 +24,23 @@
 			<h:form id="lessonDetailForm">
 				<p:panel header="Lesson" styleClass="panel">
 	    Lesson Id:<h:inputText
-						value="#{lessonViewBean.selectedLesson.id}" />
+						value="#{lessonViewBean.selectedLesson.id}"/>
 		Lesson PlanId:<h:inputText
-						value="#{lessonViewBean.selectedLesson.planid}" />
+						value="#{lessonViewBean.selectedLesson.planid}"/>
 		Lesson FacultyId:<h:inputText
-						value="#{lessonViewBean.selectedLesson.facultyid}" />
+						value="#{lessonViewBean.selectedLesson.facultyid}"/>
 		Lesson Room:<h:inputText
-						value="#{lessonViewBean.selectedLesson.room}" />
+						value="#{lessonViewBean.selectedLesson.room}"/>
 		Lesson LessontimeId:<h:inputText
-						value="#{lessonViewBean.selectedLesson.lessontimeid}" />
+						value="#{lessonViewBean.selectedLesson.lessontimeid}"/>
 		Lesson DayId:<h:inputText
-						value="#{lessonViewBean.selectedLesson.dayid}" />
+						value="#{lessonViewBean.selectedLesson.dayid}"/>
 		Lesson WeekId:<h:inputText
-						value="#{lessonViewBean.selectedLesson.weekid}" />
+						value="#{lessonViewBean.selectedLesson.weekid}"/>
 		Lesson Modified:<h:inputText
-						value="#{lessonViewBean.selectedLesson.modified}" />
+						value="#{lessonViewBean.selectedLesson.modified}"/>
 		Lesson Created:<h:inputText
-						value="#{lessonViewBean.selectedLesson.created}" />
+						value="#{lessonViewBean.selectedLesson.created}"/>
 
 					<br />
 				</p:panel>

@@ -23,6 +23,7 @@ public class RoleViewBean {
     private Role selectedRole;
     private Role[] selectedRoles;
     private List<Role> roles = new ArrayList<Role>();
+    private boolean editible;
 
     private int length;
 
@@ -66,10 +67,24 @@ public class RoleViewBean {
 
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("roleDetail.xhtml");
+        setEditible(true);
     }
 
     public void init() throws IOException {
         setSelectedRole(null);
+        setEditible(false);
+    }
+
+    public boolean isEditible() {
+        return editible;
+    }
+
+    public void setEditible(boolean editible) {
+        this.editible = editible;
+    }
+
+    public String doAction(String action) {
+        return action;
     }
 
 }

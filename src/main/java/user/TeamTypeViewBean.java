@@ -23,6 +23,7 @@ public class TeamTypeViewBean {
     private TeamType selectedTeamType;
     private TeamType[] selectedTeamTypes;
     private List<TeamType> teamTypes = new ArrayList<TeamType>();
+    private boolean editible;
 
     private int length;
 
@@ -66,10 +67,24 @@ public class TeamTypeViewBean {
 
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("teamtypeDetail.xhtml");
+        setEditible(true);
     }
 
     public void init() throws IOException {
         setSelectedTeamType(null);
+        setEditible(false);
+    }
+
+    public boolean isEditible() {
+        return editible;
+    }
+
+    public void setEditible(boolean editible) {
+        this.editible = editible;
+    }
+
+    public String doAction(String action) {
+        return action;
     }
 
 }

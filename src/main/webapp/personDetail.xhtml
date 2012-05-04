@@ -16,6 +16,7 @@
 			<ui:insert name="header">
 				<ui:include src="/detail.xhtml">
 					<ui:param name="title" value="#{msg.person}" />
+					<ui:param name="bean" value="#{personViewBean}" />
 				</ui:include>
 			</ui:insert>
 		</div>
@@ -23,15 +24,31 @@
 			<h:form id="personDetailForm">
 				<p:panel header="Person" styleClass="panel">
 	    Person Id:<h:inputText
-						value="#{personViewBean.selectedPerson.id}" />
+						value="#{personViewBean.selectedPerson.id}"/>
 		Person FirstName:<h:inputText
-						value="#{personViewBean.selectedPerson.firstname}" />
+						value="#{personViewBean.selectedPerson.firstName}"/>
 		Person LastName:<h:inputText
-						value="#{personViewBean.selectedPerson.lastname}" />
+						value="#{personViewBean.selectedPerson.lastName}"/>
 		Person MiddleName:<h:inputText
-						value="#{personViewBean.selectedPerson.middlename}" />
+						value="#{personViewBean.selectedPerson.middleName}"/>
 		Person Dob:<h:inputText
-						value="#{personViewBean.selectedPerson.dob}" />
+						value="#{personViewBean.selectedPerson.dob}"/>
+		Person Address:<h:inputText
+						value="#{personViewBean.selectedPerson.address}"/>
+		Person Academicdegree:<h:inputText
+						value="#{personViewBean.selectedPerson.academicdegree}"/>
+		Person Sex:<h:inputText
+						value="#{personViewBean.selectedPerson.sex}"/>
+		Person Phone:<h:inputText
+						value="#{personViewBean.selectedPerson.phone}"/>
+		Person Email:<h:inputText
+						value="#{personViewBean.selectedPerson.email}"/>
+		Person Code:<h:inputText
+						value="#{personViewBean.selectedPerson.code}"/>
+		Person Modified:<h:inputText
+						value="#{personViewBean.selectedPerson.modified}"/>
+		Person Created:<h:inputText
+						value="#{personViewBean.selectedPerson.created}"/>
 
 					<br />
 				</p:panel>

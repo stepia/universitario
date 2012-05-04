@@ -16,6 +16,7 @@
 			<ui:insert name="header">
 				<ui:include src="/detail.xhtml">
 					<ui:param name="title" value="#{msg.time}" />
+					<ui:param name="bean" value="#{timeViewBean}" />
 				</ui:include>
 			</ui:insert>
 		</div>
@@ -23,13 +24,13 @@
 			<h:form id="timeDetailForm">
 				<p:panel header="Time" styleClass="panel">
 	    Time Id:<h:inputText
-	    				value="#{timeViewBean.selectedTime.id}" />
+	    				value="#{timeViewBean.selectedTime.id}"/>
 	    Time Value:<h:inputText
-	    				value="#{timeViewBean.selectedTime.value}" />
+	    				value="#{timeViewBean.selectedTime.value}"/>
 	    Time Created:<h:inputText
-	    				value="#{timeViewBean.selectedTime.created}" />
+	    				value="#{timeViewBean.selectedTime.created}"/>
 	    Time Modified:<h:inputText
-	    				value="#{timeViewBean.selectedTime.modified}" />
+	    				value="#{timeViewBean.selectedTime.modified}"/>
 
 					<br />
 				</p:panel>

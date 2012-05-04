@@ -16,6 +16,7 @@
 			<ui:insert name="header">
 				<ui:include src="/detail.xhtml">
 					<ui:param name="title" value="#{msg.emp2team}" />
+					<ui:param name="bean" value="#{emp2TeamViewBean}" />
 				</ui:include>
 			</ui:insert>
 		</div>
@@ -23,21 +24,21 @@
 			<h:form id="emp2teamDetailForm">
 				<p:panel header="Emp2team" styleClass="panel">
 	    Emp2team Id:<h:inputText
-	    				value="#{emp2TeamViewBean.selectedEmp2Team.id}" />
+	    				value="#{emp2TeamViewBean.selectedEmp2Team.id}"/>
 	    Emp2team EmpId:<h:inputText
-	    				value="#{emp2TeamViewBean.selectedEmp2Team.empid}" />
+	    				value="#{emp2TeamViewBean.selectedEmp2Team.empid}"/>
 	    Emp2team TeamId:<h:inputText
-	    				value="#{emp2TeamViewBean.selectedEmp2Team.teamid}" />
+	    				value="#{emp2TeamViewBean.selectedEmp2Team.teamid}"/>
 	    Emp2team PositionId:<h:inputText
-	    				value="#{emp2TeamViewBean.selectedEmp2Team.positionid}" />
+	    				value="#{emp2TeamViewBean.selectedEmp2Team.positionid}"/>
 	    Emp2team OccupationId:<h:inputText
-	    				value="#{emp2TeamViewBean.selectedEmp2Team.occupationid}" />
+	    				value="#{emp2TeamViewBean.selectedEmp2Team.occupationid}"/>
 	    Emp2team StateId:<h:inputText
-	    				value="#{emp2TeamViewBean.selectedEmp2Team.stateid}" />
+	    				value="#{emp2TeamViewBean.selectedEmp2Team.stateid}"/>
 	    Emp2team Modified:<h:inputText
-	    				value="#{emp2TeamViewBean.selectedEmp2Team.modified}" />
+	    				value="#{emp2TeamViewBean.selectedEmp2Team.modified}"/>
 	    Emp2team Created:<h:inputText
-	    				value="#{emp2TeamViewBean.selectedEmp2Team.created}" />
+	    				value="#{emp2TeamViewBean.selectedEmp2Team.created}"/>
 
 					<br />
 				</p:panel>

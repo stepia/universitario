@@ -16,6 +16,7 @@
 			<ui:insert name="header">
 				<ui:include src="/detail.xhtml">
 					<ui:param name="title" value="#{msg.mark}" />
+					<ui:param name="bean" value="#{markViewBean}" />
 				</ui:include>
 			</ui:insert>
 		</div>
@@ -23,13 +24,13 @@
 			<h:form id="markDetailForm">
 				<p:panel header="Mark" styleClass="panel">
 	    Mark Id:<h:inputText
-	    				value="#{markViewBean.selectedMark.id}" />
+	    				value="#{markViewBean.selectedMark.id}"/>
 	    Mark Name:<h:inputText
-	    				value="#{markViewBean.selectedMark.name}" />
+	    				value="#{markViewBean.selectedMark.name}"/>
 	    Mark Created:<h:inputText
-	    				value="#{markViewBean.selectedMark.created}" />
+	    				value="#{markViewBean.selectedMark.created}"/>
 	    Mark Modified:<h:inputText
-	    				value="#{markViewBean.selectedMark.modified}" />
+	    				value="#{markViewBean.selectedMark.modified}"/>
 
 					<br />
 				</p:panel>

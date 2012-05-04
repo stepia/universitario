@@ -16,6 +16,7 @@
 			<ui:insert name="header">
 				<ui:include src="/detail.xhtml">
 					<ui:param name="title" value="#{msg.plan}" />
+					<ui:param name="bean" value="#{planViewBean}" />
 				</ui:include>
 			</ui:insert>
 		</div>
@@ -23,25 +24,25 @@
 			<h:form id="planDetailForm">
 				<p:panel header="Plan" styleClass="panel">
 	    Plan Id:<h:inputText
-	    				value="#{planViewBean.selectedPlan.id}" />
+	    				value="#{planViewBean.selectedPlan.id}"/>
 	    Plan PlanId:<h:inputText
-	    				value="#{planViewBean.selectedPlan.planid}" />
+	    				value="#{planViewBean.selectedPlan.planid}"/>
 	    Plan DisciplineId:<h:inputText
-	    				value="#{planViewBean.selectedPlan.disciplineid}" />
+	    				value="#{planViewBean.selectedPlan.disciplineid}"/>
 	    Plan LessontypeId:<h:inputText
-	    				value="#{planViewBean.selectedPlan.lessontypeid}" />
+	    				value="#{planViewBean.selectedPlan.lessontypeid}"/>
 	    Plan EmpId:<h:inputText
-	    				value="#{planViewBean.selectedPlan.empid}" />
+	    				value="#{planViewBean.selectedPlan.empid}"/>
 	    Plan PeriodId:<h:inputText
-	    				value="#{planViewBean.selectedPlan.periodid}" />
+	    				value="#{planViewBean.selectedPlan.periodid}"/>
 	    Plan Hours:<h:inputText
-	    				value="#{planViewBean.selectedPlan.hours}" />
+	    				value="#{planViewBean.selectedPlan.hours}"/>
 	    Plan MarktypeId:<h:inputText
-	    				value="#{planViewBean.selectedPlan.marktypeid}" />
+	    				value="#{planViewBean.selectedPlan.marktypeid}"/>
 	    Plan Modified:<h:inputText
-	    				value="#{planViewBean.selectedPlan.modified}" />
+	    				value="#{planViewBean.selectedPlan.modified}"/>
 	    Plan Created:<h:inputText
-	    				value="#{planViewBean.selectedPlan.created}" />
+	    				value="#{planViewBean.selectedPlan.created}"/>
 
 					<br />
 				</p:panel>

@@ -23,6 +23,7 @@ public class ReportViewBean {
     private Report selectedReport;
     private Report[] selectedReports;
     private List<Report> reports = new ArrayList<Report>();
+    private boolean editible;
 
     private int length;
 
@@ -66,10 +67,24 @@ public class ReportViewBean {
 
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("reportDetail.xhtml");
+        setEditible(true);
     }
 
     public void init() throws IOException {
         setSelectedReport(null);
+        setEditible(false);
+    }
+
+    public boolean isEditible() {
+        return editible;
+    }
+
+    public void setEditible(boolean editible) {
+        this.editible = editible;
+    }
+
+    public String doAction(String action) {
+        return action;
     }
 
 }

@@ -16,6 +16,7 @@
 			<ui:insert name="header">
 				<ui:include src="/detail.xhtml">
 					<ui:param name="title" value="#{msg.report}" />
+					<ui:param name="bean" value="#{reportViewBean}" />
 				</ui:include>
 			</ui:insert>
 		</div>
@@ -23,17 +24,17 @@
 			<h:form id="reportDetailForm">
 				<p:panel header="Report" styleClass="panel">
 	    Report Id:<h:inputText
-						value="#{reportViewBean.selectedReport.id}" />
+						value="#{reportViewBean.selectedReport.id}"/>
 		Report ReportId:<h:inputText
-						value="#{reportViewBean.selectedReport.reportid}" />
+						value="#{reportViewBean.selectedReport.reportid}"/>
 		Report EmpId:<h:inputText
-						value="#{reportViewBean.selectedReport.empid}" />
+						value="#{reportViewBean.selectedReport.empid}"/>
 		Report Name:<h:inputText
-						value="#{reportViewBean.selectedReport.name}" />
+						value="#{reportViewBean.selectedReport.name}"/>
 		Report Modified:<h:inputText
-						value="#{reportViewBean.selectedReport.modified}" />
+						value="#{reportViewBean.selectedReport.modified}"/>
 		Report Created:<h:inputText
-						value="#{reportViewBean.selectedReport.created}" />
+						value="#{reportViewBean.selectedReport.created}"/>
 
 					<br />
 				</p:panel>

@@ -23,6 +23,7 @@ public class OccupationViewBean {
     private Occupation selectedOccupation;
     private Occupation[] selectedOccupations;
     private List<Occupation> occupations = new ArrayList<Occupation>();
+    private boolean editible;
 
     private int length;
 
@@ -66,10 +67,24 @@ public class OccupationViewBean {
 
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("occupationDetail.xhtml");
+        setEditible(true);
     }
 
     public void init() throws IOException {
         setSelectedOccupation(null);
+        setEditible(false);
+    }
+
+    public boolean isEditible() {
+        return editible;
+    }
+
+    public void setEditible(boolean editible) {
+        this.editible = editible;
+    }
+
+    public String doAction(String action) {
+        return action;
     }
 
 }

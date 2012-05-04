@@ -13,29 +13,27 @@
 <f:event type="preRenderView" listener="#{occupationViewBean.init}" />
 
 <h:body>
+	<p:ajaxStatus onstart="statusDialog.show();"
+		onsuccess="statusDialog.hide();" />
+	<p:dialog modal="true" widgetVar="statusDialog" header="#{msg.loading}"
+		draggable="false" closable="false">
+		<p:graphicImage value="/resources/img/ajaxloadingbar.gif" />
+	</p:dialog>
 	<f:view locale="#{language.localeCode}" />
 	<div id="container">
 		<div id="header">
-			<ui:insert name="header">
-				<ui:include src="/query.xhtml">
-					<ui:param name="title" value="#{msg.occupation}" />
-				</ui:include>
-			</ui:insert>
+			<ui:include src="/query.xhtml">
+				<ui:param name="title" value="#{msg.occupation}" />
+				<ui:param name="bean" value="#{occupationViewBean}" />
+			</ui:include>
 		</div>
 		<div id="content">
 			<h:form id="occupationform">
-				<p:blockUI block="occupationTable" trigger="occupationTable"
-					styleClass="resTable">  
-            Loading<br />
-					<br />
-					<p:graphicImage value="/resources/img/ajax-loader.gif" />
-				</p:blockUI>
 
 				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
 					value="#{occupationViewBean.occupations}"
-					selection="#{occupationViewBean.selectedOccupation}"
-					id="occupationTable" rowsPerPageTemplate="5,10,15,25,50,100"
-					styleClass="resTable">
+					selection="#{occupationViewBean.selectedOccupation}" id="occupationTable"
+					rowsPerPageTemplate="5,10,15,25,50,100">
 
 					<f:facet name="header">  
             List of Occupations (#{occupationViewBean.length}) 
@@ -61,8 +59,8 @@
             #{rec.created}  
         </p:column>
 				</p:dataTable>
-
 			</h:form>
+
 		</div>
 		<div id="footer">
 			<ui:insert name="footer">

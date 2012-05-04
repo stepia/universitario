@@ -23,6 +23,7 @@ public class Emp2TeamViewBean {
     private Emp2Team selectedEmp2Team;
     private Emp2Team[] selectedEmp2Teams;
     private List<Emp2Team> emp2Teams = new ArrayList<Emp2Team>();
+    private boolean editible;
 
     private int length;
 
@@ -66,10 +67,24 @@ public class Emp2TeamViewBean {
 
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("emp2teamDetail.xhtml");
+        setEditible(true);
     }
 
     public void init() throws IOException {
         setSelectedEmp2Team(null);
+        setEditible(false);
+    }
+
+    public boolean isEditible() {
+        return editible;
+    }
+
+    public void setEditible(boolean editible) {
+        this.editible = editible;
+    }
+
+    public String doAction(String action) {
+        return action;
     }
 
 }

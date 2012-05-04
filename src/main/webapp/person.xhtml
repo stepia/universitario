@@ -13,34 +13,34 @@
 <f:event type="preRenderView" listener="#{personViewBean.init}" />
 
 <h:body>
+	<p:ajaxStatus onstart="statusDialog.show();"
+		onsuccess="statusDialog.hide();" />
+	<p:dialog modal="true" widgetVar="statusDialog" header="#{msg.loading}"
+		draggable="false" closable="false">
+		<p:graphicImage value="/resources/img/ajaxloadingbar.gif" />
+	</p:dialog>
 	<f:view locale="#{language.localeCode}" />
 	<div id="container">
 		<div id="header">
-			<ui:insert name="header">
-				<ui:include src="/query.xhtml">
-					<ui:param name="title" value="#{msg.person}" />
-				</ui:include>
-			</ui:insert>
+			<ui:include src="/query.xhtml">
+				<ui:param name="title" value="#{msg.person}" />
+				<ui:param name="bean" value="#{personViewBean}" />
+			</ui:include>
 		</div>
 		<div id="content">
 			<h:form id="personform">
-				<p:blockUI block="personTable" trigger="personTable"
-					styleClass="resTable">  
-            Loading<br />
-					<br />
-					<p:graphicImage value="/resources/img/ajax-loader.gif" />
-				</p:blockUI>
 
 				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
 					value="#{personViewBean.persons}"
 					selection="#{personViewBean.selectedPerson}" id="personTable"
-					rowsPerPageTemplate="5,10,15,25,50,100" styleClass="resTable">
+					rowsPerPageTemplate="5,10,15,25,50,100">
 
 					<f:facet name="header">  
             List of Persons (#{personViewBean.length}) 
         </f:facet>
 					<p:column selectionMode="single" style="width:18px" />
-					<p:ajax event="rowSelect" listener="#{personViewBean.onRowSelect}"
+					<p:ajax event="rowSelect"
+						listener="#{personViewBean.onRowSelect}"
 						update=":personform" />
 					<p:column headerText="ID" sortBy="#{rec.id}" filterBy="#{rec.id}"
 						id="id">  
@@ -58,9 +58,45 @@
 						filterBy="#{rec.middleName}" id="middleName">  
             #{rec.middleName}  
         </p:column>
+        			<p:column headerText="Dob" sortBy="#{rec.dob}"
+						filterBy="#{rec.dob}" id="dob">  
+            #{rec.dob}  
+        </p:column>
+        			<p:column headerText="Address" sortBy="#{rec.address}"
+						filterBy="#{rec.address}" id="address">  
+            #{rec.address}  
+        </p:column>
+        			<p:column headerText="Academicdegree" sortBy="#{rec.academicdegree}"
+						filterBy="#{rec.academicdegree}" id="academicdegree">  
+            #{rec.academicdegree}  
+        </p:column>
+        			<p:column headerText="Sex" sortBy="#{rec.sex}"
+						filterBy="#{rec.sex}" id="sex">  
+            #{rec.sex}  
+        </p:column>
+        			<p:column headerText="Phone" sortBy="#{rec.phone}"
+						filterBy="#{rec.phone}" id="phone">  
+            #{rec.phone}  
+        </p:column>
+        			<p:column headerText="Email" sortBy="#{rec.email}"
+						filterBy="#{rec.email}" id="email">  
+            #{rec.email}  
+        </p:column>
+        			<p:column headerText="Code" sortBy="#{rec.code}"
+						filterBy="#{rec.code}" id="code">  
+            #{rec.code}  
+        </p:column>
+        			<p:column headerText="Modified" sortBy="#{rec.modified}"
+						filterBy="#{rec.modified}" id="modified">  
+            #{rec.modified}  
+        </p:column>
+        		<p:column headerText="Created" sortBy="#{rec.created}"
+						filterBy="#{rec.created}" id="created">  
+            #{rec.created}  
+        </p:column>
 				</p:dataTable>
-
 			</h:form>
+
 		</div>
 		<div id="footer">
 			<ui:insert name="footer">

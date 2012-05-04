@@ -13,34 +13,34 @@
 <f:event type="preRenderView" listener="#{roleViewBean.init}" />
 
 <h:body>
+	<p:ajaxStatus onstart="statusDialog.show();"
+		onsuccess="statusDialog.hide();" />
+	<p:dialog modal="true" widgetVar="statusDialog" header="#{msg.loading}"
+		draggable="false" closable="false">
+		<p:graphicImage value="/resources/img/ajaxloadingbar.gif" />
+	</p:dialog>
 	<f:view locale="#{language.localeCode}" />
 	<div id="container">
 		<div id="header">
-			<ui:insert name="header">
-				<ui:include src="/query.xhtml">
-					<ui:param name="title" value="#{msg.role}" />
-				</ui:include>
-			</ui:insert>
+			<ui:include src="/query.xhtml">
+				<ui:param name="title" value="#{msg.role}" />
+				<ui:param name="bean" value="#{roleViewBean}" />
+			</ui:include>
 		</div>
 		<div id="content">
 			<h:form id="roleform">
-				<p:blockUI block="roleTable" trigger="roleTable"
-					styleClass="resTable">  
-            Loading<br />
-					<br />
-					<p:graphicImage value="/resources/img/ajax-loader.gif" />
-				</p:blockUI>
 
 				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
 					value="#{roleViewBean.roles}"
 					selection="#{roleViewBean.selectedRole}" id="roleTable"
-					rowsPerPageTemplate="5,10,15,25,50,100" styleClass="resTable">
+					rowsPerPageTemplate="5,10,15,25,50,100">
 
 					<f:facet name="header">  
             List of Roles (#{roleViewBean.length}) 
         </f:facet>
 					<p:column selectionMode="single" style="width:18px" />
-					<p:ajax event="rowSelect" listener="#{roleViewBean.onRowSelect}"
+					<p:ajax event="rowSelect"
+						listener="#{roleViewBean.onRowSelect}"
 						update=":roleform" />
 					<p:column headerText="ID" sortBy="#{rec.id}" filterBy="#{rec.id}"
 						id="id">  
@@ -59,8 +59,8 @@
             #{rec.created}  
         </p:column>
 				</p:dataTable>
-
 			</h:form>
+
 		</div>
 		<div id="footer">
 			<ui:insert name="footer">

@@ -5,7 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-	<title>Create new employee</title>
+	<title>Create new Employee</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
@@ -24,9 +24,19 @@
 			<h:form id="employeeDetailForm">
 				<p:panel header="Employee" styleClass="panel">
 	    Employee Id:<h:inputText
-	    				value="#{employeeViewBean.selectedEmployee.id}" />
+	    				value="#{employeeViewBean.selectedEmployee.id}"/>
 	    Employee PersonId:<h:inputText
 	    				value="#{employeeViewBean.selectedEmployee.personid}"/>
+	    Employee UsrName:<h:inputText
+	    				value="#{employeeViewBean.selectedEmployee.usrname}"/>
+	    Employee Stateid:<h:inputText
+	    				value="#{employeeViewBean.selectedEmployee.stateid}"/>
+	    Employee RecordBook:<h:inputText
+	    				value="#{employeeViewBean.selectedEmployee.recordbook}"/>
+	    Employee Modified:<h:inputText
+	    				value="#{employeeViewBean.selectedEmployee.modified}"/>
+	    Employee Created:<h:inputText
+	    				value="#{employeeViewBean.selectedEmployee.created}"/>
 
 					<br />
 				</p:panel>
