@@ -18,9 +18,9 @@ public class LanguageBean {
     private static Map<String, Object> countries;
     static {
         countries = new LinkedHashMap<String, Object>();
+        countries.put("UA", new Locale("ua"));
         countries.put("ENG", new Locale("en"));
         countries.put("RU", new Locale("ru"));
-        countries.put("UA", new Locale("ua"));
 
     }
 
@@ -30,7 +30,7 @@ public class LanguageBean {
 
     public String getLocaleCode() {
         if (localeCode == null) {
-            localeCode = "en";
+            localeCode = "ua";
         }
         return localeCode;
     }
