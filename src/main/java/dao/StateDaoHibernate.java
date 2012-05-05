@@ -40,7 +40,19 @@ public class StateDaoHibernate implements StateDao {
     }
 
     @Transactional
+    public void deleteState(State state) {
+        sessionFactory.getCurrentSession().delete(state);
+
+    }
+
+    @Transactional
     public void saveState(State state) {
+        sessionFactory.getCurrentSession().save(state);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(State state) {
         sessionFactory.getCurrentSession().saveOrUpdate(state);
 
     }
