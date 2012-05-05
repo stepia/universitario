@@ -21,6 +21,14 @@ public class StateManager implements IStateManager {
         getStateDao().saveState(state);
     }
 
+    public void saveOrUpdate(State state) {
+        getStateDao().saveOrUpdate(state);
+    }
+
+    public void deleteState(State state) {
+        getStateDao().deleteState(state);
+    }
+
     public List<State> getStates() {
         return getStateDao().getStates();
     }

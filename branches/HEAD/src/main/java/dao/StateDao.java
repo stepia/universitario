@@ -16,4 +16,8 @@ public interface StateDao {
 
     public State getState(Long id);
 
+    public void deleteState(State state);
+
+    public void saveOrUpdate(State state);
+
 }

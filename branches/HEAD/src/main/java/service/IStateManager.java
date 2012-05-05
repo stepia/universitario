@@ -14,4 +14,8 @@ public interface IStateManager {
 
     public List<State> getStates(String sortBy, boolean sortOrder);
 
+    public void deleteState(State state);
+
+    public void saveOrUpdate(State state);
+
 }

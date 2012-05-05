@@ -1,6 +1,7 @@
 package user;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,20 +64,23 @@ public class StateViewBean {
         this.selectedState = selectedState;
     }
 
-    public String doAction(String action) {
+    public String doAction(String action) throws UnsupportedEncodingException {
         Action act = Action.fromString(action);
         switch (act)
             {
             case DELETE:
-                System.out.println("Penny coin");
+                getStateManager().deleteState(getSelectedState());
                 break;
             case CREATE:
                 setSelectedState(new State());
                 break;
             case SAVE:
-                getStateManager().saveState(getSelectedState());
+                if (getSelectedState().getCreated() != null) {
+                    getStateManager().saveOrUpdate(getSelectedState());
+                } else {
+                    getStateManager().saveState(getSelectedState());
+                }
                 break;
-
             }
         return action;
     }
