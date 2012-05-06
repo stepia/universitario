@@ -5,7 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-	<title>Create new user</title>
+	<title>#{msg.cperson}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
@@ -22,7 +22,7 @@
 		</div>
 		<div id="content">
 			<h:form id="personDetailForm">
-				<p:panel header="Person" styleClass="panel">
+				<p:panel header="#{msg.person}" styleClass="panel">
 	    Person Id:<h:inputText
 						value="#{personViewBean.selectedPerson.id}"/>
 		Person FirstName:<h:inputText

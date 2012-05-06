@@ -5,7 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-	<title>Create new Emp2Team</title>
+	<title>#{msg.cemp2team}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
@@ -22,7 +22,7 @@
 		</div>
 		<div id="content">
 			<h:form id="emp2teamDetailForm">
-				<p:panel header="Emp2team" styleClass="panel">
+				<p:panel header="#{msg.emp2team}" styleClass="panel">
 	    Emp2team Id:<h:inputText
 	    				value="#{emp2TeamViewBean.selectedEmp2Team.id}"/>
 	    Emp2team EmpId:<h:inputText

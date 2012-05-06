@@ -5,7 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-	<title>Create new Mark</title>
+	<title>#{msg.cmark}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
@@ -22,7 +22,7 @@
 		</div>
 		<div id="content">
 			<h:form id="markDetailForm">
-				<p:panel header="Mark" styleClass="panel">
+				<p:panel header="#{msg.mark}" styleClass="panel">
 	    Mark Id:<h:inputText
 	    				value="#{markViewBean.selectedMark.id}"/>
 	    Mark Name:<h:inputText

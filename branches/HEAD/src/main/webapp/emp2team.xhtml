@@ -35,7 +35,7 @@
 					emptyMessage="#{msg.norecordsfound}">
 
 					<f:facet name="header">  
-            List of Emp2teams (#{emp2TeamViewBean.length}) 
+            #{msg.lemp2team} (#{emp2TeamViewBean.length}) 
         </f:facet>
         <p:ajax event="sort"
                             listener="#{emp2TeamViewBean.caseListSortListner}" update=":emp2teamform:emp2TeamTable" />

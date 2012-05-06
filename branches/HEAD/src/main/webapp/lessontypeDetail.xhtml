@@ -5,7 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-	<title>Create new LessonType</title>
+	<title>#{msg.clessontype}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
@@ -22,7 +22,7 @@
 		</div>
 		<div id="content">
 			<h:form id="lessontypeDetailForm">
-				<p:panel header="LessonType" styleClass="panel">
+				<p:panel header="#{msg.lessontype}" styleClass="panel">
 	    Lessontype Id:<h:inputText
 						value="#{lessonTypeViewBean.selectedLessonType.id}"/>
 		Lessontype Name:<h:inputText

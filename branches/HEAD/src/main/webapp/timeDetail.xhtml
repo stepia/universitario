@@ -5,7 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-	<title>Create new Time</title>
+	<title>#{msg.ctime}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
@@ -22,7 +22,7 @@
 		</div>
 		<div id="content">
 			<h:form id="timeDetailForm">
-				<p:panel header="Time" styleClass="panel">
+				<p:panel header="#{msg.time}" styleClass="panel">
 	    Time Id:<h:inputText
 	    				value="#{timeViewBean.selectedTime.id}"/>
 	    Time Value:<h:inputText

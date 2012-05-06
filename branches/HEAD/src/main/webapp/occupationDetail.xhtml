@@ -5,7 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-	<title>Create new Occupation</title>
+	<title>#{msg.coccupation}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
@@ -22,7 +22,7 @@
 		</div>
 		<div id="content">
 			<h:form id="occupationDetailForm">
-				<p:panel header="Occupation" styleClass="panel">
+				<p:panel header="#{msg.occupation}" styleClass="panel">
 	    Occupation Id:<h:inputText
 						value="#{occupationViewBean.selectedOccupation.id}"/>
 		Occupation Name:<h:inputText

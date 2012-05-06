@@ -35,7 +35,7 @@
 					emptyMessage="#{msg.norecordsfound}">
 
 					<f:facet name="header">  
-            List of Positions (#{positionViewBean.length}) 
+            #{msg.lposition} (#{positionViewBean.length}) 
         </f:facet>
         <p:ajax event="sort"
                             listener="#{positionViewBean.caseListSortListner}" update=":positionform:positionTable" />

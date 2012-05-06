@@ -35,7 +35,7 @@
 					emptyMessage="#{msg.norecordsfound}">
 
 					<f:facet name="header">  
-            List of ReportTypes (#{reportTypeViewBean.length}) 
+            #{msg.lreporttype} (#{reportTypeViewBean.length}) 
         </f:facet>
         <p:ajax event="sort"
                             listener="#{reportTypeViewBean.caseListSortListner}" update=":reporttypeform:reportTypeTable" />

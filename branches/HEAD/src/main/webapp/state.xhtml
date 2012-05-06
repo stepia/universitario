@@ -36,7 +36,7 @@
 					emptyMessage="#{msg.norecordsfound}">
 
 					<f:facet name="header">  
-            List of States (#{stateViewBean.length}) 
+            #{msg.lstate} (#{stateViewBean.length}) 
         </f:facet>
         <p:ajax event="sort"
                             listener="#{stateViewBean.caseListSortListner}" update=":stateform:stateTable" />

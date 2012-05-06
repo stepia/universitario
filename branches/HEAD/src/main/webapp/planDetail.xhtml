@@ -5,7 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-	<title>Create new Plan</title>
+	<title>#{msg.cplan}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
@@ -22,7 +22,7 @@
 		</div>
 		<div id="content">
 			<h:form id="planDetailForm">
-				<p:panel header="Plan" styleClass="panel">
+				<p:panel header="#{msg.plan}" styleClass="panel">
 	    Plan Id:<h:inputText
 	    				value="#{planViewBean.selectedPlan.id}"/>
 	    Plan PlanId:<h:inputText

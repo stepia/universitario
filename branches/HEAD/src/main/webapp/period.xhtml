@@ -35,7 +35,7 @@
 					emptyMessage="#{msg.norecordsfound}">
 
 					<f:facet name="header">  
-            List of Periods (#{periodViewBean.length}) 
+            #{msg.lperiod} (#{periodViewBean.length}) 
         </f:facet>
         <p:ajax event="sort"
                             listener="#{periodViewBean.caseListSortListner}" update=":periodform:periodTable" />
