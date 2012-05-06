@@ -12,7 +12,7 @@
             <supported-locale>en</supported-locale>
         </locale-config>
         <resource-bundle>
-            <base-name>main.messages</base-name>
+            <base-name>server.PropertiesResourceBundle</base-name>
             <var>msg</var>
         </resource-bundle>
     </application>
