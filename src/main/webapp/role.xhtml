@@ -35,7 +35,7 @@
 					emptyMessage="#{msg.norecordsfound}">
 
 					<f:facet name="header">  
-            List of Roles (#{roleViewBean.length}) 
+            #{msg.lrole} (#{roleViewBean.length}) 
         </f:facet>
         <p:ajax event="sort"
                             listener="#{roleViewBean.caseListSortListner}" update=":roleform:roleTable" />

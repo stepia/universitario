@@ -35,7 +35,7 @@
 					emptyMessage="#{msg.norecordsfound}">>
 
 					<f:facet name="header">  
-            List of Lessons (#{lessonViewBean.length}) 
+            #{msg.llesson} (#{lessonViewBean.length}) 
         </f:facet>
         <p:ajax event="sort"
                             listener="#{lessonViewBean.caseListSortListner}" update=":lessonform:lessonTable" />

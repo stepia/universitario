@@ -5,7 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-	<title>Create new Position</title>
+	<title>#{msg.cposition}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
@@ -22,7 +22,7 @@
 		</div>
 		<div id="content">
 			<h:form id="positionDetailForm">
-				<p:panel header="Position" styleClass="panel">
+				<p:panel header="#{msg.position}" styleClass="panel">
 	    Position Id:<h:inputText
 						value="#{positionViewBean.selectedPosition.id}"/>
 		Position Name:<h:inputText

@@ -5,7 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-	<title>Create new Report</title>
+	<title>#{msg.creport}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
@@ -22,7 +22,7 @@
 		</div>
 		<div id="content">
 			<h:form id="reportDetailForm">
-				<p:panel header="Report" styleClass="panel">
+				<p:panel header="#{msg.report}" styleClass="panel">
 	    Report Id:<h:inputText
 						value="#{reportViewBean.selectedReport.id}"/>
 		Report ReportId:<h:inputText

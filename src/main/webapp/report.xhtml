@@ -35,7 +35,7 @@
 					emptyMessage="#{msg.norecordsfound}">
 
 					<f:facet name="header">  
-            List of Reports (#{reportViewBean.length}) 
+            #{msg.lreport} (#{reportViewBean.length}) 
         </f:facet>
         <p:ajax event="sort"
                             listener="#{reportViewBean.caseListSortListner}" update=":reportform:reportTable" />

@@ -35,7 +35,7 @@
 					emptyMessage="#{msg.norecordsfound}">
 
 					<f:facet name="header">  
-            List of Marks (#{markViewBean.length}) 
+            #{msg.lmark} (#{markViewBean.length}) 
         </f:facet>
         <p:ajax event="sort"
                             listener="#{markViewBean.caseListSortListner}" update=":markform:markTable" />

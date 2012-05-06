@@ -35,7 +35,7 @@
 					emptyMessage="#{msg.norecordsfound}">
 
 					<f:facet name="header">  
-            List of TeamTypes (#{teamTypeViewBean.length}) 
+            #{msg.lteamtype} (#{teamTypeViewBean.length}) 
         </f:facet>
         <p:ajax event="sort"
                             listener="#{teamTypeViewBean.caseListSortListner}" update=":teamtypeform:teamTypeTable" />

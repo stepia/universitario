@@ -5,7 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-	<title>Create new TeamType</title>
+	<title>#{msg.cteamtype}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
@@ -22,7 +22,7 @@
 		</div>
 		<div id="content">
 			<h:form id="teamtypeDetailForm">
-				<p:panel header="TeamType" styleClass="panel">
+				<p:panel header="#{msg.teamtype}" styleClass="panel">
 	    TeamType Id:<h:inputText
 						value="#{teamTypeViewBean.selectedTeamType.id}"/>
 		TeamType Name:<h:inputText
