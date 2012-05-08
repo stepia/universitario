@@ -21,6 +21,14 @@ public class Emp2TeamManager implements IEmp2TeamManager {
         getEmp2TeamDao().saveEmp2Team(empTeam);
     }
 
+    public void saveOrUpdate(Emp2Team empTeam) {
+        getEmp2TeamDao().saveOrUpdate(empTeam);
+    }
+
+    public void deleteEmp2Team(Emp2Team empTeam) {
+        getEmp2TeamDao().deleteEmp2Team(empTeam);
+    }
+
     public List<Emp2Team> getEmp2Teams() {
         return getEmp2TeamDao().getEmp2Teams();
     }

@@ -40,7 +40,19 @@ public class LessonDaoHibernate implements LessonDao {
     }
 
     @Transactional
+    public void deleteLesson(Lesson lesson) {
+        sessionFactory.getCurrentSession().delete(lesson);
+
+    }
+
+    @Transactional
     public void saveLesson(Lesson lesson) {
+        sessionFactory.getCurrentSession().save(lesson);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(Lesson lesson) {
         sessionFactory.getCurrentSession().saveOrUpdate(lesson);
 
     }

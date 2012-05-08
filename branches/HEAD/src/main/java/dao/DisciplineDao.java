@@ -16,4 +16,8 @@ public interface DisciplineDao {
 
     public Discipline getDiscipline(Long id);
 
+    public void deleteDiscipline(Discipline discipline);
+
+    public void saveOrUpdate(Discipline discipline);
+
 }

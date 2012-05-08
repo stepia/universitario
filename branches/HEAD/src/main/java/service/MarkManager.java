@@ -21,6 +21,14 @@ public class MarkManager implements IMarkManager {
         getMarkDao().saveMark(mark);
     }
 
+    public void saveOrUpdate(Mark mark) {
+        getMarkDao().saveOrUpdate(mark);
+    }
+
+    public void deleteMark(Mark mark) {
+        getMarkDao().deleteMark(mark);
+    }
+
     public List<Mark> getMarks() {
         return getMarkDao().getMarks();
     }

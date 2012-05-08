@@ -21,6 +21,14 @@ public class WeekManager implements IWeekManager {
         getWeekDao().saveWeek(week);
     }
 
+    public void saveOrUpdate(Week week) {
+        getWeekDao().saveOrUpdate(week);
+    }
+
+    public void deleteWeek(Week week) {
+        getWeekDao().deleteWeek(week);
+    }
+
     public List<Week> getWeeks() {
         return getWeekDao().getWeeks();
     }

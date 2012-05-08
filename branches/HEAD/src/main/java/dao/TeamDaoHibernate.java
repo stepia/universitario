@@ -39,6 +39,12 @@ public class TeamDaoHibernate implements TeamDao {
 
     }
 
+    @Transactional
+    public void deleteTeam(Team team) {
+        sessionFactory.getCurrentSession().delete(team);
+
+    }
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Team> getParentTeams(int teamid) {
@@ -61,6 +67,12 @@ public class TeamDaoHibernate implements TeamDao {
 
     @Transactional
     public void saveTeam(Team team) {
+        sessionFactory.getCurrentSession().save(team);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(Team team) {
         sessionFactory.getCurrentSession().saveOrUpdate(team);
 
     }

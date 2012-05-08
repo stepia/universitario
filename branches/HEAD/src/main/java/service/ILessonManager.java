@@ -14,4 +14,8 @@ public interface ILessonManager {
 
     public List<Lesson> getLessons(String sortBy, boolean sortOrder);
 
+    public void deleteLesson(Lesson lesson);
+
+    public void saveOrUpdate(Lesson lesson);
+
 }

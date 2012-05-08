@@ -1,6 +1,7 @@
 package user;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,20 +82,23 @@ public class PlanViewBean {
         this.editible = editible;
     }
 
-    public String doAction(String action) {
+    public String doAction(String action) throws UnsupportedEncodingException {
         Action act = Action.fromString(action);
         switch (act)
             {
             case DELETE:
-                System.out.println("Penny coin");
+            	getPlanManager().deletePlan(getSelectedPlan());
                 break;
             case CREATE:
                 setSelectedPlan(new Plan());
                 break;
             case SAVE:
-                getPlanManager().savePlan(getSelectedPlan());
+            	if (getSelectedPlan().getCreated() != null) {
+                    getPlanManager().saveOrUpdate(getSelectedPlan());
+                } else {
+                    getPlanManager().savePlan(getSelectedPlan());
+                }
                 break;
-
             }
         return action;
     }

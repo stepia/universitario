@@ -16,4 +16,8 @@ public interface MarkTypeDao {
 
     public MarkType getMarkType(String name);
 
+    public void deleteMarkType(MarkType markType);
+
+    public void saveOrUpdate(MarkType markType);
+
 }

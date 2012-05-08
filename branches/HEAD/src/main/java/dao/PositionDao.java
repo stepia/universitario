@@ -16,4 +16,8 @@ public interface PositionDao {
 
     public Position getPosition(Long id);
 
+    public void deletePosition(Position position);
+
+    public void saveOrUpdate(Position position);
+
 }

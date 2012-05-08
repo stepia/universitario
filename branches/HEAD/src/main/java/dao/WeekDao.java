@@ -16,4 +16,8 @@ public interface WeekDao {
 
     public Week getWeek(Long id);
 
+    public void deleteWeek(Week week);
+
+    public void saveOrUpdate(Week week);
+
 }

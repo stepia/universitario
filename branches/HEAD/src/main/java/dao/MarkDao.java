@@ -16,4 +16,8 @@ public interface MarkDao {
 
     public Mark getMark(Long id);
 
+    public void deleteMark(Mark mark);
+
+    public void saveOrUpdate(Mark mark);
+
 }

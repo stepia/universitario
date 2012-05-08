@@ -40,7 +40,19 @@ public class ReportDaoHibernate implements ReportDao {
     }
 
     @Transactional
+    public void deleteReport(Report report) {
+        sessionFactory.getCurrentSession().delete(report);
+
+    }
+
+    @Transactional
     public void saveReport(Report report) {
+        sessionFactory.getCurrentSession().save(report);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(Report report) {
         sessionFactory.getCurrentSession().saveOrUpdate(report);
 
     }

@@ -16,4 +16,8 @@ public interface LessonDao {
 
     public Lesson getLesson(Long id);
 
+    public void deleteLesson(Lesson lesson);
+
+    public void saveOrUpdate(Lesson lesson);
+
 }

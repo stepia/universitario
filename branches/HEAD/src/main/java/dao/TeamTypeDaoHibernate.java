@@ -40,7 +40,19 @@ public class TeamTypeDaoHibernate implements TeamTypeDao {
     }
 
     @Transactional
+    public void deleteTeamType(TeamType teamType) {
+        sessionFactory.getCurrentSession().delete(teamType);
+
+    }
+
+    @Transactional
     public void saveTeamType(TeamType teamType) {
+        sessionFactory.getCurrentSession().save(teamType);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(TeamType teamType) {
         sessionFactory.getCurrentSession().saveOrUpdate(teamType);
 
     }

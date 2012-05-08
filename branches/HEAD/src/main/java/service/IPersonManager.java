@@ -14,4 +14,8 @@ public interface IPersonManager {
 
     public List<Person> getPersons(String sortBy, boolean sortOrder);
 
+    public void deletePerson(Person person);
+
+    public void saveOrUpdate(Person person);
+
 }

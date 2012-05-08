@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<title>#{msg.cweek}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </h:head>
 
 <h:body>
 	<f:view locale="#{language.localeCode}" />
 	<div id="container">
 		<div id="header">
-			<ui:insert name="header">
-				<ui:include src="/detail.xhtml">
-					<ui:param name="title" value="#{msg.week}" />
-					<ui:param name="bean" value="#{weekViewBean}" />
-				</ui:include>
-			</ui:insert>
+			<ui:include src="/header.xhtml">
+				<ui:param name="title" value="#{msg.week}" />
+			</ui:include>
 		</div>
 		<div id="content">
-			<h:form id="weekDetailForm">
-				<p:panel header="#{msg.week}" styleClass="panel">
-	    Week Id:<h:inputText
-	    				value="#{weekViewBean.selectedWeek.id}"/>
-	    Week Value:<h:inputText
-	    				value="#{weekViewBean.selectedWeek.value}"/>
-	    Week Created:<h:inputText
-	    				value="#{weekViewBean.selectedWeek.created}"/>
-	    Week Modified:<h:inputText
-	    				value="#{weekViewBean.selectedWeek.modified}"/>
 
+			<h:form id="weekDetailForm">
+				<h:panelGrid id="pnlWeekDetail" columns="2" cellspacing="30"
+					border="0" title="Universitario">
+					<c:if test="#{weekViewBean.editible}">
+	    Week Id:<h:inputText value="#{weekViewBean.selectedWeek.id}"
+							readonly="true">
+							<f:converter converterId="javax.faces.Long" />
+						</h:inputText>
+					</c:if>
+	    Week Value:<h:inputText value="#{weekViewBean.selectedWeek.value}"
+						required="true" requiredMessage="Value is required" />
+					<c:if test="#{not empty weekViewBean.selectedWeek.created}">
+	    Week Created:<h:inputText readonly="true"
+							value="#{weekViewBean.selectedWeek.created}" />
+	    Week Modified:<h:inputText readonly="true"
+							value="#{weekViewBean.selectedWeek.modified}" />
+					</c:if>
+					<ui:include src="/detail.xhtml">
+						<ui:param name="bean" value="#{weekViewBean}" />
+					</ui:include>
 					<br />
-				</p:panel>
+				</h:panelGrid>
 			</h:form>
 		</div>
 		<div id="footer">

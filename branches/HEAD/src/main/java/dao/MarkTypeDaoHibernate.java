@@ -40,7 +40,19 @@ public class MarkTypeDaoHibernate implements MarkTypeDao {
     }
 
     @Transactional
+    public void deleteMarkType(MarkType marktype) {
+        sessionFactory.getCurrentSession().delete(marktype);
+
+    }
+
+    @Transactional
     public void saveMarkType(MarkType marktype) {
+        sessionFactory.getCurrentSession().save(marktype);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(MarkType marktype) {
         sessionFactory.getCurrentSession().saveOrUpdate(marktype);
 
     }

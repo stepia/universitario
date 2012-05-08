@@ -16,4 +16,8 @@ public interface PersonDao {
 
     public Person getPerson(Long id);
 
+    public void deletePerson(Person person);
+
+    public void saveOrUpdate(Person person);
+
 }

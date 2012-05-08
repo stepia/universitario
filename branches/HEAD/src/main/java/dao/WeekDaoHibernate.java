@@ -40,7 +40,19 @@ public class WeekDaoHibernate implements WeekDao {
     }
 
     @Transactional
+    public void deleteWeek(Week week) {
+        sessionFactory.getCurrentSession().delete(week);
+
+    }
+
+    @Transactional
     public void saveWeek(Week week) {
+        sessionFactory.getCurrentSession().save(week);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(Week week) {
         sessionFactory.getCurrentSession().saveOrUpdate(week);
 
     }

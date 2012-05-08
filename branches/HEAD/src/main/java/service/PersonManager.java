@@ -21,6 +21,14 @@ public class PersonManager implements IPersonManager {
         getPersonDao().savePerson(person);
     }
 
+    public void saveOrUpdate(Person person) {
+        getPersonDao().saveOrUpdate(person);
+    }
+
+    public void deletePerson(Person person) {
+        getPersonDao().deletePerson(person);
+    }
+
     public List<Person> getPersons() {
         return getPersonDao().getPersons();
     }

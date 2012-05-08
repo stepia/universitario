@@ -40,7 +40,19 @@ public class Emp2TeamDaoHibernate implements Emp2TeamDao {
     }
 
     @Transactional
+    public void deleteEmp2Team(Emp2Team empTeam) {
+        sessionFactory.getCurrentSession().delete(empTeam);
+
+    }
+
+    @Transactional
     public void saveEmp2Team(Emp2Team empTeam) {
+        sessionFactory.getCurrentSession().save(empTeam);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(Emp2Team empTeam) {
         sessionFactory.getCurrentSession().saveOrUpdate(empTeam);
 
     }

@@ -1,57 +1,65 @@
 <!DOCTYPE html>
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<title>#{msg.cperson}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </h:head>
 
 <h:body>
 	<f:view locale="#{language.localeCode}" />
 	<div id="container">
 		<div id="header">
-			<ui:insert name="header">
-				<ui:include src="/detail.xhtml">
-					<ui:param name="title" value="#{msg.person}" />
-					<ui:param name="bean" value="#{personViewBean}" />
-				</ui:include>
-			</ui:insert>
+			<ui:include src="/header.xhtml">
+				<ui:param name="title" value="#{msg.person}" />
+			</ui:include>
 		</div>
 		<div id="content">
-			<h:form id="personDetailForm">
-				<p:panel header="#{msg.person}" styleClass="panel">
-	    Person Id:<h:inputText
-						value="#{personViewBean.selectedPerson.id}"/>
-		Person FirstName:<h:inputText
-						value="#{personViewBean.selectedPerson.firstName}"/>
-		Person LastName:<h:inputText
-						value="#{personViewBean.selectedPerson.lastName}"/>
-		Person MiddleName:<h:inputText
-						value="#{personViewBean.selectedPerson.middleName}"/>
-		Person Dob:<h:inputText
-						value="#{personViewBean.selectedPerson.dob}"/>
-		Person Address:<h:inputText
-						value="#{personViewBean.selectedPerson.address}"/>
-		Person Academicdegree:<h:inputText
-						value="#{personViewBean.selectedPerson.academicdegree}"/>
-		Person Sex:<h:inputText
-						value="#{personViewBean.selectedPerson.sex}"/>
-		Person Phone:<h:inputText
-						value="#{personViewBean.selectedPerson.phone}"/>
-		Person Email:<h:inputText
-						value="#{personViewBean.selectedPerson.email}"/>
-		Person Code:<h:inputText
-						value="#{personViewBean.selectedPerson.code}"/>
-		Person Modified:<h:inputText
-						value="#{personViewBean.selectedPerson.modified}"/>
-		Person Created:<h:inputText
-						value="#{personViewBean.selectedPerson.created}"/>
 
+			<h:form id="personDetailForm">
+				<h:panelGrid id="pnlPersonDetail" columns="2" cellspacing="30"
+					border="0" title="Universitario">
+					<c:if test="#{personViewBean.editible}">
+	    Person Id:<h:inputText value="#{personViewBean.selectedPerson.id}"
+							readonly="true">
+							<f:converter converterId="javax.faces.Long" />
+						</h:inputText>
+					</c:if>
+		Person FirstName:<h:inputText value="#{personViewBean.selectedPerson.firstName}"
+						required="true" requiredMessage="FirstName is required" />
+		Person LastName:<h:inputText value="#{personViewBean.selectedPerson.lastName}"
+						required="true" requiredMessage="LastName is required" />
+		Person MiddleName:<h:inputText value="#{personViewBean.selectedPerson.middleName}"
+						required="true" requiredMessage="MiddleName is required" />
+		Person Dob:<h:inputText value="#{personViewBean.selectedPerson.dob}"
+						required="true" requiredMessage="Dob is required" />
+		Person Address:<h:inputText value="#{personViewBean.selectedPerson.address}"
+						required="true" requiredMessage="Address is required" />
+		Person Academicdegree:<h:inputText value="#{personViewBean.selectedPerson.academicdegree}"
+						required="true" requiredMessage="Academicdegree is required" />
+		Person Sex:<h:inputText value="#{personViewBean.selectedPerson.sex}"
+						required="true" requiredMessage="Sex is required" />
+		Person Phone:<h:inputText value="#{personViewBean.selectedPerson.phone}"
+						required="true" requiredMessage="Phone is required" />
+		Person Email:<h:inputText value="#{personViewBean.selectedPerson.email}"
+						required="true" requiredMessage="Email is required" />
+		Person Code:<h:inputText value="#{personViewBean.selectedPerson.code}"
+						required="true" requiredMessage="Code is required" />
+					<c:if test="#{not empty personViewBean.selectedPerson.created}">
+	    Person Created:<h:inputText readonly="true"
+							value="#{personViewBean.selectedPerson.created}" />
+	    Person Modified:<h:inputText readonly="true"
+							value="#{personViewBean.selectedPerson.modified}" />
+					</c:if>
+					<ui:include src="/detail.xhtml">
+						<ui:param name="bean" value="#{personViewBean}" />
+					</ui:include>
 					<br />
-				</p:panel>
+				</h:panelGrid>
 			</h:form>
 		</div>
 		<div id="footer">

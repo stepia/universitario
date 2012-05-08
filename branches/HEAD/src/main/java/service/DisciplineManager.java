@@ -21,6 +21,14 @@ public class DisciplineManager implements IDisciplineManager {
         getDisciplineDao().saveDiscipline(discipline);
     }
 
+    public void saveOrUpdate(Discipline discipline) {
+        getDisciplineDao().saveOrUpdate(discipline);
+    }
+
+    public void deleteDiscipline(Discipline discipline) {
+        getDisciplineDao().deleteDiscipline(discipline);
+    }
+
     public List<Discipline> getDisciplines() {
         return getDisciplineDao().getDisciplines();
     }

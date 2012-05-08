@@ -16,4 +16,8 @@ public interface TimeDao {
 
     public Time getTime(Long id);
 
+    public void deleteTime(Time time);
+
+    public void saveOrUpdate(Time time);
+
 }

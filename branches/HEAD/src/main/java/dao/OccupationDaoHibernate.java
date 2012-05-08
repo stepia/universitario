@@ -40,7 +40,19 @@ public class OccupationDaoHibernate implements OccupationDao {
     }
 
     @Transactional
+    public void deleteOccupation(Occupation occupation) {
+        sessionFactory.getCurrentSession().delete(occupation);
+
+    }
+
+    @Transactional
     public void saveOccupation(Occupation occupation) {
+        sessionFactory.getCurrentSession().save(occupation);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(Occupation occupation) {
         sessionFactory.getCurrentSession().saveOrUpdate(occupation);
 
     }

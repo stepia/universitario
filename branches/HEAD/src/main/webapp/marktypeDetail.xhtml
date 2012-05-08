@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<title>#{msg.cmarktype}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </h:head>
 
 <h:body>
 	<f:view locale="#{language.localeCode}" />
 	<div id="container">
 		<div id="header">
-			<ui:insert name="header">
-				<ui:include src="/detail.xhtml">
-					<ui:param name="title" value="#{msg.marktype}" />
-					<ui:param name="bean" value="#{markTypeViewBean}" />
-				</ui:include>
-			</ui:insert>
+			<ui:include src="/header.xhtml">
+				<ui:param name="title" value="#{msg.marktype}" />
+			</ui:include>
 		</div>
 		<div id="content">
-			<h:form id="marktypeDetailForm">
-				<p:panel header="#{msg.marktype}" styleClass="panel">
-	    MarkType Id:<h:inputText
-						value="#{markTypeViewBean.selectedMarkType.id}"/>
-		MarkType Name:<h:inputText
-						value="#{markTypeViewBean.selectedMarkType.name}"/>
-		MarkType Created:<h:inputText
-						value="#{markTypeViewBean.selectedMarkType.created}"/>
-		MarkType Modified:<h:inputText
-						value="#{markTypeViewBean.selectedMarkType.modified}"/>
 
+			<h:form id="marktypeDetailForm">
+				<h:panelGrid id="pnlMarkTypeDetail" columns="2" cellspacing="30"
+					border="0" title="Universitario">
+					<c:if test="#{markTypeViewBean.editible}">
+	    MarkType Id:<h:inputText value="#{markTypeViewBean.selectedMarkType.id}"
+							readonly="true">
+							<f:converter converterId="javax.faces.Long" />
+						</h:inputText>
+					</c:if>
+	    MarkType Name:<h:inputText value="#{markTypeViewBean.selectedMarkType.name}"
+						required="true" requiredMessage="Name is required" />
+					<c:if test="#{not empty markTypeViewBean.selectedMarkType.created}">
+	    MarkType Created:<h:inputText readonly="true"
+							value="#{markTypeViewBean.selectedMarkType.created}" />
+	    MarkType Modified:<h:inputText readonly="true"
+							value="#{markTypeViewBean.selectedMarkType.modified}" />
+					</c:if>
+					<ui:include src="/detail.xhtml">
+						<ui:param name="bean" value="#{markTypeViewBean}" />
+					</ui:include>
 					<br />
-				</p:panel>
+				</h:panelGrid>
 			</h:form>
 		</div>
 		<div id="footer">

@@ -40,7 +40,19 @@ public class MarkDaoHibernate implements MarkDao {
     }
 
     @Transactional
+    public void deleteMark(Mark mark) {
+        sessionFactory.getCurrentSession().delete(mark);
+
+    }
+
+    @Transactional
     public void saveMark(Mark mark) {
+        sessionFactory.getCurrentSession().save(mark);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(Mark mark) {
         sessionFactory.getCurrentSession().saveOrUpdate(mark);
 
     }

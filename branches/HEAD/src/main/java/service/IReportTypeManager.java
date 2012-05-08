@@ -14,4 +14,8 @@ public interface IReportTypeManager {
 
     public List<ReportType> getReportTypes(String sortBy, boolean sortOrder);
 
+    public void deleteReportType(ReportType reportType);
+
+    public void saveOrUpdate(ReportType reportType);
+
 }

@@ -21,6 +21,14 @@ public class TeamTypeManager implements ITeamTypeManager {
         getTeamTypeDao().saveTeamType(teamType);
     }
 
+    public void saveOrUpdate(TeamType teamType) {
+        getTeamTypeDao().saveOrUpdate(teamType);
+    }
+
+    public void deleteTeamType(TeamType teamType) {
+        getTeamTypeDao().deleteTeamType(teamType);
+    }
+
     public List<TeamType> getTeamTypes() {
         return getTeamTypeDao().getTeamTypes();
     }

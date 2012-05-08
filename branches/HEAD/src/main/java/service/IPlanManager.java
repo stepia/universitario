@@ -14,4 +14,8 @@ public interface IPlanManager {
 
     public List<Plan> getPlans(String sortBy, boolean sortOrder);
 
+    public void deletePlan(Plan plan);
+
+    public void saveOrUpdate(Plan plan);
+
 }

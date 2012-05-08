@@ -40,7 +40,19 @@ public class TimeDaoHibernate implements TimeDao {
     }
 
     @Transactional
+    public void deleteTime(Time time) {
+        sessionFactory.getCurrentSession().delete(time);
+
+    }
+
+    @Transactional
     public void saveTime(Time time) {
+        sessionFactory.getCurrentSession().save(time);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(Time time) {
         sessionFactory.getCurrentSession().saveOrUpdate(time);
 
     }

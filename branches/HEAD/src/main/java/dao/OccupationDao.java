@@ -16,4 +16,8 @@ public interface OccupationDao {
 
     public Occupation getOccupation(Long id);
 
+    public void deleteOccupation(Occupation occupation);
+
+    public void saveOrUpdate(Occupation occupation);
+
 }

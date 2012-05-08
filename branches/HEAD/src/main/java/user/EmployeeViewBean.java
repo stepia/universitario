@@ -1,6 +1,7 @@
 package user;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,20 +82,23 @@ public class EmployeeViewBean {
         this.editible = editible;
     }
 
-    public String doAction(String action) {
+    public String doAction(String action) throws UnsupportedEncodingException {
         Action act = Action.fromString(action);
         switch (act)
             {
             case DELETE:
-                System.out.println("Penny coin");
+            	getEmployeeManager().deleteEmployee(getSelectedEmployee());
                 break;
             case CREATE:
-                System.out.println("Nickle coin");
+            	setSelectedEmployee(new Employee());
                 break;
             case SAVE:
-                System.out.println("Dime coin");
+            	if (getSelectedEmployee().getCreated() != null) {
+                    getEmployeeManager().saveOrUpdate(getSelectedEmployee());
+                } else {
+                    getEmployeeManager().saveEmployee(getSelectedEmployee());
+                }
                 break;
-
             }
         return action;
     }

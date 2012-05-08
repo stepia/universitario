@@ -69,15 +69,15 @@ create table team(
       rootid int not null,
       details varchar(200) not null ,
       stateid int,
-      modified datetime not null,
-      created datetime not null);
+      modified datetime,
+      created datetime);
 
 create table teamtype(
       id int not null AUTO_INCREMENT primary key,
       name varchar(200) not null ,
       stateid int,
-      modified datetime not null,
-      created datetime not null);
+      modified datetime,
+      created datetime);
 
 create table emp2team(
       id int not null AUTO_INCREMENT primary key,
@@ -86,34 +86,34 @@ create table emp2team(
       positionid int,
       occupationid int,
       stateid int,
-      modified datetime not null,
-      created datetime not null);
+      modified datetime,
+      created datetime);
 
 
 
 create table positions(
       id int not null AUTO_INCREMENT primary key,
       name varchar(100) not null,
-      modified datetime not null,
-      created datetime not null);
+      modified datetime,
+      created datetime);
       
 create table lessontype(
       id int not null AUTO_INCREMENT primary key,
       name varchar(50) not null ,
-      modified datetime not null,
-      created datetime not null);
+      modified datetime,
+      created datetime);
       
 create table marktype(
       id int not null AUTO_INCREMENT primary key,
       name varchar(50) not null ,
-      modified datetime not null,
-      created datetime not null);
+      modified datetime,
+      created datetime);
 
 create table period(
       id int not null AUTO_INCREMENT primary key,
       value varchar(50) not null ,
-      modified datetime not null,
-      created datetime not null);
+      modified datetime,
+      created datetime);
       
 create table plan(
       id int not null AUTO_INCREMENT primary key,
@@ -124,34 +124,34 @@ create table plan(
       periodid int not null,
       hours varchar(50),
       marktypeid int not null,
-      modified datetime not null,
-      created datetime not null);
+      modified datetime,
+      created datetime);
 
 create table discipline(
       id int not null AUTO_INCREMENT primary key,
       name varchar(50) not null ,
-      modified datetime not null,
-      created datetime not null);
+      modified datetime,
+      created datetime);
      
 create table mark(
       id int not null AUTO_INCREMENT primary key,
       name varchar(50) not null ,
-      modified datetime not null,
-      created datetime not null);
+      modified datetime,
+      created datetime);
      
 create table report(
       id int not null AUTO_INCREMENT primary key,
       reportid int not null,
       empid int not null,
       name varchar(50) not null ,
-      modified datetime not null,
-      created datetime not null);
+      modified datetime,
+      created datetime);
 
 create table reporttype(
       id int not null AUTO_INCREMENT primary key,
       name varchar(50) not null ,
-      modified datetime not null,
-      created datetime not null);
+      modified datetime,
+      created datetime);
 
 
 create table lesson (
@@ -162,18 +162,18 @@ create table lesson (
       lessontimeid int not null,
       dayid int not null,
       weekid int not null,
-      modified datetime not null,
-      created datetime not null);
+      modified datetime,
+      created datetime);
       
 create table time(
       id int not null AUTO_INCREMENT primary key,
       value varchar(50) not null ,
-      modified datetime not null,
-      created datetime not null);
+      modified datetime,
+      created datetime);
       
 create table week(
       id int not null AUTO_INCREMENT primary key,
       value varchar(50) not null ,
-      modified datetime not null,
-      created datetime not null);
+      modified datetime,
+      created datetime);
       

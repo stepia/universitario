@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<title>#{msg.cposition}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </h:head>
 
 <h:body>
 	<f:view locale="#{language.localeCode}" />
 	<div id="container">
 		<div id="header">
-			<ui:insert name="header">
-				<ui:include src="/detail.xhtml">
-					<ui:param name="title" value="#{msg.position}" />
-					<ui:param name="bean" value="#{positionViewBean}" />
-				</ui:include>
-			</ui:insert>
+			<ui:include src="/header.xhtml">
+				<ui:param name="title" value="#{msg.position}" />
+			</ui:include>
 		</div>
 		<div id="content">
-			<h:form id="positionDetailForm">
-				<p:panel header="#{msg.position}" styleClass="panel">
-	    Position Id:<h:inputText
-						value="#{positionViewBean.selectedPosition.id}"/>
-		Position Name:<h:inputText
-						value="#{positionViewBean.selectedPosition.name}"/>
-		Position Modified:<h:inputText
-						value="#{positionViewBean.selectedPosition.modified}"/>
-		Position Created:<h:inputText
-						value="#{positionViewBean.selectedPosition.created}"/>
 
+			<h:form id="positionDetailForm">
+				<h:panelGrid id="pnlPositionDetail" columns="2" cellspacing="30"
+					border="0" title="Universitario">
+					<c:if test="#{positionViewBean.editible}">
+	    Position Id:<h:inputText value="#{positionViewBean.selectedPosition.id}"
+							readonly="true">
+							<f:converter converterId="javax.faces.Long" />
+						</h:inputText>
+					</c:if>
+	    Position Name:<h:inputText value="#{positionViewBean.selectedPosition.name}"
+						required="true" requiredMessage="Name is required" />
+					<c:if test="#{not empty positionViewBean.selectedPosition.created}">
+	    Position Created:<h:inputText readonly="true"
+							value="#{positionViewBean.selectedPosition.created}" />
+	    Position Modified:<h:inputText readonly="true"
+							value="#{positionViewBean.selectedPosition.modified}" />
+					</c:if>
+					<ui:include src="/detail.xhtml">
+						<ui:param name="bean" value="#{positionViewBean}" />
+					</ui:include>
 					<br />
-				</p:panel>
+				</h:panelGrid>
 			</h:form>
 		</div>
 		<div id="footer">

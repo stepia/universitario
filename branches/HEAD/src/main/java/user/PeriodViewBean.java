@@ -1,6 +1,7 @@
 package user;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,20 +82,23 @@ public class PeriodViewBean {
         this.editible = editible;
     }
 
-    public String doAction(String action) {
+    public String doAction(String action) throws UnsupportedEncodingException {
         Action act = Action.fromString(action);
         switch (act)
             {
             case DELETE:
-                System.out.println("Penny coin");
+            	getPeriodManager().deletePeriod(getSelectedPeriod());
                 break;
             case CREATE:
                 setSelectedPeriod(new Period());
                 break;
             case SAVE:
-                getPeriodManager().savePeriod(getSelectedPeriod());
+            	if (getSelectedPeriod().getCreated() != null) {
+                    getPeriodManager().saveOrUpdate(getSelectedPeriod());
+                } else {
+                    getPeriodManager().savePeriod(getSelectedPeriod());
+                }
                 break;
-
             }
         return action;
     }

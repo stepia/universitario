@@ -16,6 +16,10 @@ public interface TeamDao {
 
     public Team getTeam(String name);
 
+    public void deleteTeam(Team team);
+
+    public void saveOrUpdate(Team team);
+
     public List<Team> getParentTeams(int teamid);
 
     public List<Team> getSubTeams(int teamid);

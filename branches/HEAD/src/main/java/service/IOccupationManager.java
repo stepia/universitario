@@ -14,4 +14,8 @@ public interface IOccupationManager {
 
     public List<Occupation> getOccupations(String sortBy, boolean sortOrder);
 
+    public void deleteOccupation(Occupation occupation);
+
+    public void saveOrUpdate(Occupation occupation);
+
 }

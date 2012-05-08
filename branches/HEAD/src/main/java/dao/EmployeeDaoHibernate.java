@@ -40,7 +40,19 @@ public class EmployeeDaoHibernate implements EmployeeDao {
     }
 
     @Transactional
+    public void deleteEmployee(Employee employee) {
+        sessionFactory.getCurrentSession().delete(employee);
+
+    }
+
+    @Transactional
     public void saveEmployee(Employee employee) {
+        sessionFactory.getCurrentSession().save(employee);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(Employee employee) {
         sessionFactory.getCurrentSession().saveOrUpdate(employee);
 
     }
