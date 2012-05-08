@@ -14,4 +14,8 @@ public interface IEmployeeManager {
 
     public List<Employee> getEmployees(String sortBy, boolean sortOrder);
 
+    public void deleteEmployee(Employee employee);
+
+    public void saveOrUpdate(Employee employee);
+
 }

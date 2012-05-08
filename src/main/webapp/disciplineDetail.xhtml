@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<title>#{msg.cdiscipline}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </h:head>
 
 <h:body>
 	<f:view locale="#{language.localeCode}" />
 	<div id="container">
 		<div id="header">
-			<ui:insert name="header">
-				<ui:include src="/detail.xhtml">
-					<ui:param name="title" value="#{msg.discipline}" />
-					<ui:param name="bean" value="#{disciplineViewBean}" />
-				</ui:include>
-			</ui:insert>
+			<ui:include src="/header.xhtml">
+				<ui:param name="title" value="#{msg.discipline}" />
+			</ui:include>
 		</div>
 		<div id="content">
-			<h:form id="disciplineDetailForm">
-				<p:panel header="#{msg.discipline}" styleClass="panel">
-	    Discipline Id:<h:inputText
-	    				value="#{disciplineViewBean.selectedDiscipline.id}"/>
-	    Discipline Name:<h:inputText
-	    				value="#{disciplineViewBean.selectedDiscipline.name}"/>
-	    Discipline Created:<h:inputText
-	    				value="#{disciplineViewBean.selectedDiscipline.created}"/>
-	    Discipline Modified:<h:inputText
-	    				value="#{disciplineViewBean.selectedDiscipline.modified}"/>
 
+			<h:form id="disciplineDetailForm">
+				<h:panelGrid id="pnlDisciplineDetail" columns="2" cellspacing="30"
+					border="0" title="Universitario">
+					<c:if test="#{disciplineViewBean.editible}">
+		Discipline Id:<h:inputText value="#{disciplineViewBean.selectedDiscipline.id}"
+							readonly="true">
+							<f:converter converterId="javax.faces.Long" />
+						</h:inputText>
+					</c:if>
+	    Discipline Name:<h:inputText value="#{disciplineViewBean.selectedDiscipline.name}"
+						required="true" requiredMessage="Name is required" />
+					<c:if test="#{not empty disciplineViewBean.selectedDiscipline.created}">
+	    Discipline Created:<h:inputText readonly="true"
+							value="#{disciplineViewBean.selectedDiscipline.created}" />
+	    Discipline Modified:<h:inputText readonly="true"
+							value="#{disciplineViewBean.selectedDiscipline.modified}" />
+					</c:if>
+					<ui:include src="/detail.xhtml">
+						<ui:param name="bean" value="#{disciplineViewBean}" />
+					</ui:include>
 					<br />
-				</p:panel>
+				</h:panelGrid>
 			</h:form>
 		</div>
 		<div id="footer">

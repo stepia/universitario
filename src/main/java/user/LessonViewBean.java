@@ -1,6 +1,7 @@
 package user;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,20 +82,23 @@ public class LessonViewBean {
         this.editible = editible;
     }
 
-    public String doAction(String action) {
+    public String doAction(String action) throws UnsupportedEncodingException {
         Action act = Action.fromString(action);
         switch (act)
             {
             case DELETE:
-                System.out.println("Penny coin");
+            	getLessonManager().deleteLesson(getSelectedLesson());
                 break;
             case CREATE:
                 setSelectedLesson(new Lesson());
                 break;
             case SAVE:
-                getLessonManager().saveLesson(getSelectedLesson());
+            	if (getSelectedLesson().getCreated() != null) {
+                    getLessonManager().saveOrUpdate(getSelectedLesson());
+                } else {
+                    getLessonManager().saveLesson(getSelectedLesson());
+                }
                 break;
-
             }
         return action;
     }

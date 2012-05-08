@@ -1,6 +1,7 @@
 package user;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,20 +82,23 @@ public class TeamTypeViewBean {
         this.editible = editible;
     }
 
-    public String doAction(String action) {
+    public String doAction(String action) throws UnsupportedEncodingException {
         Action act = Action.fromString(action);
         switch (act)
             {
             case DELETE:
-                System.out.println("Penny coin");
+            	getTeamTypeManager().deleteTeamType(getSelectedTeamType());
                 break;
             case CREATE:
                 setSelectedTeamType(new TeamType());
                 break;
             case SAVE:
-                getTeamTypeManager().saveTeamType(getSelectedTeamType());
+            	if (getSelectedTeamType().getCreated() != null) {
+                    getTeamTypeManager().saveOrUpdate(getSelectedTeamType());
+                } else {
+                    getTeamTypeManager().saveTeamType(getSelectedTeamType());
+                }
                 break;
-
             }
         return action;
     }

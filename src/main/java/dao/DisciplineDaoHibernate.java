@@ -38,9 +38,21 @@ public class DisciplineDaoHibernate implements DisciplineDao {
         }
 
     }
+    
+    @Transactional
+    public void deleteDiscipline(Discipline discipline) {
+        sessionFactory.getCurrentSession().delete(discipline);
+
+    }
 
     @Transactional
     public void saveDiscipline(Discipline discipline) {
+        sessionFactory.getCurrentSession().save(discipline);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(Discipline discipline) {
         sessionFactory.getCurrentSession().saveOrUpdate(discipline);
 
     }

@@ -21,6 +21,14 @@ public class TimeManager implements ITimeManager {
         getTimeDao().saveTime(time);
     }
 
+    public void saveOrUpdate(Time time) {
+        getTimeDao().saveOrUpdate(time);
+    }
+
+    public void deleteTime(Time time) {
+        getTimeDao().deleteTime(time);
+    }
+
     public List<Time> getTimes() {
         return getTimeDao().getTimes();
     }

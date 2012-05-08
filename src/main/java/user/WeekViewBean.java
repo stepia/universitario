@@ -1,6 +1,7 @@
 package user;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,20 +82,23 @@ public class WeekViewBean {
         this.editible = editible;
     }
 
-    public String doAction(String action) {
+    public String doAction(String action) throws UnsupportedEncodingException {
         Action act = Action.fromString(action);
         switch (act)
             {
             case DELETE:
-                System.out.println("Penny coin");
+            	getWeekManager().deleteWeek(getSelectedWeek());
                 break;
             case CREATE:
                 setSelectedWeek(new Week());
                 break;
             case SAVE:
-                getWeekManager().saveWeek(getSelectedWeek());
+            	if (getSelectedWeek().getCreated() != null) {
+                    getWeekManager().saveOrUpdate(getSelectedWeek());
+                } else {
+                    getWeekManager().saveWeek(getSelectedWeek());
+                }
                 break;
-
             }
         return action;
     }

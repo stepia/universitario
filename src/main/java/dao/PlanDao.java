@@ -16,4 +16,8 @@ public interface PlanDao {
 
     public Plan getPlan(Long id);
 
+    public void deletePlan(Plan plan);
+
+    public void saveOrUpdate(Plan plan);
+
 }

@@ -14,4 +14,8 @@ public interface ITimeManager {
 
     public List<Time> getTimes(String sortBy, boolean sortOrder);
 
+    public void deleteTime(Time time);
+
+    public void saveOrUpdate(Time time);
+
 }

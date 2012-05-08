@@ -14,4 +14,8 @@ public interface IRoleManager {
 
     public List<Role> getRoles(String sortBy, boolean sortOrder);
 
+    public void deleteRole(Role role);
+
+    public void saveOrUpdate(Role role);
+
 }

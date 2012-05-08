@@ -16,4 +16,8 @@ public interface PeriodDao {
 
     public Period getPeriod(Long id);
 
+    public void deletePeriod(Period period);
+
+    public void saveOrUpdate(Period period);
+
 }

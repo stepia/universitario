@@ -1,6 +1,7 @@
 package user;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,20 +82,23 @@ public class DisciplineViewBean {
         this.editible = editible;
     }
 
-    public String doAction(String action) {
+    public String doAction(String action) throws UnsupportedEncodingException {
         Action act = Action.fromString(action);
         switch (act)
             {
             case DELETE:
-                System.out.println("Penny coin");
+            	getDisciplineManager().deleteDiscipline(getSelectedDiscipline());
                 break;
             case CREATE:
                 setSelectedDiscipline(new Discipline());
                 break;
             case SAVE:
-                getDisciplineManager().saveDiscipline(getSelectedDiscipline());
+            	if (getSelectedDiscipline().getCreated() != null) {
+                    getDisciplineManager().saveOrUpdate(getSelectedDiscipline());
+                } else {
+                    getDisciplineManager().saveDiscipline(getSelectedDiscipline());
+                }
                 break;
-
             }
         return action;
     }

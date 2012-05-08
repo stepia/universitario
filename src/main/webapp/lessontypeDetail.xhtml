@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<title>#{msg.clessontype}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </h:head>
 
 <h:body>
 	<f:view locale="#{language.localeCode}" />
 	<div id="container">
 		<div id="header">
-			<ui:insert name="header">
-				<ui:include src="/detail.xhtml">
-					<ui:param name="title" value="#{msg.lessontype}" />
-					<ui:param name="bean" value="#{lessonTypeViewBean}" />
-				</ui:include>
-			</ui:insert>
+			<ui:include src="/header.xhtml">
+				<ui:param name="title" value="#{msg.lessontype}" />
+			</ui:include>
 		</div>
 		<div id="content">
-			<h:form id="lessontypeDetailForm">
-				<p:panel header="#{msg.lessontype}" styleClass="panel">
-	    Lessontype Id:<h:inputText
-						value="#{lessonTypeViewBean.selectedLessonType.id}"/>
-		Lessontype Name:<h:inputText
-						value="#{lessonTypeViewBean.selectedLessonType.name}"/>
-		Lessontype Created:<h:inputText
-						value="#{lessonTypeViewBean.selectedLessonType.created}"/>
-		Lessontype Modified:<h:inputText
-						value="#{lessonTypeViewBean.selectedLessonType.modified}"/>
 
+			<h:form id="lessontypeDetailForm">
+				<h:panelGrid id="pnlLessonTypeDetail" columns="2" cellspacing="30"
+					border="0" title="Universitario">
+					<c:if test="#{lessonTypeViewBean.editible}">
+	    Lessontype Id:<h:inputText value="#{lessonTypeViewBean.selectedLessonType.id}"
+							readonly="true">
+							<f:converter converterId="javax.faces.Long" />
+						</h:inputText>
+					</c:if>
+		Lessontype Name:<h:inputText value="#{lessonTypeViewBean.selectedLessonType.name}"
+						required="true" requiredMessage="Name is required" />
+					<c:if test="#{not empty lessonTypeViewBean.selectedLessonType.created}">
+		Lessontype Created:<h:inputText readonly="true"
+								value="#{lessonTypeViewBean.selectedLessonType.created}"/>
+		Lessontype Modified:<h:inputText readonly="true"
+								value="#{lessonTypeViewBean.selectedLessonType.modified}"/>
+					</c:if>
+					<ui:include src="/detail.xhtml">
+						<ui:param name="bean" value="#{lessonTypeViewBean}" />
+					</ui:include>
 					<br />
-				</p:panel>
+				</h:panelGrid>
 			</h:form>
 		</div>
 		<div id="footer">

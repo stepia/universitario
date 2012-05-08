@@ -16,4 +16,8 @@ public interface TeamTypeDao {
 
     public TeamType getTeamType(Long id);
 
+    public void deleteTeamType(TeamType teamType);
+
+    public void saveOrUpdate(TeamType teamType);
+
 }

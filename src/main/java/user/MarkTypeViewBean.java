@@ -1,6 +1,7 @@
 package user;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,20 +82,23 @@ public class MarkTypeViewBean {
         this.editible = editible;
     }
 
-    public String doAction(String action) {
+    public String doAction(String action) throws UnsupportedEncodingException {
         Action act = Action.fromString(action);
         switch (act)
             {
             case DELETE:
-                System.out.println("Penny coin");
+            	getMarkTypeManager().deleteMarkType(getSelectedMarkType());
                 break;
             case CREATE:
                 setSelectedMarkType(new MarkType());
                 break;
             case SAVE:
-                getMarkTypeManager().saveMarkType(getSelectedMarkType());
+            	if (getSelectedMarkType().getCreated() != null) {
+                    getMarkTypeManager().saveOrUpdate(getSelectedMarkType());
+                } else {
+                    getMarkTypeManager().saveMarkType(getSelectedMarkType());
+                }
                 break;
-
             }
         return action;
     }

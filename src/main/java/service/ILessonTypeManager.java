@@ -14,4 +14,8 @@ public interface ILessonTypeManager {
 
     public List<LessonType> getLessonTypes(String sortBy, boolean sortOrder);
 
+    public void deleteLessonType(LessonType lessonType);
+
+    public void saveOrUpdate(LessonType lessonType);
+
 }

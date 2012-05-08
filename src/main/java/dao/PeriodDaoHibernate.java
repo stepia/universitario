@@ -40,7 +40,19 @@ public class PeriodDaoHibernate implements PeriodDao {
     }
 
     @Transactional
+    public void deletePeriod(Period period) {
+        sessionFactory.getCurrentSession().delete(period);
+
+    }
+
+    @Transactional
     public void savePeriod(Period period) {
+        sessionFactory.getCurrentSession().save(period);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(Period period) {
         sessionFactory.getCurrentSession().saveOrUpdate(period);
 
     }

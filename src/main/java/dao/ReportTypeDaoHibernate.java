@@ -40,7 +40,19 @@ public class ReportTypeDaoHibernate implements ReportTypeDao {
     }
 
     @Transactional
+    public void deleteReportType(ReportType reporttype) {
+        sessionFactory.getCurrentSession().delete(reporttype);
+
+    }
+
+    @Transactional
     public void saveReportType(ReportType reporttype) {
+        sessionFactory.getCurrentSession().save(reporttype);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(ReportType reporttype) {
         sessionFactory.getCurrentSession().saveOrUpdate(reporttype);
 
     }

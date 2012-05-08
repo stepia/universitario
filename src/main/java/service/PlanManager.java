@@ -21,6 +21,14 @@ public class PlanManager implements IPlanManager {
         getPlanDao().savePlan(plan);
     }
 
+    public void saveOrUpdate(Plan plan) {
+        getPlanDao().saveOrUpdate(plan);
+    }
+
+    public void deletePlan(Plan plan) {
+        getPlanDao().deletePlan(plan);
+    }
+
     public List<Plan> getPlans() {
         return getPlanDao().getPlans();
     }

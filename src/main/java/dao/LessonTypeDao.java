@@ -16,4 +16,8 @@ public interface LessonTypeDao {
 
     public LessonType getLessonType(Long id);
 
+    public void deleteLessonType(LessonType lessonType);
+
+    public void saveOrUpdate(LessonType lessonType);
+
 }

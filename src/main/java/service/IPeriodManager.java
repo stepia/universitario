@@ -14,4 +14,8 @@ public interface IPeriodManager {
 
     public List<Period> getPeriods(String sortBy, boolean sortOrder);
 
+    public void deletePeriod(Period period);
+
+    public void saveOrUpdate(Period period);
+
 }

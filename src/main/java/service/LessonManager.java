@@ -21,6 +21,14 @@ public class LessonManager implements ILessonManager {
         getLessonDao().saveLesson(lesson);
     }
 
+    public void saveOrUpdate(Lesson lesson) {
+        getLessonDao().saveOrUpdate(lesson);
+    }
+
+    public void deleteLesson(Lesson lesson) {
+        getLessonDao().deleteLesson(lesson);
+    }
+
     public List<Lesson> getLessons() {
         return getLessonDao().getLessons();
     }

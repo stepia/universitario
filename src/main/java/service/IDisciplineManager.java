@@ -14,4 +14,8 @@ public interface IDisciplineManager {
     
     public List<Discipline> getDisciplines(String sortBy, boolean sortOrder);
 
+    public void deleteDiscipline(Discipline discipline);
+
+    public void saveOrUpdate(Discipline discipline);
+
 }

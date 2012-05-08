@@ -21,6 +21,14 @@ public class ReportManager implements IReportManager {
         getReportDao().saveReport(report);
     }
 
+    public void saveOrUpdate(Report report) {
+        getReportDao().saveOrUpdate(report);
+    }
+
+    public void deleteReport(Report report) {
+        getReportDao().deleteReport(report);
+    }
+
     public List<Report> getReports() {
         return getReportDao().getReports();
     }

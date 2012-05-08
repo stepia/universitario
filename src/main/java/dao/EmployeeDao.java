@@ -16,4 +16,8 @@ public interface EmployeeDao {
 
     public Employee getEmployee(Long id);
 
+    public void deleteEmployee(Employee employee);
+
+    public void saveOrUpdate(Employee employee);
+
 }

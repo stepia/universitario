@@ -40,7 +40,19 @@ public class PersonDaoHibernate implements PersonDao {
     }
 
     @Transactional
+    public void deletePerson(Person person) {
+        sessionFactory.getCurrentSession().delete(person);
+
+    }
+
+    @Transactional
     public void savePerson(Person person) {
+        sessionFactory.getCurrentSession().save(person);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(Person person) {
         sessionFactory.getCurrentSession().saveOrUpdate(person);
 
     }

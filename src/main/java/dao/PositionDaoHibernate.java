@@ -40,7 +40,19 @@ public class PositionDaoHibernate implements PositionDao {
     }
 
     @Transactional
+    public void deletePosition(Position position) {
+        sessionFactory.getCurrentSession().delete(position);
+
+    }
+
+    @Transactional
     public void savePosition(Position position) {
+        sessionFactory.getCurrentSession().save(position);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(Position position) {
         sessionFactory.getCurrentSession().saveOrUpdate(position);
 
     }

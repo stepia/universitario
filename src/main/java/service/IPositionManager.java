@@ -14,4 +14,8 @@ public interface IPositionManager {
 
     public List<Position> getPositions(String sortBy, boolean sortOrder);
 
+    public void deletePosition(Position position);
+
+    public void saveOrUpdate(Position position);
+
 }

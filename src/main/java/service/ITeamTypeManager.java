@@ -14,4 +14,8 @@ public interface ITeamTypeManager {
 
     public List<TeamType> getTeamTypes(String sortBy, boolean sortOrder);
 
+    public void deleteTeamType(TeamType teamType);
+
+    public void saveOrUpdate(TeamType teamType);
+
 }

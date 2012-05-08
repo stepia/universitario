@@ -16,4 +16,8 @@ public interface ReportTypeDao {
 
     public ReportType getReportType(Long id);
 
+    public void deleteReportType(ReportType reporttype);
+
+    public void saveOrUpdate(ReportType reporttype);
+
 }

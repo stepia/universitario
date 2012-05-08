@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<title>#{msg.cteam}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </h:head>
 
 <h:body>
 	<f:view locale="#{language.localeCode}" />
 	<div id="container">
 		<div id="header">
-			<ui:insert name="header">
-				<ui:include src="/detail.xhtml">
-					<ui:param name="title" value="#{msg.team}" />
-					<ui:param name="bean" value="#{teamViewBean}" />
-				</ui:include>
-			</ui:insert>
+			<ui:include src="/header.xhtml">
+				<ui:param name="title" value="#{msg.team}" />
+			</ui:include>
 		</div>
 		<div id="content">
-			<h:form id="teamDetailForm">
-				<p:panel header="#{msg.team}" styleClass="panel">
-		Team Id:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.id}"/>
-	    Team Name:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.name}"/>
-	    Team TeamtypeId:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.teamtypeid}"/>
-	    Team RootId:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.rootid}"/>
-	    Team Details:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.details}"/>
-	    Team StateId:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.stateid}"/>
-	    Team Created:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.created}"/>
-	    Team Modified:<h:inputText
-	    			value="#{teamViewBean.selectedTeam.modified}"/>
 
+			<h:form id="teamDetailForm">
+				<h:panelGrid id="pnlTeamDetail" columns="2" cellspacing="30"
+					border="0" title="Universitario">
+					<c:if test="#{teamViewBean.editible}">
+	    Team Id:<h:inputText value="#{teamViewBean.selectedTeam.id}"
+							readonly="true">
+							<f:converter converterId="javax.faces.Long" />
+						</h:inputText>
+					</c:if>
+	    Team Name:<h:inputText value="#{teamViewBean.selectedTeam.name}"
+						required="true" requiredMessage="Name is required" />
+		Team TeamtypeId:<h:inputText value="#{teamViewBean.selectedTeam.teamtypeid}"
+						required="true" requiredMessage="TeamtypeId is required" />
+	    Team RootId:<h:inputText value="#{teamViewBean.selectedTeam.rootid}"
+						required="true" requiredMessage="RootId is required" />
+	    Team Details:<h:inputText value="#{teamViewBean.selectedTeam.details}"
+						required="true" requiredMessage="Details is required" />
+	    Team StateId:<h:inputText value="#{teamViewBean.selectedTeam.stateid}"
+						required="true" requiredMessage="StateId is required" />
+					<c:if test="#{not empty teamViewBean.selectedTeam.created}">
+	    Team Created:<h:inputText readonly="true"
+							value="#{teamViewBean.selectedTeam.created}" />
+	    Team Modified:<h:inputText readonly="true"
+							value="#{teamViewBean.selectedTeam.modified}" />
+					</c:if>
+					<ui:include src="/detail.xhtml">
+						<ui:param name="bean" value="#{teamViewBean}" />
+					</ui:include>
 					<br />
-				</p:panel>
+				</h:panelGrid>
 			</h:form>
 		</div>
 		<div id="footer">

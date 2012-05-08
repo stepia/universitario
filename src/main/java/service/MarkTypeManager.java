@@ -21,6 +21,14 @@ public class MarkTypeManager implements IMarkTypeManager {
         getMarkTypeDao().saveMarkType(markType);
     }
 
+    public void saveOrUpdate(MarkType markType) {
+        getMarkTypeDao().saveOrUpdate(markType);
+    }
+
+    public void deleteMarkType(MarkType markType) {
+        getMarkTypeDao().deleteMarkType(markType);
+    }
+
     public List<MarkType> getMarkTypes() {
         return getMarkTypeDao().getMarkTypes();
     }

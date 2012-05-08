@@ -1,6 +1,7 @@
 package user;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,20 +82,23 @@ public class ReportViewBean {
         this.editible = editible;
     }
 
-    public String doAction(String action) {
+    public String doAction(String action) throws UnsupportedEncodingException {
         Action act = Action.fromString(action);
         switch (act)
             {
             case DELETE:
-                System.out.println("Penny coin");
+            	getReportManager().deleteReport(getSelectedReport());
                 break;
             case CREATE:
                 setSelectedReport(new Report());
                 break;
             case SAVE:
-                getReportManager().saveReport(getSelectedReport());
+            	if (getSelectedReport().getCreated() != null) {
+                    getReportManager().saveOrUpdate(getSelectedReport());
+                } else {
+                    getReportManager().saveReport(getSelectedReport());
+                }
                 break;
-
             }
         return action;
     }

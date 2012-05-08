@@ -16,4 +16,8 @@ public interface ReportDao {
 
     public Report getReport(Long id);
 
+    public void deleteReport(Report report);
+
+    public void saveOrUpdate(Report report);
+
 }

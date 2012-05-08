@@ -1,6 +1,7 @@
 package user;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,20 +82,23 @@ public class TimeViewBean {
         this.editible = editible;
     }
 
-    public String doAction(String action) {
+    public String doAction(String action) throws UnsupportedEncodingException {
         Action act = Action.fromString(action);
         switch (act)
             {
             case DELETE:
-                System.out.println("Penny coin");
+            	getTimeManager().deleteTime(getSelectedTime());
                 break;
             case CREATE:
                 setSelectedTime(new Time());
                 break;
             case SAVE:
-                getTimeManager().saveTime(getSelectedTime());
+            	if (getSelectedTime().getCreated() != null) {
+                    getTimeManager().saveOrUpdate(getSelectedTime());
+                } else {
+                    getTimeManager().saveTime(getSelectedTime());
+                }
                 break;
-
             }
         return action;
     }

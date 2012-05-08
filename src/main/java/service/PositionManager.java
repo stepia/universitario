@@ -21,6 +21,14 @@ public class PositionManager implements IPositionManager {
         getPositionDao().savePosition(position);
     }
 
+    public void saveOrUpdate(Position position) {
+        getPositionDao().saveOrUpdate(position);
+    }
+
+    public void deletePosition(Position position) {
+        getPositionDao().deletePosition(position);
+    }
+
     public List<Position> getPositions() {
         return getPositionDao().getPositions();
     }

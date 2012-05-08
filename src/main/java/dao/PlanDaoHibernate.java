@@ -40,7 +40,19 @@ public class PlanDaoHibernate implements PlanDao {
     }
 
     @Transactional
+    public void deletePlan(Plan plan) {
+        sessionFactory.getCurrentSession().delete(plan);
+
+    }
+
+    @Transactional
     public void savePlan(Plan plan) {
+        sessionFactory.getCurrentSession().save(plan);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(Plan plan) {
         sessionFactory.getCurrentSession().saveOrUpdate(plan);
 
     }

@@ -14,4 +14,8 @@ public interface IMarkManager {
 
     public List<Mark> getMarks(String sortBy, boolean sortOrder);
 
+    public void deleteMark(Mark mark);
+
+    public void saveOrUpdate(Mark mark);
+
 }

@@ -1,51 +1,59 @@
 <!DOCTYPE html>
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<title>#{msg.cplan}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </h:head>
 
 <h:body>
 	<f:view locale="#{language.localeCode}" />
 	<div id="container">
 		<div id="header">
-			<ui:insert name="header">
-				<ui:include src="/detail.xhtml">
-					<ui:param name="title" value="#{msg.plan}" />
-					<ui:param name="bean" value="#{planViewBean}" />
-				</ui:include>
-			</ui:insert>
+			<ui:include src="/header.xhtml">
+				<ui:param name="title" value="#{msg.plan}" />
+			</ui:include>
 		</div>
 		<div id="content">
-			<h:form id="planDetailForm">
-				<p:panel header="#{msg.plan}" styleClass="panel">
-	    Plan Id:<h:inputText
-	    				value="#{planViewBean.selectedPlan.id}"/>
-	    Plan PlanId:<h:inputText
-	    				value="#{planViewBean.selectedPlan.planid}"/>
-	    Plan DisciplineId:<h:inputText
-	    				value="#{planViewBean.selectedPlan.disciplineid}"/>
-	    Plan LessontypeId:<h:inputText
-	    				value="#{planViewBean.selectedPlan.lessontypeid}"/>
-	    Plan EmpId:<h:inputText
-	    				value="#{planViewBean.selectedPlan.empid}"/>
-	    Plan PeriodId:<h:inputText
-	    				value="#{planViewBean.selectedPlan.periodid}"/>
-	    Plan Hours:<h:inputText
-	    				value="#{planViewBean.selectedPlan.hours}"/>
-	    Plan MarktypeId:<h:inputText
-	    				value="#{planViewBean.selectedPlan.marktypeid}"/>
-	    Plan Modified:<h:inputText
-	    				value="#{planViewBean.selectedPlan.modified}"/>
-	    Plan Created:<h:inputText
-	    				value="#{planViewBean.selectedPlan.created}"/>
 
+			<h:form id="planDetailForm">
+				<h:panelGrid id="pnlPlanDetail" columns="2" cellspacing="30"
+					border="0" title="Universitario">
+					<c:if test="#{planViewBean.editible}">
+	    Plan Id:<h:inputText value="#{planViewBean.selectedPlan.id}"
+							readonly="true">
+							<f:converter converterId="javax.faces.Long" />
+						</h:inputText>
+					</c:if>
+		Plan PlanId:<h:inputText value="#{planViewBean.selectedPlan.planid}"
+						required="true" requiredMessage="PlanId is required" />
+	    Plan DisciplineId:<h:inputText value="#{planViewBean.selectedPlan.disciplineid}"
+						required="true" requiredMessage="DisciplineId is required" />
+	    Plan LessontypeId:<h:inputText value="#{planViewBean.selectedPlan.lessontypeid}"
+						required="true" requiredMessage="LessontypeId is required" />
+	    Plan EmpId:<h:inputText value="#{planViewBean.selectedPlan.empid}"
+						required="true" requiredMessage="EmpId is required" />
+	    Plan PeriodId:<h:inputText value="#{planViewBean.selectedPlan.periodid}"
+						required="true" requiredMessage="PeriodId is required" />
+	    Plan Hours:<h:inputText value="#{planViewBean.selectedPlan.hours}"
+						required="true" requiredMessage="Hours is required" />
+	    Plan MarktypeId:<h:inputText value="#{planViewBean.selectedPlan.marktypeid}"
+						required="true" requiredMessage="MarktypeId is required" />
+					<c:if test="#{not empty planViewBean.selectedPlan.created}">
+	    Plan Created:<h:inputText readonly="true"
+							value="#{planViewBean.selectedPlan.created}" />
+	    Plan Modified:<h:inputText readonly="true"
+							value="#{planViewBean.selectedPlan.modified}" />
+					</c:if>
+					<ui:include src="/detail.xhtml">
+						<ui:param name="bean" value="#{planViewBean}" />
+					</ui:include>
 					<br />
-				</p:panel>
+				</h:panelGrid>
 			</h:form>
 		</div>
 		<div id="footer">

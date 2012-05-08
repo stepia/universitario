@@ -21,6 +21,14 @@ public class EmployeeManager implements IEmployeeManager {
         getEmployeeDao().saveEmployee(employee);
     }
 
+    public void saveOrUpdate(Employee employee) {
+        getEmployeeDao().saveOrUpdate(employee);
+    }
+
+    public void deleteEmployee(Employee employee) {
+        getEmployeeDao().deleteEmployee(employee);
+    }
+
     public List<Employee> getEmployees() {
         return getEmployeeDao().getEmployees();
     }

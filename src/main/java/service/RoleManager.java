@@ -21,6 +21,14 @@ public class RoleManager implements IRoleManager {
         getRoleDao().saveRole(role);
     }
 
+    public void saveOrUpdate(Role role) {
+        getRoleDao().saveOrUpdate(role);
+    }
+
+    public void deleteRole(Role role) {
+        getRoleDao().deleteRole(role);
+    }
+
     public List<Role> getRoles() {
         return getRoleDao().getRoles();
     }

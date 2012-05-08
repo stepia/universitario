@@ -21,6 +21,14 @@ public class ReportTypeManager implements IReportTypeManager {
         getReportTypeDao().saveReportType(reportType);
     }
 
+    public void saveOrUpdate(ReportType reportType) {
+        getReportTypeDao().saveOrUpdate(reportType);
+    }
+
+    public void deleteReportType(ReportType reportType) {
+        getReportTypeDao().deleteReportType(reportType);
+    }
+
     public List<ReportType> getReportTypes() {
         return getReportTypeDao().getReportTypes();
     }

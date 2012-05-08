@@ -1,6 +1,7 @@
 package user;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,20 +82,23 @@ public class RoleViewBean {
         this.editible = editible;
     }
 
-    public String doAction(String action) {
+    public String doAction(String action) throws UnsupportedEncodingException {
         Action act = Action.fromString(action);
         switch (act)
             {
             case DELETE:
-                System.out.println("Penny coin");
+            	getRoleManager().deleteRole(getSelectedRole());
                 break;
             case CREATE:
                 setSelectedRole(new Role());
                 break;
             case SAVE:
-                getRoleManager().saveRole(getSelectedRole());
+            	if (getSelectedRole().getCreated() != null) {
+                    getRoleManager().saveOrUpdate(getSelectedRole());
+                } else {
+                    getRoleManager().saveRole(getSelectedRole());
+                }
                 break;
-
             }
         return action;
     }

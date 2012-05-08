@@ -14,4 +14,8 @@ public interface IMarkTypeManager {
 
     public List<MarkType> getMarkTypes(String sortBy, boolean sortOrder);
 
+    public void deleteMarkType(MarkType markType);
+
+    public void saveOrUpdate(MarkType markType);
+
 }

@@ -21,6 +21,14 @@ public class TeamManager implements ITeamManager {
         getTeamDao().saveTeam(team);
     }
 
+    public void saveOrUpdate(Team team) {
+        getTeamDao().saveOrUpdate(team);
+    }
+
+    public void deleteTeam(Team team) {
+        getTeamDao().deleteTeam(team);
+    }
+
     public List<Team> getTeams() {
         return getTeamDao().getTeams();
     }

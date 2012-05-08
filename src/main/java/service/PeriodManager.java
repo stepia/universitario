@@ -21,6 +21,14 @@ public class PeriodManager implements IPeriodManager {
         getPeriodDao().savePeriod(period);
     }
 
+    public void saveOrUpdate(Period period) {
+        getPeriodDao().saveOrUpdate(period);
+    }
+
+    public void deletePeriod(Period period) {
+        getPeriodDao().deletePeriod(period);
+    }
+
     public List<Period> getPeriods() {
         return getPeriodDao().getPeriods();
     }

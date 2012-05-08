@@ -14,4 +14,8 @@ public interface IReportManager {
 
     public List<Report> getReports(String sortBy, boolean sortOrder);
 
+    public void deleteReport(Report report);
+
+    public void saveOrUpdate(Report report);
+
 }

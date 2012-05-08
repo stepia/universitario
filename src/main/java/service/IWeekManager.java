@@ -14,4 +14,8 @@ public interface IWeekManager {
 
     public List<Week> getWeeks(String sortBy, boolean sortOrder);
 
+    public void deleteWeek(Week week);
+
+    public void saveOrUpdate(Week week);
+
 }

@@ -21,6 +21,14 @@ public class OccupationManager implements IOccupationManager {
         getOccupationDao().saveOccupation(occupation);
     }
 
+    public void saveOrUpdate(Occupation occupation) {
+        getOccupationDao().saveOrUpdate(occupation);
+    }
+
+    public void deleteOccupation(Occupation occupation) {
+        getOccupationDao().deleteOccupation(occupation);
+    }
+
     public List<Occupation> getOccupations() {
         return getOccupationDao().getOccupations();
     }

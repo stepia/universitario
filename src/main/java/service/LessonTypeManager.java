@@ -21,6 +21,14 @@ public class LessonTypeManager implements ILessonTypeManager {
         getLessonTypeDao().saveLessonType(lessonType);
     }
 
+    public void saveOrUpdate(LessonType lessonType) {
+        getLessonTypeDao().saveOrUpdate(lessonType);
+    }
+
+    public void deleteLessonType(LessonType lessonType) {
+        getLessonTypeDao().deleteLessonType(lessonType);
+    }
+
     public List<LessonType> getLessonTypes() {
         return getLessonTypeDao().getLessonTypes();
     }

@@ -40,7 +40,19 @@ public class RoleDaoHibernate implements RoleDao {
     }
 
     @Transactional
+    public void deleteRole(Role role) {
+        sessionFactory.getCurrentSession().delete(role);
+
+    }
+
+    @Transactional
     public void saveRole(Role role) {
+        sessionFactory.getCurrentSession().save(role);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(Role role) {
         sessionFactory.getCurrentSession().saveOrUpdate(role);
 
     }
