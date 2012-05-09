@@ -26,11 +26,10 @@
 					<c:if test="#{roleViewBean.editible}">
 	    Role Id:<h:inputText value="#{roleViewBean.selectedRole.id}"
 							readonly="true">
-							<f:converter converterId="javax.faces.Long" />
 						</h:inputText>
 					</c:if>
 	    Role Name:<h:inputText value="#{roleViewBean.selectedRole.name}"
-						required="true" requiredMessage="Name is required" />
+						required="true" requiredMessage="#{msg.rmname}" />
 					<c:if test="#{not empty roleViewBean.selectedRole.created}">
 	    Role Created:<h:inputText readonly="true"
 							value="#{roleViewBean.selectedRole.created}" />

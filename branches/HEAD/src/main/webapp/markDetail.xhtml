@@ -26,11 +26,10 @@
 					<c:if test="#{markViewBean.editible}">
 	    Mark Id:<h:inputText value="#{markViewBean.selectedMark.id}"
 							readonly="true">
-							<f:converter converterId="javax.faces.Long" />
 						</h:inputText>
 					</c:if>
 	    Mark Name:<h:inputText value="#{markViewBean.selectedMark.name}"
-						required="true" requiredMessage="Name is required" />
+						required="true" requiredMessage="#{msg.rmname}" />
 					<c:if test="#{not empty markViewBean.selectedMark.created}">
 	    Mark Created:<h:inputText readonly="true"
 							value="#{markViewBean.selectedMark.created}" />

@@ -26,19 +26,18 @@
 					<c:if test="#{emp2TeamViewBean.editible}">
 	    Emp2team Id:<h:inputText value="#{emp2TeamViewBean.selectedEmp2Team.id}"
 							readonly="true">
-							<f:converter converterId="javax.faces.Long" />
 						</h:inputText>
 					</c:if>
 		Emp2team EmpId:<h:inputText value="#{emp2TeamViewBean.selectedEmp2Team.empid}"
-						required="true" requiredMessage="EmpId is required" />
+						required="true" requiredMessage="#{msg.rmempid}" />
 	    Emp2team TeamId:<h:inputText value="#{emp2TeamViewBean.selectedEmp2Team.teamid}"
-						required="true" requiredMessage="TeamId is required" />
+						required="true" requiredMessage="#{msg.rmteamid}" />
 	    Emp2team PositionId:<h:inputText value="#{emp2TeamViewBean.selectedEmp2Team.positionid}"
-						required="true" requiredMessage="PositionId is required" />
+						required="true" requiredMessage="#{msg.rmpositionid}" />
 	    Emp2team OccupationId:<h:inputText value="#{emp2TeamViewBean.selectedEmp2Team.occupationid}"
-						required="true" requiredMessage="OccupationId is required" />
+						required="true" requiredMessage="#{msg.rmoccupationid}" />
 	    Emp2team StateId:<h:inputText value="#{emp2TeamViewBean.selectedEmp2Team.stateid}"
-						required="true" requiredMessage="StateId is required" />
+						required="true" requiredMessage="#{msg.rmstateid}" />
 					<c:if test="#{not empty emp2TeamViewBean.selectedEmp2Team.created}">
 	    Emp2team Created:<h:inputText readonly="true"
 							value="#{emp2TeamViewBean.selectedEmp2Team.created}" />

@@ -26,19 +26,18 @@
 					<c:if test="#{teamViewBean.editible}">
 	    Team Id:<h:inputText value="#{teamViewBean.selectedTeam.id}"
 							readonly="true">
-							<f:converter converterId="javax.faces.Long" />
 						</h:inputText>
 					</c:if>
 	    Team Name:<h:inputText value="#{teamViewBean.selectedTeam.name}"
-						required="true" requiredMessage="Name is required" />
+						required="true" requiredMessage="#{msg.rmname}" />
 		Team TeamtypeId:<h:inputText value="#{teamViewBean.selectedTeam.teamtypeid}"
-						required="true" requiredMessage="TeamtypeId is required" />
+						required="true" requiredMessage="#{msg.rmteamtypeid}" />
 	    Team RootId:<h:inputText value="#{teamViewBean.selectedTeam.rootid}"
-						required="true" requiredMessage="RootId is required" />
+						required="true" requiredMessage="#{msg.rmrootid}" />
 	    Team Details:<h:inputText value="#{teamViewBean.selectedTeam.details}"
-						required="true" requiredMessage="Details is required" />
+						required="true" requiredMessage="#{msg.rmdetails}" />
 	    Team StateId:<h:inputText value="#{teamViewBean.selectedTeam.stateid}"
-						required="true" requiredMessage="StateId is required" />
+						required="true" requiredMessage="#{msg.rmstateid}" />
 					<c:if test="#{not empty teamViewBean.selectedTeam.created}">
 	    Team Created:<h:inputText readonly="true"
 							value="#{teamViewBean.selectedTeam.created}" />

@@ -26,11 +26,10 @@
 					<c:if test="#{periodViewBean.editible}">
 	    Period Id:<h:inputText value="#{periodViewBean.selectedPeriod.id}"
 							readonly="true">
-							<f:converter converterId="javax.faces.Long" />
 						</h:inputText>
 					</c:if>
 	    Period Value:<h:inputText value="#{periodViewBean.selectedPeriod.value}"
-						required="true" requiredMessage="Value is required" />
+						required="true" requiredMessage="#{msg.rmvalue}" />
 					<c:if test="#{not empty periodViewBean.selectedPeriod.created}">
 	    Period Created:<h:inputText readonly="true"
 							value="#{periodViewBean.selectedPeriod.created}" />

@@ -26,31 +26,35 @@
 					<c:if test="#{personViewBean.editible}">
 	    Person Id:<h:inputText value="#{personViewBean.selectedPerson.id}"
 							readonly="true">
-							<f:converter converterId="javax.faces.Long" />
 						</h:inputText>
 					</c:if>
 		Person FirstName:<h:inputText value="#{personViewBean.selectedPerson.firstName}"
-						required="true" requiredMessage="FirstName is required" />
+						required="true" requiredMessage="#{msg.rmfirstname}" />
 		Person LastName:<h:inputText value="#{personViewBean.selectedPerson.lastName}"
-						required="true" requiredMessage="LastName is required" />
+						required="true" requiredMessage="#{msg.rmlastname}" />
 		Person MiddleName:<h:inputText value="#{personViewBean.selectedPerson.middleName}"
-						required="true" requiredMessage="MiddleName is required" />
+						required="true" requiredMessage="#{msg.rmmiddlename}" />
 		Person Dob:<h:inputText value="#{personViewBean.selectedPerson.dob}"
-						required="true" requiredMessage="Dob is required">
-							<f:convertDateTime type="date" pattern="dd.MM.yyyy"/>
+						required="true" requiredMessage="#{msg.rmdob}"
+						converterMessage="#{msg.vmdob}">
+							<f:convertDateTime type="date" pattern="dd.MM.yyyy" />
 						</h:inputText>
 		Person Address:<h:inputText value="#{personViewBean.selectedPerson.address}"
-						required="true" requiredMessage="Address is required" />
+						required="true" requiredMessage="#{msg.rmaddress}" />
 		Person Academicdegree:<h:inputText value="#{personViewBean.selectedPerson.academicdegree}"
-						required="true" requiredMessage="Academicdegree is required" />
+						required="true" requiredMessage="#{msg.rmacademicdegree}" />
 		Person Sex:<h:inputText value="#{personViewBean.selectedPerson.sex}"
-						required="true" requiredMessage="Sex is required" />
+						required="true" requiredMessage="#{msg.rmsex}" />
 		Person Phone:<h:inputText value="#{personViewBean.selectedPerson.phone}"
-						required="true" requiredMessage="Phone is required" />
+						required="true" requiredMessage="#{msg.rmphone}" />
 		Person Email:<h:inputText value="#{personViewBean.selectedPerson.email}"
-						required="true" requiredMessage="Email is required" />
+						required="true" requiredMessage="#{msg.rmemail}"
+						validatorMessage="#{msg.vmemail}">
+						<f:validateRegex
+							pattern="([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))" /> 
+					</h:inputText>
 		Person Code:<h:inputText value="#{personViewBean.selectedPerson.code}"
-						required="true" requiredMessage="Code is required" />
+						required="true" requiredMessage="#{msg.rmcode}" />
 					<c:if test="#{not empty personViewBean.selectedPerson.created}">
 	    Person Created:<h:inputText readonly="true"
 							value="#{personViewBean.selectedPerson.created}" />
