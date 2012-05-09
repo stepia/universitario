@@ -26,23 +26,22 @@
 					<c:if test="#{planViewBean.editible}">
 	    Plan Id:<h:inputText value="#{planViewBean.selectedPlan.id}"
 							readonly="true">
-							<f:converter converterId="javax.faces.Long" />
 						</h:inputText>
 					</c:if>
 		Plan PlanId:<h:inputText value="#{planViewBean.selectedPlan.planid}"
-						required="true" requiredMessage="PlanId is required" />
+						required="true" requiredMessage="#{msg.rmplanid}" />
 	    Plan DisciplineId:<h:inputText value="#{planViewBean.selectedPlan.disciplineid}"
-						required="true" requiredMessage="DisciplineId is required" />
+						required="true" requiredMessage="#{msg.rmdisciplineid}" />
 	    Plan LessontypeId:<h:inputText value="#{planViewBean.selectedPlan.lessontypeid}"
-						required="true" requiredMessage="LessontypeId is required" />
+						required="true" requiredMessage="#{msg.rmlessontypeid}" />
 	    Plan EmpId:<h:inputText value="#{planViewBean.selectedPlan.empid}"
-						required="true" requiredMessage="EmpId is required" />
+						required="true" requiredMessage="#{msg.rmempid}" />
 	    Plan PeriodId:<h:inputText value="#{planViewBean.selectedPlan.periodid}"
-						required="true" requiredMessage="PeriodId is required" />
+						required="true" requiredMessage="#{msg.rmperiodid}" />
 	    Plan Hours:<h:inputText value="#{planViewBean.selectedPlan.hours}"
-						required="true" requiredMessage="Hours is required" />
+						required="true" requiredMessage="#{msg.rmhours}" />
 	    Plan MarktypeId:<h:inputText value="#{planViewBean.selectedPlan.marktypeid}"
-						required="true" requiredMessage="MarktypeId is required" />
+						required="true" requiredMessage="#{msg.rmmarktypeid}" />
 					<c:if test="#{not empty planViewBean.selectedPlan.created}">
 	    Plan Created:<h:inputText readonly="true"
 							value="#{planViewBean.selectedPlan.created}" />

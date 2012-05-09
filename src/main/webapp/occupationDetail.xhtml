@@ -26,11 +26,10 @@
 					<c:if test="#{occupationViewBean.editible}">
 		Occupation Id:<h:inputText value="#{occupationViewBean.selectedOccupation.id}"
 							readonly="true">
-							<f:converter converterId="javax.faces.Long" />
 						</h:inputText>
 					</c:if>
 	    Occupation Name:<h:inputText value="#{occupationViewBean.selectedOccupation.name}"
-						required="true" requiredMessage="Name is required" />
+						required="true" requiredMessage="#{msg.rmname}" />
 					<c:if test="#{not empty occupationViewBean.selectedOccupation.created}">
 	    Occupation Created:<h:inputText readonly="true"
 							value="#{occupationViewBean.selectedOccupation.created}" />

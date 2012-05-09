@@ -26,11 +26,10 @@
 					<c:if test="#{timeViewBean.editible}">
 	    Time Id:<h:inputText value="#{timeViewBean.selectedTime.id}"
 							readonly="true">
-							<f:converter converterId="javax.faces.Long" />
 						</h:inputText>
 					</c:if>
 	    Time Value:<h:inputText value="#{timeViewBean.selectedTime.value}"
-						required="true" requiredMessage="Value is required" />
+						required="true" requiredMessage="#{msg.rmvalue}" />
 					<c:if test="#{not empty timeViewBean.selectedTime.created}">
 	    Time Created:<h:inputText readonly="true"
 							value="#{timeViewBean.selectedTime.created}" />

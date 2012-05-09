@@ -26,17 +26,16 @@
 					<c:if test="#{employeeViewBean.editible}">
 	    Employee Id:<h:inputText value="#{employeeViewBean.selectedEmployee.id}"
 							readonly="true">
-							<f:converter converterId="javax.faces.Long" />
 						</h:inputText>
 					</c:if>
 		Employee PersonId:<h:inputText value="#{employeeViewBean.selectedEmployee.personid}"
-						required="true" requiredMessage="PersonId is required" />
+						required="true" requiredMessage="#{msg.rmpersonid}" />
 	    Employee UsrName:<h:inputText value="#{employeeViewBean.selectedEmployee.usrname}"
-						required="true" requiredMessage="UsrName is required" />
+						required="true" requiredMessage="#{msg.rmusrname}" />
 	    Employee StateId:<h:inputText value="#{employeeViewBean.selectedEmployee.stateid}"
-						required="true" requiredMessage="StateId is required" />
+						required="true" requiredMessage="#{msg.rmstateid}" />
 	    Employee RecordBook:<h:inputText value="#{employeeViewBean.selectedEmployee.recordbook}"
-						required="true" requiredMessage="RecordBook is required" />
+						required="true" requiredMessage="#{msg.rmrecordbook}" />
 					<c:if test="#{not empty employeeViewBean.selectedEmployee.created}">
 	    Employee Created:<h:inputText readonly="true"
 							value="#{employeeViewBean.selectedEmployee.created}" />

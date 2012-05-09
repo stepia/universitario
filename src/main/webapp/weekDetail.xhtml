@@ -26,11 +26,10 @@
 					<c:if test="#{weekViewBean.editible}">
 	    Week Id:<h:inputText value="#{weekViewBean.selectedWeek.id}"
 							readonly="true">
-							<f:converter converterId="javax.faces.Long" />
 						</h:inputText>
 					</c:if>
 	    Week Value:<h:inputText value="#{weekViewBean.selectedWeek.value}"
-						required="true" requiredMessage="Value is required" />
+						required="true" requiredMessage="#{msg.rmvalue}" />
 					<c:if test="#{not empty weekViewBean.selectedWeek.created}">
 	    Week Created:<h:inputText readonly="true"
 							value="#{weekViewBean.selectedWeek.created}" />

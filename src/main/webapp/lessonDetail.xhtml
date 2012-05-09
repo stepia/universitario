@@ -26,21 +26,20 @@
 					<c:if test="#{lessonViewBean.editible}">
 	    Lesson Id:<h:inputText value="#{lessonViewBean.selectedLesson.id}"
 							readonly="true">
-							<f:converter converterId="javax.faces.Long" />
 						</h:inputText>
 					</c:if>
 		Lesson PlanId:<h:inputText value="#{lessonViewBean.selectedLesson.planid}"
-						required="true" requiredMessage="PlanId is required" />
+						required="true" requiredMessage="#{msg.rmplanid}" />
 		Lesson FacultyId:<h:inputText value="#{lessonViewBean.selectedLesson.facultyid}"
-						required="true" requiredMessage="FacultyId is required" />
+						required="true" requiredMessage="#{msg.rmfacultyid}" />
 		Lesson Room:<h:inputText value="#{lessonViewBean.selectedLesson.room}"
-						required="true" requiredMessage="Room is required" />
+						required="true" requiredMessage="#{msg.rmroom}" />
 		Lesson LessontimeId:<h:inputText value="#{lessonViewBean.selectedLesson.lessontimeid}"
-						required="true" requiredMessage="LessontimeId is required" />
+						required="true" requiredMessage="#{msg.rmlessontimeid}" />
 		Lesson DayId:<h:inputText value="#{lessonViewBean.selectedLesson.dayid}"
-						required="true" requiredMessage="DayId is required" />
+						required="true" requiredMessage="#{msg.rmdayid}" />
 		Lesson WeekId:<h:inputText value="#{lessonViewBean.selectedLesson.weekid}"
-						required="true" requiredMessage="WeekId is required" />
+						required="true" requiredMessage="#{msg.rmweekid}" />
 					<c:if test="#{not empty lessonViewBean.selectedLesson.created}">
 	    Lesson Created:<h:inputText readonly="true"
 							value="#{lessonViewBean.selectedLesson.created}" />
