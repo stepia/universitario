@@ -33,23 +33,6 @@ END;//
 delimiter ;
 
 delimiter //
-CREATE TRIGGER employee_OnInsert BEFORE INSERT ON `employee`
-FOR EACH ROW
-BEGIN
-    SET NEW.created = NOW();
-    SET NEW.modified = NOW();
-END;//
-delimiter ;
-
-delimiter //
-CREATE TRIGGER employee_OnUpdate BEFORE UPDATE ON `employee`
-FOR EACH ROW
-BEGIN
-    SET NEW.modified = NOW();
-END;//
-delimiter ;
-
-delimiter //
 CREATE TRIGGER authorities_OnInsert BEFORE INSERT ON `authorities`
 FOR EACH ROW
 BEGIN
@@ -196,6 +179,23 @@ delimiter ;
 
 delimiter //
 CREATE TRIGGER plan_OnUpdate BEFORE UPDATE ON `plan`
+FOR EACH ROW
+BEGIN
+    SET NEW.modified = NOW();
+END;//
+delimiter ;
+
+delimiter //
+CREATE TRIGGER planDetails_OnInsert BEFORE INSERT ON `planDetails`
+FOR EACH ROW
+BEGIN
+    SET NEW.created = NOW();
+    SET NEW.modified = NOW();
+END;//
+delimiter ;
+
+delimiter //
+CREATE TRIGGER planDetails_OnUpdate BEFORE UPDATE ON `planDetails`
 FOR EACH ROW
 BEGIN
     SET NEW.modified = NOW();

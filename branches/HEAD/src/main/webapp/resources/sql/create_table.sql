@@ -1,11 +1,15 @@
 create table person (
       id int not null primary key,
-      firstname varchar(50),
-      lastname varchar(50),
+      firstnameru varchar(50),
+      lastnameru varchar(50),
+      firstnameeng varchar(50),
+      lastnameeng varchar(50),
+      firstnameua varchar(50),
+      lastnameua varchar(50),
       middlename varchar(50),
       dob date,
       address varchar(250),
-      academicdegree varchar(200),
+      details varchar(200),
       sex varchar(10),
       phone varchar(50),
       email varchar(50),
@@ -15,25 +19,14 @@ create table person (
       
 create table users(
       id int not null,
-      perid int not null,
-      empid int not null,
+      personid int not null,
       username varchar(50) not null primary key,
       password varchar(100) not null,
       enabled boolean not null,
       modified datetime,
-      created datetime,
-      constraint `pers_constr` foreign key(`perid`) references `person`(`id`));
+      created datetime);
 
       
-create table employee(
-      id int not null primary key,
-      personid int,
-      usrname varchar(50) not null,
-      stateid int,
-      recordbook int,
-      modified datetime,
-      created datetime,
-      foreign key(usrname) references users(username));
 
 create table state (
       id int not null AUTO_INCREMENT primary key,
@@ -60,7 +53,6 @@ create table authorities (
       modified datetime,
       created datetime,
       foreign key(username) references users(username));
-      create unique index ix_auth_username on authorities (username,authority);
       
 create table team(
       id int not null AUTO_INCREMENT primary key,
@@ -81,10 +73,11 @@ create table teamtype(
 
 create table emp2team(
       id int not null AUTO_INCREMENT primary key,
-      empid int not null,
+      personid int not null,
       teamid int not null,
       positionid int,
       occupationid int,
+      recordbook int,
       stateid int,
       modified datetime,
       created datetime);
@@ -117,10 +110,15 @@ create table period(
       
 create table plan(
       id int not null AUTO_INCREMENT primary key,
+      teamid int not null,
+      modified datetime,
+      created datetime);
+      
+create table planDetails(      
+      id int not null AUTO_INCREMENT primary key,
       planid int not null,
       disciplineid int not null,
       lessontypeid int not null,
-      empid int not null,
       periodid int not null,
       hours varchar(50),
       marktypeid int not null,
@@ -142,7 +140,7 @@ create table mark(
 create table report(
       id int not null AUTO_INCREMENT primary key,
       reportid int not null,
-      empid int not null,
+      personid int not null,
       name varchar(50) not null ,
       modified datetime,
       created datetime);

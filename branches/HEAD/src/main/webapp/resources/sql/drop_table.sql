@@ -1,7 +1,6 @@
 SET FOREIGN_KEY_CHECKS = 0;
 drop table authorities;
 drop table users;
-drop table employee;
 drop table person;
 drop table team;
 drop table teamtype;
@@ -21,6 +20,7 @@ drop table reporttype;
 drop table role;
 drop table state;
 drop table occupation;
+drop table planDetails;
 /*old table*/
 drop table university;
 drop table faculty;
@@ -28,3 +28,4 @@ drop table chair;
 drop table profession;
 drop table groups;
 drop table subgroup;
+drop table employee;
