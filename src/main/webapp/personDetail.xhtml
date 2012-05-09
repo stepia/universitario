@@ -36,7 +36,9 @@
 		Person MiddleName:<h:inputText value="#{personViewBean.selectedPerson.middleName}"
 						required="true" requiredMessage="MiddleName is required" />
 		Person Dob:<h:inputText value="#{personViewBean.selectedPerson.dob}"
-						required="true" requiredMessage="Dob is required" />
+						required="true" requiredMessage="Dob is required">
+							<f:convertDateTime type="date" pattern="dd.MM.yyyy"/>
+						</h:inputText>
 		Person Address:<h:inputText value="#{personViewBean.selectedPerson.address}"
 						required="true" requiredMessage="Address is required" />
 		Person Academicdegree:<h:inputText value="#{personViewBean.selectedPerson.academicdegree}"
