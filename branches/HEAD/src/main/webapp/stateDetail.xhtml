@@ -30,7 +30,7 @@
 						</h:inputText>
 					</c:if>
 	    State Name:<h:inputText value="#{stateViewBean.selectedState.name}"
-						required="true" requiredMessage="Name is required" />
+						required="true" requiredMessage="#{msg.nameError}" />
 					<c:if test="#{not empty stateViewBean.selectedState.created}">
 	    State Created:<h:inputText readonly="true"
 							value="#{stateViewBean.selectedState.created}" />
