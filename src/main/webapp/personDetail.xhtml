@@ -51,7 +51,7 @@
 						required="true" requiredMessage="#{msg.rmemail}"
 						validatorMessage="#{msg.vmemail}">
 						<f:validateRegex
-							pattern="([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))" /> 
+							pattern="([\w\-]+[.]?[\w\-]+)+@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))" /> 
 					</h:inputText>
 		Person Code:<h:inputText value="#{personViewBean.selectedPerson.code}"
 						required="true" requiredMessage="#{msg.rmcode}" />
