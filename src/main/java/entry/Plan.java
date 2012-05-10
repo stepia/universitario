@@ -10,13 +10,7 @@ import javax.faces.bean.RequestScoped;
 public class Plan {
 
 	private Long id;
-	private Long planid;
-    private Long disciplineid;
-    private Long lessontypeid;
-    private Long empid;
-    private Long periodid;
-    private String hours;
-    private Long marktypeid;
+	private Long teamid;
     private Date created;
     private Date modified;
 
@@ -28,60 +22,12 @@ public class Plan {
         this.id = id;
     }
 
-    public Long getPlanid() {
-        return planid;
+    public Long getTeamid() {
+        return teamid;
     }
 
-    public void setPlanid(Long planid) {
-        this.planid = planid;
-    }
-
-    public Long getDisciplineid() {
-        return disciplineid;
-    }
-
-    public void setDisciplineid(Long disciplineid) {
-        this.disciplineid = disciplineid;
-    }
-
-    public Long getLessontypeid() {
-        return lessontypeid;
-    }
-
-    public void setLessontypeid(Long lessontypeid) {
-        this.lessontypeid = lessontypeid;
-    }
-    
-    public Long getEmpid() {
-        return empid;
-    }
-
-    public void setEmpid(Long empid) {
-        this.empid = empid;
-    }
-        
-    public Long getPeriodid() {
-        return periodid;
-    }
-
-    public void setPeriodid(Long periodid) {
-        this.periodid = periodid;
-    }
-    
-    public String getHours() {
-        return hours;
-    }
-
-    public void setHours(String hours) {
-        this.hours = hours;
-    }
-    
-    public Long getMarktypeid() {
-        return marktypeid;
-    }
-
-    public void setMarktypeid(Long marktypeid) {
-        this.marktypeid = marktypeid;
+    public void setTeamid(Long teamid) {
+        this.teamid = teamid;
     }
     
     public Date getCreated() {

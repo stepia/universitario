@@ -15,13 +15,5 @@
         <property name="stateid" column="stateid"/>
         <property name="modified" column="modified"/>
         <property name="created" column="created"/>
-        <bag name="employees" table="employee" lazy="false" cascade="all">
-            <key column="id"/>
-            <one-to-many class="entry.Employee"/>
-        </bag>
-                <bag name="teams" table="team" lazy="false" cascade="all">
-            <key column="id"/>
-            <one-to-many class="entry.Team"/>
-        </bag>
     </class>
 </hibernate-mapping>
