@@ -68,7 +68,7 @@ INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (28,'
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (29,'Кривошеїн','Віталій','Володимирович','доктор політичних наук, доцент');
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (30,'Шевцов','Сергій','Вікторович','доктор філософських наук, доцент');
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (31,'Іщенко','Ігор','Васильович','кандидат історичних наук, доцент');
-INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (32,'Герман Юлія Олександрівна, кандидат історичних наук, доцент.','','','');
+INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (32,'Герман','Юлія','Олександрівна','кандидат історичних наук, доцент.');
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (33,'Гнатенко','Петро','Іванович','доктор філософських наук, професор, член-кореспондент Національної академії педагогічних наук України, заслужений діяч науки і техніки України, відмінник освіти України');
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (34,'Ніколенко','Вадим','Вікторович','кандидат соціологічних наук, доцент');
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (35,'Тупиця','Олег','Леонідович','доктор політичних наук, кандидат історичних наук, доцент, заслужений працівник освіти України, відмінник освіти України');
@@ -140,7 +140,7 @@ INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (94,'
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (95,'Стукало','Наталія','Вадимівна','доктор економічних наук, професор'); 
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (96,'Тимошенко','Лідія','Михайлівна','доктор економічних наук,  професор, академік Акдемії економічних наук України'); 
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (97,'Мешко','Наталія','Петрівна','доктор економічних наук, професор'); 
-INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (98,'Пономарьова Лілія Федорівна, кандидат філологічних наук, доцент.','','',''); 
+INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (98,'Пономарьова','Лілія','Федорівна','кандидат філологічних наук, доцент.'); 
 /*Факультет систем і засобів масової комунікації*/
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (99,'Демченко','Володимир','Дмитрович','доктор філологічних наук,  професор, заслужений журналіст України'); 
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (100,'Лященко','Анжела','Вадимівна','кандидат  наук із соціальних комунікацій,  доцент'); 
@@ -224,9 +224,9 @@ INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (171,
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (172,'Лихолат','Юрій','Васильович','доктор біологічних наук, професор'); 
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (173,'Штеменко','Наталя','Іванівна','доктор біологічних наук, професор'); 
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (174,'Федоненко','Олена','Вікторівна','кандидат сільськогосподарських наук, доцент'); 
-INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (175,'Вінніков Альберт Іванович, заслужений діяч науки і техніки України, академік АН ВШ України, доктор біологічних наук, професор.','','',''); 
+INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (175,'Вінніков','Альберт','Іванович','заслужений діяч науки і техніки України, академік АН ВШ України, доктор біологічних наук, професор.'); 
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (176,'Гассо','Віктор','Якович','кандидат біологічних наук, доцент'); 
-INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (17lastnameua,firstnameua,middlenameua7,'Мицик','Леонід','Павлович','доктор біологічних наук, професор, академік Екологічної академії наук України'); 
+INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (177,'Мицик','Леонід','Павлович','доктор біологічних наук, професор, академік Екологічної академії наук України'); 
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (178,'Поліон','Наталія','Миколаївна','кандидат медичних наук, доцент'); 
 /*Центр заочної та вечірньої форм навчання*/
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,details) VALUES (179,'Куземко','В','І','кандидат фізико-математичних наук, професор'); 

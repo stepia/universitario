@@ -10,7 +10,7 @@ create table person (
       middlenameua varchar(50),
       dob date,
       address varchar(250),
-      details varchar(200),
+      details varchar(500),
       sex varchar(10),
       phone varchar(50),
       email varchar(50),
@@ -60,7 +60,7 @@ create table team(
       name varchar(200) not null ,
       teamtypeid int not null,
       rootid int not null,
-      details varchar(200) not null ,
+      details varchar(500),
       stateid int,
       modified datetime,
       created datetime);
