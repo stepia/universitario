@@ -1,54 +1,60 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-	<title>Create new user</title>
+	<title>#{msg.cuser}</title>
+	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </h:head>
 
 <h:body>
 	<f:view locale="#{language.localeCode}" />
 	<div id="container">
+		<div id="header">
+			<ui:include src="/header.xhtml">
+				<ui:param name="title" value="#{msg.user}" />
+			</ui:include>
+		</div>
 		<div id="content">
-			<p:panel header="User" styleClass="panel">
-				<h:inputText value="#{userAction.user.username}" />
-				<br />
-			</p:panel>
-			<p:panel header="Employee" styleClass="panel">
-				state:<h:inputText value="#" />
-				<br />
-				<p:selectOneMenu value="#" effect="fade">
-					<f:selectItem itemLabel="Select One" itemValue="" />
-					<f:selectItems value="#" var="state" itemLabel="#" itemValue="#" />
-				</p:selectOneMenu>
-			</p:panel>
 
-
-
-			<p:panel header="Personal" styleClass="panel">
-							first name:<h:inputText
-					value="#{userAction.user.person.firstName}" />
-				<br />
-							last name:<h:inputText value="#{userAction.user.person.lastName}" />
-				<br />
-							middle name:<h:inputText
-					value="#{userAction.user.person.middleName}" />
-				<br />
-							DOB:<p:calendar value="#{userAction.user.person.dob}" />
-				<br />
-			</p:panel>
-
-			<ui:repeat var="emp" value="#{userAction.user.employees}">
-				<p:panel header="Employee" styleClass="panel">
-								state:<h:inputText value="#{emp.stateid}" />
+			<h:form id="userDetailForm">
+				<h:panelGrid id="pnlUserDetail" columns="2" cellspacing="30"
+					border="0" title="Universitario">
+					<c:if test="#{userViewBean.editible}">
+		User Id:<h:inputText value="#{userViewBean.selectedUser.id}"
+							readonly="true">
+						</h:inputText>
+					</c:if>
+	    User PersonId:<h:inputText value="#{userViewBean.selectedUser.personid}"
+						required="true" requiredMessage="#{msg.rmpersonid}"
+						converterMessage="#{msg.vmpersonid}" />
+	    User UserName:<h:inputText value="#{userViewBean.selectedUser.username}"
+						required="true" requiredMessage="#{msg.rmusername}" />
+	    User Password:<h:inputText value="#{userViewBean.selectedUser.password}"
+						required="true" requiredMessage="#{msg.rmpassword}" />
+	    User Enabled:<h:inputText value="#{userViewBean.selectedUser.enabled}"
+						required="true" requiredMessage="#{msg.rmenabled}" />
+					<c:if test="#{not empty userViewBean.selectedUser.created}">
+	    User Created:<h:inputText readonly="true"
+							value="#{userViewBean.selectedUser.created}" />
+	    User Modified:<h:inputText readonly="true"
+							value="#{userViewBean.selectedUser.modified}" />
+					</c:if>
+					<ui:include src="/detail.xhtml">
+						<ui:param name="bean" value="#{userViewBean}" />
+					</ui:include>
 					<br />
-				</p:panel>
-			</ui:repeat>
+				</h:panelGrid>
+			</h:form>
+		</div>
+		<div id="footer">
+			<ui:insert name="footer">
+				<ui:include src="/footer.xhtml" />
+			</ui:insert>
 		</div>
 	</div>
 </h:body>
-
 </html>

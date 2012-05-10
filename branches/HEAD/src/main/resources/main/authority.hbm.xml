@@ -4,11 +4,13 @@
 
 <hibernate-mapping>
     <class name="entry.Authority" table="authorities">
-        <id name="username"/>
+    	<id name="id" column="id">
+			<generator class="increment" />
+		</id>
+        <property name="username" column="username"/>
         <property name="authority" column="authority"/>
-        <many-to-one name="user" class="entry.User" cascade="all">
-	         <column name="id"/>
-        </many-to-one>
+        <property name="created" column="created"/>
+        <property name="modified" column="modified"/>
     </class>
 </hibernate-mapping>
 

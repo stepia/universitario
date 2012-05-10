@@ -1,5 +1,7 @@
 package entry;
 
+import java.util.Date;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -7,27 +9,17 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class Authority {
 
-    private long id;
-
+    private Long id;
     private String username;
-
     private String authority;
+    private Date created;
+    private Date modified;
 
-    private User user;
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -45,6 +37,22 @@ public class Authority {
 
     public void setAuthority(String authority) {
         this.authority = authority;
+    }
+    
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getModified() {
+        return modified;
+    }
+
+    public void setModified(Date modified) {
+        this.modified = modified;
     }
 
 }

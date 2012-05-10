@@ -17,12 +17,24 @@ public class UserManager implements IUserManager {
         this.userDao = userDao;
     }
 
-    public void createUser(User user) {
-        getUserDao().createUser(user);
+    public void saveUser(User state) {
+        getUserDao().saveUser(state);
+    }
+
+    public void saveOrUpdate(User state) {
+        getUserDao().saveOrUpdate(state);
+    }
+
+    public void deleteUser(User state) {
+        getUserDao().deleteUser(state);
     }
 
     public List<User> getUsers() {
         return getUserDao().getUsers();
+    }
+
+    public List<User> getUsers(String sortBy, boolean sortOrder) {
+        return getUserDao().getUsers(sortBy, sortOrder);
     }
 
     public void editUser(User user) {
