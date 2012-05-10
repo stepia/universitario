@@ -9,7 +9,7 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class User {
 
-    private long id;
+    private Long id;
     private long personid;
     private String username;
     private String password;
@@ -17,11 +17,11 @@ public class User {
     private Date created;
     private Date modified;
     
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
