@@ -9,13 +9,17 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class Person {
 
-    private String firstName;
-    private String lastName;
+    private String firstnameru;
+    private String firstnameeng;
+    private String firstnameua;
+    private String lastnameru;
+    private String lastnameeng;
+    private String lastnameua;
     private String middleName;
     private Date dob;
     private Long id;
     private String address;
-    private String academicdegree;
+    private String details;
     private String sex;
     private String phone;
     private String email;
@@ -39,20 +43,52 @@ public class Person {
         this.dob = dob;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstnameru() {
+        return firstnameru;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstnameru(String firstnameru) {
+        this.firstnameru = firstnameru;
+    }
+    
+    public String getFirstnameeng() {
+        return firstnameeng;
     }
 
-    public String getLastName() {
-        return lastName;
+    public void setFirstnameeng(String firstnameeng) {
+        this.firstnameeng = firstnameeng;
+    }
+    
+    public String getFirstnameua() {
+        return firstnameua;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFirstnameua(String firstnameua) {
+        this.firstnameua = firstnameua;
+    }
+
+    public String getLastnameru() {
+        return lastnameru;
+    }
+
+    public void setLastnameru(String lastnameru) {
+        this.lastnameru = lastnameru;
+    }
+    
+    public String getLastnameeng() {
+        return lastnameeng;
+    }
+
+    public void setLastnameeng(String lastnameeng) {
+        this.lastnameeng = lastnameeng;
+    }
+    
+    public String getLastnameua() {
+        return lastnameua;
+    }
+
+    public void setLastnameua(String lastnameua) {
+        this.lastnameua = lastnameua;
     }
 
     public String getMiddleName() {
@@ -71,12 +107,12 @@ public class Person {
         this.address = address;
     }
     
-    public String getAcademicdegree() {
-        return academicdegree;
+    public String getDetails() {
+        return details;
     }
 
-    public void setAcademicdegree(String academicdegree) {
-        this.academicdegree = academicdegree;
+    public void setDetails(String details) {
+        this.details = details;
     }
     
     public String getSex() {

@@ -28,9 +28,17 @@
 							readonly="true">
 						</h:inputText>
 					</c:if>
-		Person FirstName:<h:inputText value="#{personViewBean.selectedPerson.firstName}"
+		Person FirstNameUa:<h:inputText value="#{personViewBean.selectedPerson.firstnameua}"
 						required="true" requiredMessage="#{msg.rmfirstname}" />
-		Person LastName:<h:inputText value="#{personViewBean.selectedPerson.lastName}"
+		Person LastNameUa:<h:inputText value="#{personViewBean.selectedPerson.lastnameua}"
+						required="true" requiredMessage="#{msg.rmlastname}" />
+		Person FirstNameRu:<h:inputText value="#{personViewBean.selectedPerson.firstnameru}"
+						required="true" requiredMessage="#{msg.rmfirstname}" />
+		Person LastNameRu:<h:inputText value="#{personViewBean.selectedPerson.lastnameru}"
+						required="true" requiredMessage="#{msg.rmlastname}" />
+		Person FirstNameEng:<h:inputText value="#{personViewBean.selectedPerson.firstnameeng}"
+						required="true" requiredMessage="#{msg.rmfirstname}" />
+		Person LastNameEng:<h:inputText value="#{personViewBean.selectedPerson.lastnameeng}"
 						required="true" requiredMessage="#{msg.rmlastname}" />
 		Person MiddleName:<h:inputText value="#{personViewBean.selectedPerson.middleName}"
 						required="true" requiredMessage="#{msg.rmmiddlename}" />
@@ -41,8 +49,8 @@
 						</h:inputText>
 		Person Address:<h:inputText value="#{personViewBean.selectedPerson.address}"
 						required="true" requiredMessage="#{msg.rmaddress}" />
-		Person Academicdegree:<h:inputText value="#{personViewBean.selectedPerson.academicdegree}"
-						required="true" requiredMessage="#{msg.rmacademicdegree}" />
+		Person Details:<h:inputText value="#{personViewBean.selectedPerson.details}"
+						required="true" requiredMessage="#{msg.rmdetails}" />
 		Person Sex:<h:inputText value="#{personViewBean.selectedPerson.sex}"
 						required="true" requiredMessage="#{msg.rmsex}" />
 		Person Phone:<h:inputText value="#{personViewBean.selectedPerson.phone}"

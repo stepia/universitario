@@ -31,13 +31,16 @@
 	    Team Name:<h:inputText value="#{teamViewBean.selectedTeam.name}"
 						required="true" requiredMessage="#{msg.rmname}" />
 		Team TeamtypeId:<h:inputText value="#{teamViewBean.selectedTeam.teamtypeid}"
-						required="true" requiredMessage="#{msg.rmteamtypeid}" />
+						required="true" requiredMessage="#{msg.rmteamtypeid}"
+						converterMessage="#{msg.vmteamtypeid}" />
 	    Team RootId:<h:inputText value="#{teamViewBean.selectedTeam.rootid}"
-						required="true" requiredMessage="#{msg.rmrootid}" />
+						required="true" requiredMessage="#{msg.rmrootid}"
+						converterMessage="#{msg.vmrootid}" />
 	    Team Details:<h:inputText value="#{teamViewBean.selectedTeam.details}"
 						required="true" requiredMessage="#{msg.rmdetails}" />
 	    Team StateId:<h:inputText value="#{teamViewBean.selectedTeam.stateid}"
-						required="true" requiredMessage="#{msg.rmstateid}" />
+						required="true" requiredMessage="#{msg.rmstateid}"
+						converterMessage="#{msg.vmstateid}" />
 					<c:if test="#{not empty teamViewBean.selectedTeam.created}">
 	    Team Created:<h:inputText readonly="true"
 							value="#{teamViewBean.selectedTeam.created}" />

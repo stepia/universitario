@@ -12,10 +12,11 @@ import javax.faces.bean.RequestScoped;
 public class Emp2Team {
 
     private Long id;
-    private Long empid;
+    private Long personid;
     private Long teamid;
     private Long positionid;
     private Long occupationid;
+    private Long recordbook;
     private Long stateid;
     private Date created;
     private Date modified;
@@ -30,12 +31,12 @@ public class Emp2Team {
         this.id = id;
     }
 
-    public Long getEmpid() {
-        return empid;
+    public Long getPersonid() {
+        return personid;
     }
 
-    public void setEmpid(Long empid) {
-        this.empid = empid;
+    public void setPersonid(Long personid) {
+        this.personid = personid;
     }
 
     public Long getTeamid() {
@@ -60,6 +61,14 @@ public class Emp2Team {
 
     public void setOccupationid(Long occupationid) {
         this.occupationid = occupationid;
+    }
+    
+    public Long getRecordbook() {
+        return recordbook;
+    }
+
+    public void setRecordbook(Long recordbook) {
+        this.recordbook = recordbook;
     }
 
     public Long getStateid() {

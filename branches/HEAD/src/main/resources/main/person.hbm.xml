@@ -7,12 +7,16 @@
         <id name="id" column="id">
 			<generator class="increment" />
 		</id>
-        <property name="firstName" column="firstname"/>
-        <property name="lastName" column="lastname"/>
+        <property name="firstnameru" column="firstnameru"/>
+        <property name="firstnameeng" column="firstnameeng"/>
+        <property name="firstnameua" column="firstnameua"/>
+        <property name="lastnameru" column="lastnameru"/>
+        <property name="lastnameeng" column="lastnameeng"/>
+        <property name="lastnameua" column="lastnameua"/>
         <property name="middleName" column="middlename"/>
         <property name="dob" column="dob"/>
         <property name="address" column="address"/>
-        <property name="academicdegree" column="academicdegree"/>
+        <property name="details" column="details"/>
         <property name="sex" column="sex"/>
         <property name="phone" column="phone"/>
         <property name="email" column="email"/>

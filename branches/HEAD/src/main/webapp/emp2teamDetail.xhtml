@@ -28,16 +28,24 @@
 							readonly="true">
 						</h:inputText>
 					</c:if>
-		Emp2team EmpId:<h:inputText value="#{emp2TeamViewBean.selectedEmp2Team.empid}"
-						required="true" requiredMessage="#{msg.rmempid}" />
+		Emp2team PersonId:<h:inputText value="#{emp2TeamViewBean.selectedEmp2Team.personid}"
+						required="true" requiredMessage="#{msg.rmpersonid}"
+						converterMessage="#{msg.vmpersonid}" />
 	    Emp2team TeamId:<h:inputText value="#{emp2TeamViewBean.selectedEmp2Team.teamid}"
-						required="true" requiredMessage="#{msg.rmteamid}" />
+						required="true" requiredMessage="#{msg.rmteamid}"
+						converterMessage="#{msg.vmteamid}" />
 	    Emp2team PositionId:<h:inputText value="#{emp2TeamViewBean.selectedEmp2Team.positionid}"
-						required="true" requiredMessage="#{msg.rmpositionid}" />
+						required="true" requiredMessage="#{msg.rmpositionid}"
+						converterMessage="#{msg.vmpositionid}" />
 	    Emp2team OccupationId:<h:inputText value="#{emp2TeamViewBean.selectedEmp2Team.occupationid}"
-						required="true" requiredMessage="#{msg.rmoccupationid}" />
+						required="true" requiredMessage="#{msg.rmoccupationid}"
+						converterMessage="#{msg.vmoccupationid}" />
+		Emp2team RecordBook:<h:inputText value="#{emp2TeamViewBean.selectedEmp2Team.recordbook}"
+						required="true" requiredMessage="#{msg.rmrecordbook}"
+						converterMessage="#{msg.vmrecordbook}" />
 	    Emp2team StateId:<h:inputText value="#{emp2TeamViewBean.selectedEmp2Team.stateid}"
-						required="true" requiredMessage="#{msg.rmstateid}" />
+						required="true" requiredMessage="#{msg.rmstateid}"
+						converterMessage="#{msg.vmstateid}" />
 					<c:if test="#{not empty emp2TeamViewBean.selectedEmp2Team.created}">
 	    Emp2team Created:<h:inputText readonly="true"
 							value="#{emp2TeamViewBean.selectedEmp2Team.created}" />

@@ -31,7 +31,8 @@
 	    TeamType Name:<h:inputText value="#{teamTypeViewBean.selectedTeamType.name}"
 						required="true" requiredMessage="#{msg.rmname}" />
 		TeamType StateId:<h:inputText value="#{teamTypeViewBean.selectedTeamType.stateid}"
-						required="true" requiredMessage="#{msg.rmstateid}" />
+						required="true" requiredMessage="#{msg.rmstateid}"
+						converterMessage="#{msg.vmstateid}" />
 					<c:if test="#{not empty teamTypeViewBean.selectedTeamType.created}">
 	    TeamType Created:<h:inputText readonly="true"
 							value="#{teamTypeViewBean.selectedTeamType.created}" />
