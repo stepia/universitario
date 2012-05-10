@@ -13,7 +13,8 @@
         <property name="lastnameru" column="lastnameru"/>
         <property name="lastnameeng" column="lastnameeng"/>
         <property name="lastnameua" column="lastnameua"/>
-        <property name="middleName" column="middlename"/>
+        <property name="middlenameru" column="middlenameru"/>
+        <property name="middlenameua" column="middlenameua"/>
         <property name="dob" column="dob"/>
         <property name="address" column="address"/>
         <property name="details" column="details"/>
