@@ -15,7 +15,8 @@ public class Person {
     private String lastnameru;
     private String lastnameeng;
     private String lastnameua;
-    private String middleName;
+    private String middlenameru;
+    private String middlenameua;
     private Date dob;
     private Long id;
     private String address;
@@ -91,12 +92,20 @@ public class Person {
         this.lastnameua = lastnameua;
     }
 
-    public String getMiddleName() {
-        return middleName;
+    public String getMiddlenameru() {
+        return middlenameru;
     }
 
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
+    public void setMiddlenameru(String middlenameru) {
+        this.middlenameru = middlenameru;
+    }
+    
+    public String getMiddlenameua() {
+        return middlenameua;
+    }
+
+    public void setMiddlenameua(String middlenameua) {
+        this.middlenameua = middlenameua;
     }
     
     public String getAddress() {
