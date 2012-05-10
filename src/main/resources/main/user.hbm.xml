@@ -4,25 +4,14 @@
 
 <hibernate-mapping>
     <class name="entry.User" table="users">
-        <id name="username" column="username"/>
+        <id name="id" column="id">
+			<generator class="increment" />
+		</id>
+        <property name="personid" column="personid"/>
+        <property name="username" column="username"/>
         <property name="password" column="password"/>
-        <property name="id" column="id"/>
         <property name="enabled" column="enabled"/>
-        <property name="empId" column="empid"/>
         <property name="modified" column="modified"/>
         <property name="created" column="created"/>
-        
-        <set name="authorities" table="authorities" lazy="false" cascade="all" inverse="true">
-        	<key column="username" not-null="true"/>
-        	<one-to-many class="entry.Authority"/>
-        </set>
-        
-        <many-to-one name="person" class="entry.Person" column="perid" not-null="true" cascade="all" fetch="join"/>
-        
-        <bag name="employees" table="employee" lazy="false" cascade="all">
-	        <key column="usrname" not-null="true"/>
-        	<one-to-many class="entry.Employee"/>
-        </bag>
-        
     </class>
 </hibernate-mapping>

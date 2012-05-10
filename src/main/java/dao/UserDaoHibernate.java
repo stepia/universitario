@@ -1,15 +1,12 @@
 package dao;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Transactional;
 
-import entry.Authority;
-import entry.Person;
 import entry.User;
 
 public class UserDaoHibernate implements UserDao {
@@ -31,19 +28,32 @@ public class UserDaoHibernate implements UserDao {
                     .list();
     }
 
+    @SuppressWarnings("unchecked")
     @Transactional
-    public void createUser(User user) {
-        Set<Authority> authorities = new HashSet<Authority>();
-        Authority authority = new Authority();
-        authority.setAuthority("ROLE_USER");
-        authorities.add(authority);
+    public List<User> getUsers(String sortBy, boolean sortOrder) {
+        if (sortOrder) {
+            return sessionFactory.getCurrentSession().createCriteria(User.class).addOrder(Order.asc(sortBy)).list();
+        } else {
+            return sessionFactory.getCurrentSession().createCriteria(User.class).addOrder(Order.desc(sortBy)).list();
+        }
 
-        authority.setUsername(user.getUsername());
-        user.setAuthorities(authorities);
+    }
 
-        user.setPerson(new Person());
+    @Transactional
+    public void deleteUser(User user) {
+        sessionFactory.getCurrentSession().delete(user);
 
+    }
+
+    @Transactional
+    public void saveUser(User user) {
         sessionFactory.getCurrentSession().save(user);
+
+    }
+
+    @Transactional
+    public void saveOrUpdate(User user) {
+        sessionFactory.getCurrentSession().saveOrUpdate(user);
 
     }
 
@@ -62,4 +72,5 @@ public class UserDaoHibernate implements UserDao {
         }
         return user;
     }
+
 }

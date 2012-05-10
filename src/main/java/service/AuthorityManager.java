@@ -2,8 +2,6 @@ package service;
 
 import java.util.List;
 
-import org.springframework.transaction.annotation.Transactional;
-
 import dao.AuthorityDao;
 import entry.Authority;
 
@@ -19,19 +17,32 @@ public class AuthorityManager implements IAuthorityManager {
         this.authorityDao = authorityDao;
     }
 
-    @Transactional
-    public void createAuthority(Authority role) {
-        getAuthorityDao().createAuthority(role);
+    public void saveAuthority(Authority authority) {
+        getAuthorityDao().saveAuthority(authority);
     }
 
-    @Transactional
+    public void saveOrUpdate(Authority authority) {
+        getAuthorityDao().saveOrUpdate(authority);
+    }
+
+    public void deleteAuthority(Authority authority) {
+        getAuthorityDao().deleteAuthority(authority);
+    }
+
     public List<Authority> getAuthorities() {
         return getAuthorityDao().getAuthorities();
     }
 
-    @Transactional
-    public void deleteAuthority(Authority role) {
-        getAuthorityDao().deleteAuthority(role);
+    public List<Authority> getAuthorities(String sortBy, boolean sortOrder) {
+        return getAuthorityDao().getAuthorities(sortBy, sortOrder);
+    }
+
+    public void editAuthority(Authority authority) {
+        getAuthorityDao().editAuthority(authority);
+    }
+
+    public Authority getAuthority(Long id) {
+        return getAuthorityDao().getAuthority(id);
     }
 
 }

@@ -8,7 +8,7 @@
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
-<f:event type="preRenderView" listener="#{userViewBean.init}" />
+<f:event type="preRenderView" listener="#{authorityViewBean.init}" />
 
 <h:body>
 	<p:ajaxStatus onstart="statusDialog.show();"
@@ -21,55 +21,47 @@
 	<div id="container">
 		<div id="header">
 			<ui:include src="/query.xhtml">
-				<ui:param name="title" value="#{msg.user}" />
-				<ui:param name="bean" value="#{userViewBean}" />
+				<ui:param name="title" value="#{msg.authorities}" />
+				<ui:param name="bean" value="#{authorityViewBean}" />
 			</ui:include>
 		</div>
 		<div id="content">
-			<h:form id="userform">
+			<h:form id="authorityform">
 
-				<p:dataTable var="rec" rowKey="#{rec.username}" paginator="true" rows="5"
-					value="#{userViewBean.users}"
-					selection="#{userViewBean.selectedUser}" id="userTable"
+				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
+					value="#{authorityViewBean.authorities}"
+					selection="#{authorityViewBean.selectedAuthority}" id="authorityTable"
 					rowsPerPageTemplate="5,10,15,25,50,100"
 					emptyMessage="#{msg.norecordsfound}">
 
-					<f:facet name="header">  
-            #{msg.luser} (#{userViewBean.length}) 
+					<f:facet name="header">
+            #{msg.lauthority} (#{authorityViewBean.length})
         </f:facet>
         <p:ajax event="sort"
-                            listener="#{userViewBean.caseListSortListner}" update=":userform:userTable" />
+                            listener="#{authorityViewBean.caseListSortListner}" update=":authorityform:authorityTable" />
 					<p:column selectionMode="single" style="width:18px" />
 					<p:ajax event="rowSelect"
-						listener="#{userViewBean.onRowSelect}"
-						update=":userform" />
+						listener="#{authorityViewBean.onRowSelect}"
+						update=":authorityform" />
 					<p:column headerText="ID" sortBy="#{rec.id}" filterBy="#{rec.id}"
 						id="id">
             #{rec.id}
         </p:column>
-					<p:column headerText="PersonId" sortBy="#{rec.personid}"
-						filterBy="#{rec.personid}" id="personid">
-            #{rec.personid}
-        </p:column>
-					<p:column headerText="Username" sortBy="#{rec.username}"
+					<p:column headerText="UserName" sortBy="#{rec.username}"
 						filterBy="#{rec.username}" id="username">
-            #{rec.username}  
+            #{rec.username}
         </p:column>
-					<p:column headerText="Password" sortBy="#{rec.password}"
-						filterBy="#{rec.password}" id="password">
-            #{rec.id}
-        </p:column>
-					<p:column headerText="Enabled" sortBy="#{user.enabled}"
-						filterBy="#{user.enabled}" id="enabled">
-            #{rec.enabled}  
+					<p:column headerText="Authority" sortBy="#{rec.authority}"
+						filterBy="#{rec.authority}" id="authority">
+            #{rec.authority}
         </p:column>
 					<p:column headerText="Modified" sortBy="#{rec.modified}"
 						filterBy="#{rec.modified}" id="modified">
-            #{rec.modified}  
+            #{rec.modified}
         </p:column>
 					<p:column headerText="Created" sortBy="#{rec.created}"
 						filterBy="#{rec.created}" id="created">
-            #{rec.created}  
+            #{rec.created}
         </p:column>
 				</p:dataTable>
 			</h:form>

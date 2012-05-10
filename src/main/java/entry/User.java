@@ -1,10 +1,6 @@
 package entry;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -14,17 +10,13 @@ import javax.faces.bean.RequestScoped;
 public class User {
 
     private long id;
-    private long empId;
+    private long personid;
     private String username;
     private String password;
+    private boolean enabled = true;
     private Date created;
     private Date modified;
-    private boolean enabled = true;
-    private boolean editable;
-    private Set<Authority> authorities = new HashSet<Authority>();
-    private Person person;
-    private List<Employee> employees = new ArrayList<Employee>();
-
+    
     public long getId() {
         return id;
     }
@@ -33,44 +25,12 @@ public class User {
         this.id = id;
     }
 
-    public long getEmpId() {
-        return empId;
+    public long getPersonid() {
+        return personid;
     }
 
-    public void setEmpId(long empId) {
-        this.empId = empId;
-    }
-
-    public List<Employee> getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
-
-    public boolean isEditable() {
-        return editable;
-    }
-
-    public void setEditable(boolean editable) {
-        this.editable = editable;
-    }
-
-    public Set<Authority> getAuthorities() {
-        return authorities;
-    }
-
-    public void setAuthorities(Set<Authority> authorities) {
-        this.authorities = authorities;
+    public void setPersonid(long personid) {
+        this.personid = personid;
     }
 
     public String getUsername() {

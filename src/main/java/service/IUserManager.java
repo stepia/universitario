@@ -8,10 +8,14 @@ public interface IUserManager {
 
     public List<User> getUsers();
 
-    public void createUser(User user);
+    public void saveUser(User user);
 
     public void editUser(User user);
 
-    public User getUser(String username);
+    public List<User> getUsers(String sortBy, boolean sortOrder);
+
+    public void deleteUser(User user);
+
+    public void saveOrUpdate(User user);
 
 }

@@ -6,9 +6,16 @@ import entry.Authority;
 
 public interface IAuthorityManager {
 
-    public void createAuthority(Authority role);
-
     public List<Authority> getAuthorities();
 
-    public void deleteAuthority(Authority role);
+    public void saveAuthority(Authority authority);
+
+    public void editAuthority(Authority authority);
+    
+    public List<Authority> getAuthorities(String sortBy, boolean sortOrder);
+
+    public void deleteAuthority(Authority authority);
+
+    public void saveOrUpdate(Authority authority);
+    
 }

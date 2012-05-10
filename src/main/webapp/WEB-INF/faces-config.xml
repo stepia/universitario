@@ -94,6 +94,11 @@
             <redirect/>
         </navigation-case>
         <navigation-case>
+            <from-outcome>authority</from-outcome>
+            <to-view-id>/authority.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>discipline</from-outcome>
             <to-view-id>/discipline.xhtml</to-view-id>
             <redirect/>
@@ -189,6 +194,11 @@
             <redirect/>
         </navigation-case>
         <navigation-case>
+            <from-outcome>user</from-outcome>
+            <to-view-id>/user.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>week</from-outcome>
             <to-view-id>/week.xhtml</to-view-id>
             <redirect/>
@@ -247,6 +257,58 @@
         <navigation-case>
             <from-outcome>save</from-outcome>
             <to-view-id>/state.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/authority.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/authority.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/admin.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>create</from-outcome>
+            <to-view-id>/authorityDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+     </navigation-rule>
+     <navigation-rule>
+        <from-view-id>/authorityDetail.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/authorityDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
+            <to-view-id>/authority.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/authority.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>save</from-outcome>
+            <to-view-id>/authority.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -1183,6 +1245,58 @@
         <navigation-case>
             <from-outcome>save</from-outcome>
             <to-view-id>/time.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/user.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/user.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/admin.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>create</from-outcome>
+            <to-view-id>/userDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+     </navigation-rule>
+     <navigation-rule>
+        <from-view-id>/userDetail.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/userDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
+            <to-view-id>/user.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/user.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>save</from-outcome>
+            <to-view-id>/user.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>

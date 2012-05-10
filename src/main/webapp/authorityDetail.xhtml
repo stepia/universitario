@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>#{msg.cauthority}</title>
+	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</h:head>
+
+<h:body>
+	<f:view locale="#{language.localeCode}" />
+	<div id="container">
+		<div id="header">
+			<ui:include src="/header.xhtml">
+				<ui:param name="title" value="#{msg.authorities}" />
+			</ui:include>
+		</div>
+		<div id="content">
+
+			<h:form id="authorityDetailForm">
+				<h:panelGrid id="pnlAuthorityDetail" columns="2" cellspacing="30"
+					border="0" title="Universitario">
+					<c:if test="#{authorityViewBean.editible}">
+		Authority Id:<h:inputText value="#{authorityViewBean.selectedAuthority.id}"
+							readonly="true">
+						</h:inputText>
+					</c:if>
+	    Authority UserName:<h:inputText value="#{authorityViewBean.selectedAuthority.username}"
+						required="true" requiredMessage="#{msg.rmusername}" />
+	    Authority Authority:<h:inputText value="#{authorityViewBean.selectedAuthority.authority}"
+						required="true" requiredMessage="#{msg.rmauthority}" />
+					<c:if test="#{not empty authorityViewBean.selectedAuthority.created}">
+	    Authority Created:<h:inputText readonly="true"
+							value="#{authorityViewBean.selectedAuthority.created}" />
+	    Authority Modified:<h:inputText readonly="true"
+							value="#{authorityViewBean.selectedAuthority.modified}" />
+					</c:if>
+					<ui:include src="/detail.xhtml">
+						<ui:param name="bean" value="#{authorityViewBean}" />
+					</ui:include>
+					<br />
+				</h:panelGrid>
+			</h:form>
+		</div>
+		<div id="footer">
+			<ui:insert name="footer">
+				<ui:include src="/footer.xhtml" />
+			</ui:insert>
+		</div>
+	</div>
+</h:body>
+</html>
