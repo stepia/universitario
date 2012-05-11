@@ -8,7 +8,7 @@
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
-<f:event type="preRenderView" listener="#{stateViewBean.init}" />
+<f:event type="preRenderView" listener="#{planDetailViewBean.init}" />
 
 <h:body>
 	<p:ajaxStatus onstart="statusDialog.show();"
@@ -21,43 +21,55 @@
 	<div id="container">
 		<div id="header">
 			<ui:include src="/query.xhtml">
-				<ui:param name="title" value="#{msg.report}" />
-				<ui:param name="bean" value="#{reportViewBean}" />
+				<ui:param name="title" value="#{msg.plandetail}" />
+				<ui:param name="bean" value="#{planDetailViewBean}" />
 			</ui:include>
 		</div>
 		<div id="content">
-			<h:form id="reportform">
+			<h:form id="plandetailform">
 
 				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
-					value="#{reportViewBean.reports}"
-					selection="#{reportViewBean.selectedReport}" id="reportTable"
+					value="#{planDetailViewBean.planDetails}"
+					selection="#{planDetailViewBean.selectedPlanDetail}" id="planDetailTable"
 					rowsPerPageTemplate="5,10,15,25,50,100"
 					emptyMessage="#{msg.norecordsfound}">
 
 					<f:facet name="header">  
-            #{msg.lreport} (#{reportViewBean.length}) 
+            #{msg.lplandetail} (#{planDetailViewBean.length}) 
         </f:facet>
         <p:ajax event="sort"
-                            listener="#{reportViewBean.caseListSortListner}" update=":reportform:reportTable" />
+                            listener="#{planDetailViewBean.caseListSortListner}" update=":plandetailform:planDetailTable" />
 					<p:column selectionMode="single" style="width:18px" />
 					<p:ajax event="rowSelect"
-						listener="#{reportViewBean.onRowSelect}"
-						update=":reportform" />
+						listener="#{planDetailViewBean.onRowSelect}"
+						update=":plandetailform" />
 					<p:column headerText="ID" sortBy="#{rec.id}" filterBy="#{rec.id}"
 						id="id">  
             #{rec.id}  
         </p:column>
-					<p:column headerText="ReportId" sortBy="#{rec.reportid}"
-						filterBy="#{rec.reportid}" id="reportid">  
-            #{rec.reportid}  
+					<p:column headerText="PlanId" sortBy="#{rec.planid}"
+						filterBy="#{rec.planid}" id="planid">  
+            #{rec.planid}  
         </p:column>
-					<p:column headerText="PersonId" sortBy="#{rec.personid}"
-						filterBy="#{rec.personid}" id="personid">  
-            #{rec.personid}  
+					<p:column headerText="DisciplineId" sortBy="#{rec.disciplineid}"
+						filterBy="#{rec.disciplineid}" id="disciplineid">  
+            #{rec.disciplineid}  
         </p:column>
-					<p:column headerText="Name" sortBy="#{rec.name}"
-						filterBy="#{rec.name}" id="name">  
-            #{rec.name}  
+					<p:column headerText="LessonTypeId" sortBy="#{rec.lessontypeid}"
+						filterBy="#{rec.lessontypeid}" id="lessontypeid">  
+            #{rec.lessontypeid}  
+        </p:column>
+					<p:column headerText="PeriodId" sortBy="#{rec.periodid}"
+						filterBy="#{rec.periodid}" id="periodid">  
+            #{rec.periodid}  
+        </p:column>
+					<p:column headerText="Hours" sortBy="#{rec.hours}"
+						filterBy="#{rec.hours}" id="hours">  
+            #{rec.hours}  
+        </p:column>
+					<p:column headerText="MarkTypeId" sortBy="#{rec.marktypeid}"
+						filterBy="#{rec.marktypeid}" id="marktypeid">  
+            #{rec.marktypeid}  
         </p:column>
 					<p:column headerText="Modified" sortBy="#{rec.modified}"
 						filterBy="#{rec.modified}" id="modified">  

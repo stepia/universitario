@@ -31,9 +31,9 @@
 		Report ReportId:<h:inputText value="#{reportViewBean.selectedReport.reportid}"
 						required="true" requiredMessage="#{msg.rmreportid}"
 						converterMessage="#{msg.vmreportid}" />
-		Report EmpId:<h:inputText value="#{reportViewBean.selectedReport.empid}"
-						required="true" requiredMessage="#{msg.rmempid}"
-						converterMessage="#{msg.vmempid}" />
+		Report PersonId:<h:inputText value="#{reportViewBean.selectedReport.personid}"
+						required="true" requiredMessage="#{msg.rmpersonid}"
+						converterMessage="#{msg.vmpersonid}" />
 	    Report Name:<h:inputText value="#{reportViewBean.selectedReport.name}"
 						required="true" requiredMessage="#{msg.rmname}" />
 					<c:if test="#{not empty reportViewBean.selectedReport.created}">
