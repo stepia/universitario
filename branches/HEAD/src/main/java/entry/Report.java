@@ -11,7 +11,7 @@ public class Report {
 
     private Long id;
     private Long reportid;
-    private Long empid;
+    private Long personid;
     private String name;
     private Date created;
     private Date modified;
@@ -32,12 +32,12 @@ public class Report {
         this.reportid = reportid;
     }
 
-    public Long getEmpid() {
-        return empid;
+    public Long getPersonid() {
+        return personid;
     }
 
-    public void setEmpid(Long empid) {
-        this.empid = empid;
+    public void setPersonid(Long personid) {
+        this.personid = personid;
     }
 
     public String getName() {

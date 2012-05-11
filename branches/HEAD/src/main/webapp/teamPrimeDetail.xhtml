@@ -28,7 +28,7 @@
 							readonly="true">
 						</h:inputText>
 					</c:if>
-	    Team Name:<h:inputText value="#{teamViewBean.selectedTeam.name}"
+	    Team Name:<h:inputTextarea value="#{teamViewBean.selectedTeam.name}"
 						required="true" requiredMessage="#{msg.rmname}" />
 		Team TeamtypeId:<h:inputText value="#{teamViewBean.selectedTeam.teamtypeid}"
 						required="true" requiredMessage="#{msg.rmteamtypeid}"
@@ -36,7 +36,7 @@
 	    Team RootId:<h:inputText value="#{teamViewBean.selectedTeam.rootid}"
 						required="true" requiredMessage="#{msg.rmrootid}"
 						converterMessage="#{msg.vmrootid}" />
-	    Team Details:<h:inputText value="#{teamViewBean.selectedTeam.details}"
+	    Team Details:<h:inputTextarea value="#{teamViewBean.selectedTeam.details}"
 						required="true" requiredMessage="#{msg.rmdetails}" />
 	    Team StateId:<h:inputText value="#{teamViewBean.selectedTeam.stateid}"
 						required="true" requiredMessage="#{msg.rmstateid}"
