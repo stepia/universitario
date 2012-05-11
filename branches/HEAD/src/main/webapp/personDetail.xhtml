@@ -49,9 +49,9 @@
 						converterMessage="#{msg.vmdob}">
 							<f:convertDateTime type="date" pattern="dd.MM.yyyy" />
 						</h:inputText>
-		Person Address:<h:inputTextarea value="#{personViewBean.selectedPerson.address}"
+		Person Address:<h:inputText value="#{personViewBean.selectedPerson.address}"
 						required="true" requiredMessage="#{msg.rmaddress}" />
-		Person Details:<h:inputTextarea value="#{personViewBean.selectedPerson.details}"
+		Person Details:<h:inputText value="#{personViewBean.selectedPerson.details}"
 						required="true" requiredMessage="#{msg.rmdetails}" />
 		Person Sex:<h:inputText value="#{personViewBean.selectedPerson.sex}"
 						required="true" requiredMessage="#{msg.rmsex}" />
