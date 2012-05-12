@@ -3,19 +3,24 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="entry.Employee" table="employee">
+    <class name="entry.Employee" table="users">
         <id name="id" column="id">
-            <generator class="increment"/>
-        </id>
-        <property name="personid" column="personid"/>
-        <!--<property name="usrname" column="usrname"/>-->
-        <!--<property name="stateid" column="stateid"/>-->
-        <!--<property name="recordbook" column="recordbook"/>-->
+			<generator class="increment" />
+		</id>
+        <property name="username" column="username"/>
+        <property name="password" column="password"/>
+        <property name="enabled" column="enabled"/>
         <property name="modified" column="modified"/>
         <property name="created" column="created"/>
-        <bag name="empTeams" table="emp2team" lazy="false" cascade="all">
-            <key column="empid"/>
-            <one-to-many class="entry.Emp2Team"/>
-        </bag>
+        
+
+        <many-to-one name="person" class="entry.Person" column="personid" not-null="true" cascade="all" fetch="join" />
+
+        <set name="authorities" table="authorities" lazy="false" inverse="true" order-by="authority">
+            <key column="username"  property-ref="username" />
+            <one-to-many class="entry.Authority"/>
+        </set>
+        
+      
     </class>
 </hibernate-mapping>

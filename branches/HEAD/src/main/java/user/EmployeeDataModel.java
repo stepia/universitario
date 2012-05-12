@@ -18,7 +18,7 @@ public class EmployeeDataModel extends ListDataModel<Employee> implements Select
     }
 
     public Employee getRowData(String rowKey) {
-    	Long id = Long.valueOf(rowKey);
+        Long id = Long.valueOf(rowKey);
 
         @SuppressWarnings("unchecked")
         List<Employee> employees = (List<Employee>) getWrappedData();
