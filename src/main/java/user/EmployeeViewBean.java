@@ -9,6 +9,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.model.SelectItem;
 
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
@@ -27,6 +28,21 @@ public class EmployeeViewBean {
     private boolean editible;
     private boolean sortOrder;
     private String sortBy;
+    private SelectItem[] enabledOptions = new SelectItem[3];
+
+    public SelectItem[] getEnabledOptions() {
+        return enabledOptions;
+    }
+
+    public void setEnabledOptions(SelectItem[] enabledOptions) {
+        this.enabledOptions = enabledOptions;
+    }
+
+    public EmployeeViewBean() {
+        enabledOptions[0] = new SelectItem("", "Select");
+        enabledOptions[1] = new SelectItem("true", "Active");
+        enabledOptions[2] = new SelectItem("false", "Not active");
+    }
 
     private int length;
 
@@ -47,10 +63,12 @@ public class EmployeeViewBean {
     }
 
     public List<Employee> getEmployees() {
-    	if (sortBy == null) {
-    		employees = getEmployeeManager().getEmployees();
+        if (sortBy == null) {
+            employees = getEmployeeManager().getEmployees();
         } else {
-        	employees = getEmployeeManager().getEmployees(sortBy, sortOrder);
+            if (!sortBy.equals("person")) {
+                employees = getEmployeeManager().getEmployees(sortBy, sortOrder);
+            }
         }
         this.length = employees.size();
         return employees;
@@ -87,13 +105,13 @@ public class EmployeeViewBean {
         switch (act)
             {
             case DELETE:
-            	getEmployeeManager().deleteEmployee(getSelectedEmployee());
+                getEmployeeManager().deleteEmployee(getSelectedEmployee());
                 break;
             case CREATE:
-            	setSelectedEmployee(new Employee());
+                setSelectedEmployee(new Employee());
                 break;
             case SAVE:
-            	if (getSelectedEmployee().getCreated() != null) {
+                if (getSelectedEmployee().getCreated() != null) {
                     getEmployeeManager().saveOrUpdate(getSelectedEmployee());
                 } else {
                     getEmployeeManager().saveEmployee(getSelectedEmployee());
@@ -102,7 +120,7 @@ public class EmployeeViewBean {
             }
         return action;
     }
-    
+
     public void caseListSortListner(SortEvent sortEvent) {
         setSortBy(sortEvent.getSortColumn().getId());
         if (sortEvent.isAscending()) {
@@ -127,5 +145,5 @@ public class EmployeeViewBean {
     public void setSortBy(String sortBy) {
         this.sortBy = sortBy;
     }
-    
+
 }

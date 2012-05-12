@@ -27,10 +27,9 @@
 					<h:panelGrid columns="6" cellpadding="10" cellspacing="100"
 						styleClass="centered">
 						<h:panelGrid columns="1" cellpadding="10">
-							<h:commandButton
-								image="/resources/img/preferences-contact-list.png"
-								action="#{mainbean.doAction('myData')}" />
-							<h:outputText value="#{msg.myData}" />
+							<h:commandButton image="/resources/img/system-users-3.png"
+								action="#{mainbean.doAction('employee')}" />
+							<h:outputText value="#{msg.employee}" />
 						</h:panelGrid>
 						<h:panelGrid columns="1" cellpadding="10">
 							<h:commandButton image="/resources/img/dialog-password.png"
@@ -47,11 +46,6 @@
 								image="/resources/img/accessories-dictionary.png"
 								action="#{mainbean.doAction('plan')}" />
 							<h:outputText value="#{msg.plan}" />
-						</h:panelGrid>
-						<h:panelGrid columns="1" cellpadding="10">
-							<h:commandButton image="/resources/img/system-users-3.png"
-								action="#{mainbean.doAction('employee')}" />
-							<h:outputText value="#{msg.employee}" />
 						</h:panelGrid>
 						<h:panelGrid columns="1" cellpadding="10">
 							<h:commandButton image="/resources/img/applications-other-2.png"

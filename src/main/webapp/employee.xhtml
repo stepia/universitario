@@ -20,7 +20,7 @@
 	<f:view locale="#{language.localeCode}" />
 	<div id="container">
 		<div id="header">
-			<ui:include src="/query.xhtml">
+			<ui:include src="/viewquery.xhtml">
 				<ui:param name="title" value="#{msg.employee}" />
 				<ui:param name="bean" value="#{employeeViewBean}" />
 			</ui:include>
@@ -34,7 +34,7 @@
 					rowsPerPageTemplate="5,10,15,25,50,100"
 					emptyMessage="#{msg.norecordsfound}">
 
-					<f:facet name="header">  
+					<f:facet name="header">  .
             #{msg.lemployee} (#{employeeViewBean.length}) 
         </f:facet>
         <p:ajax event="sort"
@@ -43,34 +43,29 @@
 					<p:ajax event="rowSelect"
 						listener="#{employeeViewBean.onRowSelect}"
 						update=":employeeform" />
-					<p:column headerText="ID" sortBy="#{rec.id}" filterBy="#{rec.id}"
-						id="id">  
-            #{rec.id}  
+        			<p:column headerText="#{msg.username}" sortBy="#{rec.username}"
+						filterBy="#{rec.username}" id="username">  
+            #{rec.username}   
         </p:column>
-					<p:column headerText="PersonId" sortBy="#{rec.personid}"
-						filterBy="#{rec.personid}" id="personid">  
-            #{rec.personid}  
+					<p:column headerText="#{msg.lastnameua}" sortBy="#{rec.person.lastnameua}" filterBy="#{rec.person.lastnameua}"
+						id="lastnameua">  
+            #{rec.person.lastnameua}  
         </p:column>
-        			<p:column headerText="UsrName" sortBy="#{rec.usrname}"
-						filterBy="#{rec.usrname}" id="usrname">  
-            #{rec.usrname}  
+					<p:column headerText="#{msg.firstnameua}" sortBy="#{rec.person.firstnameua}"
+						filterBy="#{rec.person.firstnameua}" id="firstnameua">  
+            #{rec.person.firstnameua}  
         </p:column>
-        			<p:column headerText="StateId" sortBy="#{rec.stateid}"
-						filterBy="#{rec.stateid}" id="stateid">  
-            #{rec.stateid}  
+        			<p:column headerText="#{msg.middlenameua}" sortBy="#{rec.person.middlenameua}"
+						filterBy="#{rec.person.middlenameua}" id="middlenameua">  
+            #{rec.person.middlenameua}  
         </p:column>
-        			<p:column headerText="RecordBook" sortBy="#{rec.recordbook}"
-						filterBy="#{rec.recordbook}" id="recordbook">  
-            #{rec.recordbook}  
+        			<p:column headerText="#{msg.enabled}" sortBy="#{rec.enabled}"
+						filterBy="#{rec.enabled}" id="enabled"  
+                filterOptions="#{employeeViewBean.enabledOptions}"  
+                filterMatchMode="exact">  
+            #{rec.enabled}  
         </p:column>
-        			<p:column headerText="Modified" sortBy="#{rec.modified}"
-						filterBy="#{rec.modified}" id="modified">  
-            #{rec.modified}  
-        </p:column>
-        			<p:column headerText="Created" sortBy="#{rec.created}"
-						filterBy="#{rec.created}" id="created">  
-            #{rec.created}  
-        </p:column>
+
 				</p:dataTable>
 			</h:form>
 
