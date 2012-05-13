@@ -5,7 +5,7 @@ import java.util.List;
 import dao.AuthorityDao;
 import entry.Authority;
 
-public class AuthorityManager implements IAuthorityManager {
+public class AuthorityManager implements AuthorityDao {
 
     private AuthorityDao authorityDao;
 

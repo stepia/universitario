@@ -27,14 +27,15 @@ public class Emp2TeamDaoHibernate implements Emp2TeamDao {
         return sessionFactory.getCurrentSession().createCriteria(Emp2Team.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Emp2Team> getEmp2Teams(String sortBy, boolean sortOrder) {
         if (sortOrder) {
             return sessionFactory.getCurrentSession().createCriteria(Emp2Team.class).addOrder(Order.asc(sortBy)).list();
         } else {
-            return sessionFactory.getCurrentSession().createCriteria(Emp2Team.class).addOrder(Order.desc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(Emp2Team.class).addOrder(Order.desc(sortBy))
+                        .list();
         }
 
     }
@@ -62,6 +63,7 @@ public class Emp2TeamDaoHibernate implements Emp2TeamDao {
         sessionFactory.getCurrentSession().merge(empTeam);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public Emp2Team getEmp2Team(Long id) {
         List empTeams = sessionFactory.getCurrentSession().createCriteria(Emp2Team.class)

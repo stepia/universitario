@@ -5,7 +5,7 @@ import java.util.List;
 import dao.Emp2TeamDao;
 import entry.Emp2Team;
 
-public class Emp2TeamManager implements IEmp2TeamManager {
+public class Emp2TeamManager implements Emp2TeamDao {
 
     private Emp2TeamDao empTeamDao;
 

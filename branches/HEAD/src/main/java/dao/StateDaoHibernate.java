@@ -62,6 +62,7 @@ public class StateDaoHibernate implements StateDao {
         sessionFactory.getCurrentSession().merge(state);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public State getState(Long id) {
         List states = sessionFactory.getCurrentSession().createCriteria(State.class)

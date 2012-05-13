@@ -5,7 +5,7 @@ import java.util.List;
 import dao.PositionDao;
 import entry.Position;
 
-public class PositionManager implements IPositionManager {
+public class PositionManager implements PositionDao {
 
     private PositionDao positionDao;
 

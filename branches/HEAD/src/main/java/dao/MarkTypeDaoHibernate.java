@@ -27,14 +27,15 @@ public class MarkTypeDaoHibernate implements MarkTypeDao {
         return sessionFactory.getCurrentSession().createCriteria(MarkType.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<MarkType> getMarkTypes(String sortBy, boolean sortOrder) {
         if (sortOrder) {
             return sessionFactory.getCurrentSession().createCriteria(MarkType.class).addOrder(Order.asc(sortBy)).list();
         } else {
-            return sessionFactory.getCurrentSession().createCriteria(MarkType.class).addOrder(Order.desc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(MarkType.class).addOrder(Order.desc(sortBy))
+                        .list();
         }
 
     }
@@ -62,13 +63,14 @@ public class MarkTypeDaoHibernate implements MarkTypeDao {
         sessionFactory.getCurrentSession().merge(marktype);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public MarkType getMarkType(String name) {
         List marktypes = sessionFactory.getCurrentSession().createCriteria(MarkType.class)
                     .add(Restrictions.eq("name", name)).list();
         MarkType marktype = null;
         if ((marktypes != null) && (marktypes.size() > 0)) {
-        	marktype = (MarkType) marktypes.get(0);
+            marktype = (MarkType) marktypes.get(0);
         }
         return marktype;
     }

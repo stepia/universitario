@@ -5,7 +5,7 @@ import java.util.List;
 import dao.RoleDao;
 import entry.Role;
 
-public class RoleManager implements IRoleManager {
+public class RoleManager implements RoleDao {
 
     private RoleDao roleDao;
 

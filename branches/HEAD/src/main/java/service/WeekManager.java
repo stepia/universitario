@@ -5,7 +5,7 @@ import java.util.List;
 import dao.WeekDao;
 import entry.Week;
 
-public class WeekManager implements IWeekManager {
+public class WeekManager implements WeekDao {
 
     private WeekDao weekDao;
 

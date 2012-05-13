@@ -27,14 +27,16 @@ public class PlanDetailDaoHibernate implements PlanDetailDao {
         return sessionFactory.getCurrentSession().createCriteria(PlanDetail.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<PlanDetail> getPlanDetails(String sortBy, boolean sortOrder) {
         if (sortOrder) {
-            return sessionFactory.getCurrentSession().createCriteria(PlanDetail.class).addOrder(Order.asc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(PlanDetail.class).addOrder(Order.asc(sortBy))
+                        .list();
         } else {
-            return sessionFactory.getCurrentSession().createCriteria(PlanDetail.class).addOrder(Order.desc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(PlanDetail.class).addOrder(Order.desc(sortBy))
+                        .list();
         }
 
     }
@@ -62,13 +64,14 @@ public class PlanDetailDaoHibernate implements PlanDetailDao {
         sessionFactory.getCurrentSession().merge(planDetail);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public PlanDetail getPlanDetail(Long id) {
         List planDetails = sessionFactory.getCurrentSession().createCriteria(PlanDetail.class)
                     .add(Restrictions.eq("id", id)).list();
         PlanDetail planDetail = null;
         if ((planDetails != null) && (planDetails.size() > 0)) {
-        	planDetail = (PlanDetail) planDetails.get(0);
+            planDetail = (PlanDetail) planDetails.get(0);
         }
         return planDetail;
     }

@@ -27,6 +27,7 @@ public class PropertiesResourceBundle extends ResourceBundle {
         return parent.getObject(key);
     }
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
     public Enumeration getKeys() {
         return parent.getKeys();

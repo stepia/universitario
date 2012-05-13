@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="entry.Emp2TeamITeam" table="emp2team">
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="recordbook" column="recordbook"/>
+        <property name="modified" column="modified"/>
+        <property name="created" column="created"/>
+        
+        <many-to-one name="person" class="entry.Person" column="personid" not-null="true" cascade="all" fetch="join" />
+        <many-to-one name="position" class="entry.Position" column="positionid" not-null="true" cascade="all" fetch="join" />
+        <many-to-one name="occupation" class="entry.Occupation" column="occupationid" not-null="true" cascade="all" fetch="join" />
+        <many-to-one name="state" class="entry.State" column="stateid" not-null="true" cascade="all" fetch="join" />
+    </class>
+</hibernate-mapping>

@@ -27,7 +27,7 @@ public class MarkDaoHibernate implements MarkDao {
         return sessionFactory.getCurrentSession().createCriteria(Mark.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Mark> getMarks(String sortBy, boolean sortOrder) {
@@ -62,13 +62,14 @@ public class MarkDaoHibernate implements MarkDao {
         sessionFactory.getCurrentSession().merge(mark);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public Mark getMark(Long id) {
         List marks = sessionFactory.getCurrentSession().createCriteria(Mark.class)
                     .add(Restrictions.eq("id", id)).list();
         Mark mark = null;
         if ((marks != null) && (marks.size() > 0)) {
-        	mark = (Mark) marks.get(0);
+            mark = (Mark) marks.get(0);
         }
         return mark;
     }

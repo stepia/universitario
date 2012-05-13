@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.IStateManager;
+import dao.StateDao;
 import entry.State;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.State;
 public class StateViewBean {
 
     @ManagedProperty(value = "#{stateManager}")
-    private IStateManager stateManager;
+    private StateDao stateManager;
     private State selectedState;
     private List<State> states = new ArrayList<State>();
     private boolean editible;
@@ -38,11 +38,11 @@ public class StateViewBean {
         this.length = length;
     }
 
-    public IStateManager getStateManager() {
+    public StateDao getStateManager() {
         return stateManager;
     }
 
-    public void setStateManager(IStateManager stateManager) {
+    public void setStateManager(StateDao stateManager) {
         this.stateManager = stateManager;
     }
 

@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.IDisciplineManager;
+import dao.DisciplineDao;
 import entry.Discipline;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.Discipline;
 public class DisciplineViewBean {
 
     @ManagedProperty(value = "#{disciplineManager}")
-    private IDisciplineManager disciplineManager;
+    private DisciplineDao disciplineManager;
     private Discipline selectedDiscipline;
     private List<Discipline> disciplines = new ArrayList<Discipline>();
     private boolean editible;
@@ -38,19 +38,19 @@ public class DisciplineViewBean {
         this.length = length;
     }
 
-    public IDisciplineManager getDisciplineManager() {
+    public DisciplineDao getDisciplineManager() {
         return disciplineManager;
     }
 
-    public void setDisciplineManager(IDisciplineManager disciplineManager) {
+    public void setDisciplineManager(DisciplineDao disciplineManager) {
         this.disciplineManager = disciplineManager;
     }
 
     public List<Discipline> getDisciplines() {
-    	if (sortBy == null) {
-    		disciplines = getDisciplineManager().getDisciplines();
+        if (sortBy == null) {
+            disciplines = getDisciplineManager().getDisciplines();
         } else {
-        	disciplines = getDisciplineManager().getDisciplines(sortBy, sortOrder);
+            disciplines = getDisciplineManager().getDisciplines(sortBy, sortOrder);
         }
         this.length = disciplines.size();
         return disciplines;
@@ -63,7 +63,7 @@ public class DisciplineViewBean {
     public void setSelectedDiscipline(Discipline selectedDiscipline) {
         this.selectedDiscipline = selectedDiscipline;
     }
-    
+
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("disciplineDetail.xhtml");
         setEditible(true);
@@ -73,7 +73,7 @@ public class DisciplineViewBean {
         setSelectedDiscipline(null);
         setEditible(false);
     }
-    
+
     public boolean isEditible() {
         return editible;
     }
@@ -87,13 +87,13 @@ public class DisciplineViewBean {
         switch (act)
             {
             case DELETE:
-            	getDisciplineManager().deleteDiscipline(getSelectedDiscipline());
+                getDisciplineManager().deleteDiscipline(getSelectedDiscipline());
                 break;
             case CREATE:
                 setSelectedDiscipline(new Discipline());
                 break;
             case SAVE:
-            	if (getSelectedDiscipline().getCreated() != null) {
+                if (getSelectedDiscipline().getCreated() != null) {
                     getDisciplineManager().saveOrUpdate(getSelectedDiscipline());
                 } else {
                     getDisciplineManager().saveDiscipline(getSelectedDiscipline());
@@ -102,7 +102,7 @@ public class DisciplineViewBean {
             }
         return action;
     }
-    
+
     public void caseListSortListner(SortEvent sortEvent) {
         setSortBy(sortEvent.getSortColumn().getId());
         if (sortEvent.isAscending()) {

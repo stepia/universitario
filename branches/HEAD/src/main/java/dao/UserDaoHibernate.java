@@ -62,6 +62,7 @@ public class UserDaoHibernate implements UserDao {
         sessionFactory.getCurrentSession().merge(user);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public User getUser(String username) {
         List users = sessionFactory.getCurrentSession().createCriteria(User.class)

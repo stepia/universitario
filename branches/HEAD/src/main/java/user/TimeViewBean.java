@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.ITimeManager;
+import dao.TimeDao;
 import entry.Time;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.Time;
 public class TimeViewBean {
 
     @ManagedProperty(value = "#{timeManager}")
-    private ITimeManager timeManager;
+    private TimeDao timeManager;
     private Time selectedTime;
     private List<Time> times = new ArrayList<Time>();
     private boolean editible;
@@ -38,19 +38,19 @@ public class TimeViewBean {
         this.length = length;
     }
 
-    public ITimeManager getTimeManager() {
+    public TimeDao getTimeManager() {
         return timeManager;
     }
 
-    public void setTimeManager(ITimeManager timeManager) {
+    public void setTimeManager(TimeDao timeManager) {
         this.timeManager = timeManager;
     }
 
     public List<Time> getTimes() {
-    	if (sortBy == null) {
-    		times = getTimeManager().getTimes();
+        if (sortBy == null) {
+            times = getTimeManager().getTimes();
         } else {
-        	times = getTimeManager().getTimes(sortBy, sortOrder);
+            times = getTimeManager().getTimes(sortBy, sortOrder);
         }
         this.length = times.size();
         return times;
@@ -87,13 +87,13 @@ public class TimeViewBean {
         switch (act)
             {
             case DELETE:
-            	getTimeManager().deleteTime(getSelectedTime());
+                getTimeManager().deleteTime(getSelectedTime());
                 break;
             case CREATE:
                 setSelectedTime(new Time());
                 break;
             case SAVE:
-            	if (getSelectedTime().getCreated() != null) {
+                if (getSelectedTime().getCreated() != null) {
                     getTimeManager().saveOrUpdate(getSelectedTime());
                 } else {
                     getTimeManager().saveTime(getSelectedTime());
@@ -102,7 +102,7 @@ public class TimeViewBean {
             }
         return action;
     }
-    
+
     public void caseListSortListner(SortEvent sortEvent) {
         setSortBy(sortEvent.getSortColumn().getId());
         if (sortEvent.isAscending()) {

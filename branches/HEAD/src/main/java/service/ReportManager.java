@@ -5,7 +5,7 @@ import java.util.List;
 import dao.ReportDao;
 import entry.Report;
 
-public class ReportManager implements IReportManager {
+public class ReportManager implements ReportDao {
 
     private ReportDao reportDao;
 

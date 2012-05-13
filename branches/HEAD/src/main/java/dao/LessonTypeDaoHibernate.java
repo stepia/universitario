@@ -27,14 +27,16 @@ public class LessonTypeDaoHibernate implements LessonTypeDao {
         return sessionFactory.getCurrentSession().createCriteria(LessonType.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<LessonType> getLessonTypes(String sortBy, boolean sortOrder) {
         if (sortOrder) {
-            return sessionFactory.getCurrentSession().createCriteria(LessonType.class).addOrder(Order.asc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(LessonType.class).addOrder(Order.asc(sortBy))
+                        .list();
         } else {
-            return sessionFactory.getCurrentSession().createCriteria(LessonType.class).addOrder(Order.desc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(LessonType.class).addOrder(Order.desc(sortBy))
+                        .list();
         }
 
     }
@@ -62,13 +64,14 @@ public class LessonTypeDaoHibernate implements LessonTypeDao {
         sessionFactory.getCurrentSession().merge(lessonType);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public LessonType getLessonType(Long id) {
         List lessonTypes = sessionFactory.getCurrentSession().createCriteria(LessonType.class)
                     .add(Restrictions.eq("id", id)).list();
         LessonType lessonType = null;
         if ((lessonTypes != null) && (lessonTypes.size() > 0)) {
-        	lessonType = (LessonType) lessonTypes.get(0);
+            lessonType = (LessonType) lessonTypes.get(0);
         }
         return lessonType;
     }

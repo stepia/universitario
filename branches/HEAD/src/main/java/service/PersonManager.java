@@ -5,7 +5,7 @@ import java.util.List;
 import dao.PersonDao;
 import entry.Person;
 
-public class PersonManager implements IPersonManager {
+public class PersonManager implements PersonDao {
 
     private PersonDao personDao;
 

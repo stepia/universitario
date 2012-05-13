@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+<h:body>
+	<ui:include src="/header.xhtml">
+		<ui:param name="title" value="#{title}" />
+	</ui:include>
+	<h:form>
+		<p:growl id="growl" />
+		<table style="height: 100%; width: 100%">
+			<tr>
+				<f:ajax>
+					<td style="padding: 2px;"><h:commandButton id="btnRefresh"
+							value="#{msg.refresh}" action="#{bean.doAction('refresh')}"
+							styleClass="actionButton" update="growl" />
+					</td>
+					<td style="padding: 2px;"><h:commandButton id="btnCancel"
+							value="#{msg.cancel}" action="#{bean.doAction('cancel')}"
+							styleClass="actionButton" update="growl" /></td>
+				</f:ajax>
+				<td width="97%"></td>
+			</tr>
+		</table>
+	</h:form>
+
+</h:body>
+</h:html>

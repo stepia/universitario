@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.ILessonTypeManager;
+import dao.LessonTypeDao;
 import entry.LessonType;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.LessonType;
 public class LessonTypeViewBean {
 
     @ManagedProperty(value = "#{lessonTypeManager}")
-    private ILessonTypeManager lessonTypeManager;
+    private LessonTypeDao lessonTypeManager;
     private LessonType selectedLessonType;
     private List<LessonType> lessonTypes = new ArrayList<LessonType>();
     private boolean editible;
@@ -38,19 +38,19 @@ public class LessonTypeViewBean {
         this.length = length;
     }
 
-    public ILessonTypeManager getLessonTypeManager() {
+    public LessonTypeDao getLessonTypeManager() {
         return lessonTypeManager;
     }
 
-    public void setLessonTypeManager(ILessonTypeManager lessonTypeManager) {
+    public void setLessonTypeManager(LessonTypeDao lessonTypeManager) {
         this.lessonTypeManager = lessonTypeManager;
     }
 
     public List<LessonType> getLessonTypes() {
-    	if (sortBy == null) {
-    		lessonTypes = getLessonTypeManager().getLessonTypes();
+        if (sortBy == null) {
+            lessonTypes = getLessonTypeManager().getLessonTypes();
         } else {
-        	lessonTypes = getLessonTypeManager().getLessonTypes(sortBy, sortOrder);
+            lessonTypes = getLessonTypeManager().getLessonTypes(sortBy, sortOrder);
         }
         this.length = lessonTypes.size();
         return lessonTypes;
@@ -87,13 +87,13 @@ public class LessonTypeViewBean {
         switch (act)
             {
             case DELETE:
-            	getLessonTypeManager().deleteLessonType(getSelectedLessonType());
+                getLessonTypeManager().deleteLessonType(getSelectedLessonType());
                 break;
             case CREATE:
                 setSelectedLessonType(new LessonType());
                 break;
             case SAVE:
-            	if (getSelectedLessonType().getCreated() != null) {
+                if (getSelectedLessonType().getCreated() != null) {
                     getLessonTypeManager().saveOrUpdate(getSelectedLessonType());
                 } else {
                     getLessonTypeManager().saveLessonType(getSelectedLessonType());
@@ -102,7 +102,7 @@ public class LessonTypeViewBean {
             }
         return action;
     }
-    
+
     public void caseListSortListner(SortEvent sortEvent) {
         setSortBy(sortEvent.getSortColumn().getId());
         if (sortEvent.isAscending()) {

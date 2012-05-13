@@ -5,7 +5,7 @@ import java.util.List;
 import dao.TimeDao;
 import entry.Time;
 
-public class TimeManager implements ITimeManager {
+public class TimeManager implements TimeDao {
 
     private TimeDao timeDao;
 

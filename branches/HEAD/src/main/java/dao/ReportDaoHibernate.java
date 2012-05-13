@@ -27,7 +27,7 @@ public class ReportDaoHibernate implements ReportDao {
         return sessionFactory.getCurrentSession().createCriteria(Report.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Report> getReports(String sortBy, boolean sortOrder) {
@@ -62,13 +62,14 @@ public class ReportDaoHibernate implements ReportDao {
         sessionFactory.getCurrentSession().merge(report);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public Report getReport(Long id) {
         List reports = sessionFactory.getCurrentSession().createCriteria(Report.class)
                     .add(Restrictions.eq("id", id)).list();
         Report report = null;
         if ((reports != null) && (reports.size() > 0)) {
-        	report = (Report) reports.get(0);
+            report = (Report) reports.get(0);
         }
         return report;
     }

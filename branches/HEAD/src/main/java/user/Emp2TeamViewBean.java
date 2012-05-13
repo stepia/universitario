@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.IEmp2TeamManager;
+import dao.Emp2TeamDao;
 import entry.Emp2Team;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.Emp2Team;
 public class Emp2TeamViewBean {
 
     @ManagedProperty(value = "#{emp2TeamManager}")
-    private IEmp2TeamManager emp2TeamManager;
+    private Emp2TeamDao emp2TeamManager;
     private Emp2Team selectedEmp2Team;
     private List<Emp2Team> emp2Teams = new ArrayList<Emp2Team>();
     private boolean editible;
@@ -38,19 +38,19 @@ public class Emp2TeamViewBean {
         this.length = length;
     }
 
-    public IEmp2TeamManager getEmp2TeamManager() {
+    public Emp2TeamDao getEmp2TeamManager() {
         return emp2TeamManager;
     }
 
-    public void setEmp2TeamManager(IEmp2TeamManager emp2TeamManager) {
+    public void setEmp2TeamManager(Emp2TeamDao emp2TeamManager) {
         this.emp2TeamManager = emp2TeamManager;
     }
 
     public List<Emp2Team> getEmp2Teams() {
-    	if (sortBy == null) {
-    		emp2Teams = getEmp2TeamManager().getEmp2Teams();
+        if (sortBy == null) {
+            emp2Teams = getEmp2TeamManager().getEmp2Teams();
         } else {
-        	emp2Teams = getEmp2TeamManager().getEmp2Teams(sortBy, sortOrder);
+            emp2Teams = getEmp2TeamManager().getEmp2Teams(sortBy, sortOrder);
         }
         this.length = emp2Teams.size();
         return emp2Teams;
@@ -87,13 +87,13 @@ public class Emp2TeamViewBean {
         switch (act)
             {
             case DELETE:
-            	getEmp2TeamManager().deleteEmp2Team(getSelectedEmp2Team());
+                getEmp2TeamManager().deleteEmp2Team(getSelectedEmp2Team());
                 break;
             case CREATE:
                 setSelectedEmp2Team(new Emp2Team());
                 break;
             case SAVE:
-            	if (getSelectedEmp2Team().getCreated() != null) {
+                if (getSelectedEmp2Team().getCreated() != null) {
                     getEmp2TeamManager().saveOrUpdate(getSelectedEmp2Team());
                 } else {
                     getEmp2TeamManager().saveEmp2Team(getSelectedEmp2Team());
@@ -102,7 +102,7 @@ public class Emp2TeamViewBean {
             }
         return action;
     }
-    
+
     public void caseListSortListner(SortEvent sortEvent) {
         setSortBy(sortEvent.getSortColumn().getId());
         if (sortEvent.isAscending()) {

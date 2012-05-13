@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.IPersonManager;
+import dao.PersonDao;
 import entry.Person;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.Person;
 public class PersonViewBean {
 
     @ManagedProperty(value = "#{personManager}")
-    private IPersonManager personManager;
+    private PersonDao personManager;
     private Person selectedPerson;
     private List<Person> persons = new ArrayList<Person>();
     private boolean editible;
@@ -38,19 +38,19 @@ public class PersonViewBean {
         this.length = length;
     }
 
-    public IPersonManager getPersonManager() {
+    public PersonDao getPersonManager() {
         return personManager;
     }
 
-    public void setPersonManager(IPersonManager personManager) {
+    public void setPersonManager(PersonDao personManager) {
         this.personManager = personManager;
     }
 
     public List<Person> getPersons() {
-    	if (sortBy == null) {
-    		persons = getPersonManager().getPersons();
+        if (sortBy == null) {
+            persons = getPersonManager().getPersons();
         } else {
-        	persons = getPersonManager().getPersons(sortBy, sortOrder);
+            persons = getPersonManager().getPersons(sortBy, sortOrder);
         }
         this.length = persons.size();
         return persons;
@@ -87,13 +87,13 @@ public class PersonViewBean {
         switch (act)
             {
             case DELETE:
-            	getPersonManager().deletePerson(getSelectedPerson());
+                getPersonManager().deletePerson(getSelectedPerson());
                 break;
             case CREATE:
                 setSelectedPerson(new Person());
                 break;
             case SAVE:
-            	if (getSelectedPerson().getCreated() != null) {
+                if (getSelectedPerson().getCreated() != null) {
                     getPersonManager().saveOrUpdate(getSelectedPerson());
                 } else {
                     getPersonManager().savePerson(getSelectedPerson());
@@ -102,7 +102,7 @@ public class PersonViewBean {
             }
         return action;
     }
-    
+
     public void caseListSortListner(SortEvent sortEvent) {
         setSortBy(sortEvent.getSortColumn().getId());
         if (sortEvent.isAscending()) {

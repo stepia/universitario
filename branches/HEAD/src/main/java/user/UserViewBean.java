@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.IUserManager;
+import dao.UserDao;
 import entry.User;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.User;
 public class UserViewBean {
 
     @ManagedProperty(value = "#{userManager}")
-    private IUserManager userManager;
+    private UserDao userManager;
     private User selectedUser;
     private List<User> users = new ArrayList<User>();
     private boolean editible;
@@ -38,11 +38,11 @@ public class UserViewBean {
         this.length = length;
     }
 
-    public IUserManager getUserManager() {
+    public UserDao getUserManager() {
         return userManager;
     }
 
-    public void setUserManager(IUserManager userManager) {
+    public void setUserManager(UserDao userManager) {
         this.userManager = userManager;
     }
 

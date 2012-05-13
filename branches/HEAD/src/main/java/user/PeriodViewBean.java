@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.IPeriodManager;
+import dao.PeriodDao;
 import entry.Period;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.Period;
 public class PeriodViewBean {
 
     @ManagedProperty(value = "#{periodManager}")
-    private IPeriodManager periodManager;
+    private PeriodDao periodManager;
     private Period selectedPeriod;
     private List<Period> periods = new ArrayList<Period>();
     private boolean editible;
@@ -38,19 +38,19 @@ public class PeriodViewBean {
         this.length = length;
     }
 
-    public IPeriodManager getPeriodManager() {
+    public PeriodDao getPeriodManager() {
         return periodManager;
     }
 
-    public void setPeriodManager(IPeriodManager periodManager) {
+    public void setPeriodManager(PeriodDao periodManager) {
         this.periodManager = periodManager;
     }
 
     public List<Period> getPeriods() {
-    	if (sortBy == null) {
-    		periods = getPeriodManager().getPeriods();
+        if (sortBy == null) {
+            periods = getPeriodManager().getPeriods();
         } else {
-        	periods = getPeriodManager().getPeriods(sortBy, sortOrder);
+            periods = getPeriodManager().getPeriods(sortBy, sortOrder);
         }
         this.length = periods.size();
         return periods;
@@ -87,13 +87,13 @@ public class PeriodViewBean {
         switch (act)
             {
             case DELETE:
-            	getPeriodManager().deletePeriod(getSelectedPeriod());
+                getPeriodManager().deletePeriod(getSelectedPeriod());
                 break;
             case CREATE:
                 setSelectedPeriod(new Period());
                 break;
             case SAVE:
-            	if (getSelectedPeriod().getCreated() != null) {
+                if (getSelectedPeriod().getCreated() != null) {
                     getPeriodManager().saveOrUpdate(getSelectedPeriod());
                 } else {
                     getPeriodManager().savePeriod(getSelectedPeriod());
@@ -102,7 +102,7 @@ public class PeriodViewBean {
             }
         return action;
     }
-    
+
     public void caseListSortListner(SortEvent sortEvent) {
         setSortBy(sortEvent.getSortColumn().getId());
         if (sortEvent.isAscending()) {

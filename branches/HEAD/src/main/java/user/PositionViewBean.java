@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.IPositionManager;
+import dao.PositionDao;
 import entry.Position;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.Position;
 public class PositionViewBean {
 
     @ManagedProperty(value = "#{positionManager}")
-    private IPositionManager positionManager;
+    private PositionDao positionManager;
     private Position selectedPosition;
     private List<Position> positions = new ArrayList<Position>();
     private boolean editible;
@@ -38,19 +38,19 @@ public class PositionViewBean {
         this.length = length;
     }
 
-    public IPositionManager getPositionManager() {
+    public PositionDao getPositionManager() {
         return positionManager;
     }
 
-    public void setPositionManager(IPositionManager positionManager) {
+    public void setPositionManager(PositionDao positionManager) {
         this.positionManager = positionManager;
     }
 
     public List<Position> getPositions() {
-    	if (sortBy == null) {
-    		positions = getPositionManager().getPositions();
+        if (sortBy == null) {
+            positions = getPositionManager().getPositions();
         } else {
-        	positions = getPositionManager().getPositions(sortBy, sortOrder);
+            positions = getPositionManager().getPositions(sortBy, sortOrder);
         }
         this.length = positions.size();
         return positions;
@@ -87,13 +87,13 @@ public class PositionViewBean {
         switch (act)
             {
             case DELETE:
-            	getPositionManager().deletePosition(getSelectedPosition());
+                getPositionManager().deletePosition(getSelectedPosition());
                 break;
             case CREATE:
                 setSelectedPosition(new Position());
                 break;
             case SAVE:
-            	if (getSelectedPosition().getCreated() != null) {
+                if (getSelectedPosition().getCreated() != null) {
                     getPositionManager().saveOrUpdate(getSelectedPosition());
                 } else {
                     getPositionManager().savePosition(getSelectedPosition());
@@ -102,7 +102,7 @@ public class PositionViewBean {
             }
         return action;
     }
-    
+
     public void caseListSortListner(SortEvent sortEvent) {
         setSortBy(sortEvent.getSortColumn().getId());
         if (sortEvent.isAscending()) {

@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.IAuthorityManager;
+import dao.AuthorityDao;
 import entry.Authority;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.Authority;
 public class AuthorityViewBean {
 
     @ManagedProperty(value = "#{authorityManager}")
-    private IAuthorityManager authorityManager;
+    private AuthorityDao authorityManager;
     private Authority selectedAuthority;
     private List<Authority> authorities = new ArrayList<Authority>();
     private boolean editible;
@@ -38,19 +38,19 @@ public class AuthorityViewBean {
         this.length = length;
     }
 
-    public IAuthorityManager getAuthorityManager() {
+    public AuthorityDao getAuthorityManager() {
         return authorityManager;
     }
 
-    public void setAuthorityManager(IAuthorityManager authorityManager) {
+    public void setAuthorityManager(AuthorityDao authorityManager) {
         this.authorityManager = authorityManager;
     }
 
     public List<Authority> getAuthorities() {
-    	if (sortBy == null) {
-    		authorities = getAuthorityManager().getAuthorities();
+        if (sortBy == null) {
+            authorities = getAuthorityManager().getAuthorities();
         } else {
-        	authorities = getAuthorityManager().getAuthorities(sortBy, sortOrder);
+            authorities = getAuthorityManager().getAuthorities(sortBy, sortOrder);
         }
         this.length = authorities.size();
         return authorities;
@@ -63,7 +63,7 @@ public class AuthorityViewBean {
     public void setSelectedAuthority(Authority selectedAuthority) {
         this.selectedAuthority = selectedAuthority;
     }
-    
+
     public void onRowSelect(SelectEvent event) throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("authorityDetail.xhtml");
         setEditible(true);
@@ -73,7 +73,7 @@ public class AuthorityViewBean {
         setSelectedAuthority(null);
         setEditible(false);
     }
-    
+
     public boolean isEditible() {
         return editible;
     }
@@ -87,13 +87,13 @@ public class AuthorityViewBean {
         switch (act)
             {
             case DELETE:
-            	getAuthorityManager().deleteAuthority(getSelectedAuthority());
+                getAuthorityManager().deleteAuthority(getSelectedAuthority());
                 break;
             case CREATE:
                 setSelectedAuthority(new Authority());
                 break;
             case SAVE:
-            	if (getSelectedAuthority().getCreated() != null) {
+                if (getSelectedAuthority().getCreated() != null) {
                     getAuthorityManager().saveOrUpdate(getSelectedAuthority());
                 } else {
                     getAuthorityManager().saveAuthority(getSelectedAuthority());
@@ -102,7 +102,7 @@ public class AuthorityViewBean {
             }
         return action;
     }
-    
+
     public void caseListSortListner(SortEvent sortEvent) {
         setSortBy(sortEvent.getSortColumn().getId());
         if (sortEvent.isAscending()) {

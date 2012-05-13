@@ -27,14 +27,15 @@ public class PositionDaoHibernate implements PositionDao {
         return sessionFactory.getCurrentSession().createCriteria(Position.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Position> getPositions(String sortBy, boolean sortOrder) {
         if (sortOrder) {
             return sessionFactory.getCurrentSession().createCriteria(Position.class).addOrder(Order.asc(sortBy)).list();
         } else {
-            return sessionFactory.getCurrentSession().createCriteria(Position.class).addOrder(Order.desc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(Position.class).addOrder(Order.desc(sortBy))
+                        .list();
         }
 
     }
@@ -62,13 +63,14 @@ public class PositionDaoHibernate implements PositionDao {
         sessionFactory.getCurrentSession().merge(position);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public Position getPosition(Long id) {
         List positions = sessionFactory.getCurrentSession().createCriteria(Position.class)
                     .add(Restrictions.eq("id", id)).list();
         Position position = null;
         if ((positions != null) && (positions.size() > 0)) {
-        	position = (Position) positions.get(0);
+            position = (Position) positions.get(0);
         }
         return position;
     }

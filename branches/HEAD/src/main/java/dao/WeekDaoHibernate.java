@@ -27,7 +27,7 @@ public class WeekDaoHibernate implements WeekDao {
         return sessionFactory.getCurrentSession().createCriteria(Week.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Week> getWeeks(String sortBy, boolean sortOrder) {
@@ -62,13 +62,14 @@ public class WeekDaoHibernate implements WeekDao {
         sessionFactory.getCurrentSession().merge(week);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public Week getWeek(Long id) {
         List weeks = sessionFactory.getCurrentSession().createCriteria(Week.class)
                     .add(Restrictions.eq("id", id)).list();
         Week week = null;
         if ((weeks != null) && (weeks.size() > 0)) {
-        	week = (Week) weeks.get(0);
+            week = (Week) weeks.get(0);
         }
         return week;
     }

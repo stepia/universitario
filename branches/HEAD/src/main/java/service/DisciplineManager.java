@@ -5,7 +5,7 @@ import java.util.List;
 import dao.DisciplineDao;
 import entry.Discipline;
 
-public class DisciplineManager implements IDisciplineManager {
+public class DisciplineManager implements DisciplineDao {
 
     private DisciplineDao disciplineDao;
 

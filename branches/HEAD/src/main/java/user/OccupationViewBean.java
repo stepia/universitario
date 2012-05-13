@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.IOccupationManager;
+import dao.OccupationDao;
 import entry.Occupation;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.Occupation;
 public class OccupationViewBean {
 
     @ManagedProperty(value = "#{occupationManager}")
-    private IOccupationManager occupationManager;
+    private OccupationDao occupationManager;
     private Occupation selectedOccupation;
     private List<Occupation> occupations = new ArrayList<Occupation>();
     private boolean editible;
@@ -38,19 +38,19 @@ public class OccupationViewBean {
         this.length = length;
     }
 
-    public IOccupationManager getOccupationManager() {
+    public OccupationDao getOccupationManager() {
         return occupationManager;
     }
 
-    public void setOccupationManager(IOccupationManager occupationManager) {
+    public void setOccupationManager(OccupationDao occupationManager) {
         this.occupationManager = occupationManager;
     }
 
     public List<Occupation> getOccupations() {
-    	if (sortBy == null) {
-    		occupations = getOccupationManager().getOccupations();
+        if (sortBy == null) {
+            occupations = getOccupationManager().getOccupations();
         } else {
-        	occupations = getOccupationManager().getOccupations(sortBy, sortOrder);
+            occupations = getOccupationManager().getOccupations(sortBy, sortOrder);
         }
         this.length = occupations.size();
         return occupations;
@@ -87,13 +87,13 @@ public class OccupationViewBean {
         switch (act)
             {
             case DELETE:
-            	getOccupationManager().deleteOccupation(getSelectedOccupation());
+                getOccupationManager().deleteOccupation(getSelectedOccupation());
                 break;
             case CREATE:
                 setSelectedOccupation(new Occupation());
                 break;
             case SAVE:
-            	if (getSelectedOccupation().getCreated() != null) {
+                if (getSelectedOccupation().getCreated() != null) {
                     getOccupationManager().saveOrUpdate(getSelectedOccupation());
                 } else {
                     getOccupationManager().saveOccupation(getSelectedOccupation());
@@ -102,7 +102,7 @@ public class OccupationViewBean {
             }
         return action;
     }
-    
+
     public void caseListSortListner(SortEvent sortEvent) {
         setSortBy(sortEvent.getSortColumn().getId());
         if (sortEvent.isAscending()) {

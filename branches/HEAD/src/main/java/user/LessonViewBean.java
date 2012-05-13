@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.ILessonManager;
+import dao.LessonDao;
 import entry.Lesson;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.Lesson;
 public class LessonViewBean {
 
     @ManagedProperty(value = "#{lessonManager}")
-    private ILessonManager lessonManager;
+    private LessonDao lessonManager;
     private Lesson selectedLesson;
     private List<Lesson> lessons = new ArrayList<Lesson>();
     private boolean editible;
@@ -38,19 +38,19 @@ public class LessonViewBean {
         this.length = length;
     }
 
-    public ILessonManager getLessonManager() {
+    public LessonDao getLessonManager() {
         return lessonManager;
     }
 
-    public void setLessonManager(ILessonManager lessonManager) {
+    public void setLessonManager(LessonDao lessonManager) {
         this.lessonManager = lessonManager;
     }
 
     public List<Lesson> getLessons() {
-    	if (sortBy == null) {
-    		lessons = getLessonManager().getLessons();
+        if (sortBy == null) {
+            lessons = getLessonManager().getLessons();
         } else {
-        	lessons = getLessonManager().getLessons(sortBy, sortOrder);
+            lessons = getLessonManager().getLessons(sortBy, sortOrder);
         }
         this.length = lessons.size();
         return lessons;
@@ -87,13 +87,13 @@ public class LessonViewBean {
         switch (act)
             {
             case DELETE:
-            	getLessonManager().deleteLesson(getSelectedLesson());
+                getLessonManager().deleteLesson(getSelectedLesson());
                 break;
             case CREATE:
                 setSelectedLesson(new Lesson());
                 break;
             case SAVE:
-            	if (getSelectedLesson().getCreated() != null) {
+                if (getSelectedLesson().getCreated() != null) {
                     getLessonManager().saveOrUpdate(getSelectedLesson());
                 } else {
                     getLessonManager().saveLesson(getSelectedLesson());
@@ -102,7 +102,7 @@ public class LessonViewBean {
             }
         return action;
     }
-    
+
     public void caseListSortListner(SortEvent sortEvent) {
         setSortBy(sortEvent.getSortColumn().getId());
         if (sortEvent.isAscending()) {

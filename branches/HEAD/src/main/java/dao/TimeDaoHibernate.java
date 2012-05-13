@@ -27,7 +27,7 @@ public class TimeDaoHibernate implements TimeDao {
         return sessionFactory.getCurrentSession().createCriteria(Time.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Time> getTimes(String sortBy, boolean sortOrder) {
@@ -62,13 +62,14 @@ public class TimeDaoHibernate implements TimeDao {
         sessionFactory.getCurrentSession().merge(time);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public Time getTime(Long id) {
         List times = sessionFactory.getCurrentSession().createCriteria(Time.class)
                     .add(Restrictions.eq("id", id)).list();
         Time time = null;
         if ((times != null) && (times.size() > 0)) {
-        	time = (Time) times.get(0);
+            time = (Time) times.get(0);
         }
         return time;
     }

@@ -7,7 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
-import service.ITeamManager;
+import dao.TeamDao;
 import entry.Team;
 
 @ManagedBean
@@ -17,7 +17,7 @@ public class ChairViewBean {
     @ManagedProperty(value = "#{chair}")
     private Team team;
     @ManagedProperty(value = "#{teamManager}")
-    private ITeamManager teamManager;
+    private TeamDao teamManager;
     private Team selectedTeam;
     private Team[] selectedTeams;
     private List<Team> teams = new ArrayList<Team>();
@@ -40,11 +40,11 @@ public class ChairViewBean {
         this.selectedTeams = selectedTeams;
     }
 
-    public ITeamManager getTeamManager() {
+    public TeamDao getTeamManager() {
         return teamManager;
     }
 
-    public void setTeamManager(ITeamManager teamManager) {
+    public void setTeamManager(TeamDao teamManager) {
         this.teamManager = teamManager;
     }
 

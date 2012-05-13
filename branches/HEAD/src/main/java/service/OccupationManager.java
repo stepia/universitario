@@ -5,7 +5,7 @@ import java.util.List;
 import dao.OccupationDao;
 import entry.Occupation;
 
-public class OccupationManager implements IOccupationManager {
+public class OccupationManager implements OccupationDao {
 
     private OccupationDao occupationDao;
 

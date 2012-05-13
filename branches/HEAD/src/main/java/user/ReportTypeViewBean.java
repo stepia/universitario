@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.IReportTypeManager;
+import dao.ReportTypeDao;
 import entry.ReportType;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.ReportType;
 public class ReportTypeViewBean {
 
     @ManagedProperty(value = "#{reportTypeManager}")
-    private IReportTypeManager reportTypeManager;
+    private ReportTypeDao reportTypeManager;
     private ReportType selectedReportType;
     private List<ReportType> reportTypes = new ArrayList<ReportType>();
     private boolean editible;
@@ -38,19 +38,19 @@ public class ReportTypeViewBean {
         this.length = length;
     }
 
-    public IReportTypeManager getReportTypeManager() {
+    public ReportTypeDao getReportTypeManager() {
         return reportTypeManager;
     }
 
-    public void setReportTypeManager(IReportTypeManager reportTypeManager) {
+    public void setReportTypeManager(ReportTypeDao reportTypeManager) {
         this.reportTypeManager = reportTypeManager;
     }
 
     public List<ReportType> getReportTypes() {
-    	if (sortBy == null) {
-    		reportTypes = getReportTypeManager().getReportTypes();
+        if (sortBy == null) {
+            reportTypes = getReportTypeManager().getReportTypes();
         } else {
-        	reportTypes = getReportTypeManager().getReportTypes(sortBy, sortOrder);
+            reportTypes = getReportTypeManager().getReportTypes(sortBy, sortOrder);
         }
         this.length = reportTypes.size();
         return reportTypes;
@@ -87,13 +87,13 @@ public class ReportTypeViewBean {
         switch (act)
             {
             case DELETE:
-            	getReportTypeManager().deleteReportType(getSelectedReportType());
+                getReportTypeManager().deleteReportType(getSelectedReportType());
                 break;
             case CREATE:
                 setSelectedReportType(new ReportType());
                 break;
             case SAVE:
-            	if (getSelectedReportType().getCreated() != null) {
+                if (getSelectedReportType().getCreated() != null) {
                     getReportTypeManager().saveOrUpdate(getSelectedReportType());
                 } else {
                     getReportTypeManager().saveReportType(getSelectedReportType());
@@ -102,7 +102,7 @@ public class ReportTypeViewBean {
             }
         return action;
     }
-    
+
     public void caseListSortListner(SortEvent sortEvent) {
         setSortBy(sortEvent.getSortColumn().getId());
         if (sortEvent.isAscending()) {

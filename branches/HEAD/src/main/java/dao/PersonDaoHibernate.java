@@ -27,7 +27,7 @@ public class PersonDaoHibernate implements PersonDao {
         return sessionFactory.getCurrentSession().createCriteria(Person.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Person> getPersons(String sortBy, boolean sortOrder) {
@@ -62,6 +62,7 @@ public class PersonDaoHibernate implements PersonDao {
         sessionFactory.getCurrentSession().merge(person);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public Person getPerson(Long id) {
         List persons = sessionFactory.getCurrentSession().createCriteria(Person.class)
