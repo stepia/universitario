@@ -54,7 +54,7 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>employee</from-outcome>
-            <to-view-id>/userIPerson.xhtml</to-view-id>
+            <to-view-id>/employee.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
     </navigation-rule>
@@ -400,10 +400,10 @@
     </navigation-rule>
     
     <navigation-rule>
-        <from-view-id>/userIPerson.xhtml</from-view-id>
+        <from-view-id>/employee.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
-            <to-view-id>/userIPerson.xhtml</to-view-id>
+            <to-view-id>/employee.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -418,25 +418,25 @@
         </navigation-case>
      </navigation-rule>
      <navigation-rule>
-        <from-view-id>/userIPersonDetail.xhtml</from-view-id>
+        <from-view-id>/employeeDetail.xhtml</from-view-id>
          <navigation-case>
             <from-outcome>refresh</from-outcome>
-            <to-view-id>/userIPersonDetail.xhtml</to-view-id>
+            <to-view-id>/employeeDetail.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>delete</from-outcome>
-            <to-view-id>/userIPerson.xhtml</to-view-id>
+            <to-view-id>/employee.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
-            <to-view-id>/userIPerson.xhtml</to-view-id>
+            <to-view-id>/employee.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>save</from-outcome>
-            <to-view-id>/userIPerson.xhtml</to-view-id>
+            <to-view-id>/employee.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
