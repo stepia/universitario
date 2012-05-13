@@ -9,7 +9,7 @@ import javax.faces.bean.RequestScoped;
 
 @ManagedBean
 @RequestScoped
-public class UserIPerson {
+public class Employee {
 
     private Long id;
     private Person person;
