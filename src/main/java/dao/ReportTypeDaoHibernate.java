@@ -27,14 +27,16 @@ public class ReportTypeDaoHibernate implements ReportTypeDao {
         return sessionFactory.getCurrentSession().createCriteria(ReportType.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<ReportType> getReportTypes(String sortBy, boolean sortOrder) {
         if (sortOrder) {
-            return sessionFactory.getCurrentSession().createCriteria(ReportType.class).addOrder(Order.asc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(ReportType.class).addOrder(Order.asc(sortBy))
+                        .list();
         } else {
-            return sessionFactory.getCurrentSession().createCriteria(ReportType.class).addOrder(Order.desc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(ReportType.class).addOrder(Order.desc(sortBy))
+                        .list();
         }
 
     }
@@ -62,13 +64,14 @@ public class ReportTypeDaoHibernate implements ReportTypeDao {
         sessionFactory.getCurrentSession().merge(reporttype);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public ReportType getReportType(Long id) {
         List reporttypes = sessionFactory.getCurrentSession().createCriteria(ReportType.class)
                     .add(Restrictions.eq("id", id)).list();
         ReportType reporttype = null;
         if ((reporttypes != null) && (reporttypes.size() > 0)) {
-        	reporttype = (ReportType) reporttypes.get(0);
+            reporttype = (ReportType) reporttypes.get(0);
         }
         return reporttype;
     }

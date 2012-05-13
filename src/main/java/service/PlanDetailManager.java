@@ -5,7 +5,7 @@ import java.util.List;
 import dao.PlanDetailDao;
 import entry.PlanDetail;
 
-public class PlanDetailManager implements IPlanDetailManager {
+public class PlanDetailManager implements PlanDetailDao {
 
     private PlanDetailDao planDetailDao;
 

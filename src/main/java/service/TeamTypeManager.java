@@ -5,7 +5,7 @@ import java.util.List;
 import dao.TeamTypeDao;
 import entry.TeamType;
 
-public class TeamTypeManager implements ITeamTypeManager {
+public class TeamTypeManager implements TeamTypeDao {
 
     private TeamTypeDao teamTypeDao;
 

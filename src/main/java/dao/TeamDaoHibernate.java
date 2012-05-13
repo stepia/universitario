@@ -27,7 +27,7 @@ public class TeamDaoHibernate implements TeamDao {
         return sessionFactory.getCurrentSession().createCriteria(Team.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Team> getTeams(String sortBy, boolean sortOrder) {
@@ -82,6 +82,7 @@ public class TeamDaoHibernate implements TeamDao {
         sessionFactory.getCurrentSession().merge(team);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public Team getTeam(String name) {
         List teams = sessionFactory.getCurrentSession().createCriteria(Team.class)

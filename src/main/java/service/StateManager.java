@@ -5,7 +5,7 @@ import java.util.List;
 import dao.StateDao;
 import entry.State;
 
-public class StateManager implements IStateManager {
+public class StateManager implements StateDao {
 
     private StateDao stateDao;
 

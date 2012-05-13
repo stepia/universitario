@@ -5,7 +5,7 @@ import java.util.List;
 import dao.ReportTypeDao;
 import entry.ReportType;
 
-public class ReportTypeManager implements IReportTypeManager {
+public class ReportTypeManager implements ReportTypeDao {
 
     private ReportTypeDao reportTypeDao;
 

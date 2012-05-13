@@ -27,18 +27,20 @@ public class AuthorityDaoHibernate implements AuthorityDao {
         return sessionFactory.getCurrentSession().createCriteria(Authority.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Authority> getAuthorities(String sortBy, boolean sortOrder) {
         if (sortOrder) {
-            return sessionFactory.getCurrentSession().createCriteria(Authority.class).addOrder(Order.asc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(Authority.class).addOrder(Order.asc(sortBy))
+                        .list();
         } else {
-            return sessionFactory.getCurrentSession().createCriteria(Authority.class).addOrder(Order.desc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(Authority.class).addOrder(Order.desc(sortBy))
+                        .list();
         }
 
     }
-    
+
     @Transactional
     public void deleteAuthority(Authority authority) {
         sessionFactory.getCurrentSession().delete(authority);
@@ -62,13 +64,14 @@ public class AuthorityDaoHibernate implements AuthorityDao {
         sessionFactory.getCurrentSession().merge(authority);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public Authority getAuthority(Long id) {
         List authorities = sessionFactory.getCurrentSession().createCriteria(Authority.class)
                     .add(Restrictions.eq("id", id)).list();
         Authority authority = null;
         if ((authorities != null) && (authorities.size() > 0)) {
-        	authority = (Authority) authorities.get(0);
+            authority = (Authority) authorities.get(0);
         }
         return authority;
     }

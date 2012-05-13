@@ -5,7 +5,7 @@ import java.util.List;
 import dao.MarkDao;
 import entry.Mark;
 
-public class MarkManager implements IMarkManager {
+public class MarkManager implements MarkDao {
 
     private MarkDao markDao;
 

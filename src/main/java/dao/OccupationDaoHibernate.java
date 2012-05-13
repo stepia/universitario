@@ -27,14 +27,16 @@ public class OccupationDaoHibernate implements OccupationDao {
         return sessionFactory.getCurrentSession().createCriteria(Occupation.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Occupation> getOccupations(String sortBy, boolean sortOrder) {
         if (sortOrder) {
-            return sessionFactory.getCurrentSession().createCriteria(Occupation.class).addOrder(Order.asc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(Occupation.class).addOrder(Order.asc(sortBy))
+                        .list();
         } else {
-            return sessionFactory.getCurrentSession().createCriteria(Occupation.class).addOrder(Order.desc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(Occupation.class).addOrder(Order.desc(sortBy))
+                        .list();
         }
 
     }
@@ -62,13 +64,14 @@ public class OccupationDaoHibernate implements OccupationDao {
         sessionFactory.getCurrentSession().merge(occupation);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public Occupation getOccupation(Long id) {
         List occupations = sessionFactory.getCurrentSession().createCriteria(Occupation.class)
                     .add(Restrictions.eq("id", id)).list();
         Occupation occupation = null;
         if ((occupations != null) && (occupations.size() > 0)) {
-        	occupation = (Occupation) occupations.get(0);
+            occupation = (Occupation) occupations.get(0);
         }
         return occupation;
     }

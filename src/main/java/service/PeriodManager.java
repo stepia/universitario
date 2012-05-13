@@ -5,7 +5,7 @@ import java.util.List;
 import dao.PeriodDao;
 import entry.Period;
 
-public class PeriodManager implements IPeriodManager {
+public class PeriodManager implements PeriodDao {
 
     private PeriodDao periodDao;
 

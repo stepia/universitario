@@ -5,7 +5,7 @@ import java.util.List;
 import dao.LessonDao;
 import entry.Lesson;
 
-public class LessonManager implements ILessonManager {
+public class LessonManager implements LessonDao {
 
     private LessonDao lessonDao;
 

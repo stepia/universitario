@@ -5,7 +5,7 @@ import java.util.List;
 import dao.MarkTypeDao;
 import entry.MarkType;
 
-public class MarkTypeManager implements IMarkTypeManager {
+public class MarkTypeManager implements MarkTypeDao {
 
     private MarkTypeDao markTypeDao;
 

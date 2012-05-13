@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.ITeamTypeManager;
+import dao.TeamTypeDao;
 import entry.TeamType;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.TeamType;
 public class TeamTypeViewBean {
 
     @ManagedProperty(value = "#{teamTypeManager}")
-    private ITeamTypeManager teamTypeManager;
+    private TeamTypeDao teamTypeManager;
     private TeamType selectedTeamType;
     private List<TeamType> teamTypes = new ArrayList<TeamType>();
     private boolean editible;
@@ -38,19 +38,19 @@ public class TeamTypeViewBean {
         this.length = length;
     }
 
-    public ITeamTypeManager getTeamTypeManager() {
+    public TeamTypeDao getTeamTypeManager() {
         return teamTypeManager;
     }
 
-    public void setTeamTypeManager(ITeamTypeManager teamTypeManager) {
+    public void setTeamTypeManager(TeamTypeDao teamTypeManager) {
         this.teamTypeManager = teamTypeManager;
     }
 
     public List<TeamType> getTeamTypes() {
-    	if (sortBy == null) {
-    		teamTypes = getTeamTypeManager().getTeamTypes();
+        if (sortBy == null) {
+            teamTypes = getTeamTypeManager().getTeamTypes();
         } else {
-        	teamTypes = getTeamTypeManager().getTeamTypes(sortBy, sortOrder);
+            teamTypes = getTeamTypeManager().getTeamTypes(sortBy, sortOrder);
         }
         this.length = teamTypes.size();
         return teamTypes;
@@ -87,13 +87,13 @@ public class TeamTypeViewBean {
         switch (act)
             {
             case DELETE:
-            	getTeamTypeManager().deleteTeamType(getSelectedTeamType());
+                getTeamTypeManager().deleteTeamType(getSelectedTeamType());
                 break;
             case CREATE:
                 setSelectedTeamType(new TeamType());
                 break;
             case SAVE:
-            	if (getSelectedTeamType().getCreated() != null) {
+                if (getSelectedTeamType().getCreated() != null) {
                     getTeamTypeManager().saveOrUpdate(getSelectedTeamType());
                 } else {
                     getTeamTypeManager().saveTeamType(getSelectedTeamType());
@@ -102,7 +102,7 @@ public class TeamTypeViewBean {
             }
         return action;
     }
-    
+
     public void caseListSortListner(SortEvent sortEvent) {
         setSortBy(sortEvent.getSortColumn().getId());
         if (sortEvent.isAscending()) {

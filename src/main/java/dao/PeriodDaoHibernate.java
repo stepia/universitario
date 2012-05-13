@@ -27,7 +27,7 @@ public class PeriodDaoHibernate implements PeriodDao {
         return sessionFactory.getCurrentSession().createCriteria(Period.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Period> getPeriods(String sortBy, boolean sortOrder) {
@@ -62,13 +62,14 @@ public class PeriodDaoHibernate implements PeriodDao {
         sessionFactory.getCurrentSession().merge(period);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public Period getPeriod(Long id) {
         List periods = sessionFactory.getCurrentSession().createCriteria(Period.class)
                     .add(Restrictions.eq("id", id)).list();
         Period period = null;
         if ((periods != null) && (periods.size() > 0)) {
-        	period = (Period) periods.get(0);
+            period = (Period) periods.get(0);
         }
         return period;
     }

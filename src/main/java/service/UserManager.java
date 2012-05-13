@@ -5,7 +5,7 @@ import java.util.List;
 import dao.UserDao;
 import entry.User;
 
-public class UserManager implements IUserManager {
+public class UserManager implements UserDao {
 
     private UserDao userDao;
 

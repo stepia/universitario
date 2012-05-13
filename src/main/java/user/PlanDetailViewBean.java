@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.IPlanDetailManager;
+import dao.PlanDetailDao;
 import entry.PlanDetail;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.PlanDetail;
 public class PlanDetailViewBean {
 
     @ManagedProperty(value = "#{planDetailManager}")
-    private IPlanDetailManager planDetailManager;
+    private PlanDetailDao planDetailManager;
     private PlanDetail selectedPlanDetail;
     private List<PlanDetail> planDetails = new ArrayList<PlanDetail>();
     private boolean editible;
@@ -38,19 +38,19 @@ public class PlanDetailViewBean {
         this.length = length;
     }
 
-    public IPlanDetailManager getPlanDetailManager() {
+    public PlanDetailDao getPlanDetailManager() {
         return planDetailManager;
     }
 
-    public void setPlanDetailManager(IPlanDetailManager planDetailManager) {
+    public void setPlanDetailManager(PlanDetailDao planDetailManager) {
         this.planDetailManager = planDetailManager;
     }
 
     public List<PlanDetail> getPlanDetails() {
-    	if (sortBy == null) {
-    		planDetails = getPlanDetailManager().getPlanDetails();
+        if (sortBy == null) {
+            planDetails = getPlanDetailManager().getPlanDetails();
         } else {
-        	planDetails = getPlanDetailManager().getPlanDetails(sortBy, sortOrder);
+            planDetails = getPlanDetailManager().getPlanDetails(sortBy, sortOrder);
         }
         this.length = planDetails.size();
         return planDetails;
@@ -87,13 +87,13 @@ public class PlanDetailViewBean {
         switch (act)
             {
             case DELETE:
-            	getPlanDetailManager().deletePlanDetail(getSelectedPlanDetail());
+                getPlanDetailManager().deletePlanDetail(getSelectedPlanDetail());
                 break;
             case CREATE:
                 setSelectedPlanDetail(new PlanDetail());
                 break;
             case SAVE:
-            	if (getSelectedPlanDetail().getCreated() != null) {
+                if (getSelectedPlanDetail().getCreated() != null) {
                     getPlanDetailManager().saveOrUpdate(getSelectedPlanDetail());
                 } else {
                     getPlanDetailManager().savePlanDetail(getSelectedPlanDetail());
@@ -102,7 +102,7 @@ public class PlanDetailViewBean {
             }
         return action;
     }
-    
+
     public void caseListSortListner(SortEvent sortEvent) {
         setSortBy(sortEvent.getSortColumn().getId());
         if (sortEvent.isAscending()) {

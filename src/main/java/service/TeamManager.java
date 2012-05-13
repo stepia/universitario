@@ -5,7 +5,7 @@ import java.util.List;
 import dao.TeamDao;
 import entry.Team;
 
-public class TeamManager implements ITeamManager {
+public class TeamManager implements TeamDao {
 
     private TeamDao teamDao;
 
@@ -48,7 +48,7 @@ public class TeamManager implements ITeamManager {
     public List<Team> getParentTeams(int teamId) {
         return getTeamDao().getParentTeams(teamId);
     }
-    
+
     public List<Team> getSubTeams(int teamId) {
         return getTeamDao().getSubTeams(teamId);
     }

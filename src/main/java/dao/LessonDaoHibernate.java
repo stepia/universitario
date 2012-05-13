@@ -27,7 +27,7 @@ public class LessonDaoHibernate implements LessonDao {
         return sessionFactory.getCurrentSession().createCriteria(Lesson.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Lesson> getLessons(String sortBy, boolean sortOrder) {
@@ -62,13 +62,14 @@ public class LessonDaoHibernate implements LessonDao {
         sessionFactory.getCurrentSession().merge(lesson);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public Lesson getLesson(Long id) {
         List lessons = sessionFactory.getCurrentSession().createCriteria(Lesson.class)
                     .add(Restrictions.eq("id", id)).list();
         Lesson lesson = null;
         if ((lessons != null) && (lessons.size() > 0)) {
-        	lesson = (Lesson) lessons.get(0);
+            lesson = (Lesson) lessons.get(0);
         }
         return lesson;
     }

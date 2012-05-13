@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import service.IMarkTypeManager;
+import dao.MarkTypeDao;
 import entry.MarkType;
 
 @ManagedBean
@@ -21,7 +21,7 @@ import entry.MarkType;
 public class MarkTypeViewBean {
 
     @ManagedProperty(value = "#{markTypeManager}")
-    private IMarkTypeManager markTypeManager;
+    private MarkTypeDao markTypeManager;
     private MarkType selectedMarkType;
     private List<MarkType> markTypes = new ArrayList<MarkType>();
     private boolean editible;
@@ -38,19 +38,19 @@ public class MarkTypeViewBean {
         this.length = length;
     }
 
-    public IMarkTypeManager getMarkTypeManager() {
+    public MarkTypeDao getMarkTypeManager() {
         return markTypeManager;
     }
 
-    public void setMarkTypeManager(IMarkTypeManager markTypeManager) {
+    public void setMarkTypeManager(MarkTypeDao markTypeManager) {
         this.markTypeManager = markTypeManager;
     }
 
     public List<MarkType> getMarkTypes() {
-    	if (sortBy == null) {
-    		markTypes = getMarkTypeManager().getMarkTypes();
+        if (sortBy == null) {
+            markTypes = getMarkTypeManager().getMarkTypes();
         } else {
-        	markTypes = getMarkTypeManager().getMarkTypes(sortBy, sortOrder);
+            markTypes = getMarkTypeManager().getMarkTypes(sortBy, sortOrder);
         }
         this.length = markTypes.size();
         return markTypes;
@@ -87,13 +87,13 @@ public class MarkTypeViewBean {
         switch (act)
             {
             case DELETE:
-            	getMarkTypeManager().deleteMarkType(getSelectedMarkType());
+                getMarkTypeManager().deleteMarkType(getSelectedMarkType());
                 break;
             case CREATE:
                 setSelectedMarkType(new MarkType());
                 break;
             case SAVE:
-            	if (getSelectedMarkType().getCreated() != null) {
+                if (getSelectedMarkType().getCreated() != null) {
                     getMarkTypeManager().saveOrUpdate(getSelectedMarkType());
                 } else {
                     getMarkTypeManager().saveMarkType(getSelectedMarkType());
@@ -102,7 +102,7 @@ public class MarkTypeViewBean {
             }
         return action;
     }
-    
+
     public void caseListSortListner(SortEvent sortEvent) {
         setSortBy(sortEvent.getSortColumn().getId());
         if (sortEvent.isAscending()) {

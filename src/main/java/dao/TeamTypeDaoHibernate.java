@@ -27,14 +27,15 @@ public class TeamTypeDaoHibernate implements TeamTypeDao {
         return sessionFactory.getCurrentSession().createCriteria(TeamType.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<TeamType> getTeamTypes(String sortBy, boolean sortOrder) {
         if (sortOrder) {
             return sessionFactory.getCurrentSession().createCriteria(TeamType.class).addOrder(Order.asc(sortBy)).list();
         } else {
-            return sessionFactory.getCurrentSession().createCriteria(TeamType.class).addOrder(Order.desc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(TeamType.class).addOrder(Order.desc(sortBy))
+                        .list();
         }
 
     }
@@ -62,13 +63,14 @@ public class TeamTypeDaoHibernate implements TeamTypeDao {
         sessionFactory.getCurrentSession().merge(teamType);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public TeamType getTeamType(Long id) {
         List teamTypes = sessionFactory.getCurrentSession().createCriteria(TeamType.class)
                     .add(Restrictions.eq("id", id)).list();
         TeamType teamType = null;
         if ((teamTypes != null) && (teamTypes.size() > 0)) {
-        	teamType = (TeamType) teamTypes.get(0);
+            teamType = (TeamType) teamTypes.get(0);
         }
         return teamType;
     }

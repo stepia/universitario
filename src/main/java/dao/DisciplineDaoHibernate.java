@@ -27,18 +27,20 @@ public class DisciplineDaoHibernate implements DisciplineDao {
         return sessionFactory.getCurrentSession().createCriteria(Discipline.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Discipline> getDisciplines(String sortBy, boolean sortOrder) {
         if (sortOrder) {
-            return sessionFactory.getCurrentSession().createCriteria(Discipline.class).addOrder(Order.asc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(Discipline.class).addOrder(Order.asc(sortBy))
+                        .list();
         } else {
-            return sessionFactory.getCurrentSession().createCriteria(Discipline.class).addOrder(Order.desc(sortBy)).list();
+            return sessionFactory.getCurrentSession().createCriteria(Discipline.class).addOrder(Order.desc(sortBy))
+                        .list();
         }
 
     }
-    
+
     @Transactional
     public void deleteDiscipline(Discipline discipline) {
         sessionFactory.getCurrentSession().delete(discipline);
@@ -62,13 +64,14 @@ public class DisciplineDaoHibernate implements DisciplineDao {
         sessionFactory.getCurrentSession().merge(discipline);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public Discipline getDiscipline(Long id) {
         List disciplines = sessionFactory.getCurrentSession().createCriteria(Discipline.class)
                     .add(Restrictions.eq("id", id)).list();
         Discipline discipline = null;
         if ((disciplines != null) && (disciplines.size() > 0)) {
-        	discipline = (Discipline) disciplines.get(0);
+            discipline = (Discipline) disciplines.get(0);
         }
         return discipline;
     }

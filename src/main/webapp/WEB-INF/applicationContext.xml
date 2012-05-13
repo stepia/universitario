@@ -39,7 +39,7 @@
             <list>
                 <value>main/authority.hbm.xml</value>
                 <value>main/user.hbm.xml</value>
-                <value>main/employee.hbm.xml</value>
+                <value>main/userIPerson.hbm.xml</value>
                 <value>main/person.hbm.xml</value>
                 <value>main/team.hbm.xml</value>
                 <value>main/emp2team.hbm.xml</value>
@@ -59,6 +59,8 @@
                 <value>main/week.hbm.xml</value>
                 <value>main/lesson.hbm.xml</value>
                 <value>main/report.hbm.xml</value>
+                <value>main/emp2teamIPerson.hbm.xml</value>
+                <value>main/emp2teamITeam.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -110,15 +112,37 @@
         </property>
     </bean>
     
-    <bean id="employeeDao" class="dao.EmployeeDaoHibernate">
+    <bean id="userIPersonDao" class="dao.UserIPersonDaoHibernate">
         <property name="sessionFactory">
             <ref local="sessionFactory"/>
         </property>
     </bean>
 
-    <bean id="employeeManager" class="service.EmployeeManager">
-        <property name="employeeDao">
-            <ref local="employeeDao"/>
+    <bean id="userIPersonManager" class="service.UserIPersonManager">
+        <property name="userIPersonDao">
+            <ref local="userIPersonDao"/>
+        </property>
+    </bean>
+        <bean id="emp2TeamIPersonDao" class="dao.Emp2TeamIPersonDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="emp2TeamIPersonManager" class="service.Emp2TeamIPersonManager">
+        <property name="emp2TeamIPersonDao">
+            <ref local="emp2TeamIPersonDao"/>
+        </property>
+    </bean>
+    <bean id="emp2TeamITeamDao" class="dao.Emp2TeamITeamDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="emp2TeamITeamManager" class="service.Emp2TeamITeamManager">
+        <property name="emp2TeamITeamDao">
+            <ref local="emp2TeamITeamDao"/>
         </property>
     </bean>
     

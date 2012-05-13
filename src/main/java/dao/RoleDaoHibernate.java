@@ -27,7 +27,7 @@ public class RoleDaoHibernate implements RoleDao {
         return sessionFactory.getCurrentSession().createCriteria(Role.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Role> getRoles(String sortBy, boolean sortOrder) {
@@ -62,13 +62,14 @@ public class RoleDaoHibernate implements RoleDao {
         sessionFactory.getCurrentSession().merge(role);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public Role getRole(Long id) {
         List roles = sessionFactory.getCurrentSession().createCriteria(Role.class)
                     .add(Restrictions.eq("id", id)).list();
         Role role = null;
         if ((roles != null) && (roles.size() > 0)) {
-        	role = (Role) roles.get(0);
+            role = (Role) roles.get(0);
         }
         return role;
     }

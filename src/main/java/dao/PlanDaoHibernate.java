@@ -27,7 +27,7 @@ public class PlanDaoHibernate implements PlanDao {
         return sessionFactory.getCurrentSession().createCriteria(Plan.class)
                     .list();
     }
-    
+
     @SuppressWarnings("unchecked")
     @Transactional
     public List<Plan> getPlans(String sortBy, boolean sortOrder) {
@@ -62,13 +62,14 @@ public class PlanDaoHibernate implements PlanDao {
         sessionFactory.getCurrentSession().merge(plan);
     }
 
+    @SuppressWarnings("rawtypes")
     @Transactional
     public Plan getPlan(Long id) {
         List plans = sessionFactory.getCurrentSession().createCriteria(Plan.class)
                     .add(Restrictions.eq("id", id)).list();
         Plan plan = null;
         if ((plans != null) && (plans.size() > 0)) {
-        	plan = (Plan) plans.get(0);
+            plan = (Plan) plans.get(0);
         }
         return plan;
     }
