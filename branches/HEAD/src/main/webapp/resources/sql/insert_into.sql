@@ -26,6 +26,7 @@ INSERT INTO occupation (id,name) VALUES (7,'Директор центра');
 INSERT INTO occupation (id,name) VALUES (8,'Керівник');
 INSERT INTO occupation (id,name) VALUES (9,'Aспірант');
 INSERT INTO occupation (id,name) VALUES (10,'Завідувач кафедри');
+INSERT INTO occupation (id,name) VALUES (11,'Староста групи');
 
 /*positions*/
 INSERT INTO positions (id,name) VALUES (1,'Вчитель');
@@ -43,6 +44,115 @@ INSERT INTO lessontype (id,name) VALUES (4, 'Консультацiя');
 INSERT INTO reporttype (id,name) VALUES (1, 'Екзаменацiйна');
 INSERT INTO reporttype (id,name) VALUES (2, 'Модульна');
 INSERT INTO reporttype (id,name) VALUES (3, 'Зведена');
+
+/*marks*/
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (1,1,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (2,2,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (3,3,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (4,4,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (5,5,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (6,6,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (7,7,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (8,8,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (9,9,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (10,10,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (11,11,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (12,12,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (13,13,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (14,14,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (15,15,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (16,16,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (17,17,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (18,18,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (19,19,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (20,20,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (21,21,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (22,22,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (23,23,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (24,24,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (25,25,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (26,26,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (27,27,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (28,28,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (29,29,1,'F','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (30,30,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (31,31,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (32,32,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (33,33,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (34,34,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (35,35,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (36,36,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (37,37,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (38,38,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (39,39,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (40,40,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (41,41,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (42,42,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (43,43,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (44,44,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (45,45,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (46,46,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (47,47,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (48,48,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (49,49,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (50,50,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (51,51,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (52,52,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (53,53,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (54,54,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (55,55,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (56,56,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (57,57,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (58,58,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (59,59,2,'FX','не задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (60,60,3,'DE','задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (61,61,3,'DE','задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (62,62,3,'DE','задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (63,63,3,'DE','задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (64,64,3,'DE','задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (65,65,3,'DE','задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (66,66,3,'DE','задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (67,67,3,'DE','задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (68,68,3,'DE','задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (69,69,3,'DE','задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (70,70,3,'DE','задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (71,71,3,'DE','задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (72,72,3,'DE','задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (73,73,3,'DE','задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (74,74,3,'DE','задовільно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (75,75,4,'BC','добре');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (76,76,4,'BC','добре');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (77,77,4,'BC','добре');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (78,78,4,'BC','добре');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (79,79,4,'BC','добре');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (80,80,4,'BC','добре');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (81,81,4,'BC','добре');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (82,82,4,'BC','добре');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (83,83,4,'BC','добре');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (84,84,4,'BC','добре');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (85,85,4,'BC','добре');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (86,86,4,'BC','добре');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (87,87,4,'BC','добре');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (88,88,4,'BC','добре');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (89,89,4,'BC','добре');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (90,90,5,'A','відмінно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (91,91,5,'A','відмінно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (92,92,5,'A','відмінно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (93,93,5,'A','відмінно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (94,94,5,'A','відмінно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (95,95,5,'A','відмінно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (96,96,5,'A','відмінно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (97,97,5,'A','відмінно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (98,98,5,'A','відмінно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (99,99,5,'A','відмінно');
+INSERT INTO mark (id,pmark,nmark,wmark,vmark) VALUES (100,100,5,'A','відмінно');
+
+
+/*marktype*/
+INSERT INTO marktype (id,name) VALUES ('1','Екзамен');
+INSERT INTO marktype (id,name) VALUES ('2','Залік');
+INSERT INTO marktype (id,name) VALUES ('3','Диференційный залік');
+INSERT INTO marktype (id,name) VALUES ('4','Курсова робота');
 
 
 /*person*/
@@ -268,6 +378,130 @@ INSERT INTO person (id,lastnameua,firstnameua,middlenameua,lastnameru,firstnamer
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,lastnameru,firstnameru,middlenameru,lastnameeng,firstnameeng,dob,details) VALUES (210,'Фесенко','Станіслав','Євгенійович','Фесенко','Станислав','Евгеньевич','Fesenko','Stanislav','1995-04-08','студент');
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,lastnameru,firstnameru,middlenameru,lastnameeng,firstnameeng,dob,details) VALUES (211,'Чорнойван','Сергій','Анатолійович','Чорнойван','Сергей','Анатольевич','Chornoyvan','Sergei','1996-07-02','студент');
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,lastnameru,firstnameru,middlenameru,lastnameeng,firstnameeng,dob,details) VALUES (212,'Шатайло','Артур','Дмитрович','Шатайло','Артур','Дмитриевич','Shataylo','Arthur','1995-04-12','студент');
+
+
+/*discipline*/
+INSERT INTO discipline (id,name) VALUES ('1','Історія України');
+INSERT INTO discipline (id,name) VALUES ('2','Іноземна мова');
+INSERT INTO discipline (id,name) VALUES ('3','Молекулярна фізика');
+INSERT INTO discipline (id,name) VALUES ('4','Обчислювальна техніка та програмування');
+INSERT INTO discipline (id,name) VALUES ('5','Математичний аналіз');
+INSERT INTO discipline (id,name) VALUES ('6','Фшзичне виховання');
+INSERT INTO discipline (id,name) VALUES ('7','Диференціальні рівняння');
+INSERT INTO discipline (id,name) VALUES ('8','Фізичний практикум');
+
+INSERT INTO discipline (id,name) VALUES ('9','Фізична хімія');
+INSERT INTO discipline (id,name) VALUES ('10','Обчислювальна математика');
+INSERT INTO discipline (id,name) VALUES ('11','Інженерна комп’ютерна графіка');
+INSERT INTO discipline (id,name) VALUES ('12','Вища математика');
+INSERT INTO discipline (id,name) VALUES ('13','Фізика');
+
+
+/*period*/
+INSERT INTO period (id,value) VALUES ('1','1 курс 1 семестр');
+INSERT INTO period (id,value) VALUES ('2','1 курс 2 семестр');
+INSERT INTO period (id,value) VALUES ('3','2 курс 1 семестр');
+INSERT INTO period (id,value) VALUES ('4','2 курс 2 семестр');
+INSERT INTO period (id,value) VALUES ('5','3 курс 1 семестр');
+INSERT INTO period (id,value) VALUES ('6','3 курс 2 семестр');
+INSERT INTO period (id,value) VALUES ('7','4 курс 1 семестр');
+INSERT INTO period (id,value) VALUES ('8','4 курс 2 семестр');
+INSERT INTO period (id,value) VALUES ('9','5 курс 1 семестр');
+INSERT INTO period (id,value) VALUES ('10','5 курс 2 семестр');
+
+
+/*plan*/
+INSERT INTO plan (id,teamid) VALUES ('1','199');
+INSERT INTO plan (id,teamid) VALUES ('2','201');
+INSERT INTO plan (id,teamid) VALUES ('3','200');
+INSERT INTO plan (id,teamid) VALUES ('4','202');
+INSERT INTO plan (id,teamid) VALUES ('5','203');
+
+
+/*planDetails*/
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('1','1','1','1','1','108/51','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('2','2','1','1','1','108/51','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('3','3','1','1','1','108/51','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('4','4','1','1','1','108/51','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('5','5','1','1','1','108/51','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('6','1','2','1','1','80/34','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('7','2','2','1','1','80/34','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('8','3','2','1','1','108/34','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('9','4','2','1','1','108/34','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('10','5','2','1','1','108/34','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('11','1','3','1','1','216/85','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('12','2','3','1','1','216/85','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('13','1','3','2','1','216/85','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('14','2','3','2','1','216/85','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('15','1','4','2','1','114/68','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('16','2','4','2','1','114/68','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('17','1','5','1','1','256/102','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('18','2','5','1','1','256/102','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('19','1','6','2','1','68','2');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('20','2','6','2','1','68','2');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('21','3','6','2','1','68','2');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('22','4','6','2','1','68','2');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('23','5','6','2','1','68','2');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('24','1','7','2','1','180/68','2');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('25','2','7','2','1','180/68','2');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('26','1','8','2','1','51/34','2');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('27','2','8','2','1','51/34','2');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('28','1','4','2','1','114/68','4');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('29','2','4','2','1','114/68','4');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('30','3','9','1','1','162/68','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('31','4','9','1','1','162/68','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('32','5','9','1','1','162/68','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('33','3','10','1','1','207/85','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('34','4','10','1','1','207/85','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('35','5','10','1','1','207/85','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('36','3','10','2','1','207/85','4');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('37','4','10','2','1','207/85','4');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('38','5','10','2','1','207/85','4');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('39','3','11','2','1','81/34','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('40','4','11','2','1','81/34','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('41','5','11','2','1','81/34','1');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('42','3','12','2','1','234/68','2');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('43','4','12','2','1','234/68','2');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('44','5','12','2','1','234/68','2');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('45','3','13','1','1','180/68','2');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('46','4','13','1','1','180/68','2');
+INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,marktypeid) VALUES ('47','5','13','1','1','180/68','2');
+
+
+/*emp2team*/
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (1,183,199,2,808006,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (2,184,201,2,808007,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (3,185,199,2,808008,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (4,186,201,2,11,808009,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (5,187,199,2,808010,2);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (6,188,201,2,808011,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (7,189,199,2,808012,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (8,190,201,2,808013,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (9,191,199,2,808014,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (10,192,201,2,808015,2);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (11,193,199,2,808016,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (12,194,201,2,808017,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (13,195,199,2,808018,1);
+
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (14,196,203,2,808019,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (15,197,200,2,808020,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (16,198,202,2,808021,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (17,186,202,2,11,808022,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (18,199,203,2,808023,2);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (19,200,200,2,808024,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (20,201,203,2,808025,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (21,202,200,2,808026,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (22,203,202,2,808027,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (23,204,200,2,808028,2);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (24,205,203,2,808029,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (25,206,200,2,808030,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (26,207,202,2,808031,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (27,208,203,2,808032,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (28,209,202,2,808033,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (29,210,202,2,808034,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (30,211,203,2,808035,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (31,212,202,2,808036,1);
+
 
 /*users*/
 INSERT INTO users (id,personid,username,password,enabled) VALUES ('2','2','user2',120,1);
@@ -732,3 +966,10 @@ INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (196,'6.040302 Ін�
 /*Групи*/
 INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (197,'КП-11-1',5,149,1);
 INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (198,'КМ-11-1',5,150,1);
+
+/*Підгрупи*/
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (199,'Підгруппа 1',6,197,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (200,'Підгруппа 1',6,198,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (201,'Підгруппа 2',6,197,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (202,'Підгруппа 2',6,198,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (203,'Підгруппа 3',6,198,1);

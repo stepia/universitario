@@ -52,6 +52,7 @@
                 <value>main/marktype.hbm.xml</value>
                 <value>main/period.hbm.xml</value>
                 <value>main/plan.hbm.xml</value>
+                <value>main/plandetails.hbm.xml</value>
                 <value>main/discipline.hbm.xml</value>
                 <value>main/mark.hbm.xml</value>
                 <value>main/reporttype.hbm.xml</value>
@@ -275,6 +276,18 @@
     <bean id="planManager" class="service.PlanManager">
         <property name="planDao">
             <ref local="planDao"/>
+        </property>
+    </bean>
+    
+    <bean id="planDetailDao" class="dao.PlanDetailDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="planDetailManager" class="service.PlanDetailManager">
+        <property name="planDetailDao">
+            <ref local="planDetailDao"/>
         </property>
     </bean>
     
