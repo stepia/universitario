@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>#{msg.cemployee}</title>
+	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</h:head>
+
+<h:body>
+	<f:view locale="#{language.localeCode}" />
+	<div id="container">
+		<div id="header">
+			<ui:include src="/iDetail.xhtml">
+			    <ui:param name="title" value="#{msg.employee}" />
+				<ui:param name="bean" value="#{employeeViewBean}" />
+			</ui:include>
+		</div>
+		<div id="content">
+
+			<h:form id="employeeDetailForm">
+				<h:panelGrid id="pnlEmployeeDetail" columns="6" cellspacing="30"
+					border="0" title="Universitario">
+
+		#{msg.lastnameua}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.lastnameua}"/>
+	    #{msg.firstnameua}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.firstnameua}"/>
+	    #{msg.middlenameua}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.middlenameua}"/>
+	    #{msg.lastnameru}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.lastnameru}"/>
+	    #{msg.firstnameru}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.firstnameru}"/>
+	    #{msg.middlenameru}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.middlenameru}"/>
+	    #{msg.lastnameeng}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.lastnameeng}"/>
+	    #{msg.firstnameeng}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.firstnameeng}"/>
+	    #{msg.dob}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.dob}"/>
+	    #{msg.username}:<h:inputText value="#{employeeViewBean.selectedEmployee.username}"/>
+	    #{msg.enabled}:<h:selectOneMenu id="Enabled" disabled="true" value="#{employeeViewBean.selectedEmployee.enabled}">
+	    <f:selectItem id="item1" itemLabel=" #{msg.active}" itemValue="true" />
+	    <f:selectItem id="item2" itemLabel="#{msg.notactive}" itemValue="false" />
+	    </h:selectOneMenu>
+				</h:panelGrid>
+			</h:form>
+		</div>
+		<div id="footer">
+			<ui:insert name="footer">
+				<ui:include src="/footer.xhtml" />
+			</ui:insert>
+		</div>
+	</div>
+</h:body>
+</html>

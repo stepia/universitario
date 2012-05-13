@@ -5,9 +5,9 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 import dao.UserDao;
+import entry.Employee;
 import entry.Person;
 import entry.User;
-import entry.UserIPerson;
 
 @ManagedBean(name = "mainbean")
 @SessionScoped
@@ -17,7 +17,7 @@ public class Universitario {
     private UserDao userManager;
     private static User user;
     private static Person person;
-    private static UserIPerson userIPerson;
+    private static Employee employee;
 
     public Universitario() {
         // String user = FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
@@ -41,12 +41,12 @@ public class Universitario {
         Universitario.person = person;
     }
 
-    public static UserIPerson getUserIPerson() {
-        return userIPerson;
+    public static Employee getEmployee() {
+        return employee;
     }
 
-    public static void setEmployee(UserIPerson userIPerson) {
-        Universitario.userIPerson = userIPerson;
+    public static void setEmployee(Employee employee) {
+        Universitario.employee = employee;
     }
 
     public static User getUser() {

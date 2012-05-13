@@ -14,17 +14,17 @@ import javax.faces.model.SelectItem;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import dao.UserIPersonDao;
-import entry.UserIPerson;
+import dao.EmployeeDao;
+import entry.Employee;
 
 @ManagedBean
 @SessionScoped
-public class UserIPersonViewBean {
+public class EmployeeViewBean {
 
-    @ManagedProperty(value = "#{userIPersonManager}")
-    private UserIPersonDao userIPersonManager;
-    private UserIPerson selectedUserIPerson;
-    private List<UserIPerson> userIPersons = new ArrayList<UserIPerson>();
+    @ManagedProperty(value = "#{employeeManager}")
+    private EmployeeDao employeeManager;
+    private Employee selectedEmployee;
+    private List<Employee> employees = new ArrayList<Employee>();
     private boolean editible;
     private boolean sortOrder;
     private String sortBy;
@@ -38,7 +38,7 @@ public class UserIPersonViewBean {
         this.enabledOptions = enabledOptions;
     }
 
-    public UserIPersonViewBean() {
+    public EmployeeViewBean() {
         enabledOptions[0] = new SelectItem("", "Select");
         enabledOptions[1] = new SelectItem("true", "Active");
         enabledOptions[2] = new SelectItem("false", "Not active");
@@ -54,33 +54,33 @@ public class UserIPersonViewBean {
         this.length = length;
     }
 
-    public List<UserIPerson> getUserIPersons() {
+    public List<Employee> getEmployees() {
         if (sortBy == null) {
-            userIPersons = getUserIPersonManager().getUserIPersons();
+            employees = getEmployeeManager().getEmployees();
         } else {
             if (!sortBy.equals("person")) {
-                userIPersons = getUserIPersonManager().getUserIPersons(sortBy, sortOrder);
+                employees = getEmployeeManager().getEmployees(sortBy, sortOrder);
             }
         }
-        this.length = userIPersons.size();
-        return userIPersons;
+        this.length = employees.size();
+        return employees;
     }
 
-    public UserIPerson getSelectedUserIPerson() {
-        return selectedUserIPerson;
+    public Employee getSelectedEmployee() {
+        return selectedEmployee;
     }
 
-    public void setSelectedUserIPerson(UserIPerson selectedUserIPerson) {
-        this.selectedUserIPerson = selectedUserIPerson;
+    public void setSelectedEmployee(Employee selectedEmployee) {
+        this.selectedEmployee = selectedEmployee;
     }
 
     public void onRowSelect(SelectEvent event) throws IOException {
-        FacesContext.getCurrentInstance().getExternalContext().redirect("userIPersonDetail.xhtml");
+        FacesContext.getCurrentInstance().getExternalContext().redirect("employeeDetail.xhtml");
         setEditible(true);
     }
 
     public void init() throws IOException {
-        setSelectedUserIPerson(null);
+        setSelectedEmployee(null);
         setEditible(false);
     }
 
@@ -97,16 +97,16 @@ public class UserIPersonViewBean {
         switch (act)
             {
             case DELETE:
-                getUserIPersonManager().deleteUserIPerson(getSelectedUserIPerson());
+                getEmployeeManager().deleteEmployee(getSelectedEmployee());
                 break;
             case CREATE:
-                setSelectedUserIPerson(new UserIPerson());
+                setSelectedEmployee(new Employee());
                 break;
             case SAVE:
-                if (getSelectedUserIPerson().getCreated() != null) {
-                    getUserIPersonManager().saveOrUpdate(getSelectedUserIPerson());
+                if (getSelectedEmployee().getCreated() != null) {
+                    getEmployeeManager().saveOrUpdate(getSelectedEmployee());
                 } else {
-                    getUserIPersonManager().saveUserIPerson(getSelectedUserIPerson());
+                    getEmployeeManager().saveEmployee(getSelectedEmployee());
                 }
                 break;
             }
@@ -138,12 +138,12 @@ public class UserIPersonViewBean {
         this.sortBy = sortBy;
     }
 
-    public UserIPersonDao getUserIPersonManager() {
-        return userIPersonManager;
+    public EmployeeDao getEmployeeManager() {
+        return employeeManager;
     }
 
-    public void setUserIPersonManager(UserIPersonDao userIPersonManager) {
-        this.userIPersonManager = userIPersonManager;
+    public void setEmployeeManager(EmployeeDao employeeManager) {
+        this.employeeManager = employeeManager;
     }
 
 }

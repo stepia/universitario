@@ -8,7 +8,7 @@
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
-<f:event type="preRenderView" listener="#{userIPersonViewBean.init}" />
+<f:event type="preRenderView" listener="#{employeeViewBean.init}" />
 
 <h:body>
 	<p:ajaxStatus onstart="statusDialog.show();"
@@ -22,27 +22,27 @@
 		<div id="header">
 			<ui:include src="/iQuery.xhtml">
 				<ui:param name="title" value="#{msg.employee}" />
-				<ui:param name="bean" value="#{userIPersonViewBean}" />
+				<ui:param name="bean" value="#{employeeViewBean}" />
 			</ui:include>
 		</div>
 		<div id="content">
-			<h:form id="userIPersonform">
+			<h:form id="employeeform">
 
 				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
-					value="#{userIPersonViewBean.userIPersons}"
-					selection="#{userIPersonViewBean.selectedUserIPerson}" id="userIPersonTable"
+					value="#{employeeViewBean.employees}"
+					selection="#{employeeViewBean.selectedEmployee}" id="employeeTable"
 					rowsPerPageTemplate="5,10,15,25,50,100"
 					emptyMessage="#{msg.norecordsfound}">
 
 					<f:facet name="header">  .
-            #{msg.lemployee} (#{userIPersonViewBean.length}) 
+            #{msg.lemployee} (#{employeeViewBean.length}) 
         </f:facet>
         <p:ajax event="sort"
-                            listener="#{userIPersonViewBean.caseListSortListner}" update=":userIPersonform:userIPersonTable" />
+                            listener="#{employeeViewBean.caseListSortListner}" update=":employeeform:employeeTable" />
 					<p:column selectionMode="single" style="width:18px" />
 					<p:ajax event="rowSelect"
-						listener="#{userIPersonViewBean.onRowSelect}"
-						update=":userIPersonform" />
+						listener="#{employeeViewBean.onRowSelect}"
+						update=":employeeform" />
         			<p:column headerText="#{msg.username}" sortBy="#{rec.username}"
 						filterBy="#{rec.username}" id="username">  
             #{rec.username}   
@@ -61,7 +61,7 @@
         </p:column>
         			<p:column headerText="#{msg.enabled}" sortBy="#{rec.enabled}"
 						filterBy="#{rec.enabled}" id="enabled"  
-                filterOptions="#{userIPersonViewBean.enabledOptions}"  
+                filterOptions="#{employeeViewBean.enabledOptions}"  
                 filterMatchMode="exact">  
             #{rec.enabled}  
         </p:column>
