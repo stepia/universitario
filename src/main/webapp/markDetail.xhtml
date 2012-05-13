@@ -28,7 +28,13 @@
 							readonly="true">
 						</h:inputText>
 					</c:if>
-	    Mark Name:<h:inputText value="#{markViewBean.selectedMark.name}"
+	    Mark Pmark:<h:inputText value="#{markViewBean.selectedMark.pmark}"
+						required="true" requiredMessage="#{msg.rmname}" />
+	    Mark Nmark:<h:inputText value="#{markViewBean.selectedMark.nmark}"
+						required="true" requiredMessage="#{msg.rmname}" />
+	    Mark Wmark:<h:inputText value="#{markViewBean.selectedMark.wmark}"
+						required="true" requiredMessage="#{msg.rmname}" />
+	    Mark Vmark:<h:inputText value="#{markViewBean.selectedMark.vmark}"
 						required="true" requiredMessage="#{msg.rmname}" />
 					<c:if test="#{not empty markViewBean.selectedMark.created}">
 	    Mark Created:<h:inputText readonly="true"

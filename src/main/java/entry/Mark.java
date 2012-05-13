@@ -10,7 +10,10 @@ import javax.faces.bean.RequestScoped;
 public class Mark {
 
 	private Long id;
-	private String name;
+	private String pmark;
+	private String nmark;
+	private String wmark;
+	private String vmark;
     private Date created;
     private Date modified;
     
@@ -23,12 +26,36 @@ public class Mark {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getPmark() {
+        return pmark;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPmark(String pmark) {
+        this.pmark = pmark;
+    }
+    
+    public String getNmark() {
+        return nmark;
+    }
+
+    public void setNmark(String nmark) {
+        this.nmark = nmark;
+    }
+    
+    public String getWmark() {
+        return wmark;
+    }
+
+    public void setWmark(String wmark) {
+        this.wmark = wmark;
+    }
+    
+    public String getVmark() {
+        return vmark;
+    }
+
+    public void setVmark(String vmark) {
+        this.vmark = vmark;
     }
     
     public Date getCreated() {

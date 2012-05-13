@@ -134,7 +134,10 @@ create table discipline(
      
 create table mark(
       id int not null AUTO_INCREMENT primary key,
-      name varchar(50) not null ,
+      pmark varchar(50) not null ,
+      nmark varchar(50) not null ,
+      wmark varchar(50) not null ,
+      vmark varchar(50) not null ,
       modified datetime,
       created datetime);
      

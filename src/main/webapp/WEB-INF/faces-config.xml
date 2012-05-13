@@ -126,6 +126,11 @@
             <redirect/>
         </navigation-case>
         <navigation-case>
+            <from-outcome>plandetails</from-outcome>
+            <to-view-id>/plandetails.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>position</from-outcome>
             <to-view-id>/position.xhtml</to-view-id>
             <redirect/>
@@ -848,6 +853,58 @@
         <navigation-case>
             <from-outcome>save</from-outcome>
             <to-view-id>/plan.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/plandetails.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/plandetails.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/admin.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>create</from-outcome>
+            <to-view-id>/plandDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+     </navigation-rule>
+     <navigation-rule>
+        <from-view-id>/plandDetail.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/plandDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
+            <to-view-id>/plandetails.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/plandetails.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>save</from-outcome>
+            <to-view-id>/plandetails.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
