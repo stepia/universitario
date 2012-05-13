@@ -39,7 +39,7 @@
             <list>
                 <value>main/authority.hbm.xml</value>
                 <value>main/user.hbm.xml</value>
-                <value>main/userIPerson.hbm.xml</value>
+                <value>main/employee.hbm.xml</value>
                 <value>main/person.hbm.xml</value>
                 <value>main/team.hbm.xml</value>
                 <value>main/emp2team.hbm.xml</value>
@@ -113,15 +113,15 @@
         </property>
     </bean>
     
-    <bean id="userIPersonDao" class="dao.UserIPersonDaoHibernate">
+    <bean id="employeeDao" class="dao.EmployeeDaoHibernate">
         <property name="sessionFactory">
             <ref local="sessionFactory"/>
         </property>
     </bean>
 
-    <bean id="userIPersonManager" class="service.UserIPersonManager">
-        <property name="userIPersonDao">
-            <ref local="userIPersonDao"/>
+    <bean id="employeeManager" class="service.EmployeeManager">
+        <property name="employeeDao">
+            <ref local="employeeDao"/>
         </property>
     </bean>
         <bean id="emp2TeamIPersonDao" class="dao.Emp2TeamIPersonDaoHibernate">
