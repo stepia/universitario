@@ -57,6 +57,13 @@
             <to-view-id>/employee.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>faculty</from-outcome>
+            <to-view-id>/faculty.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>        
+        
+        
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/admin.xhtml</from-view-id>

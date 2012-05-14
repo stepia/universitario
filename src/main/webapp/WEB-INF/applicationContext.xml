@@ -60,8 +60,8 @@
                 <value>main/week.hbm.xml</value>
                 <value>main/lesson.hbm.xml</value>
                 <value>main/report.hbm.xml</value>
-                <value>main/emp2teamIPerson.hbm.xml</value>
-                <value>main/emp2teamITeam.hbm.xml</value>
+                <value>main/empteam.hbm.xml</value>
+                <value>main/teamemp.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -124,26 +124,26 @@
             <ref local="employeeDao"/>
         </property>
     </bean>
-        <bean id="emp2TeamIPersonDao" class="dao.Emp2TeamIPersonDaoHibernate">
+        <bean id="empTeamDao" class="dao.EmpTeamDaoHibernate">
         <property name="sessionFactory">
             <ref local="sessionFactory"/>
         </property>
     </bean>
 
-    <bean id="emp2TeamIPersonManager" class="service.Emp2TeamIPersonManager">
-        <property name="emp2TeamIPersonDao">
-            <ref local="emp2TeamIPersonDao"/>
+    <bean id="empTeamManager" class="service.EmpTeamManager">
+        <property name="empTeamDao">
+            <ref local="empTeamDao"/>
         </property>
     </bean>
-    <bean id="emp2TeamITeamDao" class="dao.Emp2TeamITeamDaoHibernate">
+    <bean id="teamEmpDao" class="dao.TeamEmpDaoHibernate">
         <property name="sessionFactory">
             <ref local="sessionFactory"/>
         </property>
     </bean>
 
-    <bean id="emp2TeamITeamManager" class="service.Emp2TeamITeamManager">
-        <property name="emp2TeamITeamDao">
-            <ref local="emp2TeamITeamDao"/>
+    <bean id="teamEmpManager" class="service.TeamEmpManager">
+        <property name="teamEmpDao">
+            <ref local="teamEmpDao"/>
         </property>
     </bean>
     

@@ -7,7 +7,7 @@
 <h:head>
 	<title>#{msg.cemployee}</title>
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </h:head>
 
 <h:body>
@@ -15,7 +15,7 @@
 	<div id="container">
 		<div id="header">
 			<ui:include src="/iDetail.xhtml">
-			    <ui:param name="title" value="#{msg.employee}" />
+				<ui:param name="title" value="#{msg.employee}" />
 				<ui:param name="bean" value="#{employeeViewBean}" />
 			</ui:include>
 		</div>
@@ -25,21 +25,60 @@
 				<h:panelGrid id="pnlEmployeeDetail" columns="6" cellspacing="30"
 					border="0" title="Universitario">
 
-		#{msg.lastnameua}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.lastnameua}"/>
-	    #{msg.firstnameua}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.firstnameua}"/>
-	    #{msg.middlenameua}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.middlenameua}"/>
-	    #{msg.lastnameru}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.lastnameru}"/>
-	    #{msg.firstnameru}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.firstnameru}"/>
-	    #{msg.middlenameru}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.middlenameru}"/>
-	    #{msg.lastnameeng}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.lastnameeng}"/>
-	    #{msg.firstnameeng}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.firstnameeng}"/>
-	    #{msg.dob}:<h:inputText value="#{employeeViewBean.selectedEmployee.person.dob}"/>
-	    #{msg.username}:<h:inputText value="#{employeeViewBean.selectedEmployee.username}"/>
-	    #{msg.enabled}:<h:selectOneMenu id="Enabled" disabled="true" value="#{employeeViewBean.selectedEmployee.enabled}">
-	    <f:selectItem id="item1" itemLabel=" #{msg.active}" itemValue="true" />
-	    <f:selectItem id="item2" itemLabel="#{msg.notactive}" itemValue="false" />
-	    </h:selectOneMenu>
+		#{msg.lastnameua}:<h:inputText
+						value="#{employeeViewBean.selectedEmployee.person.lastnameua}" />
+	    #{msg.firstnameua}:<h:inputText
+						value="#{employeeViewBean.selectedEmployee.person.firstnameua}" />
+	    #{msg.middlenameua}:<h:inputText
+						value="#{employeeViewBean.selectedEmployee.person.middlenameua}" />
+	    #{msg.lastnameru}:<h:inputText
+						value="#{employeeViewBean.selectedEmployee.person.lastnameru}" />
+	    #{msg.firstnameru}:<h:inputText
+						value="#{employeeViewBean.selectedEmployee.person.firstnameru}" />
+	    #{msg.middlenameru}:<h:inputText
+						value="#{employeeViewBean.selectedEmployee.person.middlenameru}" />
+	    #{msg.lastnameeng}:<h:inputText
+						value="#{employeeViewBean.selectedEmployee.person.lastnameeng}" />
+	    #{msg.firstnameeng}:<h:inputText
+						value="#{employeeViewBean.selectedEmployee.person.firstnameeng}" />
+	    #{msg.dob}:<h:inputText
+						value="#{employeeViewBean.selectedEmployee.person.dob}" />
+	    #{msg.username}:<h:inputText
+						value="#{employeeViewBean.selectedEmployee.username}" />
+	    #{msg.enabled}:<h:selectOneMenu id="Enabled" disabled="true"
+						value="#{employeeViewBean.selectedEmployee.enabled}">
+						<f:selectItem id="item1" itemLabel=" #{msg.active}"
+							itemValue="true" />
+						<f:selectItem id="item2" itemLabel="#{msg.notactive}"
+							itemValue="false" />
+					</h:selectOneMenu>
 				</h:panelGrid>
+				<c:if test="#{not empty employeeViewBean.selectedEmployee.teamEmps}">
+					<p:dataTable id="basic" var="teamEmp"
+						value="#{employeeViewBean.selectedEmployee.teamEmps}">
+						<p:column id="modelHeader">
+							<f:facet name="header">  
+                    Team name  
+            </f:facet>
+							<h:outputText value="#{teamEmp.team.name}" />
+						</p:column>
+
+						<p:column>
+							<f:facet name="header">  
+                    Position  
+            </f:facet>
+							<h:outputText value="#{teamEmp.position.name}" />
+						</p:column>
+
+						<p:column>
+							<f:facet name="header">  
+                    Occupation  
+            </f:facet>
+							<h:outputText value="#{teamEmp.occupation.name}" />
+						</p:column>
+
+					</p:dataTable>
+				</c:if>
 			</h:form>
 		</div>
 		<div id="footer">
