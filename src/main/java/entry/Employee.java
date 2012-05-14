@@ -1,8 +1,8 @@
 package entry;
 
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -15,7 +15,7 @@ public class Employee {
     private Person person;
     private String username;
     private String password;
-    private Set<Authority> authorities = new HashSet<Authority>();
+    private List<TeamEmp> teamEmps = new ArrayList<TeamEmp>();
     private boolean enabled = true;
     private Date created;
     private Date modified;
@@ -76,12 +76,12 @@ public class Employee {
         this.modified = modified;
     }
 
-    public Set<Authority> getAuthorities() {
-        return authorities;
+    public List<TeamEmp> getTeamEmps() {
+        return teamEmps;
     }
 
-    public void setAuthorities(Set<Authority> authorities) {
-        this.authorities = authorities;
+    public void setTeamEmps(List<TeamEmp> teamEmps) {
+        this.teamEmps = teamEmps;
     }
 
 }

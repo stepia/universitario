@@ -7,24 +7,16 @@ import javax.faces.bean.RequestScoped;
 
 @ManagedBean
 @RequestScoped
-public class Emp2TeamITeam {
+public class TeamEmp {
 
     private Long id;
-    private Person person;
+    private Team team;
     private Position position;
     private Occupation occupation;
     private Long recordbook;
     private State state;
     private Date created;
     private Date modified;
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
 
     public Position getPosition() {
         return position;
@@ -81,4 +73,13 @@ public class Emp2TeamITeam {
     public void setState(State state) {
         this.state = state;
     }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
 }

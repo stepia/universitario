@@ -7,9 +7,9 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Transactional;
 
-import entry.Emp2TeamITeam;
+import entry.TeamEmp;
 
-public class Emp2TeamITeamDaoHibernate implements Emp2TeamITeamDao {
+public class TeamEmpDaoHibernate implements TeamEmpDao {
 
     private SessionFactory sessionFactory;
 
@@ -23,20 +23,20 @@ public class Emp2TeamITeamDaoHibernate implements Emp2TeamITeamDao {
 
     @SuppressWarnings("unchecked")
     @Transactional
-    public List<Emp2TeamITeam> getEmp2TeamITeams() {
-        return sessionFactory.getCurrentSession().createCriteria(Emp2TeamITeam.class)
+    public List<TeamEmp> getTeamEmps() {
+        return sessionFactory.getCurrentSession().createCriteria(TeamEmp.class)
                     .list();
     }
 
     @SuppressWarnings("unchecked")
     @Transactional
-    public List<Emp2TeamITeam> getEmp2TeamITeams(String sortBy, boolean sortOrder) {
+    public List<TeamEmp> getTeamEmps(String sortBy, boolean sortOrder) {
         if (sortOrder) {
-            return sessionFactory.getCurrentSession().createCriteria(Emp2TeamITeam.class)
+            return sessionFactory.getCurrentSession().createCriteria(TeamEmp.class)
                         .addOrder(Order.asc(sortBy))
                         .list();
         } else {
-            return sessionFactory.getCurrentSession().createCriteria(Emp2TeamITeam.class)
+            return sessionFactory.getCurrentSession().createCriteria(TeamEmp.class)
                         .addOrder(Order.desc(sortBy))
                         .list();
         }
@@ -44,36 +44,36 @@ public class Emp2TeamITeamDaoHibernate implements Emp2TeamITeamDao {
     }
 
     @Transactional
-    public void deleteEmp2TeamITeam(Emp2TeamITeam empTeam) {
+    public void deleteTeamEmp(TeamEmp empTeam) {
         sessionFactory.getCurrentSession().delete(empTeam);
 
     }
 
     @Transactional
-    public void saveEmp2TeamITeam(Emp2TeamITeam empTeam) {
+    public void saveTeamEmp(TeamEmp empTeam) {
         sessionFactory.getCurrentSession().save(empTeam);
 
     }
 
     @Transactional
-    public void saveOrUpdate(Emp2TeamITeam empTeam) {
+    public void saveOrUpdate(TeamEmp empTeam) {
         sessionFactory.getCurrentSession().saveOrUpdate(empTeam);
 
     }
 
     @Transactional
-    public void editEmp2TeamITeam(Emp2TeamITeam empTeam) {
+    public void editTeamEmp(TeamEmp empTeam) {
         sessionFactory.getCurrentSession().merge(empTeam);
     }
 
     @SuppressWarnings("rawtypes")
     @Transactional
-    public Emp2TeamITeam getEmp2TeamITeam(Long id) {
-        List empTeams = sessionFactory.getCurrentSession().createCriteria(Emp2TeamITeam.class)
+    public TeamEmp getTeamEmp(Long id) {
+        List empTeams = sessionFactory.getCurrentSession().createCriteria(TeamEmp.class)
                     .add(Restrictions.eq("id", id)).list();
-        Emp2TeamITeam empTeam = null;
+        TeamEmp empTeam = null;
         if ((empTeams != null) && (empTeams.size() > 0)) {
-            empTeam = (Emp2TeamITeam) empTeams.get(0);
+            empTeam = (TeamEmp) empTeams.get(0);
         }
         return empTeam;
     }
