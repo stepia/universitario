@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
+</h:head>
+
+<f:event type="preRenderView" listener="#{facultyViewBean.init}" />
+
+<h:body>
+	<p:ajaxStatus onstart="statusDialog.show();"
+		onsuccess="statusDialog.hide();" />
+	<p:dialog modal="true" widgetVar="statusDialog" header="#{msg.loading}"
+		draggable="false" closable="false">
+		<p:graphicImage value="/resources/img/ajaxloadingbar.gif" />
+	</p:dialog>
+	<f:view locale="#{language.localeCode}" />
+	<div id="container">
+		<div id="header">
+			<ui:include src="/iQuery.xhtml">
+				<ui:param name="title" value="#{msg.employee}" />
+				<ui:param name="bean" value="#{facultyViewBean}" />
+			</ui:include>
+		</div>
+		<div id="content">
+			<h:form id="facultyform">
+
+				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
+					value="#{facultyViewBean.faculties}"
+					selection="#{facultyViewBean.selectedFaculty}" id="facultyTable"
+					rowsPerPageTemplate="5,10,15,25,50,100"
+					emptyMessage="#{msg.norecordsfound}">
+
+					<f:facet name="header">  .
+            #{msg.lemployee} (#{facultyViewBean.length}) 
+        </f:facet>
+        <p:ajax event="sort"
+                            listener="#{facultyViewBean.caseListSortListner}" update=":facultyform:facultyTable" />
+					<p:column selectionMode="single" style="width:18px" />
+					<p:ajax event="rowSelect"
+						listener="#{facultyViewBean.onRowSelect}"
+						update=":facultyform" />
+        			<p:column headerText="#{msg.username}" sortBy="#{rec.username}"
+						filterBy="#{rec.username}" id="username">  
+            #{rec.username}   
+        </p:column>
+					<p:column headerText="#{msg.lastnameua}"  filterBy="#{rec.person.lastnameua}"
+						id="lastnameua">  
+            #{rec.person.lastnameua}  
+        </p:column>
+					<p:column headerText="#{msg.firstnameua}" 
+						filterBy="#{rec.person.firstnameua}" id="firstnameua">  
+            #{rec.person.firstnameua}  
+        </p:column>
+        			<p:column headerText="#{msg.middlenameua}"
+						filterBy="#{rec.person.middlenameua}" id="middlenameua">  
+            #{rec.person.middlenameua}  
+        </p:column>
+        			<p:column headerText="#{msg.enabled}" sortBy="#{rec.enabled}"
+						filterBy="#{rec.enabled}" id="enabled"  
+                filterOptions="#{facultyViewBean.enabledOptions}"  
+                filterMatchMode="exact">  
+            #{rec.enabled}  
+        </p:column>
+
+				</p:dataTable>
+			</h:form>
+
+		</div>
+		<div id="footer">
+			<ui:include src="/footer.xhtml" />
+		</div>
+	</div>
+</h:body>
+</html>
