@@ -1066,87 +1066,87 @@ INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (127,'6.130102 Со�
 INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (128,'6.020301 Філософія',4,3,1);
 INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (129,'6.030101 Соціологія',4,3,1);
 /* Факультет систем та засобів масової комунікації*/
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (130,'6.030301 Журналістика',5,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (131,'6.030302 Реклама і зв''язки з громадськістю',5,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (132,'6.030303 Видавнича справа та редагування',5,3,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (130,'6.030301 Журналістика',4,4,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (131,'6.030302 Реклама і зв''язки з громадськістю',4,4,1);
+INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (132,'6.030303 Видавнича справа та редагування',4,4,1);
 /* Факультет міжнародної економіки*/
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (133,'6.140103 Туризм',6,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (134,'6.030505 Управління персоналом і економіка праці',6,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (135,'6.030503 Міжнародна економіка',6,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (136,'6.030601 Менеджмент',6,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (137,'6.030203 Міжнародні економічні відносини',6,3,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (133,'6.140103 Туризм',5,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (134,'6.030505 Управління персоналом і економіка праці',5,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (135,'6.030503 Міжнародна економіка',5,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (136,'6.030601 Менеджмент',5,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (137,'6.030203 Міжнародні економічні відносини',5,4,1);
 /* Економічний факультет*/
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (138,'6.030502 Економічна кібернетика',7,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (139,'6.030504 Економіка підприємства',7,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (140,'6.030506 Прикладна статистика',7,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (141,'6.030507 Маркетинг',7,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (142,'6.030508 Фінанси і кредит',7,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (143,'6.030509 Облік і аудит',7,3,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (138,'6.030502 Економічна кібернетика',6,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (139,'6.030504 Економіка підприємства',6,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (140,'6.030506 Прикладна статистика',6,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (141,'6.030507 Маркетинг',6,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (142,'6.030508 Фінанси і кредит',6,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (143,'6.030509 Облік і аудит',6,4,1);
 /* Історичний факультет*/
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (144,'6.020302 Історія',8,3,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (144,'6.020302 Історія',7,4,1);
 /* Факультет психології*/
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (145,'6.030102 Психологія',9,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (146,'6.010105 Корекційна освіта',9,3,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (145,'6.030102 Психологія',8,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (146,'6.010105 Корекційна освіта',8,4,1);
 /* Юридичний факультет*/
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (147,'6.030402 Правознавство',10,3,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (147,'6.030402 Правознавство',9,4,1);
 /* Факультет фізики, електроніки та комп''ютерних систем*/
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (148,'6.040203 Фізика',11,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (149,'6.040204 Прикладна фізика',11,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (150,'6.050801 Мікро- та наноелектроніка',11,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (151,'6.050101 Комп''ютерні науки',11,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (152,'6.050903 Телекомунікації',11,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (153,'6.050102 Комп''ютерна інженерія',11,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (154,'6.050902 Радіоелектронні апарати',11,3,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (148,'6.040203 Фізика',10,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (149,'6.040204 Прикладна фізика',10,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (150,'6.050801 Мікро- та наноелектроніка',10,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (151,'6.050101 Комп''ютерні науки',10,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (152,'6.050903 Телекомунікації',10,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (153,'6.050102 Комп''ютерна інженерія',10,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (154,'6.050902 Радіоелектронні апарати',10,4,1);
 /*Хімічний факультет*/
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (155,'6.040101 Хімія',12,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (156,'6.051301 Хімічна технологія',12,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (157,'6.051701 Харчова технологія та інженерія',12,3,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (155,'6.040101 Хімія',11,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (156,'6.051301 Хімічна технологія',11,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (157,'6.051701 Харчова технологія та інженерія',11,4,1);
 /* Факультет біології, екології та медицини*/
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (158,'6.040102 Біологія',13,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (159,'6.040106 Екологія, охорона навколишнього середовища та збалансоване природокористування',13,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (160,'6.120102 Лабораторна діагностика',13,3,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (158,'6.040102 Біологія',12,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (159,'6.040106 Екологія, охорона навколишнього середовища та збалансоване природокористування',12,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (160,'6.120102 Лабораторна діагностика',12,4,1);
 /*Геолого-географічний факультет*/
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (161,'6.040104 Географія',14,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (162,'6.040105 Гідрометеорологія',14,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (163,'6.040103 Геологія',14,3,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (161,'6.040104 Географія',13,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (162,'6.040105 Гідрометеорологія',13,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (163,'6.040103 Геологія',13,4,1);
 /*Факультет прикладної математики*/
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (164,'6.040301 Прикладна математика',15,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (165,'6.040302 Інформатика',15,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (166,'6.040303 Системний аналіз',15,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (167,'6.050103 Програмна інженерія',15,3,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (164,'6.040301 Прикладна математика',14,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (165,'6.040302 Інформатика',14,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (166,'6.040303 Системний аналіз',14,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (167,'6.050103 Програмна інженерія',14,4,1);
 /* Механіко-математичний факультет*/
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (168,'6.040202 Механіка',16,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (169,'6.040201 Математика',16,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (170,'6.040205 Статистика',16,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (171,'6.050601 Теплоенергетика',16,3,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (168,'6.040202 Механіка',15,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (169,'6.040201 Математика',15,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (170,'6.040205 Статистика',15,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (171,'6.050601 Теплоенергетика',15,4,1);
 /* Фізико-технічний факультет*/
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (172,'6.050701 Електротехніка та електротехнології',17,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (173,'6.050403 Інженерне матеріалознавство',17,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (174,'6.050503 Машинобудування',17,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (175,'6.050501 Прикладна механіка',17,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (176,'6.051102 6.051102 Двигуни та енергетичні установки літальних апаратів',17,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (177,'6.051003 Приладобудування',17,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (178,'6.050901 6.050901 Радіотехніка',17,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (179,'6.051103 6.051103 Авіоніка',17,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (180,'6.051101 Авіа- і ракетобудування',17,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (181,'6.170102 Системи технічного захисту інформації',17,3,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (172,'6.050701 Електротехніка та електротехнології',16,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (173,'6.050403 Інженерне матеріалознавство',16,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (174,'6.050503 Машинобудування',16,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (175,'6.050501 Прикладна механіка',16,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (176,'6.051102 6.051102 Двигуни та енергетичні установки літальних апаратів',16,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (177,'6.051003 Приладобудування',16,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (178,'6.050901 6.050901 Радіотехніка',16,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (179,'6.051103 6.051103 Авіоніка',16,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (180,'6.051101 Авіа- і ракетобудування',16,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (181,'6.170102 Системи технічного захисту інформації',16,4,1);
 
 /*Центр заочної та вечірньої форм навчання*/
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (182,'6.020303 Філологія (українська мова та література)',18,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (183,'6.020303 Філологія (англійська мова та література)',18,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (184,'6.030301 Журналістика',18,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (185,'6.030504 Економіка підприємства',18,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (186,'6.030508 Фінанси і кредит',18,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (187,'6.030601 Менеджмент',18,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (188,'6.020302 Історія',18,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (189,'6.030104 Політологія',18,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (190,'6.030101 Соціологія',18,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (191,'6.030102 Психологія',18,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (192,'6.030402 Правознавство',18,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (193,'6.040102 Біологія',18,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (194,'6.040104 Географія',18,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (195,'6.040201 Математика',18,3,1);
-INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (196,'6.040302 Інформатика',18,3,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (182,'6.020303 Філологія (українська мова та література)',17,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (183,'6.020303 Філологія (англійська мова та література)',17,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (184,'6.030301 Журналістика',17,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (185,'6.030504 Економіка підприємства',17,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (186,'6.030508 Фінанси і кредит',17,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (187,'6.030601 Менеджмент',17,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (188,'6.020302 Історія',17,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (189,'6.030104 Політологія',17,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (190,'6.030101 Соціологія',17,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (191,'6.030102 Психологія',17,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (192,'6.030402 Правознавство',17,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (193,'6.040102 Біологія',17,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (194,'6.040104 Географія',17,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (195,'6.040201 Математика',17,4,1);
+INSERT INTO team (id,name,rootid,teamtypeid,stateid) VALUES (196,'6.040302 Інформатика',17,4,1);
 
 /*Групи*/
 INSERT INTO team (id,name,teamtypeid,rootid,stateid) VALUES (197,'КП-11-1',5,149,1);
