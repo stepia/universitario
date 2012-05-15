@@ -3,16 +3,19 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="entry.Team" table="team">
+    <class name="entry.TeamView" table="team">
         <id name="id" column="id">
-            <generator class="increment" />
+            <generator class="increment"/>
         </id>
         <property name="name" column="name"/>
-        <property name="teamtypeid" column="teamtypeid"/>
-        <property name="rootid" column="rootid"/>
         <property name="details" column="details"/>
-        <property name="stateid" column="stateid"/>
         <property name="created" column="created"/>
         <property name="modified" column="modified"/>
+        <bag name="empTeams" table="emp2team" lazy="false" cascade="all">
+            <key column="teamid"  not-null="true"/>
+            <one-to-many class="entry.EmpTeam"/>
+        </bag>
+        <many-to-one name="teamtype" class="entry.TeamType" column="teamtypeid"
+            not-null="true" cascade="all" fetch="join"/>
     </class>
 </hibernate-mapping>

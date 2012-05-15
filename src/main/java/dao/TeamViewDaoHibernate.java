@@ -30,6 +30,28 @@ public class TeamViewDaoHibernate implements TeamViewDao {
 
     @SuppressWarnings("unchecked")
     @Transactional
+    public List<TeamView> getTeamViews(long teamTypeId) {
+        return sessionFactory.getCurrentSession().createCriteria(TeamView.class)
+                    .add(Restrictions.eq("teamtype.id", teamTypeId)).list();
+    }
+
+    @SuppressWarnings("unchecked")
+    @Transactional
+    public List<TeamView> getTeamViews(long teamTypeId, String sortBy, boolean sortOrder) {
+        if (sortOrder) {
+            return sessionFactory.getCurrentSession().createCriteria(TeamView.class)
+                        .addOrder(Order.asc(sortBy)).add(Restrictions.eq("teamtype.id", teamTypeId))
+                        .list();
+        } else {
+            return sessionFactory.getCurrentSession().createCriteria(TeamView.class)
+                        .addOrder(Order.desc(sortBy)).add(Restrictions.eq("teamtype.id", teamTypeId))
+                        .list();
+        }
+
+    }
+
+    @SuppressWarnings("unchecked")
+    @Transactional
     public List<TeamView> getTeamViews(String sortBy, boolean sortOrder) {
         if (sortOrder) {
             return sessionFactory.getCurrentSession().createCriteria(TeamView.class).addOrder(Order.asc(sortBy))

@@ -18,7 +18,7 @@ import entry.TeamView;
 
 @ManagedBean
 @SessionScoped
-public class ChairViewBean {
+public class GroupViewBean {
 
     @ManagedProperty(value = "#{teamViewManager}")
     private TeamViewDao teamViewManager;
@@ -49,10 +49,10 @@ public class ChairViewBean {
 
     public List<TeamView> getTeams() {
         if (sortBy == null) {
-            teams = getTeamViewManager().getTeamViews(3);
+            teams = getTeamViewManager().getTeamViews(5);
         } else {
             if (!sortBy.equals("person")) {
-                teams = getTeamViewManager().getTeamViews(3, sortBy, sortOrder);
+                teams = getTeamViewManager().getTeamViews(5, sortBy, sortOrder);
             }
         }
         this.length = teams.size();
@@ -60,7 +60,7 @@ public class ChairViewBean {
     }
 
     public void onRowSelect(SelectEvent event) throws IOException {
-        FacesContext.getCurrentInstance().getExternalContext().redirect("chairDetail.xhtml");
+        FacesContext.getCurrentInstance().getExternalContext().redirect("groupDetail.xhtml");
         setEditible(true);
     }
 

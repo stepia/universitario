@@ -8,7 +8,11 @@ public interface TeamViewDao {
 
     public List<TeamView> getTeamViews();
 
+    public List<TeamView> getTeamViews(long teamTypeId);
+
     public List<TeamView> getTeamViews(String sortBy, boolean sortOrder);
+
+    public List<TeamView> getTeamViews(long teamTypeId, String sortBy, boolean sortOrder);
 
     public void saveTeamView(TeamView teamView);
 

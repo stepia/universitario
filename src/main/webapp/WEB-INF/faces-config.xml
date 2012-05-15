@@ -5,7 +5,8 @@
     version="2.0">
 
     <application>
-        <variable-resolver>org.springframework.web.jsf.DelegatingVariableResolver</variable-resolver>
+        <variable-resolver>org.springframework.web.jsf.DelegatingVariableResolver
+        </variable-resolver>
         <locale-config>
             <supported-locale>ru</supported-locale>
             <supported-locale>ua</supported-locale>
@@ -61,9 +62,13 @@
             <from-outcome>faculty</from-outcome>
             <to-view-id>/faculty.xhtml</to-view-id>
             <redirect/>
-        </navigation-case>        
-        
-        
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>group</from-outcome>
+            <to-view-id>/group.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/admin.xhtml</from-view-id>
@@ -188,17 +193,17 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/passwordchanges.xhtml</from-view-id>
-         <navigation-case>
+        <navigation-case>
             <from-outcome>logout</from-outcome>
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-    
-     <navigation-rule>
+    </navigation-rule>
+
+    <navigation-rule>
         <from-view-id>/state.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
@@ -215,13 +220,13 @@
             <to-view-id>/stateDetail.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-         <navigation-case>
+        <navigation-case>
             <from-outcome>logout</from-outcome>
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/stateDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
@@ -249,7 +254,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/authority.xhtml</from-view-id>
         <navigation-case>
@@ -272,8 +277,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/authorityDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -301,8 +306,8 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-	
-	<navigation-rule>
+
+    <navigation-rule>
         <from-view-id>/discipline.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -324,8 +329,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/disciplineDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -353,7 +358,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/emp2team.xhtml</from-view-id>
         <navigation-case>
@@ -376,8 +381,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/emp2teamDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -405,7 +410,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/employee.xhtml</from-view-id>
         <navigation-case>
@@ -423,10 +428,10 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/employeeDetail.xhtml</from-view-id>
-         <navigation-case>
+        <navigation-case>
             <from-outcome>refresh</from-outcome>
             <to-view-id>/employeeDetail.xhtml</to-view-id>
             <redirect/>
@@ -452,7 +457,284 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
+    <navigation-rule>
+        <from-view-id>/faculty.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/faculty.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/facultyDetail.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/facultyDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
+            <to-view-id>/faculty.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/faculty.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>save</from-outcome>
+            <to-view-id>/faculty.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/plans.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/plans.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/plansDetail.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/plansDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
+            <to-view-id>/plans.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/plans.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>save</from-outcome>
+            <to-view-id>/plans.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/chair.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/chair.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/chairDetail.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/chairDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
+            <to-view-id>/chair.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/chair.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>save</from-outcome>
+            <to-view-id>/chair.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/marks.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/marks.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/marksDetail.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/marksDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
+            <to-view-id>/marks.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/employee.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>save</from-outcome>
+            <to-view-id>/employee.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/Schedule.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/Schedule.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/ScheduleDetail.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/ScheduleDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
+            <to-view-id>/Schedule.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/Schedule.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>save</from-outcome>
+            <to-view-id>/Schedule.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/group.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/group.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/groupDetail.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/groupDetail.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
+            <to-view-id>/group.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/group.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>save</from-outcome>
+            <to-view-id>/group.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
     <navigation-rule>
         <from-view-id>/lesson.xhtml</from-view-id>
         <navigation-case>
@@ -475,8 +757,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/lessonDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -504,7 +786,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/lessontype.xhtml</from-view-id>
         <navigation-case>
@@ -527,8 +809,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/lessontypeDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -556,7 +838,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/mark.xhtml</from-view-id>
         <navigation-case>
@@ -579,8 +861,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/markDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -608,7 +890,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/marktype.xhtml</from-view-id>
         <navigation-case>
@@ -631,8 +913,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/marktypeDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -660,7 +942,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/occupation.xhtml</from-view-id>
         <navigation-case>
@@ -683,8 +965,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/occupationDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -712,7 +994,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/period.xhtml</from-view-id>
         <navigation-case>
@@ -735,8 +1017,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/periodDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -764,7 +1046,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/person.xhtml</from-view-id>
         <navigation-case>
@@ -787,8 +1069,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/personDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -816,7 +1098,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/plan.xhtml</from-view-id>
         <navigation-case>
@@ -839,8 +1121,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/planDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -868,7 +1150,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/plandetails.xhtml</from-view-id>
         <navigation-case>
@@ -891,8 +1173,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/plandDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -920,7 +1202,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/position.xhtml</from-view-id>
         <navigation-case>
@@ -943,8 +1225,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/positionDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -972,7 +1254,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/report.xhtml</from-view-id>
         <navigation-case>
@@ -995,8 +1277,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/reportDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -1024,7 +1306,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/reporttype.xhtml</from-view-id>
         <navigation-case>
@@ -1047,8 +1329,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/reporttypeDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -1076,7 +1358,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/role.xhtml</from-view-id>
         <navigation-case>
@@ -1099,8 +1381,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/roleDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -1128,7 +1410,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/team.xhtml</from-view-id>
         <navigation-case>
@@ -1151,8 +1433,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/teamPrimeDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -1180,10 +1462,10 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/teamtype.xhtml</from-view-id>
-         <navigation-case>
+        <navigation-case>
             <from-outcome>refresh</from-outcome>
             <to-view-id>/teamtype.xhtml</to-view-id>
             <redirect/>
@@ -1203,8 +1485,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/teamtypeDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -1232,7 +1514,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/time.xhtml</from-view-id>
         <navigation-case>
@@ -1255,10 +1537,10 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/timeDetail.xhtml</from-view-id>
-         <navigation-case>
+        <navigation-case>
             <from-outcome>refresh</from-outcome>
             <to-view-id>/timeDetail.xhtml</to-view-id>
             <redirect/>
@@ -1284,7 +1566,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/user.xhtml</from-view-id>
         <navigation-case>
@@ -1307,8 +1589,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/userDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -1336,7 +1618,7 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/week.xhtml</from-view-id>
         <navigation-case>
@@ -1359,8 +1641,8 @@
             <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-     </navigation-rule>
-     <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/weekDetail.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>refresh</from-outcome>
@@ -1388,5 +1670,5 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-        
+
 </faces-config>
