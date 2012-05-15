@@ -9,8 +9,52 @@
 
     <http auto-config="true">
         <intercept-url pattern="/login.xhtml" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <intercept-url pattern="/**" access="ROLE_USER,ROLE_ADMIN,ROLE_DEAN" />
-        <form-login login-page="/login.xhtml"/>
+        <intercept-url pattern="/admin.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/passwordchanges.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/disciplineDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/discipline.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/emp2teamDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/emp2team.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/lessonDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/lesson.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/lessontypeDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/lessontype.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/markDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/mark.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/marktypeDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/marktype.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/occupationDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/occupation.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/periodDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/period.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/personDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/plan.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/planDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/plandetails.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/plandetailsDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/position.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/positionDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/report.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/reportDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/reporttype.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/reporttypeDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/roleDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/role.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/stateDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/state.xhtml" access="ROLE_ADMIN" />
+        <intercept-url pattern="/teamDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/team.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/teamtypeDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/teamtype.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/timeDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/time.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/weekDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/week.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/userDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/user.xhtml" access="ROLE_ADMIN" />
+        <intercept-url pattern="/authorityDetail.xhtml" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/authority.xhtml" access="ROLE_ADMIN"/>        
+        <intercept-url pattern="/**" access="ROLE_ADMIN,ROLE_TEACHER,ROLE_STUDENT,ROLE_CHAIRHEAD,ROLE_DEANSOFFICE,ROLE_DEAN,ROLE_PRORECTOR" />
         <logout invalidate-session="true"/>
         <session-management invalid-session-url="/login.xhtml" />
         <session-management>

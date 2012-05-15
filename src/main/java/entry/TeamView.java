@@ -14,6 +14,7 @@ public class TeamView {
     private String name;
     private TeamType teamtype;
     private List<TeamView> roots = new ArrayList<TeamView>();
+    private List<TeamView> children = new ArrayList<TeamView>();
     private String details;
     private State state;
     private Date created;
@@ -90,6 +91,14 @@ public class TeamView {
 
     public void setEmpTeams(List<EmpTeam> empTeams) {
         this.empTeams = empTeams;
+    }
+
+    public List<TeamView> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<TeamView> children) {
+        this.children = children;
     }
 
 }
