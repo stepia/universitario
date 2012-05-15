@@ -45,4 +45,8 @@ public class EmployeeManager implements EmployeeDao {
         return getEmployeeDao().getEmployee(id);
     }
 
+    public Employee getEmployee(String userName) {
+        return getEmployeeDao().getEmployee(userName);
+    }
+
 }

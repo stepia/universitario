@@ -76,4 +76,16 @@ public class EmployeeDaoHibernate implements EmployeeDao {
         return employee;
     }
 
+    @SuppressWarnings("rawtypes")
+    @Transactional
+    public Employee getEmployee(String userName) {
+        List Employees = sessionFactory.getCurrentSession().createCriteria(Employee.class)
+                    .add(Restrictions.eq("username", userName)).list();
+        Employee employee = null;
+        if ((Employees != null) && (Employees.size() > 0)) {
+            employee = (Employee) Employees.get(0);
+        }
+        return employee;
+    }
+
 }
