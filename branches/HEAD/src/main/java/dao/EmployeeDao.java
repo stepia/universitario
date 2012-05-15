@@ -16,6 +16,8 @@ public interface EmployeeDao {
 
     public Employee getEmployee(Long id);
 
+    public Employee getEmployee(String userName);
+
     public void deleteEmployee(Employee employee);
 
     public void saveOrUpdate(Employee employee);

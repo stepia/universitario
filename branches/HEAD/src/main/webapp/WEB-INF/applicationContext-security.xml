@@ -9,7 +9,7 @@
 
     <http auto-config="true">
         <intercept-url pattern="/login.xhtml" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <intercept-url pattern="/**" access="ROLE_USER,ROLE_ADMIN" />
+        <intercept-url pattern="/**" access="ROLE_USER,ROLE_ADMIN,ROLE_DEAN" />
         <form-login login-page="/login.xhtml"/>
         <logout invalidate-session="true"/>
         <session-management invalid-session-url="/login.xhtml" />

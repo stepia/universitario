@@ -16,7 +16,7 @@
 		<div id="header">
 			<ui:insert name="header">
 				<ui:include src="/header.xhtml">
-					<ui:param name="title" value="#{mainbean.title}" />
+					<ui:param name="title" value="#{universitario.title}" />
 				</ui:include>
 			</ui:insert>
 		</div>
@@ -28,52 +28,52 @@
 						styleClass="centered">
 						<h:panelGrid columns="1" cellpadding="10">
 							<h:commandButton image="/resources/img/system-users-3.png"
-								action="#{mainbean.doAction('employee')}" />
+								action="#{universitario.doAction('employee')}" />
 							<h:outputText value="#{msg.employee}" />
 						</h:panelGrid>
 						<h:panelGrid columns="1" cellpadding="10">
 							<h:commandButton image="/resources/img/dialog-password.png"
-								action="#{mainbean.doAction('changepassword')}" />
+								action="#{universitario.doAction('changepassword')}" />
 							<h:outputText value="#{msg.changePassword}" />
 						</h:panelGrid>
 						<h:panelGrid columns="1" cellpadding="10">
 							<h:commandButton image="/resources/img/emblem-office.png"
-								action="#{mainbean.doAction('faculty')}" />
+								action="#{universitario.doAction('faculty')}" />
 							<h:outputText value="#{msg.faculty}" />
 						</h:panelGrid>
 						<h:panelGrid columns="1" cellpadding="10">
 							<h:commandButton
 								image="/resources/img/accessories-dictionary.png"
-								action="#{mainbean.doAction('plan')}" />
+								action="#{universitario.doAction('plan')}" />
 							<h:outputText value="#{msg.plan}" />
 						</h:panelGrid>
 						<h:panelGrid columns="1" cellpadding="10">
 							<h:commandButton image="/resources/img/applications-other-2.png"
-								action="#{mainbean.doAction('chair')}" />
+								action="#{universitario.doAction('chair')}" />
 							<h:outputText value="#{msg.chair}" />
 						</h:panelGrid>
 						<h:panelGrid columns="1" cellpadding="10">
 							<h:commandButton
 								image="/resources/img/accessories-text-editor-8.png"
-								action="#{mainbean.doAction('marks')}" />
+								action="#{universitario.doAction('marks')}" />
 							<h:outputText value="#{msg.marks}" />
 						</h:panelGrid>
 						<h:panelGrid columns="1" cellpadding="10">
 							<h:commandButton image="/resources/img/accessories-clock.png"
-								action="#{mainbean.doAction('schedule')}" />
+								action="#{universitario.doAction('schedule')}" />
 							<h:outputText value="#{msg.schedule}" />
 						</h:panelGrid>
 						<h:panelGrid columns="1" cellpadding="10">
 							<h:commandButton
 								image="/resources/img/internet-web-browser-4.png"
-								action="#{mainbean.doAction('admin')}" />
+								action="#{universitario.doAction('admin')}" />
 							<h:outputText value="#{msg.adminTools}" />
 						</h:panelGrid>
 
 						<h:panelGrid columns="1" cellpadding="10">
 							<h:commandButton
 								image="/resources/img/applications-engineering-2.png"
-								action="#{mainbean.doAction('group')}" />
+								action="#{universitario.doAction('group')}" />
 							<h:outputText value="#{msg.group}" />
 						</h:panelGrid>
 
