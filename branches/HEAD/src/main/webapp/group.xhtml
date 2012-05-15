@@ -8,7 +8,7 @@
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
-<f:event type="preRenderView" listener="#{facultyViewBean.init}" />
+<f:event type="preRenderView" listener="#{groupViewBean.init}" />
 
 <h:body>
 	<p:ajaxStatus onstart="statusDialog.show();"
@@ -21,29 +21,29 @@
 	<div id="container">
 		<div id="header">
 			<ui:include src="/iQuery.xhtml">
-				<ui:param name="title" value="#{msg.faculty}" />
-				<ui:param name="bean" value="#{facultyViewBean}" />
+				<ui:param name="title" value="#{msg.group}" />
+				<ui:param name="bean" value="#{groupViewBean}" />
 			</ui:include>
 		</div>
 		<div id="content">
-			<h:form id="facultyform">
+			<h:form id="groupform">
 
 				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
-					value="#{facultyViewBean.teams}"
-					selection="#{facultyViewBean.selectedTeam}" id="facultyTable"
+					value="#{groupViewBean.teams}"
+					selection="#{groupViewBean.selectedTeam}" id="groupTable"
 					rowsPerPageTemplate="5,10,15,25,50,100"
 					emptyMessage="#{msg.norecordsfound}">
 
 					<f:facet name="header">  
-            #{msg.faculty} (#{facultyViewBean.length}) 
+            #{msg.group} (#{groupViewBean.length}) 
         </f:facet>
 					<p:ajax event="sort"
-						listener="#{facultyViewBean.caseListSortListner}"
-						update=":facultyform:facultyTable" />
+						listener="#{groupViewBean.caseListSortListner}"
+						update=":groupform:groupTable" />
 					<p:column selectionMode="single" style="width:18px" />
-					<p:ajax event="rowSelect" listener="#{facultyViewBean.onRowSelect}"
-						update=":facultyform" />
-					<p:column headerText="#{msg.faculty}" sortBy="#{rec.name}"
+					<p:ajax event="rowSelect" listener="#{groupViewBean.onRowSelect}"
+						update=":groupform" />
+					<p:column headerText="#{msg.group}" sortBy="#{rec.name}"
 						filterBy="#{rec.name}" id="name">  
             #{rec.name}   
         </p:column>

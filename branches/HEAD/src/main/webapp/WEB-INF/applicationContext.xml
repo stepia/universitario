@@ -62,6 +62,7 @@
                 <value>main/report.hbm.xml</value>
                 <value>main/empteam.hbm.xml</value>
                 <value>main/teamemp.hbm.xml</value>
+                <value>main/teamview.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -98,6 +99,18 @@
     <bean id="teamManager" class="service.TeamManager">
         <property name="teamDao">
             <ref local="teamDao"/>
+        </property>
+    </bean>
+    
+    <bean id="teamViewDao" class="dao.TeamViewDaoHibernate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="teamViewManager" class="service.TeamViewManager">
+        <property name="teamViewDao">
+            <ref local="teamViewDao"/>
         </property>
     </bean>
     

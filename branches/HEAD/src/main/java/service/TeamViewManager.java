@@ -33,8 +33,16 @@ public class TeamViewManager implements TeamViewDao {
         return getTeamViewDao().getTeamViews();
     }
 
+    public List<TeamView> getTeamViews(long teamTypeId) {
+        return getTeamViewDao().getTeamViews(teamTypeId);
+    }
+
     public List<TeamView> getTeamViews(String sortBy, boolean sortOrder) {
         return getTeamViewDao().getTeamViews(sortBy, sortOrder);
+    }
+
+    public List<TeamView> getTeamViews(long teamTypeId, String sortBy, boolean sortOrder) {
+        return getTeamViewDao().getTeamViews(teamTypeId, sortBy, sortOrder);
     }
 
     public void editTeamView(TeamView teamView) {

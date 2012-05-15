@@ -15,23 +15,18 @@
 	<div id="container">
 		<div id="header">
 			<ui:include src="/iDetail.xhtml">
-			    <ui:param name="title" value="#{msg.faculty}" />
-				<ui:param name="bean" value="#{facultyViewBean}" />
+			    <ui:param name="title" value="#{msg.group}" />
+				<ui:param name="bean" value="#{groupViewBean}" />
 			</ui:include>
 		</div>
 		<div id="content">
 
-			<h:form id="facultyDetailForm">
-				<h:panelGrid id="pnlfacultyDetail" columns="6" cellspacing="30"
-					border="0" title="Universitario">
-
-	    
-				</h:panelGrid>
-				<c:if test="#{not empty facultyViewBean.selectedTeam.empTeams}">
+			<h:form id="groupDetailForm">
+				<c:if test="#{not empty groupViewBean.selectedTeam.empTeams}">
 					<p:dataTable id="basic" var="empTeam"
-						value="#{facultyViewBean.selectedTeam.empTeams}">
+						value="#{groupViewBean.selectedTeam.empTeams}">
 								<f:facet name="header">  
-                    #{facultyViewBean.selectedTeam.name}  
+                    #{groupViewBean.selectedTeam.name}  
             </f:facet>
 						
 						

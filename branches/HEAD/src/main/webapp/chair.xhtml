@@ -8,62 +8,52 @@
 	<link href="resources/styles/main.css" rel="stylesheet" type="text/css" />
 </h:head>
 
+<f:event type="preRenderView" listener="#{chairViewBean.init}" />
+
 <h:body>
-	<f:view locale="#{language.localeCode}"/>
+	<p:ajaxStatus onstart="statusDialog.show();"
+		onsuccess="statusDialog.hide();" />
+	<p:dialog modal="true" widgetVar="statusDialog" header="#{msg.loading}"
+		draggable="false" closable="false">
+		<p:graphicImage value="/resources/img/ajaxloadingbar.gif" />
+	</p:dialog>
+	<f:view locale="#{language.localeCode}" />
 	<div id="container">
-		<div id="container">
-			<div id="header">
-				<ui:insert name="header">
-					<ui:include src="/header.xhtml">
-						<ui:param name="title" value="Chair" />
-					</ui:include>
-				</ui:insert>
-			</div>
-			<div id="content">
-				<h:form id="chairform">
-					<p:dataTable var="rec" value="#{chairViewBean.teams}"
-						rowKey="#{rec.name}" paginator="true" rows="5"
-						selection="#{chairViewBean.selectedTeam}" selectionMode="single"
-						id="teamsTable" rowsPerPageTemplate="5,10,15,25,50,100">
-
-						<f:facet name="header">  
-            List of Teams (#{chairViewBean.length}) 
-        </f:facet>
-						<p:column headerText="Name" sortBy="#{rec.name}"
-							filterBy="#{rec.name}" id="name">  
-            #{rec.name}  
-        </p:column>
-						<p:column headerText="Modified" sortBy="#{rec.modified}"
-							filterBy="#{rec.modified}" id="modified">  
-            #{rec.modified}  
-        </p:column>
-						<p:column headerText="Created" sortBy="#{rec.created}"
-							filterBy="#{rec.created}" id="created">  
-            #{rec.created}  
-        </p:column>
-						<f:facet name="footer">
-							<p:commandButton id="viewButton" value="View"
-								icon="ui-icon-search" oncomplete="teamDialog.show()" />
-							<p:commandButton id="createButton" value="Create"
-								icon="ui-icon-search" oncomplete="teamDialog.show()" />
-						</f:facet>
-					</p:dataTable>
-
-					<p:dialog header="Team Detail" widgetVar="teamDialog"
-						resizable="false" showEffect="explode" hideEffect="explode"
-						modal="true">
-						<h:panelGrid columns="1" cellspacing="20">
-							<ui:include src="/teamDetail.xhtml" />
-						</h:panelGrid>
-					</p:dialog>
-				</h:form>
-			</div>
-			<div id="footer">
-				<ui:insert name="footer">
-					<ui:include src="/footer.xhtml" />
-				</ui:insert>
-			</div>
+		<div id="header">
+			<ui:include src="/iQuery.xhtml">
+				<ui:param name="title" value="#{msg.chair}" />
+				<ui:param name="bean" value="#{chairViewBean}" />
+			</ui:include>
 		</div>
-</div>
+		<div id="content">
+			<h:form id="chairform">
+
+				<p:dataTable var="rec" rowKey="#{rec.id}" paginator="true" rows="5"
+					value="#{chairViewBean.teams}"
+					selection="#{chairViewBean.selectedTeam}" id="chairTable"
+					rowsPerPageTemplate="5,10,15,25,50,100"
+					emptyMessage="#{msg.norecordsfound}">
+
+					<f:facet name="header">  
+            #{msg.chair} (#{chairViewBean.length}) 
+        </f:facet>
+					<p:ajax event="sort"
+						listener="#{chairViewBean.caseListSortListner}"
+						update=":chairform:chairTable" />
+					<p:column selectionMode="single" style="width:18px" />
+					<p:ajax event="rowSelect" listener="#{chairViewBean.onRowSelect}"
+						update=":chairform" />
+					<p:column headerText="#{msg.chair}" sortBy="#{rec.name}"
+						filterBy="#{rec.name}" id="name">  
+            #{rec.name}   
+        </p:column>
+				</p:dataTable>
+			</h:form>
+
+		</div>
+		<div id="footer">
+			<ui:include src="/footer.xhtml" />
+		</div>
+	</div>
 </h:body>
 </html>

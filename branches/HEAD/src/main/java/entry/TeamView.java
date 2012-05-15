@@ -12,14 +12,13 @@ import javax.faces.bean.RequestScoped;
 public class TeamView {
     private long id;
     private String name;
-
-    private long teamtypeid;
-    private long rootid;
+    private TeamType teamtype;
+    private List<TeamView> roots = new ArrayList<TeamView>();
     private String details;
-    private long stateid;
+    private State state;
     private Date created;
     private Date modified;
-    private List<Emp2Team> empTeams = new ArrayList<Emp2Team>();
+    private List<EmpTeam> empTeams = new ArrayList<EmpTeam>();
 
     public long getId() {
         return id;
@@ -37,36 +36,12 @@ public class TeamView {
         this.name = name;
     }
 
-    public long getTeamtypeid() {
-        return teamtypeid;
-    }
-
-    public void setTeamtypeid(long teamtypeid) {
-        this.teamtypeid = teamtypeid;
-    }
-
-    public long getRootid() {
-        return rootid;
-    }
-
-    public void setRootid(long rootid) {
-        this.rootid = rootid;
-    }
-
     public String getDetails() {
         return details;
     }
 
     public void setDetails(String details) {
         this.details = details;
-    }
-
-    public long getStateid() {
-        return stateid;
-    }
-
-    public void setStateid(long stateid) {
-        this.stateid = stateid;
     }
 
     public Date getCreated() {
@@ -85,11 +60,35 @@ public class TeamView {
         this.modified = modified;
     }
 
-    public List<Emp2Team> getEmpTeams() {
+    public TeamType getTeamtype() {
+        return teamtype;
+    }
+
+    public void setTeamtype(TeamType teamtype) {
+        this.teamtype = teamtype;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public List<TeamView> getRoots() {
+        return roots;
+    }
+
+    public void setRoots(List<TeamView> roots) {
+        this.roots = roots;
+    }
+
+    public List<EmpTeam> getEmpTeams() {
         return empTeams;
     }
 
-    public void setEmpTeams(List<Emp2Team> empTeams) {
+    public void setEmpTeams(List<EmpTeam> empTeams) {
         this.empTeams = empTeams;
     }
 

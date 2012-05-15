@@ -1,7 +1,6 @@
 package user;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,17 +13,17 @@ import javax.faces.model.SelectItem;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.data.SortEvent;
 
-import dao.EmpTeamDao;
-import entry.EmpTeam;
+import dao.TeamViewDao;
+import entry.TeamView;
 
 @ManagedBean
 @SessionScoped
 public class FacultyViewBean {
 
-    @ManagedProperty(value = "#{empTeamManager}")
-    private EmpTeamDao empTeamManager;
-    private EmpTeam selectedFaculty;
-    private List<EmpTeam> faculties = new ArrayList<EmpTeam>();
+    @ManagedProperty(value = "#{teamViewManager}")
+    private TeamViewDao teamViewManager;
+    private TeamView selectedTeam;
+    private List<TeamView> teams = new ArrayList<TeamView>();
     private boolean editible;
     private boolean sortOrder;
     private String sortBy;
@@ -48,33 +47,25 @@ public class FacultyViewBean {
         this.length = length;
     }
 
-    public List<EmpTeam> getFaculties() {
+    public List<TeamView> getTeams() {
         if (sortBy == null) {
-            faculties = getEmpTeamManager().getEmpTeams();
+            teams = getTeamViewManager().getTeamViews(2);
         } else {
             if (!sortBy.equals("person")) {
-                faculties = getEmpTeamManager().getEmpTeams(sortBy, sortOrder);
+                teams = getTeamViewManager().getTeamViews(2, sortBy, sortOrder);
             }
         }
-        this.length = faculties.size();
-        return faculties;
-    }
-
-    public EmpTeam getSelectedFaculty() {
-        return selectedFaculty;
-    }
-
-    public void setSelectedFaculty(EmpTeam selectedFaculties) {
-        this.selectedFaculty = selectedFaculties;
+        this.length = teams.size();
+        return teams;
     }
 
     public void onRowSelect(SelectEvent event) throws IOException {
-        FacesContext.getCurrentInstance().getExternalContext().redirect("empTeamDetail.xhtml");
+        FacesContext.getCurrentInstance().getExternalContext().redirect("facultyDetail.xhtml");
         setEditible(true);
     }
 
     public void init() throws IOException {
-        setSelectedFaculty(null);
+        setSelectedTeam(null);
         setEditible(false);
     }
 
@@ -86,24 +77,7 @@ public class FacultyViewBean {
         this.editible = editible;
     }
 
-    public String doAction(String action) throws UnsupportedEncodingException {
-        Action act = Action.fromString(action);
-        switch (act)
-            {
-            case DELETE:
-                getEmpTeamManager().deleteEmpTeam(getSelectedFaculty());
-                break;
-            case CREATE:
-                setSelectedFaculty(new EmpTeam());
-                break;
-            case SAVE:
-                if (getSelectedFaculty().getCreated() != null) {
-                    getEmpTeamManager().saveOrUpdate(getSelectedFaculty());
-                } else {
-                    getEmpTeamManager().saveEmpTeam(getSelectedFaculty());
-                }
-                break;
-            }
+    public String doAction(String action) {
         return action;
     }
 
@@ -132,12 +106,20 @@ public class FacultyViewBean {
         this.sortBy = sortBy;
     }
 
-    public EmpTeamDao getEmpTeamManager() {
-        return empTeamManager;
+    public TeamViewDao getTeamViewManager() {
+        return teamViewManager;
     }
 
-    public void setEmpTeamManager(EmpTeamDao EmpTeamManager) {
-        this.empTeamManager = EmpTeamManager;
+    public void setTeamViewManager(TeamViewDao teamViewManager) {
+        this.teamViewManager = teamViewManager;
+    }
+
+    public TeamView getSelectedTeam() {
+        return selectedTeam;
+    }
+
+    public void setSelectedTeam(TeamView selectedTeam) {
+        this.selectedTeam = selectedTeam;
     }
 
 }
