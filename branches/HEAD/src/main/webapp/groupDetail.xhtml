@@ -24,7 +24,7 @@
 			<h:form id="groupDetailForm">
 				<c:if test="#{not empty groupViewBean.selectedTeam.empTeams}">
 					<p:dataTable id="basic" var="empTeam"
-						value="#{groupViewBean.selectedTeam.empTeams}">
+						value="#{groupViewBean.selectedTeam.empTeams}" rowStyleClass="#{empTeam.occupation.name == 'Староста групи' ? 'old' : null}"> 
 								<f:facet name="header">  
                     #{groupViewBean.selectedTeam.name}  
             </f:facet>
