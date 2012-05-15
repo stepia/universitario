@@ -15,7 +15,7 @@ html,body {
 
 #content {
 	padding: 40px;
-	height:100%;
+	height: 100%;
 }
 
 #container {
@@ -37,16 +37,15 @@ html,body {
 #footer {
 	background-color: #336699;
 	color: #FFFFFF;
-	position:absolute;
+	position: absolute;
 	bottom: 0;
 	width: 100%;
 	height: 25px;
 }
 
 .actionButton {
- padding:2px;
+	padding: 2px;
 }
-
 
 .panel {
 	width: 350px;
@@ -84,4 +83,10 @@ html,body {
 
 .centered {
 	text-align: center
+}
+
+.old {
+	background-color: #6CE26C !important;
+	background-image: none !important;
+	color: black !important;
 }
