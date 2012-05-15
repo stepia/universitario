@@ -63,7 +63,7 @@
 								action="#{universitario.doAction('schedule')}" />
 							<h:outputText value="#{msg.schedule}" />
 						</h:panelGrid>
-						<h:panelGrid columns="1" cellpadding="10">
+						<h:panelGrid columns="1" cellpadding="10" rendered="#{request.isUserInRole('ROLE_ADMIN')}">
 							<h:commandButton
 								image="/resources/img/internet-web-browser-4.png"
 								action="#{universitario.doAction('admin')}" />
