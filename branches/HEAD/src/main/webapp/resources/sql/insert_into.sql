@@ -25,7 +25,7 @@ INSERT INTO role (id,name) VALUES (2,'ROLE_DEAN');
 INSERT INTO role (id,name) VALUES (3,'ROLE_DEANSOFFICE');
 INSERT INTO role (id,name) VALUES (4,'ROLE_CHAIRHEAD');
 INSERT INTO role (id,name) VALUES (5,'ROLE_STUDENT');
-INSERT INTO role (id,name) VALUES (6,'ROLE_TEACHER');
+INSERT INTO role (id,name) VALUS (6,'ROLE_TEACHER');
 INSERT INTO role (id,name) VALUES (6,'ROLE_ADMIN');
 
 /*occupation*/
@@ -42,6 +42,7 @@ INSERT INTO occupation (id,name) VALUES (10,'Завідувач кафедри')
 INSERT INTO occupation (id,name) VALUES (11,'Староста групи');
 INSERT INTO occupation (id,name) VALUES (12,'Заступник декана з загальних питань');
 INSERT INTO occupation (id,name) VALUES (13,'Заступник декана по роботі з іноземними студентами');
+INSERT INTO occupation (id,name) VALUES (14,'Немає даних');
 
 /*positions*/
 INSERT INTO positions (id,name) VALUES (1,'Вчитель');
@@ -267,7 +268,8 @@ INSERT INTO person (id,lastnameua,firstnameua,middlenameua,lastnameru,firstnamer
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,lastnameru,firstnameru,middlenameru,lastnameeng,firstnameeng,dob,details) VALUES (97,'Мешко','Наталія','Петрівна','Мешко','Наталья','Петровна','Mieszko','Natalia','1972-02-06','доктор економічних наук, професор'); 
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,lastnameru,firstnameru,middlenameru,lastnameeng,firstnameeng,dob,details) VALUES (98,'Пономарьова','Лілія','Федорівна','Пономарева','Лилия','Федоровна','Ponomarev','Lily','1972-02-06','кандидат філологічних наук, доцент.'); 
 /*Факультет систем і засобів масової комунікації*/
-INSERT INTO person (id,lastnameua,firstnameua,middlenameua,lastnameru,firstnameru,middlenameru,lastnameeng,firstnameeng,dob,details) VALUES (99,'Демченко','Володимир','Дмитрович','Демченко','Владимир','Дмитриевич','Demchenko','Vladimir','1954-12-12','доктор філологічних наук,  професор, заслужений журналіст України'); 
+INSERT INTO person (id,lastnameurecordbook,stateid) VALUES (27,209,198,2,808033,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,a,firstnameua,middlenameua,lastnameru,firstnameru,middlenameru,lastnameeng,firstnameeng,dob,details) VALUES (99,'Демченко','Володимир','Дмитрович','Демченко','Владимир','Дмитриевич','Demchenko','Vladimir','1954-12-12','доктор філологічних наук,  професор, заслужений журналіст України'); 
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,lastnameru,firstnameru,middlenameru,lastnameeng,firstnameeng,dob,details) VALUES (100,'Лященко','Анжела','Вадимівна','Лященко','Анжела','Вадимовна','Lyashchenko','Angela','1972-02-06','кандидат  наук із соціальних комунікацій,  доцент'); 
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,lastnameru,firstnameru,middlenameru,lastnameeng,firstnameeng,dob,details) VALUES (101,'Сухенко','Інна','Миколаївна','Сухенко','Инна','Николаевна','Sukhenko','Ina','1964-09-02','кандидат філологічних наук, доцент'); 
 INSERT INTO person (id,lastnameua,firstnameua,middlenameua,lastnameru,firstnameru,middlenameru,lastnameeng,firstnameeng,dob,details) VALUES (102,'Полішко','Наталя','Євгенівна','Полишко','Наталья','Евгеньевна','Polishko','Natalia','1961-11-04','кандидат філологічних наук, доцент'); 
@@ -484,37 +486,37 @@ INSERT INTO planDetails (id,planid,disciplineid,lessontypeid,periodid,hours,mark
 
 
 /*emp2team*/
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (1,183,197,2,808006,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (2,184,197,2,808007,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (3,185,197,2,808008,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (1,183,197,2,14,808006,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (2,184,197,2,14,808007,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (3,185,197,2,14,808008,1);
 INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (4,186,197,2,11,808009,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (5,187,197,2,808010,2);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (6,188,197,2,808011,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (7,189,197,2,808012,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (8,190,197,2,808013,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (9,191,197,2,808014,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (10,192,197,2,808015,2);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (11,193,197,2,808016,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (12,194,197,2,808017,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (13,195,197,2,808018,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (5,187,197,2,14,808010,2);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (6,188,197,2,14,808011,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (7,189,197,2,14,808012,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (8,190,197,2,14,808013,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (9,191,197,2,14,808014,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (10,192,197,2,14,808015,2);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (11,193,197,2,14,808016,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (12,194,197,2,14,808017,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (13,195,197,2,14,808018,1);
 
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (14,196,198,2,808019,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (15,197,198,2,808020,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (16,198,198,2,808021,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (14,196,198,2,14,808019,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (15,197,198,2,14,808020,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (16,198,198,2,14,808021,1);
 INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (17,199,198,11,808022,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (18,200,198,2,808024,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (19,201,198,2,808025,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (20,202,198,2,808026,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (21,203,198,2,808027,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (22,204,198,2,808028,2);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (23,205,198,2,808029,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (24,206,198,2,808030,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (25,207,198,2,808031,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (26,208,198,2,808032,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (27,209,198,2,808033,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (28,210,198,2,808034,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (29,211,198,2,808035,1);
-INSERT INTO emp2team (id,personid,teamid,positionid,recordbook,stateid) VALUES (30,212,198,2,808036,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (18,200,198,2,14,808024,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (19,201,198,2,14,808025,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (20,202,198,2,14,808026,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (21,203,198,2,14,808027,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (22,204,198,2,14,808028,2);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (23,205,198,2,14,808029,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (24,206,198,2,14,808030,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (25,207,198,2,14,808031,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (26,208,198,2,14,808032,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (27,209,198,2,14,808033,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (28,210,198,2,14,808034,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (29,211,198,2,14,808035,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (30,212,198,2,14,808036,1);
 
 INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (32,2,2,1,1,808037,1);
 INSERT INTO emp2team (id,personid,teamid,positionid,occupationid,recordbook,stateid) VALUES (33,3,2,1,2,808038,1);
@@ -743,7 +745,8 @@ INSERT INTO users (id,personid,username,password,enabled)  VALUES ('51','51','us
 INSERT INTO users (id,personid,username,password,enabled)  VALUES ('52','52','user52',125,1);
 INSERT INTO users (id,personid,username,password,enabled)  VALUES ('53','53','user53',125,1);
 INSERT INTO users (id,personid,username,password,enabled)  VALUES ('54','54','user54',125,1);
-INSERT INTO users (id,personid,username,password,enabled)  VALUES ('55','55','user55',125,1);
+INSERT recordbook,stateid) VALUES (27,209,198,2,808033,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,INTO users (id,personid,username,password,enabled)  VALUES ('55','55','user55',125,1);
 INSERT INTO users (id,personid,username,password,enabled)  VALUES ('56','56','user56',125,1);
 INSERT INTO users (id,personid,username,password,enabled)  VALUES ('57','57','user57',125,1);
 INSERT INTO users (id,personid,username,password,enabled)  VALUES ('58','58','user58',125,1);
@@ -799,7 +802,8 @@ INSERT INTO users (id,personid,username,password,enabled)  VALUES ('107','107','
 INSERT INTO users (id,personid,username,password,enabled)  VALUES ('108','108','user108',1210,1);
 INSERT INTO users (id,personid,username,password,enabled)  VALUES ('109','109','user109',1210,1);
 INSERT INTO users (id,personid,username,password,enabled)  VALUES ('110','110','user110',1211,1);
-INSERT INTO users (id,personid,username,password,enabled)  VALUES ('111','111','user111',1211,1);
+INSERT INTO users (id,personrecordbook,stateid) VALUES (27,209,198,2,808033,1);
+INSERT INTO emp2team (id,personid,teamid,positionid,id,username,password,enabled)  VALUES ('111','111','user111',1211,1);
 INSERT INTO users (id,personid,username,password,enabled)  VALUES ('112','112','user112',1211,1);
 INSERT INTO users (id,personid,username,password,enabled)  VALUES ('113','113','user113',1211,1);
 INSERT INTO users (id,personid,username,password,enabled)  VALUES ('114','114','user114',1211,1);
