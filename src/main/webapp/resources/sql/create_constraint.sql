@@ -12,8 +12,13 @@ ALTER TABLE plan ADD CONSTRAINT plan_teamid FOREIGN KEY(teamid) REFERENCES team(
 ALTER TABLE planDetails ADD CONSTRAINT planDetails_disciplineid FOREIGN KEY(disciplineid) REFERENCES discipline(id);
 ALTER TABLE planDetails ADD CONSTRAINT planDetails_lessontypeid FOREIGN KEY(lessontypeid) REFERENCES lessontype(id);
 ALTER TABLE planDetails ADD CONSTRAINT planDetails_periodid FOREIGN KEY(periodid) REFERENCES period(id);
-ALTER TABLE planDetails ADD CONSTRAINT planDetails_marktypeid FOREIGN KEY(marktypeid) REFERENCES marktype(id);
+ALTER TABLE planDetails ADD CONSTRAINT planDetails_personid FOREIGN KEY(personid) REFERENCES person(id);
+ALTER TABLE planDetails ADD CONSTRAINT planDetails_reportid FOREIGN KEY(reportid) REFERENCES report(id);
 ALTER TABLE planDetails ADD CONSTRAINT planDetails_planid FOREIGN KEY(planid) REFERENCES plan(id);
-ALTER TABLE report ADD CONSTRAINT plan_personid FOREIGN KEY(personid) REFERENCES person(id);
+ALTER TABLE report ADD CONSTRAINT plan_marktypeid FOREIGN KEY(marktypeid) REFERENCES marktype(id);
+ALTER TABLE report ADD CONSTRAINT plan_reporttypeid FOREIGN KEY(reporttypeid) REFERENCES reporttype(id);
+ALTER TABLE reportDetails ADD CONSTRAINT plan_reportid FOREIGN KEY(reportid) REFERENCES report(id);
+ALTER TABLE reportDetails ADD CONSTRAINT plan_personid FOREIGN KEY(personid) REFERENCES person(id);
+ALTER TABLE reportDetails ADD CONSTRAINT plan_markid FOREIGN KEY(markid) REFERENCES mark(id);
 ALTER TABLE lesson ADD CONSTRAINT plan_facultyid FOREIGN KEY(facultyid) REFERENCES faculty(id);
 ALTER TABLE lesson ADD CONSTRAINT plan_lessontimeid FOREIGN KEY(lessontimeid) REFERENCES lessontime(id);

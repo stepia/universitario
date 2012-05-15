@@ -372,4 +372,21 @@ FOR EACH ROW
 BEGIN
     SET NEW.modified = NOW();
 END;//
-delimiter ; 
+delimiter ;
+
+delimiter //
+CREATE TRIGGER reportDetails_OnInsert BEFORE INSERT ON `reportDetails`
+FOR EACH ROW
+BEGIN
+    SET NEW.created = NOW();
+    SET NEW.modified = NOW();
+END;//
+delimiter ;
+
+delimiter //
+CREATE TRIGGER reportDetails_OnUpdate BEFORE UPDATE ON `reportDetails`
+FOR EACH ROW
+BEGIN
+    SET NEW.modified = NOW();
+END;//
+delimiter ;
