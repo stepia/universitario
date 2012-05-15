@@ -122,7 +122,8 @@ create table planDetails(
       lessontypeid int not null,
       periodid int not null,
       hours varchar(50),
-      marktypeid int not null,
+      personid int not null,
+      reportid int not null,
       modified datetime,
       created datetime);
 
@@ -143,9 +144,16 @@ create table mark(
      
 create table report(
       id int not null AUTO_INCREMENT primary key,
+      marktypeid int not null,
+      reporttypeid int not null,
+      modified datetime,
+      created datetime);
+
+create table reportDetails(
+      id int not null AUTO_INCREMENT primary key,
       reportid int not null,
       personid int not null,
-      name varchar(50) not null ,
+      markid int not null,
       modified datetime,
       created datetime);
 
