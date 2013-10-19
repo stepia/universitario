@@ -1,38 +1,38 @@
 DELIMITER $$
-CREATE PROCEDURE getSubTeams(IN base INT UNSIGNED,IN forumType VARCHAR(64))
+CREATE PROCEDURE getSubTeams(IN base INT UNSIGNED,IN teamtype VARCHAR(64))
 BEGIN
     DECLARE ids TEXT DEFAULT '';
     SET @parents = base;
-    SET @forumType = forumType;
+    SET @teamType = teamtype;
     SET ids = base;
     loop1: LOOP
-        SET @stm = CONCAT('SELECT GROUP_CONCAT(id) INTO @parents FROM phpbb_forums',' WHERE parent_id IN (', @parents, ')');
+        SET @stm = CONCAT('SELECT GROUP_CONCAT(id) INTO @parents FROM team',' WHERE rootid IN (', @parents, ')');
         PREPARE fetch_childs FROM @stm;
         EXECUTE fetch_childs;
         DROP PREPARE fetch_childs;
         IF @parents IS NULL THEN LEAVE loop1; END IF;
         SET ids = CONCAT(ids, ',', @parents);
     END LOOP;
-    IF @forumType IS NULL THEN
-        SET @stm = CONCAT('SELECT * FROM phpbb_forums WHERE id IN (', ids, ')');
+    IF @teamtype IS NULL THEN
+        SET @stm = CONCAT('SELECT * FROM team WHERE id IN (', ids, ')');
         PREPARE fetch_childs FROM @stm;
         EXECUTE fetch_childs;
     ELSE
-        SET @stm = CONCAT('SELECT * FROM phpbb_forums WHERE id IN (', ids, ') AND forum_type = (SELECT id from forumType where name = ?)');
+        SET @stm = CONCAT('SELECT * FROM team WHERE id IN (', ids, ') AND teamtypeid = (SELECT id from teamtype where name = ?)');
         PREPARE fetch_childs FROM @stm;
-        EXECUTE fetch_childs USING @forumtype;
+        EXECUTE fetch_childs USING @teamtype;
     END IF;
     DROP PREPARE fetch_childs;
 END;
 
 
 DELIMITER $$
-CREATE PROCEDURE getParentTeams(IN base INT UNSIGNED,IN forumType VARCHAR(64))
+CREATE PROCEDURE getParentTeams(IN base INT UNSIGNED,IN teamtype VARCHAR(64))
 BEGIN
     DECLARE ids TEXT DEFAULT '';
     SET @parent = base;
-    SET @forumType = forumType;
-    SET @stm = CONCAT('SELECT parent_id INTO @parent FROM phpbb_forums WHERE id = ?');
+    SET @teamType = teamtype;
+    SET @stm = CONCAT('SELECT rootid INTO @parent FROM team WHERE id = ?');
     PREPARE fetch_parent FROM @stm;
     loop1: LOOP
         EXECUTE fetch_parent USING @parent;
@@ -40,14 +40,14 @@ BEGIN
         IF NOT @parent THEN LEAVE loop1; END IF;
     END LOOP;
     DROP PREPARE fetch_parent;
-    IF @forumType IS NULL THEN
-        SET @stm = CONCAT('SELECT * FROM phpbb_forums WHERE id IN (', ids, ')');
+    IF @teamtype IS NULL THEN
+        SET @stm = CONCAT('SELECT * FROM team WHERE id IN (', ids, ')');
         PREPARE fetch_parents FROM @stm;
         EXECUTE fetch_parents;
     ELSE
-        SET @stm = CONCAT('SELECT * FROM phpbb_forums WHERE id IN (', ids, ') AND forum_type = (SELECT id from forumType where name = ?)');
+        SET @stm = CONCAT('SELECT * FROM team WHERE id IN (', ids, ') AND teamtypeid = (SELECT id from teamtype where name = ?)');
         PREPARE fetch_parents FROM @stm;
-        EXECUTE fetch_parents USING @forumType;
+        EXECUTE fetch_parents USING @teamtype;
     END IF;
     DROP PREPARE fetch_parents;
 END;
